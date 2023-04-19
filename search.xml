@@ -1,9 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>没有图片说明</title>
-    <url>/2023/04/19/%E6%9C%AA%E6%9B%B4%E6%96%B0%E8%AF%B4%E6%98%8E/</url>
-    <content><![CDATA[<h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><p>现在博客才搭上，但是自己网上图床还没有搞定，导致图片传不上去，所有就还没哟更新自己的学习知识，光有汉字是没用的，必须配上图片，但是因为还没搞定所以就搁置了，我会尽力更新的。</p>
+    <title>关于我</title>
+    <url>/2023/04/17/hello-world/</url>
+    <content><![CDATA[<h1 id="Hi-Boys-and-Girls"><a href="#Hi-Boys-and-Girls" class="headerlink" title="Hi Boys and Girls!"></a>Hi Boys and Girls!</h1><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/Screenshot_20230419_094457.jpg"
+                     
+                ></p>
+<p>​		你们好，我是Cream，00后，就读于某某学院（hint：老徐你要老婆不要?），软件工程专业， 写Blog(博客)为了记录自己的学习历程，监督自己学习，督促自己成长，个人觉得只有自己写出来的知识才是学到手的东西，那才是自己的东西，现在已经入行网络信息安全行业了，现在还在沉淀阶段，以后也会深耕这个行业，并为之奉献，为中国的信息安全行业贡献自己的一份力量，抵制国外黑客入侵，保卫中国信息安全，从你我做起，从现在做起，识别钓鱼链接，不点击钓鱼链接，不给敌人可乘之机。</p>
+<h2 id="我的技能"><a href="#我的技能" class="headerlink" title="我的技能"></a>我的技能</h2><ul>
+<li>目前主攻的还是web安全方向，也会一些网络华为数通、安全设备的知识</li>
+<li>会渗透测试的基本流程，有实战漏扫经验、目前任职于一家国内等保测评公司</li>
+</ul>
+<h2 id="我的兴趣爱好"><a href="#我的兴趣爱好" class="headerlink" title="我的兴趣爱好"></a>我的兴趣爱好</h2><p>以下是一些少有的坚持下来的爱好：</p>
+<p>旅行：去过杭州西湖、成都春熙路、成都武侯祠、乐山大佛、湖南岳阳楼、上海东方明珠等等，但是还是想去西藏拉萨、故宫博物馆、北京八达岭长城，计划利用放假时间出去好好玩玩，记录美好时光<br>唱歌：有事没有机会唱一下，唱歌能够使人发泄不快乐的情绪，有利于保持好心情，哈哈哈<br>游戏：以前玩儿，现在很少玩了，以前主玩英雄联盟，但是操作跟不上了就放下了，现在也只玩玩手游联盟，陶冶情操罢了</p>
+<h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/2029766.jpg"
+                     
+                ></p>
+<p>​		很高兴你能够访问我的Blog（博客），希望可以帮助到你，同时也非常高兴认识你！😊</p>
+<details class="[blue]" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>[提示] </summary>
+              <div class='content'>
+              <p>初来乍到，请多多指教！</p>
+              </div>
+            </details>
+
 ]]></content>
   </entry>
   <entry>
@@ -17,6 +42,12 @@
                 ></p>
 <p>感谢各位靓仔靓妹来到本人的博客，鄙人不才，现在主攻Web渗透方向，还是小白，但是一直在路上，俗话说的好，“不积跬步无以至千里，不积小流无以成江河，道阻且长，行则将至”，做好自己，相信未来。</p>
 <p>如有指教，请加QQ：1479632420，在此表示感谢。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>没有图片说明</title>
+    <url>/2023/04/19/%E6%9C%AA%E6%9B%B4%E6%96%B0%E8%AF%B4%E6%98%8E/</url>
+    <content><![CDATA[<h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><p>现在博客才搭上，但是自己网上图床还没有搞定，导致图片传不上去，所有就还没哟更新自己的学习知识，光有汉字是没用的，必须配上图片，但是因为还没搞定所以就搁置了，我会尽力更新的。</p>
 ]]></content>
   </entry>
 </search>

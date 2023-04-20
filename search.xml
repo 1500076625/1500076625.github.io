@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>MySQL提权</title>
+    <url>/2023/04/19/mysql%E6%8F%90%E6%9D%83/</url>
+    <content><![CDATA[<h3 id="UDF提权"><a href="#UDF提权" class="headerlink" title="UDF提权"></a>UDF提权</h3><p>udf函数按照其运行模式可以分为单次调用型和聚集函数型两类，单词调用型能够针对数据库查询的每一行记录进行处理，聚集函数型用于处理 group by等聚集函数。</p>
+<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>攻击者通过编写调用cmd或者shell的udf.dll文件，并且导入到一个指定的文件夹目录下，然后创建一个指向udf.dll的自定义函数，从而在数据库进行查询，而查询的结果则等价于在cmd或shell中执行命令。</p>
+<h3 id="存放位置"><a href="#存放位置" class="headerlink" title="存放位置"></a>存放位置</h3><p>Windows 2000操作系统需要导出udf.dll到c:\winnt\udf.dll；Windows 2003操作系统导出udf.dll到c:\Windows\udf.dll；</p>
+<h2 id="MOF提权"><a href="#MOF提权" class="headerlink" title="MOF提权"></a>MOF提权</h2><p>mof是windows系统的一个文件（在c:&#x2F;windows&#x2F;system32&#x2F;wbem&#x2F;mof&#x2F;nullevt.mof）叫做”托管对象格式”其作用是每隔五秒就会去监控进程创建和死亡。</p>
+<p>当mysql账户权限是root，然后使用root权限去执行我们上传的mof，隔了一定时间以后这个mof就会被执行，这个mof当中有一段是vbs脚本，这个vbs大多数的是cmd的添加管理员用户的命令。</p>
+<h3 id="浏览器解码"><a href="#浏览器解码" class="headerlink" title="浏览器解码"></a>浏览器解码</h3><p>atob()</p>
+<p>​						</p>
+]]></content>
+  </entry>
+  <entry>
     <title>关于我</title>
     <url>/2023/04/17/hello-world/</url>
     <content><![CDATA[<h1 id="Hi-Boys-and-Girls"><a href="#Hi-Boys-and-Girls" class="headerlink" title="Hi Boys and Girls!"></a>Hi Boys and Girls!</h1><p><img  
@@ -23,18 +35,6 @@
                      
                 ></p>
 <p>​		很高兴你能够访问我的Blog（博客），希望可以帮助到你，同时也非常高兴认识你！😊</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>MySQL提权</title>
-    <url>/2023/04/19/mysql%E6%8F%90%E6%9D%83/</url>
-    <content><![CDATA[<h3 id="UDF提权"><a href="#UDF提权" class="headerlink" title="UDF提权"></a>UDF提权</h3><p>udf函数按照其运行模式可以分为单次调用型和聚集函数型两类，单词调用型能够针对数据库查询的每一行记录进行处理，聚集函数型用于处理 group by等聚集函数。</p>
-<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>攻击者通过编写调用cmd或者shell的udf.dll文件，并且导入到一个指定的文件夹目录下，然后创建一个指向udf.dll的自定义函数，从而在数据库进行查询，而查询的结果则等价于在cmd或shell中执行命令。</p>
-<h3 id="存放位置"><a href="#存放位置" class="headerlink" title="存放位置"></a>存放位置</h3><p>Windows 2000操作系统需要导出udf.dll到c:\winnt\udf.dll；Windows 2003操作系统导出udf.dll到c:\Windows\udf.dll；</p>
-<h2 id="MOF提权"><a href="#MOF提权" class="headerlink" title="MOF提权"></a>MOF提权</h2><p>mof是windows系统的一个文件（在c:&#x2F;windows&#x2F;system32&#x2F;wbem&#x2F;mof&#x2F;nullevt.mof）叫做”托管对象格式”其作用是每隔五秒就会去监控进程创建和死亡。</p>
-<p>当mysql账户权限是root，然后使用root权限去执行我们上传的mof，隔了一定时间以后这个mof就会被执行，这个mof当中有一段是vbs脚本，这个vbs大多数的是cmd的添加管理员用户的命令。</p>
-<h3 id="浏览器解码"><a href="#浏览器解码" class="headerlink" title="浏览器解码"></a>浏览器解码</h3><p>atob()</p>
-<p>​						</p>
 ]]></content>
   </entry>
   <entry>
@@ -118,21 +118,10 @@
 ]]></content>
   </entry>
   <entry>
-    <title>web渗透的步骤</title>
-    <url>/2023/04/20/web%E6%B8%97%E9%80%8F%E7%9A%84%E6%AD%A5%E9%AA%A4/</url>
-    <content><![CDATA[<h2 id="1、信息收集"><a href="#1、信息收集" class="headerlink" title="1、信息收集"></a>1、信息收集</h2><p>子域名、C段（同网段不同服务器）、旁注（同服务器不同站点）、目录探测、服务器端口、服务器脚本语言类型及版本、CMS识别、web中间件、web框架、数据库类型及版本、操作系统类型及版本。</p>
-<h2 id="2、漏洞探测发现（手动-amp-自动）"><a href="#2、漏洞探测发现（手动-amp-自动）" class="headerlink" title="2、漏洞探测发现（手动&amp;自动）"></a>2、漏洞探测发现（手动&amp;自动）</h2><p><strong>手动</strong></p>
-<p>去常见的地方去发现top10的漏洞，<strong>比如</strong>：搜索栏，login登录框、发表言论栏，修改信息的地方、与数据库交互的地方、URL地址、上传点等。</p>
-<p><strong>自动</strong></p>
-<p><strong>自动漏洞扫描工具</strong>：AWVS、APPScan、xray、yakit、goby、wpscan等，</p>
-<p>发现中间件漏洞、框架漏洞、CMS漏洞、操作系统漏洞、端口漏洞等，去漏洞库（exploit-db、CVE漏洞库），网上寻找相应的POC进行验证。</p>
-<h2 id="3、漏洞利用"><a href="#3、漏洞利用" class="headerlink" title="3、漏洞利用"></a>3、漏洞利用</h2><p>去网上查找对应的exp和payload进行利用，MSF、各种漏洞库、阿里云漏洞库、知道创宇漏洞库去进行查找利用，最后达到控制服务器的目的。</p>
-]]></content>
-  </entry>
-  <entry>
     <title></title>
     <url>/2023/04/20/web%E6%B8%97%E9%80%8F%E7%9A%84%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E5%92%8C%E6%B6%89%E5%8F%8A%E5%88%B0%E7%9A%84%E5%B7%A5%E5%85%B7/</url>
-    <content><![CDATA[<h1 id="web渗透的信息收集和涉及到的工具"><a href="#web渗透的信息收集和涉及到的工具" class="headerlink" title="web渗透的信息收集和涉及到的工具"></a>web渗透的信息收集和涉及到的工具</h1><h2 id="1、信息收集"><a href="#1、信息收集" class="headerlink" title="1、信息收集"></a>1、信息收集</h2><p>子域名、C段、旁注、目录探测、服务器端口、服务器脚本语言及版本、CMS识别、web中间件、web框架、数据库类型和及版本、操作系统及版本</p>
+    <content><![CDATA[<hr>
+<h2 id="title：web渗透的信息收集和涉及到的工具"><a href="#title：web渗透的信息收集和涉及到的工具" class="headerlink" title="title：web渗透的信息收集和涉及到的工具"></a>title：web渗透的信息收集和涉及到的工具</h2><h2 id="1、信息收集"><a href="#1、信息收集" class="headerlink" title="1、信息收集"></a>1、信息收集</h2><p>子域名、C段、旁注、目录探测、服务器端口、服务器脚本语言及版本、CMS识别、web中间件、web框架、数据库类型和及版本、操作系统及版本</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
@@ -345,56 +334,6 @@
                 ></p>
 <p>7、网络欺骗、网络嗅探</p>
 <p>dnschef</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>docker搭建靶场常用命令</title>
-    <url>/2023/04/19/%E6%90%AD%E5%BB%BA%E9%9D%B6%E5%9C%BAdocker%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<p>启动docker服务 ：       systemctl start docker</p>
-<p>重启docker服务：   systemctl restart  docker</p>
-<p>关闭docker服务：  systemctl stop docker</p>
-<p>启动靶场：</p>
-<p>docker-compose build &amp;&amp; docker-compose up -d</p>
-<p>查看运行状态：</p>
-<p>docker ps</p>
-<p>进入镜像：</p>
-<p>docker exec -it 4r8werw8e8er &#x2F;bin&#x2F;bash</p>
-<p>docker exec -it 4r8werw8e8er bash</p>
-<p>退出镜像：exit</p>
-<p>关闭靶场镜像：</p>
-<p>docker-compose down</p>
-<p>关闭docker：systemctl stop docker</p>
-<p>docker 服务开机自启动命令：</p>
-<p>systemctl enable docker.service</p>
-<p>关闭docker 服务开机自启动命令：</p>
-<p>systemctl disable docker.service</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>文件上传绕过方式汇总</title>
-    <url>/2023/04/19/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E7%9A%84%E7%BB%95%E8%BF%87%E6%96%B9%E5%BC%8F/</url>
-    <content><![CDATA[<h1 id="文件上传的绕过方式"><a href="#文件上传的绕过方式" class="headerlink" title="文件上传的绕过方式"></a>文件上传的绕过方式</h1><h2 id="1、前对验证绕过"><a href="#1、前对验证绕过" class="headerlink" title="1、前对验证绕过"></a><strong>1、前对验证绕过</strong></h2><p>F12打开调试器关闭js格式实现绕过</p>
-<h2 id="2、Content-Type方式绕过"><a href="#2、Content-Type方式绕过" class="headerlink" title="2、Content-Type方式绕过"></a><strong>2、Content-Type方式绕过</strong></h2><p>抓包修改Content-Type的数据为它允许的格式，如image&#x2F;jpeg</p>
-<h2 id="3、黑名单绕过（不允许上传php）"><a href="#3、黑名单绕过（不允许上传php）" class="headerlink" title="3、黑名单绕过（不允许上传php）"></a><strong>3、黑名单绕过（不允许上传php）</strong></h2><p>可以上传php5、phtml后缀名，需要到Apache的配置文件，http.conf配置文件里面进行打开相应的配置：</p>
-<p> AddType application&#x2F;x-httpd-php .php .phtml .php5 .pht</p>
-<p>还有就是AllOverride all也要保证是打开的，默认的是none</p>
-<h2 id="4、-htaccess文件绕过"><a href="#4、-htaccess文件绕过" class="headerlink" title="4、.htaccess文件绕过"></a><strong>4、.htaccess文件绕过</strong></h2><p>编辑一个新的.htaccess文件，里面编辑:</p>
-<p>&lt;FilesMatch “4.png”&gt;<br>SetHandler application&#x2F;x-httpd-php</p>
-<p>这串代码的意思是如果文件中有一个4.png（是4.txt改后缀名实现的，不是图片马）的文件，他就会被解析为.php，把这个文件上传上去，然后紧接着上传4.png，这样就会把4.png当成php进行解析。</p>
-<h2 id="5、后缀大小写"><a href="#5、后缀大小写" class="headerlink" title="5、后缀大小写"></a>5、后缀大小写</h2><h2 id="6、文件后缀（空）绕过"><a href="#6、文件后缀（空）绕过" class="headerlink" title="6、文件后缀（空）绕过"></a>6、文件后缀（空）绕过</h2><p>就在php.php后面加个空格就好了。</p>
-<h2 id="7、文件后缀（点绕过）"><a href="#7、文件后缀（点绕过）" class="headerlink" title="7、文件后缀（点绕过）"></a>7、文件后缀（点绕过）</h2><p>就在php.php后面加个点就好了，如php.php.</p>
-<h2 id="8、Windows文件流绕过（-DATA）"><a href="#8、Windows文件流绕过（-DATA）" class="headerlink" title="8、Windows文件流绕过（::$DATA）"></a>8、Windows文件流绕过（::$DATA）</h2><p><strong>在window的时候如果文件名+”::$DATA”会把::$DATA之后的数据当成文件流处理,不会检测后缀名，且保持::$DATA之前的文件名，他的目的就是不检查后缀名</strong>。例如:”test.php::$DATA”Windows会自动去掉末尾的::$DATA变成”test.php”。</p>
-<h2 id="9、文件名双写绕过"><a href="#9、文件名双写绕过" class="headerlink" title="9、文件名双写绕过"></a>9、文件名双写绕过</h2><p>pphphp格式进行绕过</p>
-<h2 id="10、后缀名绕过（点空格点）"><a href="#10、后缀名绕过（点空格点）" class="headerlink" title="10、后缀名绕过（点空格点）"></a>10、后缀名绕过（点空格点）</h2><h2 id="11、GET型00截断、POST型00截断"><a href="#11、GET型00截断、POST型00截断" class="headerlink" title="11、GET型00截断、POST型00截断"></a>11、GET型00截断、POST型00截断</h2><p>（<strong>PHP版本要在5.3.4</strong>以下且<strong>php的magic_quotes_gpc为OFF状态</strong>）</p>
-<h2 id="12、条件竞争"><a href="#12、条件竞争" class="headerlink" title="12、条件竞争"></a>12、条件竞争</h2><p>这里的逻辑是先将文件上传到服务器，然后判断文件后缀是否在白名单里，如果在则重命名，否则删除。这样就存在一个安全问题，那就是我同时上传多个相同文件，在它删除之前访问就可以了。也就是条件竞争问题。可以借助burp的暴力破解模块。</p>
-<p>首先上传一个正常的符合条件的文件进行获取到上传路径，然后就在1.php里面编写内容：</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;?php file_put_contents(&#x27;phpinfoshell.php&#x27;,&#x27;&lt;?php phpinfo();?&gt;&#x27;);?&gt;</span><br></pre></td></tr></table></figure></div>
-
-<p>意思是如果没有找到phpinfoshell.php文件，则创建该文件，内容是：</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;?php phpinfo();?&gt;</span><br></pre></td></tr></table></figure></div>
-
-<p>让后通过bp抓包，进行null playd无限跑包，抓上传1.php包跑，跑了之后放包重新抓访问phpinfoshell.php包开始同时跑包，这样就可以通过条件竞争进行有概率的利用漏洞，在被删除之前访问1.php执行里面的file_put_contents函数创建phpinfoshell.php木马文件进行完美绕过。</p>
-<h2 id="13、二次渲染"><a href="#13、二次渲染" class="headerlink" title="13、二次渲染"></a>13、二次渲染</h2><p>意思是上传了的图片马中的16进制的内容被进行渲染篡改成乱码了，我们要对比上传前和上传后的图片马16进制的地方，哪个地方没有被二次渲染，就在那个地方进行添加一句话木马，这样就可以绕过二次渲染实现上传成功。</p>
 ]]></content>
   </entry>
   <entry>
@@ -1066,6 +1005,68 @@
 <li>使用HTTP隧道：使用HTTP隧道技术可以将扫描流量伪装成HTTP请求，然后通过HTTP隧道将扫描流量传输到目标网站，从而绕过防火墙的检测。</li>
 <li>使用DNS隧道：类似于HTTP隧道，可以将扫描流量伪装成DNS请求，然后通过DNS隧道将扫描流量传输到目标网站，从而绕过防火墙的检测。</li>
 </ol>
+]]></content>
+  </entry>
+  <entry>
+    <title>文件上传绕过方式汇总</title>
+    <url>/2023/04/19/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E7%9A%84%E7%BB%95%E8%BF%87%E6%96%B9%E5%BC%8F/</url>
+    <content><![CDATA[<h1 id="文件上传的绕过方式"><a href="#文件上传的绕过方式" class="headerlink" title="文件上传的绕过方式"></a>文件上传的绕过方式</h1><h2 id="1、前对验证绕过"><a href="#1、前对验证绕过" class="headerlink" title="1、前对验证绕过"></a><strong>1、前对验证绕过</strong></h2><p>F12打开调试器关闭js格式实现绕过</p>
+<h2 id="2、Content-Type方式绕过"><a href="#2、Content-Type方式绕过" class="headerlink" title="2、Content-Type方式绕过"></a><strong>2、Content-Type方式绕过</strong></h2><p>抓包修改Content-Type的数据为它允许的格式，如image&#x2F;jpeg</p>
+<h2 id="3、黑名单绕过（不允许上传php）"><a href="#3、黑名单绕过（不允许上传php）" class="headerlink" title="3、黑名单绕过（不允许上传php）"></a><strong>3、黑名单绕过（不允许上传php）</strong></h2><p>可以上传php5、phtml后缀名，需要到Apache的配置文件，http.conf配置文件里面进行打开相应的配置：</p>
+<p> AddType application&#x2F;x-httpd-php .php .phtml .php5 .pht</p>
+<p>还有就是AllOverride all也要保证是打开的，默认的是none</p>
+<h2 id="4、-htaccess文件绕过"><a href="#4、-htaccess文件绕过" class="headerlink" title="4、.htaccess文件绕过"></a><strong>4、.htaccess文件绕过</strong></h2><p>编辑一个新的.htaccess文件，里面编辑:</p>
+<p>&lt;FilesMatch “4.png”&gt;<br>SetHandler application&#x2F;x-httpd-php</p>
+<p>这串代码的意思是如果文件中有一个4.png（是4.txt改后缀名实现的，不是图片马）的文件，他就会被解析为.php，把这个文件上传上去，然后紧接着上传4.png，这样就会把4.png当成php进行解析。</p>
+<h2 id="5、后缀大小写"><a href="#5、后缀大小写" class="headerlink" title="5、后缀大小写"></a>5、后缀大小写</h2><h2 id="6、文件后缀（空）绕过"><a href="#6、文件后缀（空）绕过" class="headerlink" title="6、文件后缀（空）绕过"></a>6、文件后缀（空）绕过</h2><p>就在php.php后面加个空格就好了。</p>
+<h2 id="7、文件后缀（点绕过）"><a href="#7、文件后缀（点绕过）" class="headerlink" title="7、文件后缀（点绕过）"></a>7、文件后缀（点绕过）</h2><p>就在php.php后面加个点就好了，如php.php.</p>
+<h2 id="8、Windows文件流绕过（-DATA）"><a href="#8、Windows文件流绕过（-DATA）" class="headerlink" title="8、Windows文件流绕过（::$DATA）"></a>8、Windows文件流绕过（::$DATA）</h2><p><strong>在window的时候如果文件名+”::$DATA”会把::$DATA之后的数据当成文件流处理,不会检测后缀名，且保持::$DATA之前的文件名，他的目的就是不检查后缀名</strong>。例如:”test.php::$DATA”Windows会自动去掉末尾的::$DATA变成”test.php”。</p>
+<h2 id="9、文件名双写绕过"><a href="#9、文件名双写绕过" class="headerlink" title="9、文件名双写绕过"></a>9、文件名双写绕过</h2><p>pphphp格式进行绕过</p>
+<h2 id="10、后缀名绕过（点空格点）"><a href="#10、后缀名绕过（点空格点）" class="headerlink" title="10、后缀名绕过（点空格点）"></a>10、后缀名绕过（点空格点）</h2><h2 id="11、GET型00截断、POST型00截断"><a href="#11、GET型00截断、POST型00截断" class="headerlink" title="11、GET型00截断、POST型00截断"></a>11、GET型00截断、POST型00截断</h2><p>（<strong>PHP版本要在5.3.4</strong>以下且<strong>php的magic_quotes_gpc为OFF状态</strong>）</p>
+<h2 id="12、条件竞争"><a href="#12、条件竞争" class="headerlink" title="12、条件竞争"></a>12、条件竞争</h2><p>这里的逻辑是先将文件上传到服务器，然后判断文件后缀是否在白名单里，如果在则重命名，否则删除。这样就存在一个安全问题，那就是我同时上传多个相同文件，在它删除之前访问就可以了。也就是条件竞争问题。可以借助burp的暴力破解模块。</p>
+<p>首先上传一个正常的符合条件的文件进行获取到上传路径，然后就在1.php里面编写内容：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;?php file_put_contents(&#x27;phpinfoshell.php&#x27;,&#x27;&lt;?php phpinfo();?&gt;&#x27;);?&gt;</span><br></pre></td></tr></table></figure></div>
+
+<p>意思是如果没有找到phpinfoshell.php文件，则创建该文件，内容是：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;?php phpinfo();?&gt;</span><br></pre></td></tr></table></figure></div>
+
+<p>让后通过bp抓包，进行null playd无限跑包，抓上传1.php包跑，跑了之后放包重新抓访问phpinfoshell.php包开始同时跑包，这样就可以通过条件竞争进行有概率的利用漏洞，在被删除之前访问1.php执行里面的file_put_contents函数创建phpinfoshell.php木马文件进行完美绕过。</p>
+<h2 id="13、二次渲染"><a href="#13、二次渲染" class="headerlink" title="13、二次渲染"></a>13、二次渲染</h2><p>意思是上传了的图片马中的16进制的内容被进行渲染篡改成乱码了，我们要对比上传前和上传后的图片马16进制的地方，哪个地方没有被二次渲染，就在那个地方进行添加一句话木马，这样就可以绕过二次渲染实现上传成功。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>web渗透的步骤</title>
+    <url>/2023/04/20/web%E6%B8%97%E9%80%8F%E7%9A%84%E6%AD%A5%E9%AA%A4/</url>
+    <content><![CDATA[<h2 id="1、信息收集"><a href="#1、信息收集" class="headerlink" title="1、信息收集"></a>1、信息收集</h2><p>子域名、C段（同网段不同服务器）、旁注（同服务器不同站点）、目录探测、服务器端口、服务器脚本语言类型及版本、CMS识别、web中间件、web框架、数据库类型及版本、操作系统类型及版本。</p>
+<h2 id="2、漏洞探测发现（手动-amp-自动）"><a href="#2、漏洞探测发现（手动-amp-自动）" class="headerlink" title="2、漏洞探测发现（手动&amp;自动）"></a>2、漏洞探测发现（手动&amp;自动）</h2><p><strong>手动</strong></p>
+<p>去常见的地方去发现top10的漏洞，<strong>比如</strong>：搜索栏，login登录框、发表言论栏，修改信息的地方、与数据库交互的地方、URL地址、上传点等。</p>
+<p><strong>自动</strong></p>
+<p><strong>自动漏洞扫描工具</strong>：AWVS、APPScan、xray、yakit、goby、wpscan等，</p>
+<p>发现中间件漏洞、框架漏洞、CMS漏洞、操作系统漏洞、端口漏洞等，去漏洞库（exploit-db、CVE漏洞库），网上寻找相应的POC进行验证。</p>
+<h2 id="3、漏洞利用"><a href="#3、漏洞利用" class="headerlink" title="3、漏洞利用"></a>3、漏洞利用</h2><p>去网上查找对应的exp和payload进行利用，MSF、各种漏洞库、阿里云漏洞库、知道创宇漏洞库去进行查找利用，最后达到控制服务器的目的。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>docker搭建靶场常用命令</title>
+    <url>/2023/04/19/%E6%90%AD%E5%BB%BA%E9%9D%B6%E5%9C%BAdocker%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<p>启动docker服务 ：       systemctl start docker</p>
+<p>重启docker服务：   systemctl restart  docker</p>
+<p>关闭docker服务：  systemctl stop docker</p>
+<p>启动靶场：</p>
+<p>docker-compose build &amp;&amp; docker-compose up -d</p>
+<p>查看运行状态：</p>
+<p>docker ps</p>
+<p>进入镜像：</p>
+<p>docker exec -it 4r8werw8e8er &#x2F;bin&#x2F;bash</p>
+<p>docker exec -it 4r8werw8e8er bash</p>
+<p>退出镜像：exit</p>
+<p>关闭靶场镜像：</p>
+<p>docker-compose down</p>
+<p>关闭docker：systemctl stop docker</p>
+<p>docker 服务开机自启动命令：</p>
+<p>systemctl enable docker.service</p>
+<p>关闭docker 服务开机自启动命令：</p>
+<p>systemctl disable docker.service</p>
 ]]></content>
   </entry>
   <entry>

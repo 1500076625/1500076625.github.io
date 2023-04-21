@@ -1,6 +1,424 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>关于我</title>
+    <url>/2023/04/17/hello-world/</url>
+    <content><![CDATA[<h1 id="Hi-Boys-and-Girls"><a href="#Hi-Boys-and-Girls" class="headerlink" title="Hi Boys and Girls!"></a>Hi Boys and Girls!</h1><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/Screenshot_20230419_094457.jpg"
+                     
+                ></p>
+<p>​		你们好，我是Cream（笔名：顾彬彬），00后，就读于某某学院（hint：“老徐你要老婆不要?”），软件工程专业， 写Blog(博客)为了记录自己的学习历程，监督自己学习，督促自己成长，个人觉得只有自己写出来的知识才是学到手的东西，那才是自己的东西，现在已经入行网络信息安全行业了，现在还在沉淀阶段，以后也会深耕这个行业，并为之奉献，为中国的信息安全行业贡献自己的一份力量，抵制国外黑客入侵，保卫中国信息安全，从你我做起，从现在做起，识别钓鱼链接，不点击钓鱼链接，不给敌人可乘之机。</p>
+<h2 id="我的技能"><a href="#我的技能" class="headerlink" title="我的技能"></a>我的技能</h2><ul>
+<li>目前主攻的还是web安全方向，也会一些网络华为数通、安全设备的知识</li>
+<li>会渗透测试的基本流程，有实战漏扫经验、目前任职于一家国内等保测评公司</li>
+</ul>
+<h2 id="我的兴趣爱好"><a href="#我的兴趣爱好" class="headerlink" title="我的兴趣爱好"></a>我的兴趣爱好</h2><p>以下是一些少有的坚持下来的爱好：</p>
+<p>旅行：去过杭州西湖、成都春熙路、成都武侯祠、乐山大佛、湖南岳阳楼、上海东方明珠等等，但是还是想去西藏拉萨、故宫博物馆、北京八达岭长城，计划利用放假时间出去好好玩玩，记录美好时光<br>唱歌：有事没有机会唱一下，唱歌能够使人发泄不快乐的情绪，有利于保持好心情，哈哈哈<br>游戏：以前玩儿，现在很少玩了，以前主玩英雄联盟，但是操作跟不上了就放下了，现在也只玩玩手游联盟，陶冶情操罢了</p>
+<h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/2029766.jpg"
+                     
+                ></p>
+<p>​		很高兴你能够访问我的Blog（博客），希望可以帮助到你，同时也非常高兴认识你！😊</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>PHP基础（掌握点）</title>
+    <url>/2023/04/21/PHP%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h2 id="PHP-是一种创建动态交互性站点的强有力的服务器端脚本语言"><a href="#PHP-是一种创建动态交互性站点的强有力的服务器端脚本语言" class="headerlink" title="PHP 是一种创建动态交互性站点的强有力的服务器端脚本语言"></a>PHP 是一种创建动态交互性站点的强有力的服务器端脚本语言</h2><h2 id="PHP-是什么？"><a href="#PHP-是什么？" class="headerlink" title="PHP 是什么？"></a>PHP 是什么？</h2><ul>
+<li>PHP（全称：PHP：Hypertext Preprocessor，即”PHP：超文本预处理器”）是一种通用开源脚本语言。</li>
+<li>PHP 脚本在服务器上执行。</li>
+<li>PHP 可免费下载使用。</li>
+</ul>
+<h2 id="PHP-文件是什么？"><a href="#PHP-文件是什么？" class="headerlink" title="PHP 文件是什么？"></a>PHP 文件是什么？</h2><ul>
+<li>PHP 文件可包含文本、HTML、JavaScript代码和 PHP 代码</li>
+<li>PHP 代码在服务器上执行，结果以纯 HTML 形式返回给浏览器</li>
+<li>PHP 文件的默认文件扩展名是 “.php”</li>
+</ul>
+<h2 id="PHP-能做什么？"><a href="#PHP-能做什么？" class="headerlink" title="PHP 能做什么？"></a>PHP 能做什么？</h2><ul>
+<li>PHP 可以生成动态页面内容</li>
+<li>PHP 可以创建、打开、读取、写入、关闭服务器上的文件</li>
+<li>PHP 可以收集表单数据</li>
+<li>PHP 可以发送和接收 cookies</li>
+<li>PHP 可以添加、删除、修改您的数据库中的数据</li>
+<li>PHP 可以限制用户访问您的网站上的一些页面</li>
+<li>PHP 可以加密数据</li>
+</ul>
+<h2 id="为什么使用-PHP？"><a href="#为什么使用-PHP？" class="headerlink" title="为什么使用 PHP？"></a>为什么使用 PHP？</h2><ul>
+<li>PHP 可在不同的平台上运行（Windows、Linux、Unix、Mac OS X 等）</li>
+<li>PHP 与目前几乎所有的正在被使用的服务器相兼容（Apache、IIS 等）</li>
+<li>PHP 提供了广泛的数据库支持</li>
+<li>PHP 易于学习，并可高效地运行在服务器端</li>
+</ul>
+<h2 id="PHP语法"><a href="#PHP语法" class="headerlink" title="PHP语法"></a>PHP语法</h2><p>PHP 脚本可以放在文档中的任何位置。</p>
+<p>PHP 脚本以 <strong><?php** 开始，以 **?></strong> 结束：</p>
+<p>PHP 文件的默认文件扩展名是 “.php”。</p>
+<p>PHP 文件通常包含 HTML 标签和一些 PHP 脚本代码。</p>
+<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>My first PHP page<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="meta">echo &quot;Hello World!&quot;;</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+<p>PHP 中的每个代码行都必须以分号结束。分号是一种分隔符，用于把指令集区分开来。</p>
+<p>通过 PHP，有两种在浏览器输出文本的基础指令：<strong>echo</strong> 和 <strong>print</strong>。</p>
+<h2 id="PHP-注释"><a href="#PHP-注释" class="headerlink" title="PHP 注释"></a>PHP 注释</h2><ul>
+<li>&#x2F;&#x2F;      单行注释</li>
+<li>&#x2F;*  *&#x2F;   多行注释</li>
+</ul>
+<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="meta">// 这是 PHP 单行注释</span></span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">/*</span></span><br><span class="line"><span class="meta">这是</span></span><br><span class="line"><span class="meta">PHP 多行</span></span><br><span class="line"><span class="meta">注释</span></span><br><span class="line"><span class="meta">*/</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+
+
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>变量是用于存储信息的”容器”</p>
+<div class="highlight-container" data-rel="Php"><figure class="iseeu highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$x</span>=<span class="number">5</span>;</span><br><span class="line"><span class="variable">$y</span>=<span class="number">6</span>;</span><br><span class="line"><span class="variable">$z</span>=<span class="variable">$x</span>+<span class="variable">$y</span>;</span><br><span class="line"><span class="keyword">echo</span> <span class="variable">$z</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+
+
+<p><strong>PHP 变量规则</strong></p>
+<ul>
+<li>变量以 $ 符号开始，后面跟着变量的名称</li>
+<li>变量名必须以字母或者下划线字符开始</li>
+<li>变量名只能包含字母、数字以及下划线（A-z、0-9 和 _ ）</li>
+<li>变量名不能包含空格</li>
+<li>变量名是区分大小写的（$y 和 $Y 是两个不同的变量）</li>
+</ul>
+<h2 id="创建PHP变量"><a href="#创建PHP变量" class="headerlink" title="创建PHP变量"></a>创建PHP变量</h2><p>PHP 没有声明变量的命令。</p>
+<p>变量在您第一次赋值给它的时候被创建</p>
+<div class="highlight-container" data-rel="Php"><figure class="iseeu highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$txt</span>=<span class="string">&quot;Hello world!&quot;</span>;</span><br><span class="line"><span class="variable">$x</span>=<span class="number">5</span>;</span><br><span class="line"><span class="variable">$y</span>=<span class="number">10.5</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+<p>在上面的语句执行中，变量 <strong>txt</strong> 将保存值 **Hello world!**，且变量 <strong>x</strong> 将保存值 <strong>5</strong>。</p>
+<p><strong>注释：</strong>当您赋一个文本值给变量时，请在文本值两侧加上引号。</p>
+<h2 id="PHP-是一门弱类型语言"><a href="#PHP-是一门弱类型语言" class="headerlink" title="PHP 是一门弱类型语言"></a>PHP 是一门弱类型语言</h2><p>PHP 会根据变量的值，自动把变量转换为正确的数据类型。</p>
+<p>在强类型的编程语言中，我们必须在使用变量前先声明（定义）变量的类型和名称。</p>
+<h1 id="echo-和-print-语句"><a href="#echo-和-print-语句" class="headerlink" title="echo 和 print 语句"></a>echo 和 print 语句</h1><p>echo 和 print 区别:</p>
+<ul>
+<li>echo - 可以输出一个或多个字符串</li>
+<li>print - 只允许输出一个字符串，返回值总为 1</li>
+</ul>
+<p><strong>提示：</strong>echo 输出的速度比 print 快， echo 没有返回值，print有返回值1。</p>
+<p>echo 是一个语言结构，使用的时候可以不用加括号，也可以加上括号： echo 或 echo()。</p>
+<p><strong>显示字符串</strong></p>
+<div class="highlight-container" data-rel="Php"><figure class="iseeu highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;&lt;h2&gt;PHP 很有趣!&lt;/h2&gt;&quot;</span>;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;Hello world!&lt;br&gt;&quot;</span>;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;我要学 PHP!&lt;br&gt;&quot;</span>;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;这是一个&quot;</span>, <span class="string">&quot;字符串，&quot;</span>, <span class="string">&quot;使用了&quot;</span>, <span class="string">&quot;多个&quot;</span>, <span class="string">&quot;参数。&quot;</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+
+
+<p><strong>显示变量</strong></p>
+<div class="highlight-container" data-rel="Php"><figure class="iseeu highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$txt1</span>=<span class="string">&quot;学习 PHP&quot;</span>;</span><br><span class="line"><span class="variable">$txt2</span>=<span class="string">&quot;xbxaq.com&quot;</span>;</span><br><span class="line"><span class="variable">$cars</span>=<span class="keyword">array</span>(<span class="string">&quot;Volvo&quot;</span>,<span class="string">&quot;BMW&quot;</span>,<span class="string">&quot;Toyota&quot;</span>);</span><br><span class="line"> </span><br><span class="line"><span class="keyword">echo</span> <span class="variable">$txt1</span>;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;&lt;br&gt;&quot;</span>;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;在 <span class="subst">$txt2</span> 学习 PHP &quot;</span>;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;&lt;br&gt;&quot;</span>;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;我车的品牌是 <span class="subst">&#123;$cars[0]&#125;</span>&quot;</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+
+
+<p>print 同样是一个语言结构，可以使用括号，也可以不使用括号： print 或 print()。</p>
+<p><strong>显示字符串</strong></p>
+<div class="highlight-container" data-rel="Php"><figure class="iseeu highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">print</span> <span class="string">&quot;&lt;h2&gt;PHP 很有趣!&lt;/h2&gt;&quot;</span>;</span><br><span class="line"><span class="keyword">print</span> <span class="string">&quot;Hello world!&lt;br&gt;&quot;</span>;</span><br><span class="line"><span class="keyword">print</span> <span class="string">&quot;我要学习 PHP!&quot;</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+
+
+<p><strong>显示变量</strong></p>
+<div class="highlight-container" data-rel="Php"><figure class="iseeu highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$txt1</span>=<span class="string">&quot;学习 PHP&quot;</span>;</span><br><span class="line"><span class="variable">$txt2</span>=<span class="string">&quot;xbxaq.COM&quot;</span>;</span><br><span class="line"><span class="variable">$cars</span>=<span class="keyword">array</span>(<span class="string">&quot;Volvo&quot;</span>,<span class="string">&quot;BMW&quot;</span>,<span class="string">&quot;Toyota&quot;</span>);</span><br><span class="line"> </span><br><span class="line"><span class="keyword">print</span> <span class="variable">$txt1</span>;</span><br><span class="line"><span class="keyword">print</span> <span class="string">&quot;&lt;br&gt;&quot;</span>;</span><br><span class="line"><span class="keyword">print</span> <span class="string">&quot;在 <span class="subst">$txt2</span> 学习 PHP &quot;</span>;</span><br><span class="line"><span class="keyword">print</span> <span class="string">&quot;&lt;br&gt;&quot;</span>;</span><br><span class="line"><span class="keyword">print</span> <span class="string">&quot;我车的品牌是 <span class="subst">&#123;$cars[0]&#125;</span>&quot;</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+
+
+<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><p>PHP 变量存储不同的类型的数据，不同的数据类型可以做不一样的事情。</p>
+<p>PHP 支持以下几种数据类型:</p>
+<ul>
+<li>String（字符串）</li>
+<li>Integer（整型）</li>
+<li>Float（浮点型）</li>
+<li>Boolean（布尔型）</li>
+<li>Array（数组）</li>
+<li>Object（对象）</li>
+<li>NULL（空值）</li>
+<li>Resource（资源类型）</li>
+</ul>
+<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><p>一个字符串是一串字符的序列，就像 “Hello world!”。</p>
+<p>你可以将任何文本放在单引号和双引号中</p>
+<div class="highlight-container" data-rel="Php"><figure class="iseeu highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> </span><br><span class="line"><span class="variable">$x</span> = <span class="string">&quot;Hello world!&quot;</span>;</span><br><span class="line"><span class="keyword">echo</span> <span class="variable">$x</span>;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;&lt;br&gt;&quot;</span>; </span><br><span class="line"><span class="variable">$x</span> = <span class="string">&#x27;Hello world!&#x27;</span>;</span><br><span class="line"><span class="keyword">echo</span> <span class="variable">$x</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+
+
+<h2 id="整型"><a href="#整型" class="headerlink" title="整型"></a>整型</h2><p>整数是一个没有小数的数字。</p>
+<p>整数规则:</p>
+<ul>
+<li>整数必须至少有一个数字 (0-9)</li>
+<li>整数不能包含逗号或空格</li>
+<li>整数是没有小数点的</li>
+<li>整数可以是正数或负数</li>
+<li>整型可以用三种格式来指定：十进制， 十六进制（ 以 0x 为前缀）或八进制（前缀为 0）。</li>
+</ul>
+<p>PHP <a class="link"   href="https://www.xbxaq.com/php/php-var_dump-function.html" >var_dump()  <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>函数返回变量的数据类型和值</p>
+<div class="highlight-container" data-rel="Php"><figure class="iseeu highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> </span><br><span class="line"><span class="variable">$x</span> = <span class="number">5985</span>;</span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="variable">$x</span>);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;&lt;br&gt;&quot;</span>; </span><br><span class="line"><span class="variable">$x</span> = -<span class="number">345</span>; <span class="comment">// 负数 </span></span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="variable">$x</span>);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;&lt;br&gt;&quot;</span>; </span><br><span class="line"><span class="variable">$x</span> = <span class="number">0x8C</span>; <span class="comment">// 十六进制数</span></span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="variable">$x</span>);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;&lt;br&gt;&quot;</span>;</span><br><span class="line"><span class="variable">$x</span> = <span class="number">047</span>; <span class="comment">// 八进制数</span></span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="variable">$x</span>);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+
+
+<h2 id="浮点型"><a href="#浮点型" class="headerlink" title="浮点型"></a>浮点型</h2><p>浮点数是带小数部分的数字，或是指数形式</p>
+<div class="highlight-container" data-rel="Php"><figure class="iseeu highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> </span><br><span class="line"><span class="variable">$x</span> = <span class="number">10.365</span>;</span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="variable">$x</span>);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;&lt;br&gt;&quot;</span>; </span><br><span class="line"><span class="variable">$x</span> = <span class="number">2.4e3</span>;</span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="variable">$x</span>);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;&lt;br&gt;&quot;</span>; </span><br><span class="line"><span class="variable">$x</span> = <span class="number">8E-5</span>;</span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="variable">$x</span>);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+
+
+<h2 id="布尔型"><a href="#布尔型" class="headerlink" title="布尔型"></a>布尔型</h2><p>布尔型可以是 TRUE 或 FALSE</p>
+<p>布尔型通常用于条件判断</p>
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p>数组可以在一个变量中存储多个值</p>
+<div class="highlight-container" data-rel="Php"><figure class="iseeu highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> </span><br><span class="line"><span class="variable">$cars</span>=<span class="keyword">array</span>(<span class="string">&quot;Volvo&quot;</span>,<span class="string">&quot;BMW&quot;</span>,<span class="string">&quot;Toyota&quot;</span>);</span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="variable">$cars</span>);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+
+
+<h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><p>对象数据类型也可以用于存储数据。</p>
+<p>在 PHP 中，对象必须声明。</p>
+<p>首先，你必须使用class关键字声明类对象。类是可以包含属性和方法的结构。</p>
+<p>然后我们在类中定义数据类型，然后在实例化的类中使用数据类型</p>
+<div class="highlight-container" data-rel="Php"><figure class="iseeu highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">  <span class="keyword">var</span> <span class="variable">$color</span>;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"><span class="variable">$color</span>=<span class="string">&quot;green&quot;</span></span>) </span>&#123;</span><br><span class="line">    <span class="variable language_">$this</span>-&gt;color = <span class="variable">$color</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">what_color</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">$this</span>-&gt;color;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+
+
+<h2 id="NULL-值"><a href="#NULL-值" class="headerlink" title="NULL 值"></a>NULL 值</h2><p>NULL 值表示变量没有值。NULL 是数据类型为 NULL 的值。</p>
+<p>NULL 值指明一个变量是否为空值。 同样可用于数据空值和NULL值的区别。</p>
+<p>可以通过设置变量值为 NULL 来清空变量数据</p>
+<div class="highlight-container" data-rel="Php"><figure class="iseeu highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$x</span>=<span class="string">&quot;Hello world!&quot;</span>;</span><br><span class="line"><span class="variable">$x</span>=<span class="literal">null</span>;</span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="variable">$x</span>);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+
+
+<h1 id="类型比较"><a href="#类型比较" class="headerlink" title="类型比较"></a>类型比较</h1><p>虽然 PHP 是弱类型语言，但也需要明白变量类型及它们的意义，因为我们经常需要对 PHP 变量进行比较，包含松散和严格比较。</p>
+<ul>
+<li>松散比较：使用两个等号 <strong>&#x3D;&#x3D;</strong> 比较，只比较值，不比较类型。</li>
+<li>严格比较：用三个等号 <strong>&#x3D;&#x3D;&#x3D;</strong> 比较，除了比较值，也比较类型。</li>
+</ul>
+<p>例如，”42” 是一个字符串而 42 是一个整数。<strong>FALSE</strong> 是一个布尔值而 <strong>“FALSE”</strong> 是一个字符串。</p>
+<div class="highlight-container" data-rel="Php"><figure class="iseeu highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">if</span>(<span class="number">42</span> == <span class="string">&quot;42&quot;</span>) &#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&#x27;1、值相等&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">echo</span> PHP_EOL; <span class="comment">// 换行符</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">if</span>(<span class="number">42</span> === <span class="string">&quot;42&quot;</span>) &#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&#x27;2、类型相等&#x27;</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&#x27;3、类型不相等&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+
+
+<h2 id="PHP中-比较-0、false、null"><a href="#PHP中-比较-0、false、null" class="headerlink" title="PHP中 比较 0、false、null"></a>PHP中 比较 0、false、null</h2><div class="highlight-container" data-rel="Php"><figure class="iseeu highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">echo</span> <span class="string">&#x27;0 == false: &#x27;</span>;</span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="number">0</span> == <span class="literal">false</span>);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">&#x27;0 === false: &#x27;</span>;</span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="number">0</span> === <span class="literal">false</span>);</span><br><span class="line"><span class="keyword">echo</span> PHP_EOL;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">&#x27;0 == null: &#x27;</span>;</span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="number">0</span> == <span class="literal">null</span>);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">&#x27;0 === null: &#x27;</span>;</span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="number">0</span> === <span class="literal">null</span>);</span><br><span class="line"><span class="keyword">echo</span> PHP_EOL;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">&#x27;false == null: &#x27;</span>;</span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="literal">false</span> == <span class="literal">null</span>);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">&#x27;false === null: &#x27;</span>;</span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="literal">false</span> === <span class="literal">null</span>);</span><br><span class="line"><span class="keyword">echo</span> PHP_EOL;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">&#x27;&quot;0&quot; == false: &#x27;</span>;</span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="string">&quot;0&quot;</span> == <span class="literal">false</span>);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">&#x27;&quot;0&quot; === false: &#x27;</span>;</span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="string">&quot;0&quot;</span> === <span class="literal">false</span>);</span><br><span class="line"><span class="keyword">echo</span> PHP_EOL;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">&#x27;&quot;0&quot; == null: &#x27;</span>;</span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="string">&quot;0&quot;</span> == <span class="literal">null</span>);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">&#x27;&quot;0&quot; === null: &#x27;</span>;</span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="string">&quot;0&quot;</span> === <span class="literal">null</span>);</span><br><span class="line"><span class="keyword">echo</span> PHP_EOL;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">&#x27;&quot;&quot; == false: &#x27;</span>;</span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="string">&quot;&quot;</span> == <span class="literal">false</span>);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">&#x27;&quot;&quot; === false: &#x27;</span>;</span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="string">&quot;&quot;</span> === <span class="literal">false</span>);</span><br><span class="line"><span class="keyword">echo</span> PHP_EOL;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">&#x27;&quot;&quot; == null: &#x27;</span>;</span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="string">&quot;&quot;</span> == <span class="literal">null</span>);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">&#x27;&quot;&quot; === null: &#x27;</span>;</span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="string">&quot;&quot;</span> === <span class="literal">null</span>);</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h1 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h1><p>常量值被定义后，在脚本的其他任何地方都不能被改变</p>
+<p>常量是一个简单值的标识符。该值在脚本中不能改变。</p>
+<p>一个常量由英文字母、下划线、和数字组成,但数字不能作为首字母出现。 (常量名不需要加 $ 修饰符)。</p>
+<p><strong>注意：</strong> 常量在整个脚本中都可以使用。</p>
+<p>设置常量，使用 define() 函数，函数语法如下</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">bool define ( string $name , mixed $value [, bool $case_insensitive = false ] )</span><br></pre></td></tr></table></figure></div>
+
+<p>该函数有三个参数:</p>
+<ul>
+<li><strong>name：</strong>必选参数，常量名称，即标志符。</li>
+<li><strong>value：</strong>必选参数，常量的值。</li>
+<li><strong>case_insensitive</strong> ：可选参数，如果设置为 TRUE，该常量则大小写不敏感。默认是大小写敏感的。</li>
+</ul>
+<p>创建一个 <strong>区分大小写的常量</strong>, 常量值为 “欢迎访问 xbxaq.com”</p>
+<div class="highlight-container" data-rel="Php"><figure class="iseeu highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">// 区分大小写的常量名</span></span><br><span class="line"><span class="title function_ invoke__">define</span>(<span class="string">&quot;GREETING&quot;</span>, <span class="string">&quot;欢迎访问 xbxaq.com&quot;</span>);</span><br><span class="line"><span class="keyword">echo</span> GREETING;    <span class="comment">// 输出 </span></span><br><span class="line"><span class="keyword">echo</span> <span class="string">&#x27;&lt;br&gt;&#x27;</span>;</span><br><span class="line"><span class="keyword">echo</span> greeting;   <span class="comment">// 输出 &quot;greeting&quot;，但是有警告信息，表示该常量未定义</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+
+
+<h1 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h1><p> PHP 中，赋值运算符 <strong>&#x3D;</strong> 用于给变量赋值。</p>
+<p>在 PHP 中，算术运算符 <strong>+</strong> 用于把值加在一起。</p>
+<h2 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h2><div class="highlight-container" data-rel="Php"><figure class="iseeu highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> </span><br><span class="line"><span class="variable">$x</span>=<span class="number">10</span>; </span><br><span class="line"><span class="variable">$y</span>=<span class="number">6</span>;</span><br><span class="line"><span class="keyword">echo</span> (<span class="variable">$x</span> + <span class="variable">$y</span>); <span class="comment">// 输出16</span></span><br><span class="line"><span class="keyword">echo</span> <span class="string">&#x27;&lt;br&gt;&#x27;</span>;  <span class="comment">// 换行</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">echo</span> (<span class="variable">$x</span> - <span class="variable">$y</span>); <span class="comment">// 输出4</span></span><br><span class="line"><span class="keyword">echo</span> <span class="string">&#x27;&lt;br&gt;&#x27;</span>;  <span class="comment">// 换行</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">echo</span> (<span class="variable">$x</span> * <span class="variable">$y</span>); <span class="comment">// 输出60</span></span><br><span class="line"><span class="keyword">echo</span> <span class="string">&#x27;&lt;br&gt;&#x27;</span>;  <span class="comment">// 换行</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">echo</span> (<span class="variable">$x</span> / <span class="variable">$y</span>); <span class="comment">// 输出1.6666666666667</span></span><br><span class="line"><span class="keyword">echo</span> <span class="string">&#x27;&lt;br&gt;&#x27;</span>;  <span class="comment">// 换行</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">echo</span> (<span class="variable">$x</span> % <span class="variable">$y</span>); <span class="comment">// 输出4</span></span><br><span class="line"><span class="keyword">echo</span> <span class="string">&#x27;&lt;br&gt;&#x27;</span>;  <span class="comment">// 换行</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">echo</span> -<span class="variable">$x</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+
+
+<h2 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h2><div class="highlight-container" data-rel="Php"><figure class="iseeu highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> </span><br><span class="line"><span class="variable">$x</span>=<span class="number">10</span>; </span><br><span class="line"><span class="keyword">echo</span> <span class="variable">$x</span>; <span class="comment">// 输出10</span></span><br><span class="line"> </span><br><span class="line"><span class="variable">$y</span>=<span class="number">20</span>; </span><br><span class="line"><span class="variable">$y</span> += <span class="number">100</span>;</span><br><span class="line"><span class="keyword">echo</span> <span class="variable">$y</span>; <span class="comment">// 输出120</span></span><br><span class="line"> </span><br><span class="line"><span class="variable">$z</span>=<span class="number">50</span>;</span><br><span class="line"><span class="variable">$z</span> -= <span class="number">25</span>;</span><br><span class="line"><span class="keyword">echo</span> <span class="variable">$z</span>; <span class="comment">// 输出25</span></span><br><span class="line"> </span><br><span class="line"><span class="variable">$i</span>=<span class="number">5</span>;</span><br><span class="line"><span class="variable">$i</span> *= <span class="number">6</span>;</span><br><span class="line"><span class="keyword">echo</span> <span class="variable">$i</span>; <span class="comment">// 输出30</span></span><br><span class="line"> </span><br><span class="line"><span class="variable">$j</span>=<span class="number">10</span>;</span><br><span class="line"><span class="variable">$j</span> /= <span class="number">5</span>;</span><br><span class="line"><span class="keyword">echo</span> <span class="variable">$j</span>; <span class="comment">// 输出2</span></span><br><span class="line"> </span><br><span class="line"><span class="variable">$k</span>=<span class="number">15</span>;</span><br><span class="line"><span class="variable">$k</span> %= <span class="number">4</span>;</span><br><span class="line"><span class="keyword">echo</span> <span class="variable">$k</span>; <span class="comment">// 输出3</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+
+
+<h2 id="递增-x2F-递减运算符"><a href="#递增-x2F-递减运算符" class="headerlink" title="递增&#x2F;递减运算符"></a>递增&#x2F;递减运算符</h2><div class="highlight-container" data-rel="Php"><figure class="iseeu highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$x</span>=<span class="number">10</span>; </span><br><span class="line"><span class="keyword">echo</span> ++<span class="variable">$x</span>; <span class="comment">// 输出11</span></span><br><span class="line"> </span><br><span class="line"><span class="variable">$y</span>=<span class="number">10</span>; </span><br><span class="line"><span class="keyword">echo</span> <span class="variable">$y</span>++; <span class="comment">// 输出10</span></span><br><span class="line"> </span><br><span class="line"><span class="variable">$z</span>=<span class="number">5</span>;</span><br><span class="line"><span class="keyword">echo</span> --<span class="variable">$z</span>; <span class="comment">// 输出4</span></span><br><span class="line"> </span><br><span class="line"><span class="variable">$i</span>=<span class="number">5</span>;</span><br><span class="line"><span class="keyword">echo</span> <span class="variable">$i</span>--; <span class="comment">// 输出5</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+
+
+<h2 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h2><div class="highlight-container" data-rel="Php"><figure class="iseeu highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$x</span>=<span class="number">100</span>; </span><br><span class="line"><span class="variable">$y</span>=<span class="string">&quot;100&quot;</span>;</span><br><span class="line"> </span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="variable">$x</span> == <span class="variable">$y</span>);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;&lt;br&gt;&quot;</span>;</span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="variable">$x</span> === <span class="variable">$y</span>);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;&lt;br&gt;&quot;</span>;</span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="variable">$x</span> != <span class="variable">$y</span>);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;&lt;br&gt;&quot;</span>;</span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="variable">$x</span> !== <span class="variable">$y</span>);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;&lt;br&gt;&quot;</span>;</span><br><span class="line"> </span><br><span class="line"><span class="variable">$a</span>=<span class="number">50</span>;</span><br><span class="line"><span class="variable">$b</span>=<span class="number">90</span>;</span><br><span class="line"> </span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="variable">$a</span> &gt; <span class="variable">$b</span>);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;&lt;br&gt;&quot;</span>;</span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="variable">$a</span> &lt; <span class="variable">$b</span>);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+
+
+<h2 id="三元运算符"><a href="#三元运算符" class="headerlink" title="三元运算符"></a>三元运算符</h2><h3 id="语法格式"><a href="#语法格式" class="headerlink" title="语法格式"></a>语法格式</h3><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">(expr1) ? (expr2) : (expr3) </span><br></pre></td></tr></table></figure></div>
+
+<p>对 expr1 求值为 TRUE 时的值为 expr2，在 expr1 求值为 FALSE 时的值为 expr3。</p>
+<h2 id="条件语句"><a href="#条件语句" class="headerlink" title="条件语句"></a>条件语句</h2><p>您编写代码时，您常常需要为不同的判断执行不同的动作。您可以在代码中使用条件语句来完成此任务。</p>
+<p>在 PHP 中，提供了下列条件语句：</p>
+<ul>
+<li><strong>if 语句</strong> - 在条件成立时执行代码</li>
+<li><strong>if…else 语句</strong> - 在条件成立时执行一块代码，条件不成立时执行另一块代码</li>
+<li><strong>if…elseif….else 语句</strong> - 在若干条件之一成立时执行一个代码块</li>
+<li><strong>switch 语句</strong> - 在若干条件之一成立时执行一个代码块</li>
+</ul>
+<p>if 语句用于<strong>仅当指定条件成立时执行代码</strong></p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">if (条件)</span><br><span class="line">&#123;</span><br><span class="line">    条件成立时要执行的代码;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-container" data-rel="Php"><figure class="iseeu highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$t</span>=<span class="title function_ invoke__">date</span>(<span class="string">&quot;H&quot;</span>);</span><br><span class="line"><span class="keyword">if</span> (<span class="variable">$t</span>&lt;<span class="string">&quot;20&quot;</span>)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&quot;Have a good day!&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+
+
+<h2 id="if…else-语句"><a href="#if…else-语句" class="headerlink" title="if…else 语句"></a>if…else 语句</h2><p><strong>在条件成立时执行一块代码，条件不成立时执行另一块代码</strong>，请使用 if….else 语句。</p>
+<h3 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h3><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">if (条件)</span><br><span class="line">&#123;</span><br><span class="line">条件成立时执行的代码;</span><br><span class="line">&#125;</span><br><span class="line">else</span><br><span class="line">&#123;</span><br><span class="line">条件不成立时执行的代码;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<div class="highlight-container" data-rel="Php"><figure class="iseeu highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$t</span>=<span class="title function_ invoke__">date</span>(<span class="string">&quot;H&quot;</span>);</span><br><span class="line"><span class="keyword">if</span> (<span class="variable">$t</span>&lt;<span class="string">&quot;20&quot;</span>)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&quot;Have a good day!&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&quot;Have a good night!&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+
+
+<h2 id="if…elseif…-else-语句"><a href="#if…elseif…-else-语句" class="headerlink" title="if…elseif….else 语句"></a>if…elseif….else 语句</h2><p><strong>在若干条件之一成立时执行一个代码块</strong>，请使用 if….elseif…else 语句。.</p>
+<h3 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h3><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">if (条件)</span><br><span class="line">&#123;</span><br><span class="line">    if 条件成立时执行的代码;</span><br><span class="line">&#125;</span><br><span class="line">elseif (条件)</span><br><span class="line">&#123;</span><br><span class="line">    elseif 条件成立时执行的代码;</span><br><span class="line">&#125;</span><br><span class="line">else</span><br><span class="line">&#123;</span><br><span class="line">    条件不成立时执行的代码;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<div class="highlight-container" data-rel="Php"><figure class="iseeu highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$t</span>=<span class="title function_ invoke__">date</span>(<span class="string">&quot;H&quot;</span>);</span><br><span class="line"><span class="keyword">if</span> (<span class="variable">$t</span>&lt;<span class="string">&quot;10&quot;</span>)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&quot;Have a good morning!&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">elseif</span> (<span class="variable">$t</span>&lt;<span class="string">&quot;20&quot;</span>)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&quot;Have a good day!&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&quot;Have a good night!&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+
+
+<h1 id="Switch-语句"><a href="#Switch-语句" class="headerlink" title="Switch 语句"></a>Switch 语句</h1><p>switch 语句用于根据多个不同条件执行不同动作。</p>
+<p>如果您希望<strong>有选择地执行若干代码块之一</strong>，请使用 switch 语句。</p>
+<div class="highlight-container" data-rel="Php"><figure class="iseeu highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$favcolor</span>=<span class="string">&quot;red&quot;</span>;</span><br><span class="line"><span class="keyword">switch</span> (<span class="variable">$favcolor</span>)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">case</span> <span class="string">&quot;red&quot;</span>:</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&quot;你喜欢的颜色是红色!&quot;</span>;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line"><span class="keyword">case</span> <span class="string">&quot;blue&quot;</span>:</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&quot;你喜欢的颜色是蓝色!&quot;</span>;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line"><span class="keyword">case</span> <span class="string">&quot;green&quot;</span>:</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&quot;你喜欢的颜色是绿色!&quot;</span>;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line"><span class="keyword">default</span>:</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&quot;你喜欢的颜色不是 红, 蓝, 或绿色!&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+
+
+<h1 id="数组-1"><a href="#数组-1" class="headerlink" title="数组"></a>数组</h1><p>数组能够在单个变量中存储多个值</p>
+<p>数组可以在单个变量中存储多个值，并且您可以根据键访问其中的值。</p>
+<div class="highlight-container" data-rel="Php"><figure class="iseeu highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$cars</span>=<span class="keyword">array</span>(<span class="string">&quot;Volvo&quot;</span>,<span class="string">&quot;BMW&quot;</span>,<span class="string">&quot;Toyota&quot;</span>);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;I like &quot;</span> . <span class="variable">$cars</span>[<span class="number">0</span>] . <span class="string">&quot;, &quot;</span> . <span class="variable">$cars</span>[<span class="number">1</span>] . <span class="string">&quot; and &quot;</span> . <span class="variable">$cars</span>[<span class="number">2</span>] . <span class="string">&quot;.&quot;</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+
+
+<h2 id="创建数组"><a href="#创建数组" class="headerlink" title="创建数组"></a>创建数组</h2><p>在 PHP 中，array() 函数用于创建数组：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">array();</span><br></pre></td></tr></table></figure></div>
+
+
+
+<p>在 PHP 中，有三种类型的数组：</p>
+<ul>
+<li><strong>数值数组</strong> - 带有数字 ID 键的数组</li>
+<li><strong>关联数组</strong> - 带有指定的键的数组，每个键关联一个值</li>
+<li><strong>多维数组</strong> - 包含一个或多个数组的数组</li>
+</ul>
+<h2 id="数值数组"><a href="#数值数组" class="headerlink" title="数值数组"></a>数值数组</h2><p>这里有两种创建数值数组的方法：</p>
+<p>自动分配 ID 键（ID 键总是从 0 开始）：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">$cars=array(&quot;Volvo&quot;,&quot;BMW&quot;,&quot;Toyota&quot;);</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-container" data-rel="Php"><figure class="iseeu highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$cars</span>=<span class="keyword">array</span>(<span class="string">&quot;Volvo&quot;</span>,<span class="string">&quot;BMW&quot;</span>,<span class="string">&quot;Toyota&quot;</span>);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;I like &quot;</span> . <span class="variable">$cars</span>[<span class="number">0</span>] . <span class="string">&quot;, &quot;</span> . <span class="variable">$cars</span>[<span class="number">1</span>] . <span class="string">&quot; and &quot;</span> . <span class="variable">$cars</span>[<span class="number">2</span>] . <span class="string">&quot;.&quot;</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+
+
+<h2 id="获取数组的长度-count-函数"><a href="#获取数组的长度-count-函数" class="headerlink" title="获取数组的长度 - count() 函数"></a>获取数组的长度 - count() 函数</h2><p>count() 函数用于返回数组的长度（元素的数量）</p>
+<div class="highlight-container" data-rel="Php"><figure class="iseeu highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$cars</span>=<span class="keyword">array</span>(<span class="string">&quot;Volvo&quot;</span>,<span class="string">&quot;BMW&quot;</span>,<span class="string">&quot;Toyota&quot;</span>);</span><br><span class="line"><span class="keyword">echo</span> <span class="title function_ invoke__">count</span>(<span class="variable">$cars</span>);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+
+
+<h2 id="遍历数值数组"><a href="#遍历数值数组" class="headerlink" title="遍历数值数组"></a>遍历数值数组</h2><p>遍历并打印数值数组中的所有值，您可以使用 for 循环</p>
+<div class="highlight-container" data-rel="Php"><figure class="iseeu highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$cars</span>=<span class="keyword">array</span>(<span class="string">&quot;Volvo&quot;</span>,<span class="string">&quot;BMW&quot;</span>,<span class="string">&quot;Toyota&quot;</span>);</span><br><span class="line"><span class="variable">$arrlength</span>=<span class="title function_ invoke__">count</span>(<span class="variable">$cars</span>);</span><br><span class="line"> </span><br><span class="line"><span class="keyword">for</span>(<span class="variable">$x</span>=<span class="number">0</span>;<span class="variable">$x</span>&lt;<span class="variable">$arrlength</span>;<span class="variable">$x</span>++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="variable">$cars</span>[<span class="variable">$x</span>];</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&quot;&lt;br&gt;&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+
+
+<h2 id="关联数组"><a href="#关联数组" class="headerlink" title="关联数组"></a>关联数组</h2><p>关联数组是使用您分配给数组的指定的键的数组。</p>
+<p>这里有两种创建关联数组的方法</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">$age=array(&quot;Peter&quot;=&gt;&quot;35&quot;,&quot;Ben&quot;=&gt;&quot;37&quot;,&quot;Joe&quot;=&gt;&quot;43&quot;);</span><br><span class="line"></span><br><span class="line">or</span><br><span class="line"></span><br><span class="line">$age[&#x27;Peter&#x27;]=&quot;35&quot;;</span><br><span class="line">$age[&#x27;Ben&#x27;]=&quot;37&quot;;</span><br><span class="line">$age[&#x27;Joe&#x27;]=&quot;43&quot;;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<div class="highlight-container" data-rel="Php"><figure class="iseeu highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$age</span>=<span class="keyword">array</span>(<span class="string">&quot;Peter&quot;</span>=&gt;<span class="string">&quot;35&quot;</span>,<span class="string">&quot;Ben&quot;</span>=&gt;<span class="string">&quot;37&quot;</span>,<span class="string">&quot;Joe&quot;</span>=&gt;<span class="string">&quot;43&quot;</span>);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;Peter is &quot;</span> . <span class="variable">$age</span>[<span class="string">&#x27;Peter&#x27;</span>] . <span class="string">&quot; years old.&quot;</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+
+
+<h2 id="遍历关联数组"><a href="#遍历关联数组" class="headerlink" title="遍历关联数组"></a>遍历关联数组</h2><p>遍历并打印关联数组中的所有值，您可以使用 foreach 循环</p>
+<div class="highlight-container" data-rel="Php"><figure class="iseeu highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$age</span>=<span class="keyword">array</span>(<span class="string">&quot;Peter&quot;</span>=&gt;<span class="string">&quot;35&quot;</span>,<span class="string">&quot;Ben&quot;</span>=&gt;<span class="string">&quot;37&quot;</span>,<span class="string">&quot;Joe&quot;</span>=&gt;<span class="string">&quot;43&quot;</span>);</span><br><span class="line"> </span><br><span class="line"><span class="keyword">foreach</span>(<span class="variable">$age</span> <span class="keyword">as</span> <span class="variable">$x</span>=&gt;<span class="variable">$x_value</span>)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&quot;Key=&quot;</span> . <span class="variable">$x</span> . <span class="string">&quot;, Value=&quot;</span> . <span class="variable">$x_value</span>;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&quot;&lt;br&gt;&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+
+
+<h1 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h1><p>循环执行代码块指定的次数，或者当指定的条件为真时循环执行代码块。</p>
+<p>在 PHP 中，提供了下列循环语句：</p>
+<ul>
+<li><strong>while</strong> - 只要指定的条件成立，则循环执行代码块</li>
+<li><strong>do…while</strong> - 首先执行一次代码块，然后在指定的条件成立时重复这个循环</li>
+<li><strong>for</strong> - 循环执行代码块指定的次数</li>
+<li><strong>foreach</strong> - 根据数组中每个元素来循环代码块</li>
+</ul>
+<h2 id="while-循环"><a href="#while-循环" class="headerlink" title="while 循环"></a>while 循环</h2><p>while 循环将重复执行代码块，直到指定的条件不成立。</p>
+<h3 id="语法-3"><a href="#语法-3" class="headerlink" title="语法"></a>语法</h3><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">while (条件)</span><br><span class="line">&#123;</span><br><span class="line">    要执行的代码;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<p>实例首先设置变量 <em>i</em> 的值为 1 ($i&#x3D;1;)。</p>
+<p>然后，只要 <em>i</em> 小于或者等于 5，while 循环将继续运行。循环每运行一次，<em>i</em> 就会递增 1：</p>
+<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="meta">$i=1;</span></span><br><span class="line"><span class="meta">while($i&lt;=5)</span></span><br><span class="line"><span class="meta">&#123;</span></span><br><span class="line"><span class="meta">    echo &quot;The number is &quot; . $i . &quot;&lt;br&gt;&quot;;</span></span><br><span class="line"><span class="meta">    $i++;</span></span><br><span class="line"><span class="meta">&#125;</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+
+
+<h2 id="do…while-语句"><a href="#do…while-语句" class="headerlink" title="do…while 语句"></a>do…while 语句</h2><p>do…while 语句会至少执行一次代码，然后检查条件，只要条件成立，就会重复进行循环。</p>
+<h3 id="语法-4"><a href="#语法-4" class="headerlink" title="语法"></a>语法</h3><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">do</span><br><span class="line">&#123;</span><br><span class="line">    要执行的代码;</span><br><span class="line">&#125;</span><br><span class="line">while (条件);</span><br></pre></td></tr></table></figure></div>
+
+
+
+<p>实例首先设置变量 <em>i</em> 的值为 1 ($i&#x3D;1;)。</p>
+<p>然后，开始 do…while 循环。循环将变量 <em>i</em> 的值递增 1，然后输出。先检查条件（<em>i</em> 小于或者等于 5），只要 <em>i</em> 小于或者等于 5，循环将继续运行</p>
+<div class="highlight-container" data-rel="Php"><figure class="iseeu highlight php"><table><tr><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$i</span>=<span class="number">1</span>;</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="variable">$i</span>++;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&quot;The number is &quot;</span> . <span class="variable">$i</span> . <span class="string">&quot;&lt;br&gt;&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">while</span> (<span class="variable">$i</span>&lt;=<span class="number">5</span>);</span><br><span class="line"><span class="meta">?&gt;</span></span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h1 id="For-循环"><a href="#For-循环" class="headerlink" title="For 循环"></a>For 循环</h1><p>for 循环用于您预先知道脚本需要运行的次数的情况。</p>
+<h3 id="语法-5"><a href="#语法-5" class="headerlink" title="语法"></a>语法</h3><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">for (初始值; 条件; 增量)</span><br><span class="line">&#123;</span><br><span class="line">    要执行的代码;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>参数：</p>
+<ul>
+<li><strong>初始值</strong>：主要是初始化一个变量值，用于设置一个计数器（但可以是任何在循环的开始被执行一次的代码）。</li>
+<li><strong>条件</strong>：循环执行的限制条件。如果为 TRUE，则循环继续。如果为 FALSE，则循环结束。</li>
+<li><strong>增量</strong>：主要用于递增计数器（但可以是任何在循环的结束被执行的代码）。</li>
+</ul>
+<p><strong>注释：</strong>上面的<strong>初始值</strong>和<strong>增量</strong>参数可为空，或者有多个表达式（用逗号分隔）。</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>下面的实例定义一个初始值为 i&#x3D;1 的循环。只要变量 <strong>i</strong> 小于或者等于 5，循环将继续运行。循环每运行一次，变量 <strong>i</strong> 就会递增 1</p>
+<div class="highlight-container" data-rel="Php"><figure class="iseeu highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">for</span> (<span class="variable">$i</span>=<span class="number">1</span>; <span class="variable">$i</span>&lt;=<span class="number">5</span>; <span class="variable">$i</span>++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&quot;数字为 &quot;</span> . <span class="variable">$i</span> . PHP_EOL;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+
+
+<h2 id="foreach-循环"><a href="#foreach-循环" class="headerlink" title="foreach 循环"></a>foreach 循环</h2><p>foreach 循环用于遍历数组。</p>
+<h3 id="语法-6"><a href="#语法-6" class="headerlink" title="语法"></a>语法</h3><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">foreach ($array as $value)</span><br><span class="line">&#123;</span><br><span class="line">    要执行代码;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>每进行一次循环，当前数组元素的值就会被赋值给 $value 变量（数组指针会逐一地移动），在进行下一次循环时，您将看到数组中的下一个值。</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">foreach ($array as $key =&gt; $value)</span><br><span class="line">&#123;</span><br><span class="line">    要执行代码;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>每一次循环，当前数组元素的键与值就都会被赋值给 $key 和 $value 变量（数字指针会逐一地移动），在进行下一次循环时，你将看到数组中的下一个键与值。</p>
+<div class="highlight-container" data-rel="Php"><figure class="iseeu highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$x</span>=<span class="keyword">array</span>(<span class="string">&quot;Google&quot;</span>,<span class="string">&quot;Runoob&quot;</span>,<span class="string">&quot;Taobao&quot;</span>);</span><br><span class="line"><span class="keyword">foreach</span> (<span class="variable">$x</span> <span class="keyword">as</span> <span class="variable">$value</span>)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="variable">$value</span> . PHP_EOL;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+
+
+<div class="highlight-container" data-rel="Php"><figure class="iseeu highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$x</span>=<span class="keyword">array</span>(<span class="number">1</span>=&gt;<span class="string">&quot;Google&quot;</span>, <span class="number">2</span>=&gt;<span class="string">&quot;Runoob&quot;</span>, <span class="number">3</span>=&gt;<span class="string">&quot;Taobao&quot;</span>);</span><br><span class="line"><span class="keyword">foreach</span> (<span class="variable">$x</span> <span class="keyword">as</span> <span class="variable">$key</span> =&gt; <span class="variable">$value</span>)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&quot;key  为 &quot;</span> . <span class="variable">$key</span> . <span class="string">&quot;，对应的 value 为 &quot;</span>. <span class="variable">$value</span> . PHP_EOL;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+
+
+<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h2 id="创建-PHP-函数"><a href="#创建-PHP-函数" class="headerlink" title="创建 PHP 函数"></a>创建 PHP 函数</h2><p>函数是通过调用函数来执行的。</p>
+<div class="highlight-container" data-rel="Php"><figure class="iseeu highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">functionName</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 要执行的代码</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+<p>函数准则：</p>
+<ul>
+<li>函数的名称应该提示出它的功能</li>
+<li>函数名称以字母或下划线开头（不能以数字开头）</li>
+</ul>
+<div class="highlight-container" data-rel="Php"><figure class="iseeu highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">writeName</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&quot;Kai Jim Refsnes&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;My name is &quot;</span>;</span><br><span class="line"><span class="title function_ invoke__">writeName</span>();</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+
+
+<h2 id="函数-添加参数"><a href="#函数-添加参数" class="headerlink" title="函数 - 添加参数"></a>函数 - 添加参数</h2><p>为了给函数添加更多的功能，我们可以添加参数，参数类似变量。</p>
+<p>参数就在函数名称后面的一个括号内指定。</p>
+<div class="highlight-container" data-rel="Php"><figure class="iseeu highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">writeName</span>(<span class="params"><span class="variable">$fname</span></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="variable">$fname</span> . <span class="string">&quot; Refsnes.&lt;br&gt;&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;My name is &quot;</span>;</span><br><span class="line"><span class="title function_ invoke__">writeName</span>(<span class="string">&quot;Kai Jim&quot;</span>);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;My sister&#x27;s name is &quot;</span>;</span><br><span class="line"><span class="title function_ invoke__">writeName</span>(<span class="string">&quot;Hege&quot;</span>);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;My brother&#x27;s name is &quot;</span>;</span><br><span class="line"><span class="title function_ invoke__">writeName</span>(<span class="string">&quot;Stale&quot;</span>);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+
+
+<div class="highlight-container" data-rel="Php"><figure class="iseeu highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">writeName</span>(<span class="params"><span class="variable">$fname</span>,<span class="variable">$punctuation</span></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="variable">$fname</span> . <span class="string">&quot; Refsnes&quot;</span> . <span class="variable">$punctuation</span> . <span class="string">&quot;&lt;br&gt;&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;My name is &quot;</span>;</span><br><span class="line"><span class="title function_ invoke__">writeName</span>(<span class="string">&quot;Kai Jim&quot;</span>,<span class="string">&quot;.&quot;</span>);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;My sister&#x27;s name is &quot;</span>;</span><br><span class="line"><span class="title function_ invoke__">writeName</span>(<span class="string">&quot;Hege&quot;</span>,<span class="string">&quot;!&quot;</span>);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;My brother&#x27;s name is &quot;</span>;</span><br><span class="line"><span class="title function_ invoke__">writeName</span>(<span class="string">&quot;Ståle&quot;</span>,<span class="string">&quot;?&quot;</span>);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+
+
+<h2 id="函数-返回值"><a href="#函数-返回值" class="headerlink" title="函数 - 返回值"></a>函数 - 返回值</h2><p>如需让函数返回一个值，请使用 return 语句</p>
+<div class="highlight-container" data-rel="Php"><figure class="iseeu highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params"><span class="variable">$x</span>,<span class="variable">$y</span></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="variable">$total</span>=<span class="variable">$x</span>+<span class="variable">$y</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable">$total</span>;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;1 + 16 = &quot;</span> . <span class="title function_ invoke__">add</span>(<span class="number">1</span>,<span class="number">16</span>);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+]]></content>
+  </entry>
+  <entry>
+    <title>MySQL提权</title>
+    <url>/2023/04/19/mysql%E6%8F%90%E6%9D%83/</url>
+    <content><![CDATA[<h3 id="UDF提权"><a href="#UDF提权" class="headerlink" title="UDF提权"></a>UDF提权</h3><p>udf函数按照其运行模式可以分为单次调用型和聚集函数型两类，单词调用型能够针对数据库查询的每一行记录进行处理，聚集函数型用于处理 group by等聚集函数。</p>
+<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>攻击者通过编写调用cmd或者shell的udf.dll文件，并且导入到一个指定的文件夹目录下，然后创建一个指向udf.dll的自定义函数，从而在数据库进行查询，而查询的结果则等价于在cmd或shell中执行命令。</p>
+<h3 id="存放位置"><a href="#存放位置" class="headerlink" title="存放位置"></a>存放位置</h3><p>Windows 2000操作系统需要导出udf.dll到c:\winnt\udf.dll；Windows 2003操作系统导出udf.dll到c:\Windows\udf.dll；</p>
+<h2 id="MOF提权"><a href="#MOF提权" class="headerlink" title="MOF提权"></a>MOF提权</h2><p>mof是windows系统的一个文件（在c:&#x2F;windows&#x2F;system32&#x2F;wbem&#x2F;mof&#x2F;nullevt.mof）叫做”托管对象格式”其作用是每隔五秒就会去监控进程创建和死亡。</p>
+<p>当mysql账户权限是root，然后使用root权限去执行我们上传的mof，隔了一定时间以后这个mof就会被执行，这个mof当中有一段是vbs脚本，这个vbs大多数的是cmd的添加管理员用户的命令。</p>
+<h3 id="浏览器解码"><a href="#浏览器解码" class="headerlink" title="浏览器解码"></a>浏览器解码</h3><p>atob()</p>
+<p>​						</p>
+]]></content>
+  </entry>
+  <entry>
     <title>sql注入的注入攻略</title>
     <url>/2023/04/19/sql%E6%B3%A8%E5%85%A5%E7%9A%84%E6%B3%A8%E5%85%A5%E6%94%BB%E7%95%A5/</url>
     <content><![CDATA[<h1 id="联合注入攻略"><a href="#联合注入攻略" class="headerlink" title="联合注入攻略"></a>联合注入攻略</h1><h2 id="1、判断注入点（同时构造闭合符号）"><a href="#1、判断注入点（同时构造闭合符号）" class="headerlink" title="1、判断注入点（同时构造闭合符号）"></a>1、判断注入点（同时构造闭合符号）</h2><p>当输入?id&#x3D;1(  <strong>‘</strong>,<strong>“</strong>,<strong>‘)</strong>,<strong>“)</strong>,<strong>‘]</strong>  ) and 1&#x3D;1 – q   &#x2F;&#x2F; 正常</p>
@@ -56,43 +474,6 @@
 <h2 id="5、爆字段数据-1"><a href="#5、爆字段数据-1" class="headerlink" title="5、爆字段数据"></a>5、爆字段数据</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#x27;) and updatexml(1,concat(&#x27;!&#x27;,(select group_concat(要查的字段名) from 表名),&#x27;!&#x27;),1) -- q</span><br></pre></td></tr></table></figure></div>
 
 <h1 id="抓包修改user-agent"><a href="#抓包修改user-agent" class="headerlink" title="抓包修改user-agent"></a>抓包修改user-agent</h1><p>‘ and updatexml(1,concat(0x7e,(select database()),0x7e),1,1) – q</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>MySQL提权</title>
-    <url>/2023/04/19/mysql%E6%8F%90%E6%9D%83/</url>
-    <content><![CDATA[<h3 id="UDF提权"><a href="#UDF提权" class="headerlink" title="UDF提权"></a>UDF提权</h3><p>udf函数按照其运行模式可以分为单次调用型和聚集函数型两类，单词调用型能够针对数据库查询的每一行记录进行处理，聚集函数型用于处理 group by等聚集函数。</p>
-<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>攻击者通过编写调用cmd或者shell的udf.dll文件，并且导入到一个指定的文件夹目录下，然后创建一个指向udf.dll的自定义函数，从而在数据库进行查询，而查询的结果则等价于在cmd或shell中执行命令。</p>
-<h3 id="存放位置"><a href="#存放位置" class="headerlink" title="存放位置"></a>存放位置</h3><p>Windows 2000操作系统需要导出udf.dll到c:\winnt\udf.dll；Windows 2003操作系统导出udf.dll到c:\Windows\udf.dll；</p>
-<h2 id="MOF提权"><a href="#MOF提权" class="headerlink" title="MOF提权"></a>MOF提权</h2><p>mof是windows系统的一个文件（在c:&#x2F;windows&#x2F;system32&#x2F;wbem&#x2F;mof&#x2F;nullevt.mof）叫做”托管对象格式”其作用是每隔五秒就会去监控进程创建和死亡。</p>
-<p>当mysql账户权限是root，然后使用root权限去执行我们上传的mof，隔了一定时间以后这个mof就会被执行，这个mof当中有一段是vbs脚本，这个vbs大多数的是cmd的添加管理员用户的命令。</p>
-<h3 id="浏览器解码"><a href="#浏览器解码" class="headerlink" title="浏览器解码"></a>浏览器解码</h3><p>atob()</p>
-<p>​						</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>关于我</title>
-    <url>/2023/04/17/hello-world/</url>
-    <content><![CDATA[<h1 id="Hi-Boys-and-Girls"><a href="#Hi-Boys-and-Girls" class="headerlink" title="Hi Boys and Girls!"></a>Hi Boys and Girls!</h1><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/Screenshot_20230419_094457.jpg"
-                     
-                ></p>
-<p>​		你们好，我是Cream（笔名：顾彬彬），00后，就读于某某学院（hint：“老徐你要老婆不要?”），软件工程专业， 写Blog(博客)为了记录自己的学习历程，监督自己学习，督促自己成长，个人觉得只有自己写出来的知识才是学到手的东西，那才是自己的东西，现在已经入行网络信息安全行业了，现在还在沉淀阶段，以后也会深耕这个行业，并为之奉献，为中国的信息安全行业贡献自己的一份力量，抵制国外黑客入侵，保卫中国信息安全，从你我做起，从现在做起，识别钓鱼链接，不点击钓鱼链接，不给敌人可乘之机。</p>
-<h2 id="我的技能"><a href="#我的技能" class="headerlink" title="我的技能"></a>我的技能</h2><ul>
-<li>目前主攻的还是web安全方向，也会一些网络华为数通、安全设备的知识</li>
-<li>会渗透测试的基本流程，有实战漏扫经验、目前任职于一家国内等保测评公司</li>
-</ul>
-<h2 id="我的兴趣爱好"><a href="#我的兴趣爱好" class="headerlink" title="我的兴趣爱好"></a>我的兴趣爱好</h2><p>以下是一些少有的坚持下来的爱好：</p>
-<p>旅行：去过杭州西湖、成都春熙路、成都武侯祠、乐山大佛、湖南岳阳楼、上海东方明珠等等，但是还是想去西藏拉萨、故宫博物馆、北京八达岭长城，计划利用放假时间出去好好玩玩，记录美好时光<br>唱歌：有事没有机会唱一下，唱歌能够使人发泄不快乐的情绪，有利于保持好心情，哈哈哈<br>游戏：以前玩儿，现在很少玩了，以前主玩英雄联盟，但是操作跟不上了就放下了，现在也只玩玩手游联盟，陶冶情操罢了</p>
-<h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/2029766.jpg"
-                     
-                ></p>
-<p>​		很高兴你能够访问我的Blog（博客），希望可以帮助到你，同时也非常高兴认识你！😊</p>
 ]]></content>
   </entry>
   <entry>
@@ -346,6 +727,64 @@
 <p>发现中间件漏洞、框架漏洞、CMS漏洞、操作系统漏洞、端口漏洞等，去漏洞库（exploit-db、CVE漏洞库），网上寻找相应的POC进行验证。</p>
 <h2 id="3、漏洞利用"><a href="#3、漏洞利用" class="headerlink" title="3、漏洞利用"></a>3、漏洞利用</h2><p>去网上查找对应的exp和payload进行利用，MSF、各种漏洞库、阿里云漏洞库、知道创宇漏洞库去进行查找利用，最后达到控制服务器的目的。</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>docker搭建靶场常用命令</title>
+    <url>/2023/04/19/%E6%90%AD%E5%BB%BA%E9%9D%B6%E5%9C%BAdocker%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<h4 id="启动docker服务-："><a href="#启动docker服务-：" class="headerlink" title="启动docker服务 ："></a>启动docker服务 ：</h4><p> systemctl start docker</p>
+<h4 id="重启docker服务："><a href="#重启docker服务：" class="headerlink" title="重启docker服务："></a>重启docker服务：</h4><p> systemctl restart  docker</p>
+<h4 id="关闭docker服务："><a href="#关闭docker服务：" class="headerlink" title="关闭docker服务："></a>关闭docker服务：</h4><p>systemctl stop docker</p>
+<h4 id="启动靶场："><a href="#启动靶场：" class="headerlink" title="启动靶场："></a>启动靶场：</h4><p>docker-compose build &amp;&amp; docker-compose up -d</p>
+<h4 id="查看运行状态："><a href="#查看运行状态：" class="headerlink" title="查看运行状态："></a>查看运行状态：</h4><p>docker ps</p>
+<h4 id="进入镜像："><a href="#进入镜像：" class="headerlink" title="进入镜像："></a>进入镜像：</h4><p>docker exec -it 4r8werw8e8er &#x2F;bin&#x2F;bash</p>
+<p>docker exec -it 4r8werw8e8er bash</p>
+<h4 id="退出镜像："><a href="#退出镜像：" class="headerlink" title="退出镜像："></a>退出镜像：</h4><p>exit</p>
+<h4 id="关闭靶场镜像："><a href="#关闭靶场镜像：" class="headerlink" title="关闭靶场镜像："></a>关闭靶场镜像：</h4><p>docker-compose down</p>
+<h4 id="关闭docker："><a href="#关闭docker：" class="headerlink" title="关闭docker："></a>关闭docker：</h4><p>systemctl stop docker</p>
+<h4 id="docker-服务开机自启动命令："><a href="#docker-服务开机自启动命令：" class="headerlink" title="docker 服务开机自启动命令："></a>docker 服务开机自启动命令：</h4><p>systemctl enable docker.service</p>
+<h4 id="关闭docker-服务开机自启动命令："><a href="#关闭docker-服务开机自启动命令：" class="headerlink" title="关闭docker 服务开机自启动命令："></a>关闭docker 服务开机自启动命令：</h4><p>systemctl disable docker.service</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>文件上传绕过方式汇总</title>
+    <url>/2023/04/19/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E7%9A%84%E7%BB%95%E8%BF%87%E6%96%B9%E5%BC%8F/</url>
+    <content><![CDATA[<h1 id="文件上传的绕过方式"><a href="#文件上传的绕过方式" class="headerlink" title="文件上传的绕过方式"></a>文件上传的绕过方式</h1><h2 id="1、前对验证绕过"><a href="#1、前对验证绕过" class="headerlink" title="1、前对验证绕过"></a><strong>1、前对验证绕过</strong></h2><p>F12打开调试器关闭js格式实现绕过</p>
+<h2 id="2、Content-Type方式绕过"><a href="#2、Content-Type方式绕过" class="headerlink" title="2、Content-Type方式绕过"></a><strong>2、Content-Type方式绕过</strong></h2><p>抓包修改Content-Type的数据为它允许的格式，如image&#x2F;jpeg</p>
+<h2 id="3、黑名单绕过（不允许上传php）"><a href="#3、黑名单绕过（不允许上传php）" class="headerlink" title="3、黑名单绕过（不允许上传php）"></a><strong>3、黑名单绕过（不允许上传php）</strong></h2><p>可以上传php5、phtml后缀名，需要到Apache的配置文件，http.conf配置文件里面进行打开相应的配置：</p>
+<p> AddType application&#x2F;x-httpd-php .php .phtml .php5 .pht</p>
+<p>还有就是AllOverride all也要保证是打开的，默认的是none</p>
+<h2 id="4、-htaccess文件绕过"><a href="#4、-htaccess文件绕过" class="headerlink" title="4、.htaccess文件绕过"></a><strong>4、.htaccess文件绕过</strong></h2><p>编辑一个新的.htaccess文件，里面编辑:</p>
+<p>&lt;FilesMatch “4.png”&gt;<br>SetHandler application&#x2F;x-httpd-php</p>
+<p>这串代码的意思是如果文件中有一个4.png（是4.txt改后缀名实现的，不是图片马）的文件，他就会被解析为.php，把这个文件上传上去，然后紧接着上传4.png，这样就会把4.png当成php进行解析。</p>
+<h2 id="5、后缀大小写"><a href="#5、后缀大小写" class="headerlink" title="5、后缀大小写"></a>5、后缀大小写</h2><h2 id="6、文件后缀（空）绕过"><a href="#6、文件后缀（空）绕过" class="headerlink" title="6、文件后缀（空）绕过"></a>6、文件后缀（空）绕过</h2><p>就在php.php后面加个空格就好了。</p>
+<h2 id="7、文件后缀（点绕过）"><a href="#7、文件后缀（点绕过）" class="headerlink" title="7、文件后缀（点绕过）"></a>7、文件后缀（点绕过）</h2><p>就在php.php后面加个点就好了，如php.php.</p>
+<h2 id="8、Windows文件流绕过（-DATA）"><a href="#8、Windows文件流绕过（-DATA）" class="headerlink" title="8、Windows文件流绕过（::$DATA）"></a>8、Windows文件流绕过（::$DATA）</h2><p><strong>在window的时候如果文件名+”::$DATA”会把::$DATA之后的数据当成文件流处理,不会检测后缀名，且保持::$DATA之前的文件名，他的目的就是不检查后缀名</strong>。例如:”test.php::$DATA”Windows会自动去掉末尾的::$DATA变成”test.php”。</p>
+<h2 id="9、文件名双写绕过"><a href="#9、文件名双写绕过" class="headerlink" title="9、文件名双写绕过"></a>9、文件名双写绕过</h2><p>pphphp格式进行绕过</p>
+<h2 id="10、后缀名绕过（点空格点）"><a href="#10、后缀名绕过（点空格点）" class="headerlink" title="10、后缀名绕过（点空格点）"></a>10、后缀名绕过（点空格点）</h2><h2 id="11、GET型00截断、POST型00截断"><a href="#11、GET型00截断、POST型00截断" class="headerlink" title="11、GET型00截断、POST型00截断"></a>11、GET型00截断、POST型00截断</h2><p>（<strong>PHP版本要在5.3.4</strong>以下且<strong>php的magic_quotes_gpc为OFF状态</strong>）</p>
+<h2 id="12、条件竞争"><a href="#12、条件竞争" class="headerlink" title="12、条件竞争"></a>12、条件竞争</h2><p>这里的逻辑是先将文件上传到服务器，然后判断文件后缀是否在白名单里，如果在则重命名，否则删除。这样就存在一个安全问题，那就是我同时上传多个相同文件，在它删除之前访问就可以了。也就是条件竞争问题。可以借助burp的暴力破解模块。</p>
+<p>首先上传一个正常的符合条件的文件进行获取到上传路径，然后就在1.php里面编写内容：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;?php file_put_contents(&#x27;phpinfoshell.php&#x27;,&#x27;&lt;?php phpinfo();?&gt;&#x27;);?&gt;</span><br></pre></td></tr></table></figure></div>
+
+<p>意思是如果没有找到phpinfoshell.php文件，则创建该文件，内容是：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;?php phpinfo();?&gt;</span><br></pre></td></tr></table></figure></div>
+
+<p>让后通过bp抓包，进行null playd无限跑包，抓上传1.php包跑，跑了之后放包重新抓访问phpinfoshell.php包开始同时跑包，这样就可以通过条件竞争进行有概率的利用漏洞，在被删除之前访问1.php执行里面的file_put_contents函数创建phpinfoshell.php木马文件进行完美绕过。</p>
+<h2 id="13、二次渲染"><a href="#13、二次渲染" class="headerlink" title="13、二次渲染"></a>13、二次渲染</h2><p>意思是上传了的图片马中的16进制的内容被进行渲染篡改成乱码了，我们要对比上传前和上传后的图片马16进制的地方，哪个地方没有被二次渲染，就在那个地方进行添加一句话木马，这样就可以绕过二次渲染实现上传成功。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>欢迎你的到来</title>
+    <url>/2023/04/18/%E6%AC%A2%E8%BF%8E%E4%BD%A0/</url>
+    <content><![CDATA[<h1 id="欢迎你"><a href="#欢迎你" class="headerlink" title="欢迎你"></a>欢迎你</h1><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/2030300.jpg"
+                     
+                ></p>
+<p>感谢各位靓仔靓妹来到本人的博客，鄙人不才，现在主攻Web渗透方向，还是小白，但是一直在路上，俗话说的好，“不积跬步无以至千里，不积小流无以成江河，道阻且长，行则将至”，做好自己，相信未来。</p>
+<div class="note-large notel-default"><div class="notel-title"><p>信息</p>
+</div><div class="notel-content"><p>如有指教，请加QQ：1500076625，在此表示感谢。</p>
+ </div></div>]]></content>
   </entry>
   <entry>
     <title>Web渗透知识点</title>
@@ -1019,61 +1458,93 @@
 ]]></content>
   </entry>
   <entry>
-    <title>docker搭建靶场常用命令</title>
-    <url>/2023/04/19/%E6%90%AD%E5%BB%BA%E9%9D%B6%E5%9C%BAdocker%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<h4 id="启动docker服务-："><a href="#启动docker服务-：" class="headerlink" title="启动docker服务 ："></a>启动docker服务 ：</h4><p> systemctl start docker</p>
-<h4 id="重启docker服务："><a href="#重启docker服务：" class="headerlink" title="重启docker服务："></a>重启docker服务：</h4><p> systemctl restart  docker</p>
-<h4 id="关闭docker服务："><a href="#关闭docker服务：" class="headerlink" title="关闭docker服务："></a>关闭docker服务：</h4><p>systemctl stop docker</p>
-<h4 id="启动靶场："><a href="#启动靶场：" class="headerlink" title="启动靶场："></a>启动靶场：</h4><p>docker-compose build &amp;&amp; docker-compose up -d</p>
-<h4 id="查看运行状态："><a href="#查看运行状态：" class="headerlink" title="查看运行状态："></a>查看运行状态：</h4><p>docker ps</p>
-<h4 id="进入镜像："><a href="#进入镜像：" class="headerlink" title="进入镜像："></a>进入镜像：</h4><p>docker exec -it 4r8werw8e8er &#x2F;bin&#x2F;bash</p>
-<p>docker exec -it 4r8werw8e8er bash</p>
-<h4 id="退出镜像："><a href="#退出镜像：" class="headerlink" title="退出镜像："></a>退出镜像：</h4><p>exit</p>
-<h4 id="关闭靶场镜像："><a href="#关闭靶场镜像：" class="headerlink" title="关闭靶场镜像："></a>关闭靶场镜像：</h4><p>docker-compose down</p>
-<h4 id="关闭docker："><a href="#关闭docker：" class="headerlink" title="关闭docker："></a>关闭docker：</h4><p>systemctl stop docker</p>
-<h4 id="docker-服务开机自启动命令："><a href="#docker-服务开机自启动命令：" class="headerlink" title="docker 服务开机自启动命令："></a>docker 服务开机自启动命令：</h4><p>systemctl enable docker.service</p>
-<h4 id="关闭docker-服务开机自启动命令："><a href="#关闭docker-服务开机自启动命令：" class="headerlink" title="关闭docker 服务开机自启动命令："></a>关闭docker 服务开机自启动命令：</h4><p>systemctl disable docker.service</p>
+    <title>病毒名词解释</title>
+    <url>/2022/12/08/%E7%97%85%E6%AF%92%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/</url>
+    <content><![CDATA[<h2 id="恶意软件-内部俗称“僵木蠕”"><a href="#恶意软件-内部俗称“僵木蠕”" class="headerlink" title="恶意软件(内部俗称“僵木蠕”)"></a>恶意软件(内部俗称“僵木蠕”)</h2><p>指在计算机系统上执行恶意任务的病毒、蠕虫、特洛伊木马、后门、僵尸网络、Rootkit、逻辑炸弹、间谍软件、广告软件。</p>
+<h3 id="恶意软件危害"><a href="#恶意软件危害" class="headerlink" title="恶意软件危害"></a><strong>恶意软件危害</strong></h3><p><strong>1、破坏计算机数据</strong></p>
+<pre><code>  计算机病毒激发后会通过格式化、改写、删除、破坏设置等破坏计算机储存数据
+</code></pre>
+<p><strong>2、窃取用户隐私信息</strong></p>
+<pre><code>  如银行密码、账户密码等用户隐私信息,盗用用户财产
+</code></pre>
+<p><strong>3、利用被病毒控制的用户计算机进行非法行为</strong></p>
+<pre><code> 如利用僵尸主机发起DDOS攻击
+</code></pre>
+<p>4<strong>、占用计算机空间、抢占硬件资源</strong></p>
+<pre><code>  如挖矿木马，占用用户计算资源进行虚拟货币挖矿
+</code></pre>
+<h3 id="恶意软件特性"><a href="#恶意软件特性" class="headerlink" title="恶意软件特性"></a>恶意软件特性</h3><p>自启动特性</p>
+<p>恶意软件行为特征</p>
+<p>下载和后门特性</p>
+<p>信息收集特性</p>
+<p>隐藏特性</p>
+<p>文件感染特性</p>
+<p>网络攻击特性</p>
+<h2 id="常见的恶意软件"><a href="#常见的恶意软件" class="headerlink" title="常见的恶意软件"></a><strong>常见的恶意软件</strong></h2><h3 id="1、勒索软件"><a href="#1、勒索软件" class="headerlink" title="1、勒索软件"></a>1、勒索软件</h3><p>通过骚扰、恐吓甚至采用绑架用户文件等方式，使用户数据资产或计算资源无法正常使用，并以此为条件向用户勒索钱财</p>
+<p>​		具有代表性的勒索软件：WannaCry利用Windows操作系统445端口存在的漏洞进行传播，并具有自我复制、主动传播的特性，被改软件加密后的文件的后缀名会被统一改成 “.WNCRY” 。</p>
+<h3 id="2、DDOS木马"><a href="#2、DDOS木马" class="headerlink" title="2、DDOS木马"></a>2、DDOS木马</h3><p>黑客可向指定ip发送DDOS攻击，影响企业的正常业务</p>
+<p>​		代表木马：盖茨木马（Linux型木马），此类Linux木马主要恶意特点是具备了后门程序，DDoS攻击的能力，并且会替换常用的系统文件进行伪装。木马得名于其在变量函数的命名中，大量使用Gates这个单词。</p>
+<p>​		其余木马：DDoS_XOR、DbSecuritySpt</p>
+<h3 id="3、蠕虫病毒"><a href="#3、蠕虫病毒" class="headerlink" title="3、蠕虫病毒"></a>3、蠕虫病毒</h3><p>计算机蠕虫不需要附在别的程序内，可能不用使用者介入操作也能自我复制或执行，未必会直接破坏被感染的系统，却几乎都对网络有害。但也有直接破坏系统资源的蠕虫病毒，如WannaCry。</p>
+<p>​		代表病毒：熊猫烧香，一款拥有自动传播、自动感染硬盘能力和强大的破坏能力的病毒，它不但能感染系统中exe，com，pif，src，html，asp等文件，它还能中止大量的反病毒软件进程并且会删除扩展名为gho的文件。</p>
+<p>​		其余蠕虫：红色代码、超级病毒、WannaCry</p>
+<h3 id="4、挖矿木马"><a href="#4、挖矿木马" class="headerlink" title="4、挖矿木马"></a>4、挖矿木马</h3><p>​	黑客通过木马控制大量肉鸡电脑，为其制造虚拟货币，占用大量的系统资源.</p>
+<p>​		典型的挖矿木马：ddg</p>
+<p>​		1、对可以未授权访问redis的服务器写入公钥登录，定时下载并执行脚本；</p>
+<p>​		2、脚本下载AnXqV和ddg文件并运行，AnXqV进行挖矿，ddg进行系统监控远程调用并内网传播。</p>
+<p>​		其余挖矿木马：Linux.MulDrop.14、minerd</p>
+<h3 id="5、恶意软件处置"><a href="#5、恶意软件处置" class="headerlink" title="5、恶意软件处置"></a>5、恶意软件处置</h3><p>​		1、杀毒软件</p>
+<p>​		2、重装系统</p>
+<p>​		3、系统还原</p>
+<p>​		4、Ghost还原</p>
+<p>处理过程包括修复病毒修改的注册表&#x2F;文件内容和删除病毒文件两部分，注册表有启动项检查、服务检查、检查Winlogon加载项、检查其他加载项，还有检测可疑文件（使用一些常用工具进行加检测HijackThis、Process Explorer、PCHunter、火绒剑、ProcessHacker、Autoruns）</p>
+<h2 id="电脑病毒"><a href="#电脑病毒" class="headerlink" title="电脑病毒"></a><strong>电脑病毒</strong></h2><p>一种能把自己(或经演变)注入其它程序的计算机程序,启动区病毒,宏(macro)病毒,脚本(script)病毒也是相同概念</p>
+<p><strong>1、病毒工作三部曲</strong></p>
+<p>​		1.住进阶段: 执行被感染的程序,病毒就加载入计算机内存</p>
+<p>​		2.感染阶段: 病毒把自己注入其他程序,包括远程文件</p>
+<p>​		3.执行阶段: 当某些条件成熟时, 一些病毒会有一些特别的行为. 例如重新启动,删除文件</p>
+<p><strong>2、特点</strong></p>
+<p>​		  传播性、隐蔽性、感染性、潜伏性、可激发性、表现性或破坏性都很强</p>
+<h3 id="1、宏病毒"><a href="#1、宏病毒" class="headerlink" title="1、宏病毒"></a>1、宏病毒</h3><p><strong>定义：</strong>宏病毒是一种寄存在<strong>文档</strong>或<strong>模板</strong>的宏中的<strong>计算机病毒</strong>。一旦打开这样的文档，其中的宏就会被<strong>执行</strong>，于是宏病毒就会被激活，转移到计算机上，并驻留在<strong>Normal模板上</strong>。从此以后，所有自动保存的文档都会“感染”上这种宏病毒，而且如果其他用户打开了感染病毒的文档，宏病毒又会转移到他的<strong>计算机</strong>上。</p>
+<h3 id="2、蠕虫"><a href="#2、蠕虫" class="headerlink" title="2、蠕虫"></a>2、蠕虫</h3><p>蠕虫是一种能够利用系统漏洞通过网络进行自我传播的恶意程序。它是利用网络进行复制和传播，传染途径是通过网络和电子邮件。</p>
+<h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><p> 计算机蠕虫不需要附在别的程序内，可能不用使用者介入操作也能自我复制或执行，未必会直接破坏被感染的系统，却几乎都对网络有害。</p>
+<h3 id="3、木马"><a href="#3、木马" class="headerlink" title="3、木马"></a>3、木马</h3><p>木马与病毒一样也是一种有害的程序，其特征与特洛伊木马一样具有伪装性，表面上没有危害、甚至还附有用户需要的功能，却会在用户不经意间，对用户的计算机系统产生破坏或窃取数据，特别是用户的各种账户及口令等重要且需要保密的信息，甚至控制用户的计算机系统。</p>
+<h4 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h4><p>占用空间小、运行后较难阻止其行为、隐蔽性高</p>
+<h3 id="4、Rootkit"><a href="#4、Rootkit" class="headerlink" title="4、Rootkit"></a>4、Rootkit</h3><p>用于修改操作系统，以改变操作系统的表现行为的工具软件 。而这种改变，往往不是操作系统设计时所期望的。 广义而言，Rootkit也可视为一项技术，恶意软件利用该项技术来达到隐藏自身的目的。</p>
+<h2 id="僵尸网络"><a href="#僵尸网络" class="headerlink" title="僵尸网络"></a><strong>僵尸网络</strong></h2><h3 id="1、僵尸（Bot）"><a href="#1、僵尸（Bot）" class="headerlink" title="1、僵尸（Bot）"></a>1、僵尸（Bot）</h3><p>一种集后门与蠕虫一体的恶意程序. 通常使用IRC (Internet Relay Chat) 接受和执行黑客命令</p>
+<h3 id="2、僵尸网络（Botnet）"><a href="#2、僵尸网络（Botnet）" class="headerlink" title="2、僵尸网络（Botnet）"></a>2、僵尸网络（Botnet）</h3><p>将大量主机感染bot程序（僵尸程序）病毒，从而在控制者和被感染主机之间所形成的一个可一对多控制的网络。</p>
+<h2 id="DNS污染"><a href="#DNS污染" class="headerlink" title="DNS污染"></a>DNS污染</h2><p>指一些刻意制造或无意中制造出来的<strong>域名服务器数据包</strong>，把域名指往不正确的IP地址。</p>
+<h2 id="NGAF-x2F-AF（深信服下一代防火墙）"><a href="#NGAF-x2F-AF（深信服下一代防火墙）" class="headerlink" title="NGAF&#x2F;AF（深信服下一代防火墙）"></a>NGAF&#x2F;AF（深信服下一代防火墙）</h2><p>NGAF和AF是一样的，以前叫AF，现在叫NGAF，都是一样的，同一个东西。</p>
+<p>专注网络边界安全效果，通过应用丰富的安全创新防御技术和简单易用的产品设计理念，不仅增强网络边界的安全检测与防控能力，而且实现网络安全风险可视化展示与快速处置，让组织网络边界安全建设更有效、更简单。</p>
+<p>产品系列：</p>
+<p><strong>AF-1000-FH系列</strong></p>
+<p>适用于互联网出口边界安全防御、内网边界隔离、数据中心边界防护、广域安全组网。</p>
+<p><strong>AF-2000-FH系列</strong></p>
+<p>适用于互联网出口边界安全防御、内网边界隔离、数据中心边界防护、广域安全组网。</p>
+<p>mss平台</p>
+<p>EDR</p>
+<p>SIP</p>
+<p>云镜</p>
+<p>态势感知</p>
+<p>零信任</p>
+<p>XDR</p>
+<p>AC（上网行为管理）</p>
+<h2 id="内存马"><a href="#内存马" class="headerlink" title="内存马"></a>内存马</h2><p>内存马是指一种只在内存中运行，没有文件落地或者运行后能够删除自身的木马。</p>
+<h2 id="判断网页是否为伪静态"><a href="#判断网页是否为伪静态" class="headerlink" title="判断网页是否为伪静态"></a>判断网页是否为伪静态</h2><p>使用javascript:alert(document.lastModified)</p>
+<p>看弹出的时间是否会变化，变化则是伪静态，不变则是静态。</p>
+<h2 id="常见的字符集-amp-字符编码"><a href="#常见的字符集-amp-字符编码" class="headerlink" title="常见的字符集&amp;字符编码"></a>常见的字符集&amp;字符编码</h2><p>计算机中储存的信息都是用<strong>二进制</strong>数表示的；<br>而我们在屏幕上看到的<strong>英文、汉字</strong>等字符是<strong>二进制数转换</strong>之后的结果。<br>通俗的说，按照<strong>何种规则</strong>将字符<strong>存储在计算机中</strong>，如’a’用什么表示，称为”<strong>编码</strong>“；<br>反之，将存储在计算机中的二进制数<strong>解析</strong>显示出来，称为”<strong>解码</strong>“，如同密码学中的加密和解密。<br>在解码过程中，如果<strong>使用</strong>了<strong>错误</strong>的解码<strong>规则</strong>，则导致’a’解析成’b’或者<strong>乱码</strong>。</p>
+<h3 id="1、GBK编码-计算机编码"><a href="#1、GBK编码-计算机编码" class="headerlink" title="1、GBK编码(计算机编码)"></a>1、GBK编码(计算机编码)</h3><p>GBK全称《汉字内码扩展规范》，中文名是<strong>汉字编码字符集</strong></p>
+<h3 id="2、UNICODE编码"><a href="#2、UNICODE编码" class="headerlink" title="2、UNICODE编码"></a>2、UNICODE编码</h3><p>以**\u、\u+、&amp;#x、&amp;#**开头，比如：\u0031\u0038\</p>
+<h3 id="3、16进制编码"><a href="#3、16进制编码" class="headerlink" title="3、16进制编码"></a>3、16进制编码</h3><p>​			以<strong>\x</strong>开头</p>
+<p>​			GET &#x2F;news&#x2F;society&#x2F;201210&#x2F;2358322923.shtml”</script><object 		data=jav\x61scr\x69pt:npsduc(uhg)> </p>
+<p><strong>其中的\x61会被解码成a，\x69会被解码成i</strong> </p>
+<h3 id="4、编码-Base64编码"><a href="#4、编码-Base64编码" class="headerlink" title="4、编码-Base64编码"></a>4、编码-Base64编码</h3><p>把每三个8Bit的字节转换为四个6Bit的字节，不能算加密，因为这种编码过程是可逆的</p>
+<h3 id="5、URL编码"><a href="#5、URL编码" class="headerlink" title="5、URL编码"></a>5、URL编码</h3><p>URL编码就是找到你要编码的字符对应底层的16进制，然后再在前面加一个 百分号（%）。比如：a将编码成%61 。</p>
+<h3 id="6、ACSLL码"><a href="#6、ACSLL码" class="headerlink" title="6、ACSLL码"></a>6、ACSLL码</h3><p>基于拉丁字母的一套电脑编码系统</p>
+<p>ASCII (American Standard Code for Information Interchange)：美国信息交换标准代码是基于<strong>拉丁字母</strong>的一套电脑<strong>编码</strong>系统，主要用于显示现代<strong>英语</strong>和其他<strong>西欧</strong>语言。它是最通用的<strong>信息交换标准</strong>，并等同于<strong>国际</strong>标准 ISO&#x2F;IEC 646。ASCII第一次以规范标准的类型发表是在1967年，最后一次更新则是在1986年，到目前为止共定义了128个字符 。</p>
+<h2 id="Web应用基础"><a href="#Web应用基础" class="headerlink" title="Web应用基础"></a>Web应用基础</h2><p>HTTP1.0定义了三种请求方法： GET, POST 和 HEAD方法。</p>
+<p>HTTP1.1新增了五种请求方法：OPTIONS, PUT, DELETE, TRACE 和 CONNECT 方法。</p>
+<p>post方法中，请求头部是以一个空行为结束，即请求头部和body之间存在一个空白行。</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>文件上传绕过方式汇总</title>
-    <url>/2023/04/19/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E7%9A%84%E7%BB%95%E8%BF%87%E6%96%B9%E5%BC%8F/</url>
-    <content><![CDATA[<h1 id="文件上传的绕过方式"><a href="#文件上传的绕过方式" class="headerlink" title="文件上传的绕过方式"></a>文件上传的绕过方式</h1><h2 id="1、前对验证绕过"><a href="#1、前对验证绕过" class="headerlink" title="1、前对验证绕过"></a><strong>1、前对验证绕过</strong></h2><p>F12打开调试器关闭js格式实现绕过</p>
-<h2 id="2、Content-Type方式绕过"><a href="#2、Content-Type方式绕过" class="headerlink" title="2、Content-Type方式绕过"></a><strong>2、Content-Type方式绕过</strong></h2><p>抓包修改Content-Type的数据为它允许的格式，如image&#x2F;jpeg</p>
-<h2 id="3、黑名单绕过（不允许上传php）"><a href="#3、黑名单绕过（不允许上传php）" class="headerlink" title="3、黑名单绕过（不允许上传php）"></a><strong>3、黑名单绕过（不允许上传php）</strong></h2><p>可以上传php5、phtml后缀名，需要到Apache的配置文件，http.conf配置文件里面进行打开相应的配置：</p>
-<p> AddType application&#x2F;x-httpd-php .php .phtml .php5 .pht</p>
-<p>还有就是AllOverride all也要保证是打开的，默认的是none</p>
-<h2 id="4、-htaccess文件绕过"><a href="#4、-htaccess文件绕过" class="headerlink" title="4、.htaccess文件绕过"></a><strong>4、.htaccess文件绕过</strong></h2><p>编辑一个新的.htaccess文件，里面编辑:</p>
-<p>&lt;FilesMatch “4.png”&gt;<br>SetHandler application&#x2F;x-httpd-php</p>
-<p>这串代码的意思是如果文件中有一个4.png（是4.txt改后缀名实现的，不是图片马）的文件，他就会被解析为.php，把这个文件上传上去，然后紧接着上传4.png，这样就会把4.png当成php进行解析。</p>
-<h2 id="5、后缀大小写"><a href="#5、后缀大小写" class="headerlink" title="5、后缀大小写"></a>5、后缀大小写</h2><h2 id="6、文件后缀（空）绕过"><a href="#6、文件后缀（空）绕过" class="headerlink" title="6、文件后缀（空）绕过"></a>6、文件后缀（空）绕过</h2><p>就在php.php后面加个空格就好了。</p>
-<h2 id="7、文件后缀（点绕过）"><a href="#7、文件后缀（点绕过）" class="headerlink" title="7、文件后缀（点绕过）"></a>7、文件后缀（点绕过）</h2><p>就在php.php后面加个点就好了，如php.php.</p>
-<h2 id="8、Windows文件流绕过（-DATA）"><a href="#8、Windows文件流绕过（-DATA）" class="headerlink" title="8、Windows文件流绕过（::$DATA）"></a>8、Windows文件流绕过（::$DATA）</h2><p><strong>在window的时候如果文件名+”::$DATA”会把::$DATA之后的数据当成文件流处理,不会检测后缀名，且保持::$DATA之前的文件名，他的目的就是不检查后缀名</strong>。例如:”test.php::$DATA”Windows会自动去掉末尾的::$DATA变成”test.php”。</p>
-<h2 id="9、文件名双写绕过"><a href="#9、文件名双写绕过" class="headerlink" title="9、文件名双写绕过"></a>9、文件名双写绕过</h2><p>pphphp格式进行绕过</p>
-<h2 id="10、后缀名绕过（点空格点）"><a href="#10、后缀名绕过（点空格点）" class="headerlink" title="10、后缀名绕过（点空格点）"></a>10、后缀名绕过（点空格点）</h2><h2 id="11、GET型00截断、POST型00截断"><a href="#11、GET型00截断、POST型00截断" class="headerlink" title="11、GET型00截断、POST型00截断"></a>11、GET型00截断、POST型00截断</h2><p>（<strong>PHP版本要在5.3.4</strong>以下且<strong>php的magic_quotes_gpc为OFF状态</strong>）</p>
-<h2 id="12、条件竞争"><a href="#12、条件竞争" class="headerlink" title="12、条件竞争"></a>12、条件竞争</h2><p>这里的逻辑是先将文件上传到服务器，然后判断文件后缀是否在白名单里，如果在则重命名，否则删除。这样就存在一个安全问题，那就是我同时上传多个相同文件，在它删除之前访问就可以了。也就是条件竞争问题。可以借助burp的暴力破解模块。</p>
-<p>首先上传一个正常的符合条件的文件进行获取到上传路径，然后就在1.php里面编写内容：</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;?php file_put_contents(&#x27;phpinfoshell.php&#x27;,&#x27;&lt;?php phpinfo();?&gt;&#x27;);?&gt;</span><br></pre></td></tr></table></figure></div>
-
-<p>意思是如果没有找到phpinfoshell.php文件，则创建该文件，内容是：</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;?php phpinfo();?&gt;</span><br></pre></td></tr></table></figure></div>
-
-<p>让后通过bp抓包，进行null playd无限跑包，抓上传1.php包跑，跑了之后放包重新抓访问phpinfoshell.php包开始同时跑包，这样就可以通过条件竞争进行有概率的利用漏洞，在被删除之前访问1.php执行里面的file_put_contents函数创建phpinfoshell.php木马文件进行完美绕过。</p>
-<h2 id="13、二次渲染"><a href="#13、二次渲染" class="headerlink" title="13、二次渲染"></a>13、二次渲染</h2><p>意思是上传了的图片马中的16进制的内容被进行渲染篡改成乱码了，我们要对比上传前和上传后的图片马16进制的地方，哪个地方没有被二次渲染，就在那个地方进行添加一句话木马，这样就可以绕过二次渲染实现上传成功。</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>欢迎你的到来</title>
-    <url>/2023/04/18/%E6%AC%A2%E8%BF%8E%E4%BD%A0/</url>
-    <content><![CDATA[<h1 id="欢迎你"><a href="#欢迎你" class="headerlink" title="欢迎你"></a>欢迎你</h1><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/2030300.jpg"
-                     
-                ></p>
-<p>感谢各位靓仔靓妹来到本人的博客，鄙人不才，现在主攻Web渗透方向，还是小白，但是一直在路上，俗话说的好，“不积跬步无以至千里，不积小流无以成江河，道阻且长，行则将至”，做好自己，相信未来。</p>
-<div class="note-large notel-default"><div class="notel-title"><p>信息</p>
-</div><div class="notel-content"><p>如有指教，请加QQ：1500076625，在此表示感谢。</p>
- </div></div>]]></content>
   </entry>
 </search>

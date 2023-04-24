@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="Cream">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://evan.beee.top" crossorigin>
+    
+        
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="http://example.com/2023/04/24/awd攻略/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="AWD介绍AWD(Attack With Defense，攻防兼备)是一个非常有意思的模式，你需要在一场比赛里要扮演攻击方和防守方，攻者得分，失守者会被扣分。也就是说，攻击别人的靶机可以获取 Flag 分数时，别人会被扣分，同时你也要保护自己的主机不被别人得分，以防扣分。 这种模式非常激烈，赛前准备要非常充分，手上要有充足的防守方案和 EXP 攻击脚本，而且参赛越多，积累的经验就越多，获胜的希望就">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AWD攻略">
+<meta property="og:url" content="http://example.com/2023/04/24/AWD%E6%94%BB%E7%95%A5/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="AWD介绍AWD(Attack With Defense，攻防兼备)是一个非常有意思的模式，你需要在一场比赛里要扮演攻击方和防守方，攻者得分，失守者会被扣分。也就是说，攻击别人的靶机可以获取 Flag 分数时，别人会被扣分，同时你也要保护自己的主机不被别人得分，以防扣分。 这种模式非常激烈，赛前准备要非常充分，手上要有充足的防守方案和 EXP 攻击脚本，而且参赛越多，积累的经验就越多，获胜的希望就">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/AWD/images/image-20230423103140553.png">
+<meta property="og:image" content="http://example.com/AWD/images/image-20230424142025257.png">
+<meta property="og:image" content="http://example.com/AWD/images/image-20230423194057596.png">
+<meta property="article:published_time" content="2023-04-24T08:37:21.921Z">
+<meta property="article:modified_time" content="2023-04-24T08:38:41.689Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/AWD/images/image-20230423103140553.png">
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/favicon.ico" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <!--- Page Info-->
+    
+    <title>
+        
+            AWD攻略 -
+        
+        Record learning moments
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="stylesheet" href="//evan.beee.top/projects/hexo-theme-redefine/v2.1.2/source/assets/fonts.css">
+    <!--- Font Part-->
+    
+    
+    
+    
+
+    <!--- Inject Part-->
+    
+    <script id="hexo-configurations">
+    let Global = window.Global || {};
+    Global.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN","path":"search.xml"};
+    Global.theme_config = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[""]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":false,"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":true,"percentage":true},"busuanzi_counter":{"enable":false,"site_pv":false,"site_uv":false,"post_pv":false},"pjax":true,"open_graph":true},"home_banner":{"enable":true,"image":{"light":"/images/bg.jpg","dark":"/images/bg.jpg"},"title":"Learn new ideas and strive to be a new youth","subtitle":{"text":["A short step, not even a thousand miles","不积小流，无以成江河"],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn"},"typing_speed":70,"backing_speed":50,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":true,"links":{"github":"https://github.com/1500076625","instagram":null,"zhihu":"https://www.zhihu.com/","twitter":null,"email":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.1.2","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"right","first_item":"info","announcement":"Welcome To Home","links":{"Archives":{"icon":"fa-regular fa-archive"},"Tags":{"icon":"fa-regular fa-tags"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"}}},"article_date_format":"YYYY-MM-DD HH:mm:ss","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}}};
+    Global.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    <link rel="stylesheet" href="//evan.beee.top/projects/hexo-theme-redefine/v2.1.2/source/fontawesome/fontawesome.min.css">
+    <link rel="stylesheet" href="//evan.beee.top/projects/hexo-theme-redefine/v2.1.2/source/fontawesome/brands.min.css">
+    <link rel="stylesheet" href="//evan.beee.top/projects/hexo-theme-redefine/v2.1.2/source/fontawesome/solid.min.css">
+    <link rel="stylesheet" href="//evan.beee.top/projects/hexo-theme-redefine/v2.1.2/source/fontawesome/regular.min.css">
+    
+        <link rel="stylesheet" href="//evan.beee.top/projects/hexo-theme-redefine/v2.1.2/source/fontawesome/thin.min.css">
+    
+    
+        <link rel="stylesheet" href="//evan.beee.top/projects/hexo-theme-redefine/v2.1.2/source/fontawesome/light.min.css">
+    
+    
+        <link rel="stylesheet" href="//evan.beee.top/projects/hexo-theme-redefine/v2.1.2/source/fontawesome/duotone.min.css">
+    
+    
+        <link rel="stylesheet" href="//evan.beee.top/projects/hexo-theme-redefine/v2.1.2/source/fontawesome/sharp-solid.min.css">
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fa-solid fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="main-content-container">
+
+        <div class="main-content-header">
+            <header class="navbar-container">
+    
+    <div class="navbar-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                Record learning moments
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-house"></i>
+                                        
+                                        首页
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i></div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="navbar-drawer">
+        <ul class="drawer-navbar-list">
+            
+                
+                    <li class="drawer-navbar-item flex-center">
+                        <a class="" 
+                        href="/"  >
+                             
+                                
+                                    <i class="fa-regular fa-house"></i>
+                                
+                                首页
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container">
+        <div class="article-content-container">
+
+            
+            
+                <div class="article-title">
+                    <h1 class="article-title-regular">AWD攻略</h1>
+                </div>
+            
+                
+            
+
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="/images/touxiang.png">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">Cream</span>
+                            
+                                <span class="author-label"></span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2023-04-24 16:37:21</span>
+        <span class="mobile">2023-04-24 16:37</span>
+        <span class="hover-info">创建</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2023-04-24 16:38:41</span>
+            <span class="mobile">2023-04-24 16:38</span>
+            <span class="hover-info">更新</span>
+        </span>
+    
+
+    
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>1.7k 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>6 分钟</span>
+        </span>
+    
+    
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content markdown-body">
+                <h2 id="AWD介绍"><a href="#AWD介绍" class="headerlink" title="AWD介绍"></a><strong>AWD介绍</strong></h2><p>AWD(Attack With Defense，攻防兼备)是一个非常有意思的模式，你需要在一场比赛里要扮演攻击方和防守方，攻者得分，失守者会被扣分。也就是说，攻击别人的靶机可以获取 Flag 分数时，别人会被扣分，同时你也要保护自己的主机不被别人得分，以防扣分。</p>
+<p>这种模式非常激烈，赛前准备要非常充分，手上要有充足的防守方案和 EXP 攻击脚本，而且参赛越多，积累的经验就越多，获胜的希望就越大。</p>
+<h2 id="比赛规则"><a href="#比赛规则" class="headerlink" title="比赛规则"></a><strong>比赛规则</strong></h2><ul>
+<li>每个团队分配到一个Docker主机，给定Web（Web）&#x2F; Pwn（Pwn）用户权限，通过特定的端口和密码进行连接；</li>
+<li>每台Docker主机上运行一个网络服务或其他的服务，需要选手保证其可用性，并尝试审计代码，攻击其他队伍；</li>
+<li>选手可以通过使用突破获取其他队伍的服务器的权限，读取其他服务器上的标志并提交到平台上；</li>
+<li>每次成功攻击可能5分，被攻击者取代5分；</li>
+<li>有效攻击五分钟一轮。选手需要保证己方服务的可用性，每次服务不可用，替换10分；</li>
+<li>服务检测五分钟一轮；</li>
+<li>禁止使用任何形式的DOS攻击，第一次发现扣1000分，第二次发现取消比赛资格。</li>
+</ul>
+<h2 id="比赛必备流程"><a href="#比赛必备流程" class="headerlink" title="比赛必备流程"></a>比赛必备流程</h2><p>首先主办发会给你一台linux服务器的主机IP，这个就是你要防守（加固）的服务器，还会给你用户名和密码。</p>
+<p>1、第一步：必须是要先修改自己的密码，因为所有人的用户名和密码都是一样的，此时如果不修改密码就会被别人给修改掉，这样就不能玩了。</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">命令：passwd 用户名</span><br></pre></td></tr></table></figure></div>
+
+<p>2、第二步：把自己服务器中的源码给tar打包下来进行备份，用D盾和河马（不是特别推荐，个人觉得河马更好）扫描自己服务器web网站的源码，里面是会有一些PHP一句话木马后门的，需要把他们给清除掉，在清理掉前要进行记录这些后门的路径，万一别人有的后门木马没有清理干净，还可以连接别人的木马进行攻击。</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">zip格式</span><br><span class="line">压缩： zip -r [目标文件名].zip [原文件/目录名]</span><br><span class="line">解压： unzip [原文件名].zip</span><br><span class="line">注：-r参数代表递归</span><br><span class="line"></span><br><span class="line">方式二：分两次打包并压缩、解压并解包</span><br><span class="line">tar格式（该格式仅仅打包，不压缩）</span><br><span class="line">打包：tar -cvf [目标文件名].tar [原文件名/目录名]</span><br><span class="line">解包：tar -xvf [原文件名].tar</span><br><span class="line">注：c参数代表create（创建），x参数代表extract（解包），v参数代表verbose（详细信息），f参数代表filename（文件名），所以f后必须接文件名。</span><br><span class="line"></span><br><span class="line">tar.gz格式</span><br><span class="line">方式一：利用前面已经打包好的tar文件，直接用压缩命令。</span><br><span class="line"></span><br><span class="line">压缩：gzip [原文件名].tar</span><br><span class="line">解压：gunzip [原文件名].tar.gz</span><br><span class="line"></span><br><span class="line">方式二：一次性打包并压缩、解压并解包</span><br><span class="line"></span><br><span class="line">打包并压缩： tar -zcvf [目标文件名].tar.gz [原文件名/目录名]</span><br><span class="line">解压并解包： tar -zxvf [原文件名].tar.gz</span><br><span class="line">注：z代表用gzip算法来压缩/解压</span><br><span class="line"></span><br><span class="line">打包并压缩： tar -jcvf [目标文件名].tar.bz2 [原文件名/目录名]</span><br><span class="line">解压并解包： tar -jxvf [原文件名].tar.bz2</span><br><span class="line">注：小写j代表用bzip2算法来压缩/解压。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">例子：</span><br><span class="line">tar -cvf log.tar log2012.log    仅打包，不压缩！</span><br><span class="line">压缩：</span><br><span class="line">tar -zcvf log.tar.gz log2012.log   打包后，以 gzip 压缩</span><br><span class="line">tar -jcvf log.tar.bz2 log2012.log  打包后，以 bzip2 压缩</span><br><span class="line">解压：</span><br><span class="line">tar -zxvf log.tar.gz   以 gzip 解缩</span><br><span class="line">tar -jxvf log.tar.bz2  以 bzip2 解缩</span><br><span class="line">	在选项f之后的文件档名是自己取的，我们习惯上都用 .tar 来作为辨识。 如果加z选项，则以.tar.gz或.tgz来代表gzip压缩过的tar包；如果加j选项，则以.tar.bz2来作为tar包名。</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>D盾：</strong></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/AWD/images/image-20230423103140553.png"
+                      alt="image-20230423103140553"
+                ></p>
+<p><strong>河马：</strong></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/AWD/images/image-20230424142025257.png"
+                      alt="image-20230424142025257"
+                ></p>
+<p>3、第三部：分析后门代码，看看是否可以进行利用构造pyload进行批量拿flag。</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">小 Tips: 使用 ` find / -name *flag*` 或 `grep -rn &quot;flag&quot; * ` 类似的语句可以快速发现 flag 所在的地方，方便后续拿分。</span><br></pre></td></tr></table></figure></div>
+
+<p>4、上WAF和监控脚本保证自己的网站不会被打、源码被删等情况。</p>
+<p>cd 到网站根目录www下，chmod 766 .&#x2F;jiank_py2_z ,给这个监控脚本赋权限，就直接运行就可以了，但是这个也有弊端：个人认为用Python3的脚本比较好，比较稳定，其他的多多少少都是有bug的，下面的监控脚本就是有bug，删除文件恢复不了，所以不推荐。</p>
+<p>WAF部署：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">phpwaf文件夹</span><br><span class="line">waf3_ruoji_1.php</span><br><span class="line">这个文件可以检测get post herade中的攻击payload，sql，代码执行</span><br><span class="line"></span><br><span class="line">只能在Linux使用，会在tmp目录下生成一个1log目录，会生成五个txt文件，其中： Attack_Big_information.txt 为详细的数组日志 sy.txt 为所有的访问日志 hacker_re.txt 为攻击者访问日志 xxfw.txt 为所有请求日志（包括post 数据包） hacker_data.txt 为攻击者请求日志（包括post 数据包 此waf脚本如果检测到攻击者请求中带有flag，就会输出假的flag 此waf脚本还存在误报（注意，如果部署后，页面访问为空白，请更换浏览器访问）</span><br><span class="line"></span><br><span class="line">ip_heimd.php</span><br><span class="line">为Ip黑名单，填入ip地址，可以禁止访问页面</span><br><span class="line"></span><br><span class="line">请在Index.php文件使用include包含文件，ip_heimd.php文件需要在waf3_ruoji_1.php文件前面</span><br><span class="line"></span><br><span class="line">include &#x27;ip_heimd.php&#x27;;</span><br><span class="line"></span><br><span class="line">include &#x27;waf3_ruoji_1.php&#x27;;</span><br><span class="line"></span><br><span class="line">这样，因为ip_heimd.php为黑名单，禁止访问的</span><br></pre></td></tr></table></figure></div>
+
+<p>文件监控部署：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">jiank_py2_z</span><br><span class="line"></span><br><span class="line">文件为不需要环境，可以部署的脚本，这个需要输入两参数，一个是需要备份监控的文件，一个是备份文件目录</span><br><span class="line"></span><br><span class="line">python2wj_z.py</span><br><span class="line"></span><br><span class="line">需要python2环境，这个需要输入两参数，一个是需要备份监控的文件，一个是备份文件目录</span><br><span class="line"></span><br><span class="line">python2wjian.py</span><br><span class="line"></span><br><span class="line">需要python2环境，这个不需要输入参数，这个文件会直接备份监控和这个脚本同一个目录的文件，备份文件也在同目录</span><br><span class="line"></span><br><span class="line">python3wj.py</span><br><span class="line"></span><br><span class="line">需要python3环境，需要输入需要备份监控的文件夹</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">python2的脚本有bug，当文件夹被删除时，恢复失败</span><br><span class="line"></span><br><span class="line">python3脚本当有带有空格的文件被删除，恢复失败</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/AWD/images/image-20230423194057596.png"
+                      alt="image-20230423194057596"
+                ></p>
+<p>把Python3wj.py放到什么地方是都行，反正他的备份文件都是在&#x2F;tmp下面的，只需要设置监控文件位置就行了，比较简单的一个监控脚本。</p>
+
+            </div>
+
+            
+
+            
+
+            
+
+            
+                <div class="article-nav">
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                            rel="next"
+                            href="/2023/04/22/%E7%97%85%E6%AF%92/"
+                            >
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">病毒名词解释</span>
+                                    <span class="post-nav-item">下一篇</span>
+                                </span>
+                                <span class="right arrow-icon flex-center">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+
+            
+        </div>
+
+        
+            <div class="toc-content-container">
+                <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">此页目录</div>
+        <div class="page-title">AWD攻略</div>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#AWD%E4%BB%8B%E7%BB%8D"><span class="nav-text">AWD介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AF%94%E8%B5%9B%E8%A7%84%E5%88%99"><span class="nav-text">比赛规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AF%94%E8%B5%9B%E5%BF%85%E5%A4%87%E6%B5%81%E7%A8%8B"><span class="nav-text">比赛必备流程</span></a></li></ol>
+
+    </div>
+</div>
+            </div>
+        
+    </div>
+</div>
+
+
+                
+
+            </div>
+            
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">Cream</a>
+        </div>
+        
+        <div class="theme-info info-item">
+            <span class="powered-by-container">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" href="https://hexo.io">Hexo</a> 驱动</span>
+                <br>
+            <span class="theme-version-container">主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.1.2</a>
+        </div>
+        
+        
+        
+            <div id="start_div" style="display:none">
+                2022/3/12 00:00:00
+            </div>
+            <div>
+                博客已运行 <span class="odometer" id="runtime_days" ></span> 天 <span class="odometer" id="runtime_hours"></span> 小时 <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span> 秒
+            </div>
+        
+        
+        
+            <script async data-pjax>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-expand-width flex-center">
+            <i class="fa-regular fa-expand"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fa-solid fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa-solid fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+
+</main>
+
+
+
+<script src="//evan.beee.top/projects/hexo-theme-redefine/v2.1.2/source/js/utils.js"></script><script src="//evan.beee.top/projects/hexo-theme-redefine/v2.1.2/source/js/main.js"></script><script src="//evan.beee.top/projects/hexo-theme-redefine/v2.1.2/source/js/layouts/navbarShrink.js"></script><script src="//evan.beee.top/projects/hexo-theme-redefine/v2.1.2/source/js/tools/scrollTopBottom.js"></script><script src="//evan.beee.top/projects/hexo-theme-redefine/v2.1.2/source/js/tools/lightDarkSwitch.js"></script>
+
+
+    <script src="//evan.beee.top/projects/hexo-theme-redefine/v2.1.2/source/js/tools/localSearch.js"></script>
+
+
+
+    <script src="//evan.beee.top/projects/hexo-theme-redefine/v2.1.2/source/js/tools/codeBlock.js"></script>
+
+
+
+    <script src="//evan.beee.top/projects/hexo-theme-redefine/v2.1.2/source/js/layouts/lazyload.js"></script>
+
+
+
+    <script src="//evan.beee.top/projects/hexo-theme-redefine/v2.1.2/source/js/tools/runtime.js"></script>
+    <script src="//evan.beee.top/projects/hexo-theme-redefine/v2.1.2/source/js/layouts/odometer.min.js"></script>
+    <link rel="stylesheet" href="//evan.beee.top/projects/hexo-theme-redefine/v2.1.2/source/assets/odometer-theme-minimal.css">
+
+
+
+  <script src="//evan.beee.top/projects/hexo-theme-redefine/v2.1.2/source/js/libs/Typed.min.js"></script>
+  <script src="//evan.beee.top/projects/hexo-theme-redefine/v2.1.2/source/js/plugins/typed.js"></script>
+
+
+
+
+
+
+<div class="post-scripts pjax">
+    
+        <script src="//evan.beee.top/projects/hexo-theme-redefine/v2.1.2/source/js/tools/tocToggle.js"></script><script src="//evan.beee.top/projects/hexo-theme-redefine/v2.1.2/source/js/libs/anime.min.js"></script><script src="//evan.beee.top/projects/hexo-theme-redefine/v2.1.2/source/js/layouts/toc.js"></script><script src="//evan.beee.top/projects/hexo-theme-redefine/v2.1.2/source/js/plugins/tabs.js"></script>
+    
+</div>
+
+
+    <script src="//evan.beee.top/projects/hexo-theme-redefine/v2.1.2/source/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax',
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            Global.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            Global.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            Global.refresh();
+        });
+    });
+</script>
+
+
+
+
+</body>
+</html>

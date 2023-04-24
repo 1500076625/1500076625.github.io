@@ -25,14 +25,14 @@
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/AWD/images/image-20230423103140553.png"
+                     data-src="/images/AWD/image-20230423103140553.png"
                       alt="image-20230423103140553"
                 ></p>
 <p><strong>河马：</strong></p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/AWD/images/image-20230424142025257.png"
+                     data-src="/images/AWD/image-20230424142025257.png"
                       alt="image-20230424142025257"
                 ></p>
 <p>3、第三部：分析后门代码，看看是否可以进行利用构造pyload进行批量拿flag。</p>
@@ -49,47 +49,10 @@
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/AWD/images/image-20230423194057596.png"
+                     data-src="/images/AWD/image-20230423194057596.png"
                       alt="image-20230423194057596"
                 ></p>
 <p>把Python3wj.py放到什么地方是都行，反正他的备份文件都是在&#x2F;tmp下面的，只需要设置监控文件位置就行了，比较简单的一个监控脚本。</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>MySQL提权</title>
-    <url>/2023/04/19/mysql%E6%8F%90%E6%9D%83/</url>
-    <content><![CDATA[<h3 id="UDF提权"><a href="#UDF提权" class="headerlink" title="UDF提权"></a>UDF提权</h3><p>udf函数按照其运行模式可以分为单次调用型和聚集函数型两类，单词调用型能够针对数据库查询的每一行记录进行处理，聚集函数型用于处理 group by等聚集函数。</p>
-<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>攻击者通过编写调用cmd或者shell的udf.dll文件，并且导入到一个指定的文件夹目录下，然后创建一个指向udf.dll的自定义函数，从而在数据库进行查询，而查询的结果则等价于在cmd或shell中执行命令。</p>
-<h3 id="存放位置"><a href="#存放位置" class="headerlink" title="存放位置"></a>存放位置</h3><p>Windows 2000操作系统需要导出udf.dll到c:\winnt\udf.dll；Windows 2003操作系统导出udf.dll到c:\Windows\udf.dll；</p>
-<h2 id="MOF提权"><a href="#MOF提权" class="headerlink" title="MOF提权"></a>MOF提权</h2><p>mof是windows系统的一个文件（在c:&#x2F;windows&#x2F;system32&#x2F;wbem&#x2F;mof&#x2F;nullevt.mof）叫做”托管对象格式”其作用是每隔五秒就会去监控进程创建和死亡。</p>
-<p>当mysql账户权限是root，然后使用root权限去执行我们上传的mof，隔了一定时间以后这个mof就会被执行，这个mof当中有一段是vbs脚本，这个vbs大多数的是cmd的添加管理员用户的命令。</p>
-<h3 id="浏览器解码"><a href="#浏览器解码" class="headerlink" title="浏览器解码"></a>浏览器解码</h3><p>atob()</p>
-<p>​						</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>关于我</title>
-    <url>/2023/04/17/hello-world/</url>
-    <content><![CDATA[<h1 id="Hi-Boys-and-Girls"><a href="#Hi-Boys-and-Girls" class="headerlink" title="Hi Boys and Girls!"></a>Hi Boys and Girls!</h1><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/Screenshot_20230419_094457.jpg"
-                     
-                ></p>
-<p>​		你们好，我是Cream（笔名：顾彬彬），00后，就读于某某学院（hint：“老徐你要老婆不要?”），软件工程专业， 写Blog(博客)为了记录自己的学习历程，监督自己学习，督促自己成长，个人觉得只有自己写出来的知识才是学到手的东西，那才是自己的东西，现在已经入行网络信息安全行业了，现在还在沉淀阶段，以后也会深耕这个行业，并为之奉献，为中国的信息安全行业贡献自己的一份力量，抵制国外黑客入侵，保卫中国信息安全，从你我做起，从现在做起，识别钓鱼链接，不点击钓鱼链接，不给敌人可乘之机。</p>
-<h2 id="我的技能"><a href="#我的技能" class="headerlink" title="我的技能"></a>我的技能</h2><ul>
-<li>目前主攻的还是web安全方向，也会一些网络华为数通、安全设备的知识</li>
-<li>会渗透测试的基本流程，有实战漏扫经验、目前任职于一家国内等保测评公司</li>
-</ul>
-<h2 id="我的兴趣爱好"><a href="#我的兴趣爱好" class="headerlink" title="我的兴趣爱好"></a>我的兴趣爱好</h2><p>以下是一些少有的坚持下来的爱好：</p>
-<p>旅行：去过杭州西湖、成都春熙路、成都武侯祠、乐山大佛、湖南岳阳楼、上海东方明珠等等，但是还是想去西藏拉萨、故宫博物馆、北京八达岭长城，计划利用放假时间出去好好玩玩，记录美好时光<br>唱歌：有事没有机会唱一下，唱歌能够使人发泄不快乐的情绪，有利于保持好心情，哈哈哈<br>游戏：以前玩儿，现在很少玩了，以前主玩英雄联盟，但是操作跟不上了就放下了，现在也只玩玩手游联盟，陶冶情操罢了</p>
-<h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/2029766.jpg"
-                     
-                ></p>
-<p>​		很高兴你能够访问我的Blog（博客），希望可以帮助到你，同时也非常高兴认识你！😊</p>
 ]]></content>
   </entry>
   <entry>
@@ -474,6 +437,43 @@
 ]]></content>
   </entry>
   <entry>
+    <title>关于我</title>
+    <url>/2023/04/17/hello-world/</url>
+    <content><![CDATA[<h1 id="Hi-Boys-and-Girls"><a href="#Hi-Boys-and-Girls" class="headerlink" title="Hi Boys and Girls!"></a>Hi Boys and Girls!</h1><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/Screenshot_20230419_094457.jpg"
+                     
+                ></p>
+<p>​		你们好，我是Cream（笔名：顾彬彬），00后，就读于某某学院（hint：“老徐你要老婆不要?”），软件工程专业， 写Blog(博客)为了记录自己的学习历程，监督自己学习，督促自己成长，个人觉得只有自己写出来的知识才是学到手的东西，那才是自己的东西，现在已经入行网络信息安全行业了，现在还在沉淀阶段，以后也会深耕这个行业，并为之奉献，为中国的信息安全行业贡献自己的一份力量，抵制国外黑客入侵，保卫中国信息安全，从你我做起，从现在做起，识别钓鱼链接，不点击钓鱼链接，不给敌人可乘之机。</p>
+<h2 id="我的技能"><a href="#我的技能" class="headerlink" title="我的技能"></a>我的技能</h2><ul>
+<li>目前主攻的还是web安全方向，也会一些网络华为数通、安全设备的知识</li>
+<li>会渗透测试的基本流程，有实战漏扫经验、目前任职于一家国内等保测评公司</li>
+</ul>
+<h2 id="我的兴趣爱好"><a href="#我的兴趣爱好" class="headerlink" title="我的兴趣爱好"></a>我的兴趣爱好</h2><p>以下是一些少有的坚持下来的爱好：</p>
+<p>旅行：去过杭州西湖、成都春熙路、成都武侯祠、乐山大佛、湖南岳阳楼、上海东方明珠等等，但是还是想去西藏拉萨、故宫博物馆、北京八达岭长城，计划利用放假时间出去好好玩玩，记录美好时光<br>唱歌：有事没有机会唱一下，唱歌能够使人发泄不快乐的情绪，有利于保持好心情，哈哈哈<br>游戏：以前玩儿，现在很少玩了，以前主玩英雄联盟，但是操作跟不上了就放下了，现在也只玩玩手游联盟，陶冶情操罢了</p>
+<h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/2029766.jpg"
+                     
+                ></p>
+<p>​		很高兴你能够访问我的Blog（博客），希望可以帮助到你，同时也非常高兴认识你！😊</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>MySQL提权</title>
+    <url>/2023/04/19/mysql%E6%8F%90%E6%9D%83/</url>
+    <content><![CDATA[<h3 id="UDF提权"><a href="#UDF提权" class="headerlink" title="UDF提权"></a>UDF提权</h3><p>udf函数按照其运行模式可以分为单次调用型和聚集函数型两类，单词调用型能够针对数据库查询的每一行记录进行处理，聚集函数型用于处理 group by等聚集函数。</p>
+<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>攻击者通过编写调用cmd或者shell的udf.dll文件，并且导入到一个指定的文件夹目录下，然后创建一个指向udf.dll的自定义函数，从而在数据库进行查询，而查询的结果则等价于在cmd或shell中执行命令。</p>
+<h3 id="存放位置"><a href="#存放位置" class="headerlink" title="存放位置"></a>存放位置</h3><p>Windows 2000操作系统需要导出udf.dll到c:\winnt\udf.dll；Windows 2003操作系统导出udf.dll到c:\Windows\udf.dll；</p>
+<h2 id="MOF提权"><a href="#MOF提权" class="headerlink" title="MOF提权"></a>MOF提权</h2><p>mof是windows系统的一个文件（在c:&#x2F;windows&#x2F;system32&#x2F;wbem&#x2F;mof&#x2F;nullevt.mof）叫做”托管对象格式”其作用是每隔五秒就会去监控进程创建和死亡。</p>
+<p>当mysql账户权限是root，然后使用root权限去执行我们上传的mof，隔了一定时间以后这个mof就会被执行，这个mof当中有一段是vbs脚本，这个vbs大多数的是cmd的添加管理员用户的命令。</p>
+<h3 id="浏览器解码"><a href="#浏览器解码" class="headerlink" title="浏览器解码"></a>浏览器解码</h3><p>atob()</p>
+<p>​						</p>
+]]></content>
+  </entry>
+  <entry>
     <title>sql注入的注入攻略</title>
     <url>/2023/04/19/sql%E6%B3%A8%E5%85%A5%E7%9A%84%E6%B3%A8%E5%85%A5%E6%94%BB%E7%95%A5/</url>
     <content><![CDATA[<h1 id="联合注入攻略"><a href="#联合注入攻略" class="headerlink" title="联合注入攻略"></a>联合注入攻略</h1><h2 id="1、判断注入点（同时构造闭合符号）"><a href="#1、判断注入点（同时构造闭合符号）" class="headerlink" title="1、判断注入点（同时构造闭合符号）"></a>1、判断注入点（同时构造闭合符号）</h2><p>当输入?id&#x3D;1(  <strong>‘</strong>,<strong>“</strong>,<strong>‘)</strong>,<strong>“)</strong>,<strong>‘]</strong>  ) and 1&#x3D;1 – q   &#x2F;&#x2F; 正常</p>
@@ -772,6 +772,18 @@
 ]]></content>
   </entry>
   <entry>
+    <title>web渗透的步骤</title>
+    <url>/2023/04/20/web%E6%B8%97%E9%80%8F%E7%9A%84%E6%AD%A5%E9%AA%A4/</url>
+    <content><![CDATA[<h2 id="1、信息收集"><a href="#1、信息收集" class="headerlink" title="1、信息收集"></a>1、信息收集</h2><p>子域名、C段（同网段不同服务器）、旁注（同服务器不同站点）、目录探测、服务器端口、服务器脚本语言类型及版本、CMS识别、web中间件、web框架、数据库类型及版本、操作系统类型及版本。</p>
+<h2 id="2、漏洞探测发现（手动-amp-自动）"><a href="#2、漏洞探测发现（手动-amp-自动）" class="headerlink" title="2、漏洞探测发现（手动&amp;自动）"></a>2、漏洞探测发现（手动&amp;自动）</h2><p><strong>手动</strong></p>
+<p>去常见的地方去发现top10的漏洞，<strong>比如</strong>：搜索栏，login登录框、发表言论栏，修改信息的地方、与数据库交互的地方、URL地址、上传点等。</p>
+<p><strong>自动</strong></p>
+<p><strong>自动漏洞扫描工具</strong>：AWVS、APPScan、xray、yakit、goby、wpscan等，</p>
+<p>发现中间件漏洞、框架漏洞、CMS漏洞、操作系统漏洞、端口漏洞等，去漏洞库（exploit-db、CVE漏洞库），网上寻找相应的POC进行验证。</p>
+<h2 id="3、漏洞利用"><a href="#3、漏洞利用" class="headerlink" title="3、漏洞利用"></a>3、漏洞利用</h2><p>去网上查找对应的exp和payload进行利用，MSF、各种漏洞库、阿里云漏洞库、知道创宇漏洞库去进行查找利用，最后达到控制服务器的目的。</p>
+]]></content>
+  </entry>
+  <entry>
     <title>docker搭建靶场常用命令</title>
     <url>/2023/04/19/%E6%90%AD%E5%BB%BA%E9%9D%B6%E5%9C%BAdocker%E5%91%BD%E4%BB%A4/</url>
     <content><![CDATA[<h4 id="启动docker服务-："><a href="#启动docker服务-：" class="headerlink" title="启动docker服务 ："></a>启动docker服务 ：</h4><p> systemctl start docker</p>
@@ -786,18 +798,6 @@
 <h4 id="关闭docker："><a href="#关闭docker：" class="headerlink" title="关闭docker："></a>关闭docker：</h4><p>systemctl stop docker</p>
 <h4 id="docker-服务开机自启动命令："><a href="#docker-服务开机自启动命令：" class="headerlink" title="docker 服务开机自启动命令："></a>docker 服务开机自启动命令：</h4><p>systemctl enable docker.service</p>
 <h4 id="关闭docker-服务开机自启动命令："><a href="#关闭docker-服务开机自启动命令：" class="headerlink" title="关闭docker 服务开机自启动命令："></a>关闭docker 服务开机自启动命令：</h4><p>systemctl disable docker.service</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>web渗透的步骤</title>
-    <url>/2023/04/20/web%E6%B8%97%E9%80%8F%E7%9A%84%E6%AD%A5%E9%AA%A4/</url>
-    <content><![CDATA[<h2 id="1、信息收集"><a href="#1、信息收集" class="headerlink" title="1、信息收集"></a>1、信息收集</h2><p>子域名、C段（同网段不同服务器）、旁注（同服务器不同站点）、目录探测、服务器端口、服务器脚本语言类型及版本、CMS识别、web中间件、web框架、数据库类型及版本、操作系统类型及版本。</p>
-<h2 id="2、漏洞探测发现（手动-amp-自动）"><a href="#2、漏洞探测发现（手动-amp-自动）" class="headerlink" title="2、漏洞探测发现（手动&amp;自动）"></a>2、漏洞探测发现（手动&amp;自动）</h2><p><strong>手动</strong></p>
-<p>去常见的地方去发现top10的漏洞，<strong>比如</strong>：搜索栏，login登录框、发表言论栏，修改信息的地方、与数据库交互的地方、URL地址、上传点等。</p>
-<p><strong>自动</strong></p>
-<p><strong>自动漏洞扫描工具</strong>：AWVS、APPScan、xray、yakit、goby、wpscan等，</p>
-<p>发现中间件漏洞、框架漏洞、CMS漏洞、操作系统漏洞、端口漏洞等，去漏洞库（exploit-db、CVE漏洞库），网上寻找相应的POC进行验证。</p>
-<h2 id="3、漏洞利用"><a href="#3、漏洞利用" class="headerlink" title="3、漏洞利用"></a>3、漏洞利用</h2><p>去网上查找对应的exp和payload进行利用，MSF、各种漏洞库、阿里云漏洞库、知道创宇漏洞库去进行查找利用，最后达到控制服务器的目的。</p>
 ]]></content>
   </entry>
   <entry>

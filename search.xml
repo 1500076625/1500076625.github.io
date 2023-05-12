@@ -1,237 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>AWD攻略</title>
-    <url>/2023/04/24/AWD%E6%94%BB%E7%95%A5/</url>
-    <content><![CDATA[<h2 id="AWD介绍"><a href="#AWD介绍" class="headerlink" title="AWD介绍"></a><strong>AWD介绍</strong></h2><p>AWD(Attack With Defense，攻防兼备)是一个非常有意思的模式，你需要在一场比赛里要扮演攻击方和防守方，攻者得分，失守者会被扣分。也就是说，攻击别人的靶机可以获取 Flag 分数时，别人会被扣分，同时你也要保护自己的主机不被别人得分，以防扣分。</p>
-<p>这种模式非常激烈，赛前准备要非常充分，手上要有充足的防守方案和 EXP 攻击脚本，而且参赛越多，积累的经验就越多，获胜的希望就越大。</p>
-<h2 id="比赛规则"><a href="#比赛规则" class="headerlink" title="比赛规则"></a><strong>比赛规则</strong></h2><ul>
-<li>每个团队分配到一个Docker主机，给定Web（Web）&#x2F; Pwn（Pwn）用户权限，通过特定的端口和密码进行连接；</li>
-<li>每台Docker主机上运行一个网络服务或其他的服务，需要选手保证其可用性，并尝试审计代码，攻击其他队伍；</li>
-<li>选手可以通过使用突破获取其他队伍的服务器的权限，读取其他服务器上的标志并提交到平台上；</li>
-<li>每次成功攻击可能5分，被攻击者取代5分；</li>
-<li>有效攻击五分钟一轮。选手需要保证己方服务的可用性，每次服务不可用，替换10分；</li>
-<li>服务检测五分钟一轮；</li>
-<li>禁止使用任何形式的DOS攻击，第一次发现扣1000分，第二次发现取消比赛资格。</li>
-</ul>
-<h2 id="比赛必备流程"><a href="#比赛必备流程" class="headerlink" title="比赛必备流程"></a>比赛必备流程</h2><p>首先主办发会给你一台linux服务器的主机IP，这个就是你要防守（加固）的服务器，还会给你用户名和密码。</p>
-<p>1、第一步：必须是要先修改自己的密码，因为所有人的用户名和密码都是一样的，此时如果不修改密码就会被别人给修改掉，这样就不能玩了。</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">命令：passwd 用户名</span><br></pre></td></tr></table></figure></div>
-
-<p>2、第二步：把自己服务器中的源码给tar打包下来进行备份，用D盾和河马（不是特别推荐，个人觉得河马更好）扫描自己服务器web网站的源码，里面是会有一些PHP一句话木马后门的，需要把他们给清除掉，在清理掉前要进行记录这些后门的路径，万一别人有的后门木马没有清理干净，还可以连接别人的木马进行攻击。</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">zip格式</span><br><span class="line">压缩： zip -r [目标文件名].zip [原文件/目录名]</span><br><span class="line">解压： unzip [原文件名].zip</span><br><span class="line">注：-r参数代表递归</span><br><span class="line"></span><br><span class="line">方式二：分两次打包并压缩、解压并解包</span><br><span class="line">tar格式（该格式仅仅打包，不压缩）</span><br><span class="line">打包：tar -cvf [目标文件名].tar [原文件名/目录名]</span><br><span class="line">解包：tar -xvf [原文件名].tar</span><br><span class="line">注：c参数代表create（创建），x参数代表extract（解包），v参数代表verbose（详细信息），f参数代表filename（文件名），所以f后必须接文件名。</span><br><span class="line"></span><br><span class="line">tar.gz格式</span><br><span class="line">方式一：利用前面已经打包好的tar文件，直接用压缩命令。</span><br><span class="line"></span><br><span class="line">压缩：gzip [原文件名].tar</span><br><span class="line">解压：gunzip [原文件名].tar.gz</span><br><span class="line"></span><br><span class="line">方式二：一次性打包并压缩、解压并解包</span><br><span class="line"></span><br><span class="line">打包并压缩： tar -zcvf [目标文件名].tar.gz [原文件名/目录名]</span><br><span class="line">解压并解包： tar -zxvf [原文件名].tar.gz</span><br><span class="line">注：z代表用gzip算法来压缩/解压</span><br><span class="line"></span><br><span class="line">打包并压缩： tar -jcvf [目标文件名].tar.bz2 [原文件名/目录名]</span><br><span class="line">解压并解包： tar -jxvf [原文件名].tar.bz2</span><br><span class="line">注：小写j代表用bzip2算法来压缩/解压。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">例子：</span><br><span class="line">tar -cvf log.tar log2012.log    仅打包，不压缩！</span><br><span class="line">压缩：</span><br><span class="line">tar -zcvf log.tar.gz log2012.log   打包后，以 gzip 压缩</span><br><span class="line">tar -jcvf log.tar.bz2 log2012.log  打包后，以 bzip2 压缩</span><br><span class="line">解压：</span><br><span class="line">tar -zxvf log.tar.gz   以 gzip 解缩</span><br><span class="line">tar -jxvf log.tar.bz2  以 bzip2 解缩</span><br><span class="line">	在选项f之后的文件档名是自己取的，我们习惯上都用 .tar 来作为辨识。 如果加z选项，则以.tar.gz或.tgz来代表gzip压缩过的tar包；如果加j选项，则以.tar.bz2来作为tar包名。</span><br></pre></td></tr></table></figure></div>
-
-<p><strong>D盾：</strong></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/AWD/image-20230423103140553.png"
-                      alt="image-20230423103140553"
-                ></p>
-<p><strong>河马：</strong></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/AWD/image-20230424142025257.png"
-                      alt="image-20230424142025257"
-                ></p>
-<p>3、第三部：分析后门代码，看看是否可以进行利用构造pyload进行批量拿flag。</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">小 Tips: 使用 ` find / -name *flag*` 或 `grep -rn &quot;flag&quot; * ` 类似的语句可以快速发现 flag 所在的地方，方便后续拿分。</span><br></pre></td></tr></table></figure></div>
-
-<p>4、上WAF和监控脚本保证自己的网站不会被打、源码被删等情况。</p>
-<p>cd 到网站根目录www下，chmod 766 .&#x2F;jiank_py2_z ,给这个监控脚本赋权限，就直接运行就可以了，但是这个也有弊端：个人认为用Python3的脚本比较好，比较稳定，其他的多多少少都是有bug的，下面的监控脚本就是有bug，删除文件恢复不了，所以不推荐。</p>
-<p>WAF部署：</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">phpwaf文件夹</span><br><span class="line">waf3_ruoji_1.php</span><br><span class="line">这个文件可以检测get post herade中的攻击payload，sql，代码执行</span><br><span class="line"></span><br><span class="line">只能在Linux使用，会在tmp目录下生成一个1log目录，会生成五个txt文件，其中： Attack_Big_information.txt 为详细的数组日志 sy.txt 为所有的访问日志 hacker_re.txt 为攻击者访问日志 xxfw.txt 为所有请求日志（包括post 数据包） hacker_data.txt 为攻击者请求日志（包括post 数据包 此waf脚本如果检测到攻击者请求中带有flag，就会输出假的flag 此waf脚本还存在误报（注意，如果部署后，页面访问为空白，请更换浏览器访问）</span><br><span class="line"></span><br><span class="line">ip_heimd.php</span><br><span class="line">为Ip黑名单，填入ip地址，可以禁止访问页面</span><br><span class="line"></span><br><span class="line">请在Index.php文件使用include包含文件，ip_heimd.php文件需要在waf3_ruoji_1.php文件前面</span><br><span class="line"></span><br><span class="line">include &#x27;ip_heimd.php&#x27;;</span><br><span class="line"></span><br><span class="line">include &#x27;waf3_ruoji_1.php&#x27;;</span><br><span class="line"></span><br><span class="line">这样，因为ip_heimd.php为黑名单，禁止访问的</span><br></pre></td></tr></table></figure></div>
-
-<p>文件监控部署：</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">jiank_py2_z</span><br><span class="line"></span><br><span class="line">文件为不需要环境，可以部署的脚本，这个需要输入两参数，一个是需要备份监控的文件，一个是备份文件目录</span><br><span class="line"></span><br><span class="line">python2wj_z.py</span><br><span class="line"></span><br><span class="line">需要python2环境，这个需要输入两参数，一个是需要备份监控的文件，一个是备份文件目录</span><br><span class="line"></span><br><span class="line">python2wjian.py</span><br><span class="line"></span><br><span class="line">需要python2环境，这个不需要输入参数，这个文件会直接备份监控和这个脚本同一个目录的文件，备份文件也在同目录</span><br><span class="line"></span><br><span class="line">python3wj.py</span><br><span class="line"></span><br><span class="line">需要python3环境，需要输入需要备份监控的文件夹</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">python2的脚本有bug，当文件夹被删除时，恢复失败</span><br><span class="line"></span><br><span class="line">python3脚本当有带有空格的文件被删除，恢复失败</span><br></pre></td></tr></table></figure></div>
-
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/AWD/image-20230423194057596.png"
-                      alt="image-20230423194057596"
-                ></p>
-<p>把Python3wj.py放到什么地方是都行，反正他的备份文件都是在&#x2F;tmp下面的，只需要设置监控文件位置就行了，比较简单的一个监控脚本。</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>🔥 POC-bomber</title>
-    <url>/2023/05/12/POC%E9%9B%86/</url>
-    <content><![CDATA[<p>🦄 <strong>POC bomber 是一款漏洞检测&#x2F;利用工具，旨在利用大量高危害漏洞的POC&#x2F;EXP快速获取目标服务器权限</strong></p>
-<p>本项目收集互联网各种危害性大的 RCE · 任意文件上传 · 反序列化 · sql注入 等高危害且能够获取到服务器核心权限的漏洞POC&#x2F;EXP，并集成在 POC bomber 武器库中，利用大量高危害POC对单个或多个目标进行模糊测试，以此在大量资产中快速获取发现脆弱性目标，获取目标服务器权限。适用场景包括但不仅限于以下:</p>
-<ol>
-<li>红蓝对抗或hvv中帮助红队在大量资产中快速找到突破口进入内网</li>
-<li>内网安全测试，横向移动</li>
-<li>利用新型0day对企业资产进行批量评估</li>
-</ol>
-<h2 id="📝-简介"><a href="#📝-简介" class="headerlink" title="📝 简介"></a>📝 简介</h2><p>POC bomber 的poc支持weblogic，tomcat，apache，jboss，nginx，struct2，thinkphp2x3x5x，spring，redis，jenkins，php语言漏洞，shiro，泛微OA，致远OA，通达OA等易受攻击组件的漏洞检测，支持调用dnslog平台检测无回显的rce(包括log4j2的检测)，支持单个目标检测和批量检测，程序采用高并发线程池，支持自定义导入poc&#x2F;exp，并能够生成漏洞报告<br>POC bomber默认使用验证模式进行poc的验证，如返回结果中attack的值为True时，可以加参数(–attack)进入攻击模式直接调用exp进行攻击(需要指定poc文件名)，达到一键getshell</p>
-<h2 id="😄-红队专版-RedTeam-3-0"><a href="#😄-红队专版-RedTeam-3-0" class="headerlink" title="😄 红队专版-RedTeam 3.0"></a>😄 红队专版-RedTeam 3.0</h2><p>追求更快的速度？更稳定的框架？更低的资源占用？更高的检测效率？更多的poc&#x2F;exp集成利用？<br>尽请期待 POC-bomber RedTeam 3.0，目前仅限内部测试中，请持续关注项目更新。</p>
-<h2 id="💻-Screenshots"><a href="#💻-Screenshots" class="headerlink" title="💻 Screenshots"></a>💻 Screenshots</h2><h4 id="🏆-验证模式"><a href="#🏆-验证模式" class="headerlink" title="🏆 验证模式"></a>🏆 验证模式</h4><pre><code>    python3 pocbomber.py -u http://xxx.xxx
-</code></pre>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://user-images.githubusercontent.com/71172892/168099161-f46a54f7-562b-4ba5-a751-1d65492b17d9.png"
-                      alt="image"
-                ><br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://user-images.githubusercontent.com/71172892/147481630-f8b94566-572f-4d89-a874-dc01f5041377.png"
-                      alt="image"
-                ><br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://user-images.githubusercontent.com/71172892/148684886-98b0f1ff-76f5-48d3-8d2d-932635392a33.gif"
-                      alt="verify模试演示"
-                ></p>
-<h4 id="⚡️-攻击模式"><a href="#⚡️-攻击模式" class="headerlink" title="⚡️ 攻击模式"></a>⚡️ 攻击模式</h4><pre><code>    python3 pocbomber.py -u http://xxx.xxx --poc=&quot;thinkphp2_rce.py&quot; --attack
-</code></pre>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://user-images.githubusercontent.com/71172892/147629887-def9d18e-f6aa-466a-ab2c-2538752b82aa.png"
-                      alt="image"
-                ><br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://user-images.githubusercontent.com/71172892/148206720-86f77246-301c-481f-a16c-b36047f72d7c.png"
-                      alt="image"
-                ><br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://user-images.githubusercontent.com/71172892/148684097-67b59320-6758-458d-ac6b-ae219c327924.gif"
-                      alt="attack模式演示"
-                ></p>
-<h2 id="🔧-安装"><a href="#🔧-安装" class="headerlink" title="🔧 安装"></a>🔧 安装</h2><pre><code>  git clone https://github.com/tr0uble-mAker/POC-bomber.git            
-  cd POC-bomber
-  pip install -r requirements.txt
-</code></pre>
-<h2 id="🚀-用法"><a href="#🚀-用法" class="headerlink" title="🚀 用法"></a>🚀 用法</h2><pre><code>    查看用法:     python3 pocbomber.py
-    
-    模式:
-            获取poc/exp信息:   python3 pocbomber.py --show
-            单目标检测:        python3 pocbomber.py -u http://xxx.xxx.xx
-            批量检测:          python3 pocbomber.py -f url.txt -o report.txt 
-            指定poc检测:       python3 pocbomber.py -f url.txt --poc=&quot;thinkphp2_rce.py&quot;
-            exp攻击模式:       python3 pocbomber.py -u 目标url --poc=&quot;指定poc文件&quot; --attack
-    参数:
-            -u  --url      目标url
-            -f  --file     指定目标url文件   
-            -o  --output   指定生成报告的文件(默认不生成报告)
-            -p  --poc      指定单个或多个poc进行检测, 直接传入poc文件名, 多个poc用(,)分开
-            -t  --thread   指定线程池最大并发数量(默认30)
-            --show         展示poc/exp详细信息
-            --attack       使用poc文件中的exp进行攻击
-            --dnslog       使用dnslog平台检测无回显漏洞(默认不启用dnslog,可在配置文件中启用)
-</code></pre>
-<h2 id="🔆-配置文件"><a href="#🔆-配置文件" class="headerlink" title="🔆 配置文件"></a>🔆 配置文件</h2><pre><code>  /inc/config.py   
-</code></pre>
-<p>​          </p>
-<h2 id="⚠️-常见问题"><a href="#⚠️-常见问题" class="headerlink" title="⚠️ 常见问题"></a>⚠️ 常见问题</h2><ol>
-<li>程序不安装requirements.txt就可以直接运行，只依赖requests第三方库，其他库安装不上不影响程序运行，但有些poc会不能检测</li>
-<li>log4j2命令执行漏洞的检测：需要添加 –dnslog  参数 </li>
-<li>无回显漏洞检测默认使用 dnslog.cn 平台且默认关闭, 要开启需前往配置文件将 dnslog_flag 开关置为True  </li>
-<li>需要指定一个poc才能调用–attack攻击模式</li>
-</ol>
-<h2 id="📁-目录结构"><a href="#📁-目录结构" class="headerlink" title="📁 目录结构:"></a>📁 目录结构:</h2><pre><code>  +--------- poc_bomber.py (启动 POC-bomber)
-  | 
-  +--------- inc(存放支撑 POC-bomber 框架运行的核心文件)
-  |
-  \--------- pocs(POC存放列表)----------- framework(存放框架漏洞POC)
-                                  |
-                                  |------ middleware(存放中间件漏洞POC)
-                                  |
-                                  |------ ports(存放常见端口漏洞,主机服务漏洞POC)
-                                  |
-                                   \----- webs(存放常见web页面漏洞POC)
-</code></pre>
-<p>​      </p>
-<h2 id="📖-POC编写规则"><a href="#📖-POC编写规则" class="headerlink" title="📖 POC编写规则"></a>📖 POC编写规则</h2><p>POC bomber支持自定义编写poc<br>poc统一要求python3编写，具有verify和attack(非必须)两个函数分别进行验证和攻击,                     </p>
-<h4 id="👻-漏洞验证函数-verify-编写应该满足以下条件"><a href="#👻-漏洞验证函数-verify-编写应该满足以下条件" class="headerlink" title="👻 漏洞验证函数(verify)编写应该满足以下条件:"></a>👻 漏洞验证函数(verify)编写应该满足以下条件:</h4><ol>
-<li><p>函数名为 verify ， 参数接收目标url的参数           </p>
-</li>
-<li><p>函数的返回结果以字典的形式返回并且具有name和vulnerable两个键值，name说明漏洞名称，vulnerable通过True和False的状态表明漏洞是否存在</p>
-</li>
-<li><p>如果存在漏洞要将返回字典中vulnerable的值置为True, 并添加目标url, 漏洞利用相关网页等信息</p>
-</li>
-<li><p>用try方法尝试验证，使用request等发送数据包时要设置超时时间, 避免poc会卡死                              </p>
-<pre><code> def verify(url):                        
-     relsult = &#123;                                            
-         &#39;name&#39;: &#39;Thinkphp5 5.0.22/5.1.29 Remote Code Execution Vulnerability&#39;,                          
-         &#39;vulnerable&#39;: False，
-         &#39;attack&#39;： False，        # 如果有exp支持attack模式将attack的值置为True
-     &#125;              
-     try:                    
-         ......        
-         (用任意方法检测漏洞)             
-         ......
-         if 存在漏洞:
-             relsult[&#39;vulnerable&#39;] = True     # 将relsult的vulnerable的值置为True
-             relsult[&#39;url&#39;] = url             # 返回验证的url
-             relust[&#39;xxxxx&#39;] = &#39;xxxxx&#39;        # 可以添加该漏洞相关来源等信息   
-             ......           
-             return relsult     # 将vulnerable值为True的relsult返回                   
-         else:  # 不存在漏洞           
-             return relsult    # 若不存在漏洞将vulnerable值为False的relsult返回
- 
-     execpt:
-         return relsult
-</code></pre>
-</li>
-</ol>
-<p>如果有exp可以编写 attack 函数作为exp攻击函数，</p>
-<h4 id="🎃-漏洞攻击函数-attack-编写应该满足以下条件："><a href="#🎃-漏洞攻击函数-attack-编写应该满足以下条件：" class="headerlink" title="🎃 漏洞攻击函数(attack)编写应该满足以下条件："></a>🎃 漏洞攻击函数(attack)编写应该满足以下条件：</h4><ol>
-<li><p>函数名为 attack ， 参数接收目标url的参数  </p>
-</li>
-<li><p>并在try中编写exp代码进行攻击, 可以与用户交互输入       </p>
-</li>
-<li><p>编写完成后将该漏洞的verify函数返回字典中attack值置为True </p>
-</li>
-<li><p>攻击成功后返回True，其他原因失败的话返回False即可        </p>
-<pre><code> def attack(url):    
-   try:            
-       ........................................            
-         攻击代码(执行命令或反弹shell上传木马等)             
-       ........................................
-       return True
-   except:               
-       return False    
-</code></pre>
-<p> ​</p>
-</li>
-</ol>
-<p>编写完成后的poc直接放入 &#x2F;pocs 目录下任意位置即可被递归调用!    </p>
-<p>项目持续更新中，欢迎各位师傅贡献poc共筑网络安全！<br>有问题欢迎issues留言: <a class="link"   href="https://github.com/tr0uble-mAker/POC-bomber/issues" >https://github.com/tr0uble-mAker/POC-bomber/issues <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>     </p>
-<h2 id="免责声明"><a href="#免责声明" class="headerlink" title="免责声明"></a>免责声明</h2><p>本工具仅面向合法授权的企业安全建设行为，如您需要测试本工具的可用性，请自行搭建靶机环境。<br>在使用本工具进行检测时，您应确保该行为符合当地的法律法规，并且已经取得了足够的授权。请勿对非授权目标进行扫描。<br>如您在使用本工具的过程中存在任何非法行为，您需自行承担相应后果，我们将不承担任何法律及连带责任。</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>关于我</title>
-    <url>/2023/04/17/hello-world/</url>
-    <content><![CDATA[<h1 id="Hi-Boys-and-Girls"><a href="#Hi-Boys-and-Girls" class="headerlink" title="Hi Boys and Girls!"></a>Hi Boys and Girls!</h1><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/Screenshot_20230419_094457.jpg"
-                     
-                ></p>
-<p>​		你们好，我是Cream（笔名：顾彬彬），00后，就读于某某学院（hint：“老徐你要老婆不要?”），软件工程专业， 写Blog(博客)为了记录自己的学习历程，监督自己学习，督促自己成长，个人觉得只有自己写出来的知识才是学到手的东西，那才是自己的东西，现在已经入行网络信息安全行业了，现在还在沉淀阶段，以后也会深耕这个行业，并为之奉献，为中国的信息安全行业贡献自己的一份力量，抵制国外黑客入侵，保卫中国信息安全，从你我做起，从现在做起，识别钓鱼链接，不点击钓鱼链接，不给敌人可乘之机。</p>
-<h2 id="我的技能"><a href="#我的技能" class="headerlink" title="我的技能"></a>我的技能</h2><ul>
-<li>目前主攻的还是web安全方向，也会一些网络华为数通、安全设备的知识</li>
-<li>会渗透测试的基本流程，有实战漏扫经验、目前任职于一家国内等保测评公司</li>
-</ul>
-<h2 id="我的兴趣爱好"><a href="#我的兴趣爱好" class="headerlink" title="我的兴趣爱好"></a>我的兴趣爱好</h2><p>以下是一些少有的坚持下来的爱好：</p>
-<p>旅行：去过杭州西湖、成都春熙路、成都武侯祠、乐山大佛、湖南岳阳楼、上海东方明珠等等，但是还是想去西藏拉萨、故宫博物馆、北京八达岭长城，计划利用放假时间出去好好玩玩，记录美好时光<br>唱歌：有事没有机会唱一下，唱歌能够使人发泄不快乐的情绪，有利于保持好心情，哈哈哈<br>游戏：以前玩儿，现在很少玩了，以前主玩英雄联盟，但是操作跟不上了就放下了，现在也只玩玩手游联盟，陶冶情操罢了</p>
-<h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/2029766.jpg"
-                     
-                ></p>
-<p>​		很高兴你能够访问我的Blog（博客），希望可以帮助到你，同时也非常高兴认识你！😊</p>
-]]></content>
-  </entry>
-  <entry>
     <title>PHP基础（掌握点）</title>
     <url>/2023/04/21/PHP%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[<h2 id="PHP-是一种创建动态交互性站点的强有力的服务器端脚本语言"><a href="#PHP-是一种创建动态交互性站点的强有力的服务器端脚本语言" class="headerlink" title="PHP 是一种创建动态交互性站点的强有力的服务器端脚本语言"></a>PHP 是一种创建动态交互性站点的强有力的服务器端脚本语言</h2><h2 id="PHP-是什么？"><a href="#PHP-是什么？" class="headerlink" title="PHP 是什么？"></a>PHP 是什么？</h2><ul>
@@ -613,6 +382,86 @@
 ]]></content>
   </entry>
   <entry>
+    <title>AWD攻略</title>
+    <url>/2023/04/24/AWD%E6%94%BB%E7%95%A5/</url>
+    <content><![CDATA[<h2 id="AWD介绍"><a href="#AWD介绍" class="headerlink" title="AWD介绍"></a><strong>AWD介绍</strong></h2><p>AWD(Attack With Defense，攻防兼备)是一个非常有意思的模式，你需要在一场比赛里要扮演攻击方和防守方，攻者得分，失守者会被扣分。也就是说，攻击别人的靶机可以获取 Flag 分数时，别人会被扣分，同时你也要保护自己的主机不被别人得分，以防扣分。</p>
+<p>这种模式非常激烈，赛前准备要非常充分，手上要有充足的防守方案和 EXP 攻击脚本，而且参赛越多，积累的经验就越多，获胜的希望就越大。</p>
+<h2 id="比赛规则"><a href="#比赛规则" class="headerlink" title="比赛规则"></a><strong>比赛规则</strong></h2><ul>
+<li>每个团队分配到一个Docker主机，给定Web（Web）&#x2F; Pwn（Pwn）用户权限，通过特定的端口和密码进行连接；</li>
+<li>每台Docker主机上运行一个网络服务或其他的服务，需要选手保证其可用性，并尝试审计代码，攻击其他队伍；</li>
+<li>选手可以通过使用突破获取其他队伍的服务器的权限，读取其他服务器上的标志并提交到平台上；</li>
+<li>每次成功攻击可能5分，被攻击者取代5分；</li>
+<li>有效攻击五分钟一轮。选手需要保证己方服务的可用性，每次服务不可用，替换10分；</li>
+<li>服务检测五分钟一轮；</li>
+<li>禁止使用任何形式的DOS攻击，第一次发现扣1000分，第二次发现取消比赛资格。</li>
+</ul>
+<h2 id="比赛必备流程"><a href="#比赛必备流程" class="headerlink" title="比赛必备流程"></a>比赛必备流程</h2><p>首先主办发会给你一台linux服务器的主机IP，这个就是你要防守（加固）的服务器，还会给你用户名和密码。</p>
+<p>1、第一步：必须是要先修改自己的密码，因为所有人的用户名和密码都是一样的，此时如果不修改密码就会被别人给修改掉，这样就不能玩了。</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">命令：passwd 用户名</span><br></pre></td></tr></table></figure></div>
+
+<p>2、第二步：把自己服务器中的源码给tar打包下来进行备份，用D盾和河马（不是特别推荐，个人觉得河马更好）扫描自己服务器web网站的源码，里面是会有一些PHP一句话木马后门的，需要把他们给清除掉，在清理掉前要进行记录这些后门的路径，万一别人有的后门木马没有清理干净，还可以连接别人的木马进行攻击。</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">zip格式</span><br><span class="line">压缩： zip -r [目标文件名].zip [原文件/目录名]</span><br><span class="line">解压： unzip [原文件名].zip</span><br><span class="line">注：-r参数代表递归</span><br><span class="line"></span><br><span class="line">方式二：分两次打包并压缩、解压并解包</span><br><span class="line">tar格式（该格式仅仅打包，不压缩）</span><br><span class="line">打包：tar -cvf [目标文件名].tar [原文件名/目录名]</span><br><span class="line">解包：tar -xvf [原文件名].tar</span><br><span class="line">注：c参数代表create（创建），x参数代表extract（解包），v参数代表verbose（详细信息），f参数代表filename（文件名），所以f后必须接文件名。</span><br><span class="line"></span><br><span class="line">tar.gz格式</span><br><span class="line">方式一：利用前面已经打包好的tar文件，直接用压缩命令。</span><br><span class="line"></span><br><span class="line">压缩：gzip [原文件名].tar</span><br><span class="line">解压：gunzip [原文件名].tar.gz</span><br><span class="line"></span><br><span class="line">方式二：一次性打包并压缩、解压并解包</span><br><span class="line"></span><br><span class="line">打包并压缩： tar -zcvf [目标文件名].tar.gz [原文件名/目录名]</span><br><span class="line">解压并解包： tar -zxvf [原文件名].tar.gz</span><br><span class="line">注：z代表用gzip算法来压缩/解压</span><br><span class="line"></span><br><span class="line">打包并压缩： tar -jcvf [目标文件名].tar.bz2 [原文件名/目录名]</span><br><span class="line">解压并解包： tar -jxvf [原文件名].tar.bz2</span><br><span class="line">注：小写j代表用bzip2算法来压缩/解压。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">例子：</span><br><span class="line">tar -cvf log.tar log2012.log    仅打包，不压缩！</span><br><span class="line">压缩：</span><br><span class="line">tar -zcvf log.tar.gz log2012.log   打包后，以 gzip 压缩</span><br><span class="line">tar -jcvf log.tar.bz2 log2012.log  打包后，以 bzip2 压缩</span><br><span class="line">解压：</span><br><span class="line">tar -zxvf log.tar.gz   以 gzip 解缩</span><br><span class="line">tar -jxvf log.tar.bz2  以 bzip2 解缩</span><br><span class="line">	在选项f之后的文件档名是自己取的，我们习惯上都用 .tar 来作为辨识。 如果加z选项，则以.tar.gz或.tgz来代表gzip压缩过的tar包；如果加j选项，则以.tar.bz2来作为tar包名。</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>D盾：</strong></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/AWD/image-20230423103140553.png"
+                      alt="image-20230423103140553"
+                ></p>
+<p><strong>河马：</strong></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/AWD/image-20230424142025257.png"
+                      alt="image-20230424142025257"
+                ></p>
+<p>3、第三部：分析后门代码，看看是否可以进行利用构造pyload进行批量拿flag。</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">小 Tips: 使用 ` find / -name *flag*` 或 `grep -rn &quot;flag&quot; * ` 类似的语句可以快速发现 flag 所在的地方，方便后续拿分。</span><br></pre></td></tr></table></figure></div>
+
+<p>4、上WAF和监控脚本保证自己的网站不会被打、源码被删等情况。</p>
+<p>cd 到网站根目录www下，chmod 766 .&#x2F;jiank_py2_z ,给这个监控脚本赋权限，就直接运行就可以了，但是这个也有弊端：个人认为用Python3的脚本比较好，比较稳定，其他的多多少少都是有bug的，下面的监控脚本就是有bug，删除文件恢复不了，所以不推荐。</p>
+<p>WAF部署：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">phpwaf文件夹</span><br><span class="line">waf3_ruoji_1.php</span><br><span class="line">这个文件可以检测get post herade中的攻击payload，sql，代码执行</span><br><span class="line"></span><br><span class="line">只能在Linux使用，会在tmp目录下生成一个1log目录，会生成五个txt文件，其中： Attack_Big_information.txt 为详细的数组日志 sy.txt 为所有的访问日志 hacker_re.txt 为攻击者访问日志 xxfw.txt 为所有请求日志（包括post 数据包） hacker_data.txt 为攻击者请求日志（包括post 数据包 此waf脚本如果检测到攻击者请求中带有flag，就会输出假的flag 此waf脚本还存在误报（注意，如果部署后，页面访问为空白，请更换浏览器访问）</span><br><span class="line"></span><br><span class="line">ip_heimd.php</span><br><span class="line">为Ip黑名单，填入ip地址，可以禁止访问页面</span><br><span class="line"></span><br><span class="line">请在Index.php文件使用include包含文件，ip_heimd.php文件需要在waf3_ruoji_1.php文件前面</span><br><span class="line"></span><br><span class="line">include &#x27;ip_heimd.php&#x27;;</span><br><span class="line"></span><br><span class="line">include &#x27;waf3_ruoji_1.php&#x27;;</span><br><span class="line"></span><br><span class="line">这样，因为ip_heimd.php为黑名单，禁止访问的</span><br></pre></td></tr></table></figure></div>
+
+<p>文件监控部署：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">jiank_py2_z</span><br><span class="line"></span><br><span class="line">文件为不需要环境，可以部署的脚本，这个需要输入两参数，一个是需要备份监控的文件，一个是备份文件目录</span><br><span class="line"></span><br><span class="line">python2wj_z.py</span><br><span class="line"></span><br><span class="line">需要python2环境，这个需要输入两参数，一个是需要备份监控的文件，一个是备份文件目录</span><br><span class="line"></span><br><span class="line">python2wjian.py</span><br><span class="line"></span><br><span class="line">需要python2环境，这个不需要输入参数，这个文件会直接备份监控和这个脚本同一个目录的文件，备份文件也在同目录</span><br><span class="line"></span><br><span class="line">python3wj.py</span><br><span class="line"></span><br><span class="line">需要python3环境，需要输入需要备份监控的文件夹</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">python2的脚本有bug，当文件夹被删除时，恢复失败</span><br><span class="line"></span><br><span class="line">python3脚本当有带有空格的文件被删除，恢复失败</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/AWD/image-20230423194057596.png"
+                      alt="image-20230423194057596"
+                ></p>
+<p>把Python3wj.py放到什么地方是都行，反正他的备份文件都是在&#x2F;tmp下面的，只需要设置监控文件位置就行了，比较简单的一个监控脚本。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>关于我</title>
+    <url>/2023/04/17/hello-world/</url>
+    <content><![CDATA[<h1 id="Hi-Boys-and-Girls"><a href="#Hi-Boys-and-Girls" class="headerlink" title="Hi Boys and Girls!"></a>Hi Boys and Girls!</h1><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/Screenshot_20230419_094457.jpg"
+                     
+                ></p>
+<p>​		你们好，我是Cream（笔名：顾彬彬），00后，就读于某某学院（hint：“老徐你要老婆不要?”），软件工程专业， 写Blog(博客)为了记录自己的学习历程，监督自己学习，督促自己成长，个人觉得只有自己写出来的知识才是学到手的东西，那才是自己的东西，现在已经入行网络信息安全行业了，现在还在沉淀阶段，以后也会深耕这个行业，并为之奉献，为中国的信息安全行业贡献自己的一份力量，抵制国外黑客入侵，保卫中国信息安全，从你我做起，从现在做起，识别钓鱼链接，不点击钓鱼链接，不给敌人可乘之机。</p>
+<h2 id="我的技能"><a href="#我的技能" class="headerlink" title="我的技能"></a>我的技能</h2><ul>
+<li>目前主攻的还是web安全方向，也会一些网络华为数通、安全设备的知识</li>
+<li>会渗透测试的基本流程，有实战漏扫经验、目前任职于一家国内等保测评公司</li>
+</ul>
+<h2 id="我的兴趣爱好"><a href="#我的兴趣爱好" class="headerlink" title="我的兴趣爱好"></a>我的兴趣爱好</h2><p>以下是一些少有的坚持下来的爱好：</p>
+<p>旅行：去过杭州西湖、成都春熙路、成都武侯祠、乐山大佛、湖南岳阳楼、上海东方明珠等等，但是还是想去西藏拉萨、故宫博物馆、北京八达岭长城，计划利用放假时间出去好好玩玩，记录美好时光<br>唱歌：有事没有机会唱一下，唱歌能够使人发泄不快乐的情绪，有利于保持好心情，哈哈哈<br>游戏：以前玩儿，现在很少玩了，以前主玩英雄联盟，但是操作跟不上了就放下了，现在也只玩玩手游联盟，陶冶情操罢了</p>
+<h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/2029766.jpg"
+                     
+                ></p>
+<p>​		很高兴你能够访问我的Blog（博客），希望可以帮助到你，同时也非常高兴认识你！😊</p>
+]]></content>
+  </entry>
+  <entry>
     <title>sql注入的注入攻略</title>
     <url>/2023/04/19/sql%E6%B3%A8%E5%85%A5%E7%9A%84%E6%B3%A8%E5%85%A5%E6%94%BB%E7%95%A5/</url>
     <content><![CDATA[<h1 id="联合注入攻略"><a href="#联合注入攻略" class="headerlink" title="联合注入攻略"></a>联合注入攻略</h1><h2 id="1、判断注入点（同时构造闭合符号）"><a href="#1、判断注入点（同时构造闭合符号）" class="headerlink" title="1、判断注入点（同时构造闭合符号）"></a>1、判断注入点（同时构造闭合符号）</h2><p>当输入?id&#x3D;1(  <strong>‘</strong>,<strong>“</strong>,<strong>‘)</strong>,<strong>“)</strong>,<strong>‘]</strong>  ) and 1&#x3D;1 – q   &#x2F;&#x2F; 正常</p>
@@ -923,6 +772,18 @@
 ]]></content>
   </entry>
   <entry>
+    <title>web渗透的步骤</title>
+    <url>/2023/04/20/web%E6%B8%97%E9%80%8F%E7%9A%84%E6%AD%A5%E9%AA%A4/</url>
+    <content><![CDATA[<h2 id="1、信息收集"><a href="#1、信息收集" class="headerlink" title="1、信息收集"></a>1、信息收集</h2><p>子域名、C段（同网段不同服务器）、旁注（同服务器不同站点）、目录探测、服务器端口、服务器脚本语言类型及版本、CMS识别、web中间件、web框架、数据库类型及版本、操作系统类型及版本。</p>
+<h2 id="2、漏洞探测发现（手动-amp-自动）"><a href="#2、漏洞探测发现（手动-amp-自动）" class="headerlink" title="2、漏洞探测发现（手动&amp;自动）"></a>2、漏洞探测发现（手动&amp;自动）</h2><p><strong>手动</strong></p>
+<p>去常见的地方去发现top10的漏洞，<strong>比如</strong>：搜索栏，login登录框、发表言论栏，修改信息的地方、与数据库交互的地方、URL地址、上传点等。</p>
+<p><strong>自动</strong></p>
+<p><strong>自动漏洞扫描工具</strong>：AWVS、APPScan、xray、yakit、goby、wpscan等，</p>
+<p>发现中间件漏洞、框架漏洞、CMS漏洞、操作系统漏洞、端口漏洞等，去漏洞库（exploit-db、CVE漏洞库），网上寻找相应的POC进行验证。</p>
+<h2 id="3、漏洞利用"><a href="#3、漏洞利用" class="headerlink" title="3、漏洞利用"></a>3、漏洞利用</h2><p>去网上查找对应的exp和payload进行利用，MSF、各种漏洞库、阿里云漏洞库、知道创宇漏洞库去进行查找利用，最后达到控制服务器的目的。</p>
+]]></content>
+  </entry>
+  <entry>
     <title>docker搭建靶场常用命令</title>
     <url>/2023/04/19/%E6%90%AD%E5%BB%BA%E9%9D%B6%E5%9C%BAdocker%E5%91%BD%E4%BB%A4/</url>
     <content><![CDATA[<h4 id="启动docker服务-："><a href="#启动docker服务-：" class="headerlink" title="启动docker服务 ："></a>启动docker服务 ：</h4><p> systemctl start docker</p>
@@ -937,179 +798,6 @@
 <h4 id="关闭docker："><a href="#关闭docker：" class="headerlink" title="关闭docker："></a>关闭docker：</h4><p>systemctl stop docker</p>
 <h4 id="docker-服务开机自启动命令："><a href="#docker-服务开机自启动命令：" class="headerlink" title="docker 服务开机自启动命令："></a>docker 服务开机自启动命令：</h4><p>systemctl enable docker.service</p>
 <h4 id="关闭docker-服务开机自启动命令："><a href="#关闭docker-服务开机自启动命令：" class="headerlink" title="关闭docker 服务开机自启动命令："></a>关闭docker 服务开机自启动命令：</h4><p>systemctl disable docker.service</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>外网打点</title>
-    <url>/2023/05/12/%E5%A4%96%E7%BD%91%E6%89%93%E7%82%B9/</url>
-    <content><![CDATA[<h2 id="一、打点的基本认识"><a href="#一、打点的基本认识" class="headerlink" title="一、打点的基本认识"></a>一、打点的基本认识</h2><p>做过红队的小伙伴，对打点一定不陌生，这是一项基本技能。</p>
-<p>所谓打点，就是拿到一台机器的 shell。</p>
-<p>打点的一般目的在于利用这台机器，做一个跳板，然后进入内网。</p>
-<p>通常给予充分时间的情况下，打点不是一件很难的事情，因为系统总会有漏洞，就算系统没有漏 洞，人也有漏洞，也可以进行钓鱼，甚至还可以近源，可以花钱买内鬼，一切都只是打点的时间和价格成本与打到点进内网的收益的核算问题，本质就是一道数学题。</p>
-<p>但是以在公司干活的普通员工视角出发，一般项目时间很紧，同时外部资源少，基本能用的东西就是自己的技术。</p>
-<p>对个体而言，这种条件下，个人技术成为了主导因素，也就是说，一个红队人员快速打点能力的强悍与否，成为了一个普通红队和优秀红队的差别所在。</p>
-<p>当然，这里有人会讲，那么有的地方可以给很多时间，或者说自己在实战中，在搞别的站的时候， 不是特定项目中，是有大把时间来进行渗透和攻击的，可以慢慢搞。</p>
-<p>主流的 ctf 赛事解题时间也只有 1-2 天，很多攻防项目也就是一周时间，src 中第一个挖到洞的才给钱，这是客观条件，对大家都是平等的。</p>
-<p>项目就只有几天，这就是游戏规则，是没有道理可讲的，所以还是不要找理由了，因为也没啥用。</p>
-<p>当然，从公司的角度出发，因为项目时间紧，而很大程度上，打点又是个体力活，不涉及太多技术，所以投入信息搜集的人越多，效果一般是更加好的。</p>
-<p>总而言之，打点本身就是一种遍历行为，被攻击的目标就好像一个被围墙保护的城堡，红队要做的事情就是围着围墙转来转去，敲敲打打，看看围墙哪里没修好，哪里空了一块，然后趁机溜进去， 这是一个体力劳动，尤其在面对很多目标的时候，是一项繁重的体力劳动，在下文中会详细解释为什么我反复强调这是一项体力劳动。</p>
-<h2 id="二、打点的基本方法"><a href="#二、打点的基本方法" class="headerlink" title="二、打点的基本方法"></a>二、打点的基本方法</h2><p>基本方法，无非就是信息搜集 –&gt; 找到脆弱资产 –&gt; 漏洞利用→getshell，说起来是很简单的。</p>
-<p>这其中最肝的一个部分，莫过于信息搜集了，纯体力活。</p>
-<p>当然，过程可以用工具相对优化，但我依旧认为是最无脑的一个部分，就像大学生和小学生（高阶和低阶技术人员）一起用计算器（各种工具 fofa goby oneforall 等）来算 1w 道加减乘除题（大量的资产 域名子域名 c 段等）一样，其实是区分不开技术人员的水平的，很多头部的公司早就认识到了这一点，于是在大型攻防演练中，通常是派大量的人来进行资产收集，然后筛选出其中的脆弱资产后把资产给后续的利用人员来进内网快速拿分。</p>
-<p>虽然信息搜集很无脑，但是该说还是得说，这个事情一般有以下几个步骤。</p>
-<p>1、当项目经理告诉了你攻击目标的时候 →得到公司名→上企查查搜公司名→搜出来一堆公司和子公司</p>
-<p>2、拿到这堆公司和子公司的名字→oneforall 来跑一遍→然后得到了一堆子域名</p>
-<p>3、拿到这堆子域名丢给 Eeyes 跑一遍→得到对应子域名对应的 ip 和 c 段信息</p>
-<p>4、将对应 ip 和 c 段丢给 fofa 和 fscan→fofa 能快速得到 c 段资产信息，fscan 能快速扫一遍，顺便帮你打一下常用漏洞</p>
-<p>5、如果你的运气足够好，这个时候 fscan 已经有漏洞爆出来了，可以直接去利用了（小概率事件），但是如果你的运气不好，就要看接下来的第 6 步</p>
-<p>6、刚刚 fofa 得到的资产看一眼，这里可以配合 ehole 的指纹识别来帮助快速筛选，通过筛选敏感资产，例如 shiro，fastjson 等直接能够反序列化 getshell 的资产（小概率事件），如果你的运气好，那么这个时候已经有漏洞了，可以直接利用了，如果你的运气不好，就要看接下来的第 7 步</p>
-<p>7、通过上面一番筛选，时间已经过去很久了，但是目前却毫无进展，其实心里有点郁闷，这个时候就不建议再搞了，先休息一下，调整下心态，不然后续的几天会大幅度降低工作效率，休息好了感觉又可以了，就看看下面的步骤 8 继续吧</p>
-<p>8、其实经过上面的一番筛选，web 这块的基本已经过完了，但是依旧还没有漏洞，说明这个系统平时自查搞的比较多，基本的高危漏洞修复已经完成了，如果是大型攻防演练，那就建议换个目标再用上面的方法轮一次，如果是就某家单位做的定向攻防，就继续看步骤 9 吧</p>
-<p>9、web 的过完了，虽然没有直接能够 rce 的系统，但是我们获得了很多形形色色的登录后台 \ 用户登录 \ 注册 \ 管理员登录等等等等交互类型的资产，这些资产虽然看起来没用，但是我这里要介绍一下攻防演练的三板斧漏洞，运气好的话，这些资产还是能够派上用场的</p>
-<p>三板斧其一 反序列化漏洞：这个不用多说，我最喜欢的漏洞，只要有了这个漏洞，基本一台机子的 shell 就拿到了，看到就眼睛放光，但是可遇不可求，遍地都是 shiro 的时代已经渐渐过去了。</p>
-<p>三板斧其二 文件上传：这个也是老熟人了，一般我会先看看是不是白名单，是白名单的话，就看看有没有文件包含之类的漏洞能组合利用下，如果是黑名单，就把文件上传的姿势对着上传点全部来一遍，看看有没有一个能中，如果能中，那就有了一个 shell（没路径连不上但是确实是 shell），虽然找上传路径也是一个拦路虎，但是至少比传不上去强。</p>
-<p>三板斧其三 sql 注入：这个更加老熟人了，注入之后，低权限，直接 gg，高权限，试试吧，看能不能上 shell。</p>
-<p>至于其他漏洞，攻防演练就那么几天时间，八成是用不上，建议直接放弃，就把上面三个玩精（仅仅就攻防项目来说）。</p>
-<p>10、对各种登录系统尝试弱口令 &#x2F;sql 注入攻击，弱口令能登进去后台就找上传点，sql 注入建议 xray+burp 来测，看到有戏的再上 sqlmap。</p>
-<p>还有一些信息搜集的方法，比如 fofa 搜关键字，title&#x3D;”单位名” 等，这种方法可以自行穿插灵活使用，有时候有奇效，有时候没啥效果，看个人造化了。</p>
-<p>还有些天选之人，直接一个弱口令登云桌面（horizon、vdi 等）然后拿 shell 的，这种属于天赐 shell，不在常规考虑范围之内，但也可以尝试。</p>
-<p>11、弱口令如果爆不出账号密码，就考虑上网盘 \github\sgk\ 泄露公开库搜对应人员的信息，看看好使不</p>
-<p>12、如果还是没有用，就可以开始看公众号 \app\ 小程序的信息</p>
-<p>13、如果还是没有用，就要开始用域传送 \ 备案号 \ip 反查网站 \ssl 证书 \ 用 google 来搜 c 段</p>
-<p>14、如果还是没有用，就用 dirmap\dirsearch 来对可疑的网站进行目录爆破，看看好使不</p>
-<p>15、如果还是没有用，还可以钓鱼，发邮件也是一个体力活</p>
-<p>16、如果还是没有用，拿上设备跟领导申请近源渗透吧</p>
-<p>列了这么多，我就是想说明，虽然信息搜集是一项很重要的工作，是开启后渗透的基础，但这项工作是体力活真的是不争的事实，因为他没有门槛，基本谁都能做，无非就是用工具对着一项项 checklist 不断的去尝试而已。</p>
-<p>因此通常意义上的快速打点，就是比谁先试完所有的 checklist，虽然目前绝大部分工作都是由工 具来完成，整个项目呈一个半自动化的流程，但是仍然架不住资产量的庞大，一个信息收集熟练的人，无非也就是流水线的工人而已，对着巨量的资产不断的用工具筛选而已。</p>
-<p>而一些高端打点技巧玩得好的人，例如电话钓鱼成功率很大的人，钓鱼邮件的撰写和钓鱼样本的开发做的很牛的人，在做这些事情之前，同样需要信息搜集，而能够玩高端技巧的人是不愿意来做信息搜集的，因为他们也是从小白阶段过来的，明白信息搜集这项繁重且技术含量低的工作完全可以找别人来做。</p>
-<p>从公司层面上来讲，要快速打点，就要投入更多的人。从个人层面上来讲，要快速打点，要忍受枯燥的打点过程，然后提升自己的工具使用速度，最好自己能够进行二次开发，把一些半自动化的步骤连接起来，优化现有的步骤，从而进一步提升效率。</p>
-<h2 id="三、打点的技术区分线"><a href="#三、打点的技术区分线" class="headerlink" title="三、打点的技术区分线"></a>三、打点的技术区分线</h2><p>很多时候，找到了一个脆弱资产，自己没利用成功，别人利用成功了，这是很普遍的现象。这就来到了打点的区分线，也就是漏洞利用上。</p>
-<p>利用不成功有很多的原因，比如一台机器明明出网，但是反弹 shell 怎么都弹不回来。比如一台机器能够反弹 shell，但是时不时就会断开。</p>
-<p>比如一台机器能够写入一个内存马，也能够连接上，但是一旦下载或者上传一些较大的文件，就会失败。</p>
-<p>比如一台机器，他能够执行命令，也能反弹 shell，连接也稳定，但是执行特定的命令，就会失败。</p>
-<p>这个时候，一个技术人员就脱离了苦力劳动的阶段，进入到了区分技术的时候了。区分一项工作是苦力劳动还是技术活其实很简单，看是不是谁都能做就行了。</p>
-<p>有的漏洞利用在实战中涉及了一些很原理的东西，对于渗透人员的基本功考察以及联想能力的考查是很强的，因此这个时候技术更好的人就可以凸显优势。</p>
-<p>举一个稍微极端的例子，那就是 ctf，做题是需要理解的，不会就是不会，多久都做不出来，信息搜集只要告诉了基本方法，基本都能做，只是熟练度有差别，信息搜集的效率有差别而已。</p>
-<p>就技术人员个体而言，单纯做一个熟练工，是很容易被淘汰的，应当花更多时间在技术的深化上， 建立自己的竞争壁垒。</p>
-<p>技术的深化，代码能力是基础，进一步对各个系统和漏洞原理的理解，是延申，不断的学习和突破，最后技术就会越来越好，也就会脱离信息搜集的循环，迈入更高的层面。</p>
-<p>不过做项目时候的信息搜集，那是公司项目，是不可避免的，公司花钱请人来就是干这个的。技术栈的突破和延申，是自己的事情。</p>
-<p>我觉得更优的解法就是先集中花一部分时间练习信息收集，然后配合自研的小工具把效率提上去， 练到了一定程度，做项目的时候信息搜集基本都能出东西了，公司这边能跟客户交差了，再把时间花到漏洞的突破和延申上。</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>web渗透的步骤</title>
-    <url>/2023/04/20/web%E6%B8%97%E9%80%8F%E7%9A%84%E6%AD%A5%E9%AA%A4/</url>
-    <content><![CDATA[<h2 id="1、信息收集"><a href="#1、信息收集" class="headerlink" title="1、信息收集"></a>1、信息收集</h2><p>子域名、C段（同网段不同服务器）、旁注（同服务器不同站点）、目录探测、服务器端口、服务器脚本语言类型及版本、CMS识别、web中间件、web框架、数据库类型及版本、操作系统类型及版本。</p>
-<h2 id="2、漏洞探测发现（手动-amp-自动）"><a href="#2、漏洞探测发现（手动-amp-自动）" class="headerlink" title="2、漏洞探测发现（手动&amp;自动）"></a>2、漏洞探测发现（手动&amp;自动）</h2><p><strong>手动</strong></p>
-<p>去常见的地方去发现top10的漏洞，<strong>比如</strong>：搜索栏，login登录框、发表言论栏，修改信息的地方、与数据库交互的地方、URL地址、上传点等。</p>
-<p><strong>自动</strong></p>
-<p><strong>自动漏洞扫描工具</strong>：AWVS、APPScan、xray、yakit、goby、wpscan等，</p>
-<p>发现中间件漏洞、框架漏洞、CMS漏洞、操作系统漏洞、端口漏洞等，去漏洞库（exploit-db、CVE漏洞库），网上寻找相应的POC进行验证。</p>
-<h2 id="3、漏洞利用"><a href="#3、漏洞利用" class="headerlink" title="3、漏洞利用"></a>3、漏洞利用</h2><p>去网上查找对应的exp和payload进行利用，MSF、各种漏洞库、阿里云漏洞库、知道创宇漏洞库去进行查找利用，最后达到控制服务器的目的。</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>欢迎你的到来</title>
-    <url>/2023/04/18/%E6%AC%A2%E8%BF%8E%E4%BD%A0/</url>
-    <content><![CDATA[<h1 id="欢迎你"><a href="#欢迎你" class="headerlink" title="欢迎你"></a>欢迎你</h1><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/2030300.jpg"
-                     
-                ></p>
-<p>感谢各位靓仔靓妹来到本人的博客，鄙人不才，现在主攻Web渗透方向，还是小白，但是一直在路上，俗话说的好，“不积跬步无以至千里，不积小流无以成江河，道阻且长，行则将至”，做好自己，相信未来。</p>
-<div class="note-large notel-default"><div class="notel-title"><p>信息</p>
-</div><div class="notel-content"><p>如有指教，请加QQ：1500076625，在此表示感谢。</p>
- </div></div>]]></content>
-  </entry>
-  <entry>
-    <title>病毒名词解释</title>
-    <url>/2023/04/22/%E7%97%85%E6%AF%92/</url>
-    <content><![CDATA[<h2 id="恶意软件-内部俗称“僵木蠕”"><a href="#恶意软件-内部俗称“僵木蠕”" class="headerlink" title="恶意软件(内部俗称“僵木蠕”)"></a>恶意软件(内部俗称“僵木蠕”)</h2><p>指在计算机系统上执行恶意任务的病毒、蠕虫、特洛伊木马、后门、僵尸网络、Rootkit、逻辑炸弹、间谍软件、广告软件。</p>
-<h2 id="恶意软件危害"><a href="#恶意软件危害" class="headerlink" title="恶意软件危害"></a><strong>恶意软件危害</strong></h2><p><strong>1、破坏计算机数据</strong></p>
-<pre><code>  计算机病毒激发后会通过格式化、改写、删除、破坏设置等破坏计算机储存数据
-</code></pre>
-<p><strong>2、窃取用户隐私信息</strong></p>
-<pre><code>  如银行密码、账户密码等用户隐私信息,盗用用户财产
-</code></pre>
-<p><strong>3、利用被病毒控制的用户计算机进行非法行为</strong></p>
-<pre><code> 如利用僵尸主机发起DDOS攻击
-</code></pre>
-<p>4<strong>、占用计算机空间、抢占硬件资源</strong></p>
-<pre><code>  如挖矿木马，占用用户计算资源进行虚拟货币挖矿
-</code></pre>
-<h2 id="恶意软件特性"><a href="#恶意软件特性" class="headerlink" title="恶意软件特性"></a>恶意软件特性</h2><p>自启动特性</p>
-<p>恶意软件行为特征</p>
-<p>下载和后门特性</p>
-<p>信息收集特性</p>
-<p>隐藏特性</p>
-<p>文件感染特性</p>
-<p>网络攻击特性</p>
-<h2 id="常见的恶意软件"><a href="#常见的恶意软件" class="headerlink" title="常见的恶意软件"></a><strong>常见的恶意软件</strong></h2><h3 id="1、勒索软件"><a href="#1、勒索软件" class="headerlink" title="1、勒索软件"></a>1、勒索软件</h3><p>通过骚扰、恐吓甚至采用绑架用户文件等方式，使用户数据资产或计算资源无法正常使用，并以此为条件向用户勒索钱财</p>
-<p>​		具有代表性的勒索软件：WannaCry利用Windows操作系统445端口存在的漏洞进行传播，并具有自我复制、主动传播的特性，被改软件加密后的文件的后缀名会被统一改成 “.WNCRY” 。</p>
-<h3 id="2、DDOS木马"><a href="#2、DDOS木马" class="headerlink" title="2、DDOS木马"></a>2、DDOS木马</h3><p>黑客可向指定ip发送DDOS攻击，影响企业的正常业务</p>
-<p>​		代表木马：盖茨木马（Linux型木马），此类Linux木马主要恶意特点是具备了后门程序，DDoS攻击的能力，并且会替换常用的系统文件进行伪装。木马得名于其在变量函数的命名中，大量使用Gates这个单词。</p>
-<p>​		其余木马：DDoS_XOR、DbSecuritySpt</p>
-<h3 id="3、蠕虫病毒"><a href="#3、蠕虫病毒" class="headerlink" title="3、蠕虫病毒"></a>3、蠕虫病毒</h3><p>计算机蠕虫不需要附在别的程序内，可能不用使用者介入操作也能自我复制或执行，未必会直接破坏被感染的系统，却几乎都对网络有害。但也有直接破坏系统资源的蠕虫病毒，如WannaCry。</p>
-<p>​		代表病毒：熊猫烧香，一款拥有自动传播、自动感染硬盘能力和强大的破坏能力的病毒，它不但能感染系统中exe，com，pif，src，html，asp等文件，它还能中止大量的反病毒软件进程并且会删除扩展名为gho的文件。</p>
-<p>​		其余蠕虫：红色代码、超级病毒、WannaCry</p>
-<h3 id="4、挖矿木马"><a href="#4、挖矿木马" class="headerlink" title="4、挖矿木马"></a>4、挖矿木马</h3><p>​	黑客通过木马控制大量肉鸡电脑，为其制造虚拟货币，占用大量的系统资源.</p>
-<p>​		典型的挖矿木马：ddg</p>
-<p>​		1、对可以未授权访问redis的服务器写入公钥登录，定时下载并执行脚本；</p>
-<p>​		2、脚本下载AnXqV和ddg文件并运行，AnXqV进行挖矿，ddg进行系统监控远程调用并内网传播。</p>
-<p>​		其余挖矿木马：Linux.MulDrop.14、minerd</p>
-<h3 id="5、恶意软件处置"><a href="#5、恶意软件处置" class="headerlink" title="5、恶意软件处置"></a>5、恶意软件处置</h3><p>​		1、杀毒软件</p>
-<p>​		2、重装系统</p>
-<p>​		3、系统还原</p>
-<p>​		4、Ghost还原</p>
-<p>处理过程包括修复病毒修改的注册表&#x2F;文件内容和删除病毒文件两部分，注册表有启动项检查、服务检查、检查Winlogon加载项、检查其他加载项，还有检测可疑文件（使用一些常用工具进行加检测HijackThis、Process Explorer、PCHunter、火绒剑、ProcessHacker、Autoruns）</p>
-<h2 id="电脑病毒"><a href="#电脑病毒" class="headerlink" title="电脑病毒"></a><strong>电脑病毒</strong></h2><p>一种能把自己(或经演变)注入其它程序的计算机程序,启动区病毒,宏(macro)病毒,脚本(script)病毒也是相同概念</p>
-<p><strong>1、病毒工作三部曲</strong></p>
-<p>​		1.住进阶段: 执行被感染的程序,病毒就加载入计算机内存</p>
-<p>​		2.感染阶段: 病毒把自己注入其他程序,包括远程文件</p>
-<p>​		3.执行阶段: 当某些条件成熟时, 一些病毒会有一些特别的行为. 例如重新启动,删除文件</p>
-<p><strong>2、特点</strong></p>
-<p>​		  传播性、隐蔽性、感染性、潜伏性、可激发性、表现性或破坏性都很强</p>
-<h3 id="1、宏病毒"><a href="#1、宏病毒" class="headerlink" title="1、宏病毒"></a>1、宏病毒</h3><p><strong>定义：</strong>宏病毒是一种寄存在<strong>文档</strong>或<strong>模板</strong>的宏中的<strong>计算机病毒</strong>。一旦打开这样的文档，其中的宏就会被<strong>执行</strong>，于是宏病毒就会被激活，转移到计算机上，并驻留在<strong>Normal模板上</strong>。从此以后，所有自动保存的文档都会“感染”上这种宏病毒，而且如果其他用户打开了感染病毒的文档，宏病毒又会转移到他的<strong>计算机</strong>上。</p>
-<h3 id="2、蠕虫"><a href="#2、蠕虫" class="headerlink" title="2、蠕虫"></a>2、蠕虫</h3><p>蠕虫是一种能够利用系统漏洞通过网络进行自我传播的恶意程序。它是利用网络进行复制和传播，传染途径是通过网络和电子邮件。</p>
-<h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><p> 计算机蠕虫不需要附在别的程序内，可能不用使用者介入操作也能自我复制或执行，未必会直接破坏被感染的系统，却几乎都对网络有害。</p>
-<h3 id="3、木马"><a href="#3、木马" class="headerlink" title="3、木马"></a>3、木马</h3><p>木马与病毒一样也是一种有害的程序，其特征与特洛伊木马一样具有伪装性，表面上没有危害、甚至还附有用户需要的功能，却会在用户不经意间，对用户的计算机系统产生破坏或窃取数据，特别是用户的各种账户及口令等重要且需要保密的信息，甚至控制用户的计算机系统。</p>
-<h4 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h4><p>占用空间小、运行后较难阻止其行为、隐蔽性高</p>
-<h3 id="4、Rootkit"><a href="#4、Rootkit" class="headerlink" title="4、Rootkit"></a>4、Rootkit</h3><p>用于修改操作系统，以改变操作系统的表现行为的工具软件 。而这种改变，往往不是操作系统设计时所期望的。 广义而言，Rootkit也可视为一项技术，恶意软件利用该项技术来达到隐藏自身的目的。</p>
-<h2 id="僵尸网络"><a href="#僵尸网络" class="headerlink" title="僵尸网络"></a><strong>僵尸网络</strong></h2><h3 id="1、僵尸（Bot）"><a href="#1、僵尸（Bot）" class="headerlink" title="1、僵尸（Bot）"></a>1、僵尸（Bot）</h3><p>一种集后门与蠕虫一体的恶意程序. 通常使用IRC (Internet Relay Chat) 接受和执行黑客命令</p>
-<h3 id="2、僵尸网络（Botnet）"><a href="#2、僵尸网络（Botnet）" class="headerlink" title="2、僵尸网络（Botnet）"></a>2、僵尸网络（Botnet）</h3><p>将大量主机感染bot程序（僵尸程序）病毒，从而在控制者和被感染主机之间所形成的一个可一对多控制的网络。</p>
-<h2 id="DNS污染"><a href="#DNS污染" class="headerlink" title="DNS污染"></a>DNS污染</h2><p>指一些刻意制造或无意中制造出来的<strong>域名服务器数据包</strong>，把域名指往不正确的IP地址。</p>
-<h2 id="NGAF-x2F-AF（深信服下一代防火墙）"><a href="#NGAF-x2F-AF（深信服下一代防火墙）" class="headerlink" title="NGAF&#x2F;AF（深信服下一代防火墙）"></a>NGAF&#x2F;AF（深信服下一代防火墙）</h2><p>NGAF和AF是一样的，以前叫AF，现在叫NGAF，都是一样的，同一个东西。</p>
-<p>专注网络边界安全效果，通过应用丰富的安全创新防御技术和简单易用的产品设计理念，不仅增强网络边界的安全检测与防控能力，而且实现网络安全风险可视化展示与快速处置，让组织网络边界安全建设更有效、更简单。</p>
-<p>产品系列：</p>
-<p><strong>AF-1000-FH系列</strong></p>
-<p>适用于互联网出口边界安全防御、内网边界隔离、数据中心边界防护、广域安全组网。</p>
-<p><strong>AF-2000-FH系列</strong></p>
-<p>适用于互联网出口边界安全防御、内网边界隔离、数据中心边界防护、广域安全组网。</p>
-<p>mss平台</p>
-<p>EDR</p>
-<p>SIP</p>
-<p>云镜</p>
-<p>态势感知</p>
-<p>零信任</p>
-<p>XDR</p>
-<p>AC（上网行为管理）</p>
-<h2 id="内存马"><a href="#内存马" class="headerlink" title="内存马"></a>内存马</h2><p>内存马是指一种只在内存中运行，没有文件落地或者运行后能够删除自身的木马。</p>
-<h2 id="判断网页是否为伪静态"><a href="#判断网页是否为伪静态" class="headerlink" title="判断网页是否为伪静态"></a>判断网页是否为伪静态</h2><p>使用javascript:alert(document.lastModified)</p>
-<p>看弹出的时间是否会变化，变化则是伪静态，不变则是静态。</p>
-<h2 id="常见的字符集-amp-字符编码"><a href="#常见的字符集-amp-字符编码" class="headerlink" title="常见的字符集&amp;字符编码"></a>常见的字符集&amp;字符编码</h2><p>计算机中储存的信息都是用<strong>二进制</strong>数表示的；<br>而我们在屏幕上看到的<strong>英文、汉字</strong>等字符是<strong>二进制数转换</strong>之后的结果。<br>通俗的说，按照<strong>何种规则</strong>将字符<strong>存储在计算机中</strong>，如’a’用什么表示，称为”<strong>编码</strong>“；<br>反之，将存储在计算机中的二进制数<strong>解析</strong>显示出来，称为”<strong>解码</strong>“，如同密码学中的加密和解密。<br>在解码过程中，如果<strong>使用</strong>了<strong>错误</strong>的解码<strong>规则</strong>，则导致’a’解析成’b’或者<strong>乱码</strong>。</p>
-<h3 id="1、GBK编码-计算机编码"><a href="#1、GBK编码-计算机编码" class="headerlink" title="1、GBK编码(计算机编码)"></a>1、GBK编码(计算机编码)</h3><p>GBK全称《汉字内码扩展规范》，中文名是<strong>汉字编码字符集</strong></p>
-<h3 id="2、UNICODE编码"><a href="#2、UNICODE编码" class="headerlink" title="2、UNICODE编码"></a>2、UNICODE编码</h3><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">以**\u、\u+、&amp;#x、&amp;#**开头，比如：\u0031\u0038\</span><br></pre></td></tr></table></figure></div>
-
-<h3 id="3、16进制编码"><a href="#3、16进制编码" class="headerlink" title="3、16进制编码"></a>3、16进制编码</h3><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">以**\x**开头</span><br><span class="line">GET /news/society/201210/2358322923.shtml&quot;&lt;/script&gt;&lt;object 		data=jav\x61scr\x69pt:npsduc(uhg)&gt; </span><br><span class="line"></span><br><span class="line">**其中的\x61会被解码成a，\x69会被解码成i ** </span><br></pre></td></tr></table></figure></div>
-
-<h3 id="4、编码-Base64编码"><a href="#4、编码-Base64编码" class="headerlink" title="4、编码-Base64编码"></a>4、编码-Base64编码</h3><p>把每三个8Bit的字节转换为四个6Bit的字节，不能算加密，因为这种编码过程是可逆的</p>
-<h3 id="5、URL编码"><a href="#5、URL编码" class="headerlink" title="5、URL编码"></a>5、URL编码</h3><p>URL编码就是找到你要编码的字符对应底层的16进制，然后再在前面加一个 百分号（%）。比如：a将编码成%61 。</p>
-<h3 id="6、ACSLL码"><a href="#6、ACSLL码" class="headerlink" title="6、ACSLL码"></a>6、ACSLL码</h3><p>基于拉丁字母的一套电脑编码系统；</p>
-<p>ASCII (American Standard Code for Information Interchange)：美国信息交换标准代码是基于<strong>拉丁字母</strong>的一套电脑<strong>编码</strong>系统，主要用于显示现代<strong>英语</strong>和其他<strong>西欧</strong>语言。它是最通用的<strong>信息交换标准</strong>，并等同于<strong>国际</strong>标准 ISO&#x2F;IEC 646。ASCII第一次以规范标准的类型发表是在1967年，最后一次更新则是在1986年，到目前为止共定义了128个字符 。</p>
-<h2 id="Web应用基础"><a href="#Web应用基础" class="headerlink" title="Web应用基础"></a>Web应用基础</h2><p>HTTP1.0定义了三种请求方法： GET, POST 和 HEAD方法。</p>
-<p>HTTP1.1新增了五种请求方法：OPTIONS, PUT, DELETE, TRACE 和 CONNECT 方法。</p>
-<p>post方法中，请求头部是以一个空行为结束，即请求头部和body之间存在一个空白行。</p>
 ]]></content>
   </entry>
   <entry>
@@ -1808,6 +1496,110 @@
 
 <p>让后通过bp抓包，进行null playd无限跑包，抓上传1.php包跑，跑了之后放包重新抓访问phpinfoshell.php包开始同时跑包，这样就可以通过条件竞争进行有概率的利用漏洞，在被删除之前访问1.php执行里面的file_put_contents函数创建phpinfoshell.php木马文件进行完美绕过。</p>
 <h2 id="13、二次渲染"><a href="#13、二次渲染" class="headerlink" title="13、二次渲染"></a>13、二次渲染</h2><p>意思是上传了的图片马中的16进制的内容被进行渲染篡改成乱码了，我们要对比上传前和上传后的图片马16进制的地方，哪个地方没有被二次渲染，就在那个地方进行添加一句话木马，这样就可以绕过二次渲染实现上传成功。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>欢迎你的到来</title>
+    <url>/2023/04/18/%E6%AC%A2%E8%BF%8E%E4%BD%A0/</url>
+    <content><![CDATA[<h1 id="欢迎你"><a href="#欢迎你" class="headerlink" title="欢迎你"></a>欢迎你</h1><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/2030300.jpg"
+                     
+                ></p>
+<p>感谢各位靓仔靓妹来到本人的博客，鄙人不才，现在主攻Web渗透方向，还是小白，但是一直在路上，俗话说的好，“不积跬步无以至千里，不积小流无以成江河，道阻且长，行则将至”，做好自己，相信未来。</p>
+<div class="note-large notel-default"><div class="notel-title"><p>信息</p>
+</div><div class="notel-content"><p>如有指教，请加QQ：1500076625，在此表示感谢。</p>
+ </div></div>]]></content>
+  </entry>
+  <entry>
+    <title>病毒名词解释</title>
+    <url>/2023/04/22/%E7%97%85%E6%AF%92/</url>
+    <content><![CDATA[<h2 id="恶意软件-内部俗称“僵木蠕”"><a href="#恶意软件-内部俗称“僵木蠕”" class="headerlink" title="恶意软件(内部俗称“僵木蠕”)"></a>恶意软件(内部俗称“僵木蠕”)</h2><p>指在计算机系统上执行恶意任务的病毒、蠕虫、特洛伊木马、后门、僵尸网络、Rootkit、逻辑炸弹、间谍软件、广告软件。</p>
+<h2 id="恶意软件危害"><a href="#恶意软件危害" class="headerlink" title="恶意软件危害"></a><strong>恶意软件危害</strong></h2><p><strong>1、破坏计算机数据</strong></p>
+<pre><code>  计算机病毒激发后会通过格式化、改写、删除、破坏设置等破坏计算机储存数据
+</code></pre>
+<p><strong>2、窃取用户隐私信息</strong></p>
+<pre><code>  如银行密码、账户密码等用户隐私信息,盗用用户财产
+</code></pre>
+<p><strong>3、利用被病毒控制的用户计算机进行非法行为</strong></p>
+<pre><code> 如利用僵尸主机发起DDOS攻击
+</code></pre>
+<p>4<strong>、占用计算机空间、抢占硬件资源</strong></p>
+<pre><code>  如挖矿木马，占用用户计算资源进行虚拟货币挖矿
+</code></pre>
+<h2 id="恶意软件特性"><a href="#恶意软件特性" class="headerlink" title="恶意软件特性"></a>恶意软件特性</h2><p>自启动特性</p>
+<p>恶意软件行为特征</p>
+<p>下载和后门特性</p>
+<p>信息收集特性</p>
+<p>隐藏特性</p>
+<p>文件感染特性</p>
+<p>网络攻击特性</p>
+<h2 id="常见的恶意软件"><a href="#常见的恶意软件" class="headerlink" title="常见的恶意软件"></a><strong>常见的恶意软件</strong></h2><h3 id="1、勒索软件"><a href="#1、勒索软件" class="headerlink" title="1、勒索软件"></a>1、勒索软件</h3><p>通过骚扰、恐吓甚至采用绑架用户文件等方式，使用户数据资产或计算资源无法正常使用，并以此为条件向用户勒索钱财</p>
+<p>​		具有代表性的勒索软件：WannaCry利用Windows操作系统445端口存在的漏洞进行传播，并具有自我复制、主动传播的特性，被改软件加密后的文件的后缀名会被统一改成 “.WNCRY” 。</p>
+<h3 id="2、DDOS木马"><a href="#2、DDOS木马" class="headerlink" title="2、DDOS木马"></a>2、DDOS木马</h3><p>黑客可向指定ip发送DDOS攻击，影响企业的正常业务</p>
+<p>​		代表木马：盖茨木马（Linux型木马），此类Linux木马主要恶意特点是具备了后门程序，DDoS攻击的能力，并且会替换常用的系统文件进行伪装。木马得名于其在变量函数的命名中，大量使用Gates这个单词。</p>
+<p>​		其余木马：DDoS_XOR、DbSecuritySpt</p>
+<h3 id="3、蠕虫病毒"><a href="#3、蠕虫病毒" class="headerlink" title="3、蠕虫病毒"></a>3、蠕虫病毒</h3><p>计算机蠕虫不需要附在别的程序内，可能不用使用者介入操作也能自我复制或执行，未必会直接破坏被感染的系统，却几乎都对网络有害。但也有直接破坏系统资源的蠕虫病毒，如WannaCry。</p>
+<p>​		代表病毒：熊猫烧香，一款拥有自动传播、自动感染硬盘能力和强大的破坏能力的病毒，它不但能感染系统中exe，com，pif，src，html，asp等文件，它还能中止大量的反病毒软件进程并且会删除扩展名为gho的文件。</p>
+<p>​		其余蠕虫：红色代码、超级病毒、WannaCry</p>
+<h3 id="4、挖矿木马"><a href="#4、挖矿木马" class="headerlink" title="4、挖矿木马"></a>4、挖矿木马</h3><p>​	黑客通过木马控制大量肉鸡电脑，为其制造虚拟货币，占用大量的系统资源.</p>
+<p>​		典型的挖矿木马：ddg</p>
+<p>​		1、对可以未授权访问redis的服务器写入公钥登录，定时下载并执行脚本；</p>
+<p>​		2、脚本下载AnXqV和ddg文件并运行，AnXqV进行挖矿，ddg进行系统监控远程调用并内网传播。</p>
+<p>​		其余挖矿木马：Linux.MulDrop.14、minerd</p>
+<h3 id="5、恶意软件处置"><a href="#5、恶意软件处置" class="headerlink" title="5、恶意软件处置"></a>5、恶意软件处置</h3><p>​		1、杀毒软件</p>
+<p>​		2、重装系统</p>
+<p>​		3、系统还原</p>
+<p>​		4、Ghost还原</p>
+<p>处理过程包括修复病毒修改的注册表&#x2F;文件内容和删除病毒文件两部分，注册表有启动项检查、服务检查、检查Winlogon加载项、检查其他加载项，还有检测可疑文件（使用一些常用工具进行加检测HijackThis、Process Explorer、PCHunter、火绒剑、ProcessHacker、Autoruns）</p>
+<h2 id="电脑病毒"><a href="#电脑病毒" class="headerlink" title="电脑病毒"></a><strong>电脑病毒</strong></h2><p>一种能把自己(或经演变)注入其它程序的计算机程序,启动区病毒,宏(macro)病毒,脚本(script)病毒也是相同概念</p>
+<p><strong>1、病毒工作三部曲</strong></p>
+<p>​		1.住进阶段: 执行被感染的程序,病毒就加载入计算机内存</p>
+<p>​		2.感染阶段: 病毒把自己注入其他程序,包括远程文件</p>
+<p>​		3.执行阶段: 当某些条件成熟时, 一些病毒会有一些特别的行为. 例如重新启动,删除文件</p>
+<p><strong>2、特点</strong></p>
+<p>​		  传播性、隐蔽性、感染性、潜伏性、可激发性、表现性或破坏性都很强</p>
+<h3 id="1、宏病毒"><a href="#1、宏病毒" class="headerlink" title="1、宏病毒"></a>1、宏病毒</h3><p><strong>定义：</strong>宏病毒是一种寄存在<strong>文档</strong>或<strong>模板</strong>的宏中的<strong>计算机病毒</strong>。一旦打开这样的文档，其中的宏就会被<strong>执行</strong>，于是宏病毒就会被激活，转移到计算机上，并驻留在<strong>Normal模板上</strong>。从此以后，所有自动保存的文档都会“感染”上这种宏病毒，而且如果其他用户打开了感染病毒的文档，宏病毒又会转移到他的<strong>计算机</strong>上。</p>
+<h3 id="2、蠕虫"><a href="#2、蠕虫" class="headerlink" title="2、蠕虫"></a>2、蠕虫</h3><p>蠕虫是一种能够利用系统漏洞通过网络进行自我传播的恶意程序。它是利用网络进行复制和传播，传染途径是通过网络和电子邮件。</p>
+<h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><p> 计算机蠕虫不需要附在别的程序内，可能不用使用者介入操作也能自我复制或执行，未必会直接破坏被感染的系统，却几乎都对网络有害。</p>
+<h3 id="3、木马"><a href="#3、木马" class="headerlink" title="3、木马"></a>3、木马</h3><p>木马与病毒一样也是一种有害的程序，其特征与特洛伊木马一样具有伪装性，表面上没有危害、甚至还附有用户需要的功能，却会在用户不经意间，对用户的计算机系统产生破坏或窃取数据，特别是用户的各种账户及口令等重要且需要保密的信息，甚至控制用户的计算机系统。</p>
+<h4 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h4><p>占用空间小、运行后较难阻止其行为、隐蔽性高</p>
+<h3 id="4、Rootkit"><a href="#4、Rootkit" class="headerlink" title="4、Rootkit"></a>4、Rootkit</h3><p>用于修改操作系统，以改变操作系统的表现行为的工具软件 。而这种改变，往往不是操作系统设计时所期望的。 广义而言，Rootkit也可视为一项技术，恶意软件利用该项技术来达到隐藏自身的目的。</p>
+<h2 id="僵尸网络"><a href="#僵尸网络" class="headerlink" title="僵尸网络"></a><strong>僵尸网络</strong></h2><h3 id="1、僵尸（Bot）"><a href="#1、僵尸（Bot）" class="headerlink" title="1、僵尸（Bot）"></a>1、僵尸（Bot）</h3><p>一种集后门与蠕虫一体的恶意程序. 通常使用IRC (Internet Relay Chat) 接受和执行黑客命令</p>
+<h3 id="2、僵尸网络（Botnet）"><a href="#2、僵尸网络（Botnet）" class="headerlink" title="2、僵尸网络（Botnet）"></a>2、僵尸网络（Botnet）</h3><p>将大量主机感染bot程序（僵尸程序）病毒，从而在控制者和被感染主机之间所形成的一个可一对多控制的网络。</p>
+<h2 id="DNS污染"><a href="#DNS污染" class="headerlink" title="DNS污染"></a>DNS污染</h2><p>指一些刻意制造或无意中制造出来的<strong>域名服务器数据包</strong>，把域名指往不正确的IP地址。</p>
+<h2 id="NGAF-x2F-AF（深信服下一代防火墙）"><a href="#NGAF-x2F-AF（深信服下一代防火墙）" class="headerlink" title="NGAF&#x2F;AF（深信服下一代防火墙）"></a>NGAF&#x2F;AF（深信服下一代防火墙）</h2><p>NGAF和AF是一样的，以前叫AF，现在叫NGAF，都是一样的，同一个东西。</p>
+<p>专注网络边界安全效果，通过应用丰富的安全创新防御技术和简单易用的产品设计理念，不仅增强网络边界的安全检测与防控能力，而且实现网络安全风险可视化展示与快速处置，让组织网络边界安全建设更有效、更简单。</p>
+<p>产品系列：</p>
+<p><strong>AF-1000-FH系列</strong></p>
+<p>适用于互联网出口边界安全防御、内网边界隔离、数据中心边界防护、广域安全组网。</p>
+<p><strong>AF-2000-FH系列</strong></p>
+<p>适用于互联网出口边界安全防御、内网边界隔离、数据中心边界防护、广域安全组网。</p>
+<p>mss平台</p>
+<p>EDR</p>
+<p>SIP</p>
+<p>云镜</p>
+<p>态势感知</p>
+<p>零信任</p>
+<p>XDR</p>
+<p>AC（上网行为管理）</p>
+<h2 id="内存马"><a href="#内存马" class="headerlink" title="内存马"></a>内存马</h2><p>内存马是指一种只在内存中运行，没有文件落地或者运行后能够删除自身的木马。</p>
+<h2 id="判断网页是否为伪静态"><a href="#判断网页是否为伪静态" class="headerlink" title="判断网页是否为伪静态"></a>判断网页是否为伪静态</h2><p>使用javascript:alert(document.lastModified)</p>
+<p>看弹出的时间是否会变化，变化则是伪静态，不变则是静态。</p>
+<h2 id="常见的字符集-amp-字符编码"><a href="#常见的字符集-amp-字符编码" class="headerlink" title="常见的字符集&amp;字符编码"></a>常见的字符集&amp;字符编码</h2><p>计算机中储存的信息都是用<strong>二进制</strong>数表示的；<br>而我们在屏幕上看到的<strong>英文、汉字</strong>等字符是<strong>二进制数转换</strong>之后的结果。<br>通俗的说，按照<strong>何种规则</strong>将字符<strong>存储在计算机中</strong>，如’a’用什么表示，称为”<strong>编码</strong>“；<br>反之，将存储在计算机中的二进制数<strong>解析</strong>显示出来，称为”<strong>解码</strong>“，如同密码学中的加密和解密。<br>在解码过程中，如果<strong>使用</strong>了<strong>错误</strong>的解码<strong>规则</strong>，则导致’a’解析成’b’或者<strong>乱码</strong>。</p>
+<h3 id="1、GBK编码-计算机编码"><a href="#1、GBK编码-计算机编码" class="headerlink" title="1、GBK编码(计算机编码)"></a>1、GBK编码(计算机编码)</h3><p>GBK全称《汉字内码扩展规范》，中文名是<strong>汉字编码字符集</strong></p>
+<h3 id="2、UNICODE编码"><a href="#2、UNICODE编码" class="headerlink" title="2、UNICODE编码"></a>2、UNICODE编码</h3><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">以**\u、\u+、&amp;#x、&amp;#**开头，比如：\u0031\u0038\</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="3、16进制编码"><a href="#3、16进制编码" class="headerlink" title="3、16进制编码"></a>3、16进制编码</h3><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">以**\x**开头</span><br><span class="line">GET /news/society/201210/2358322923.shtml&quot;&lt;/script&gt;&lt;object 		data=jav\x61scr\x69pt:npsduc(uhg)&gt; </span><br><span class="line"></span><br><span class="line">**其中的\x61会被解码成a，\x69会被解码成i ** </span><br></pre></td></tr></table></figure></div>
+
+<h3 id="4、编码-Base64编码"><a href="#4、编码-Base64编码" class="headerlink" title="4、编码-Base64编码"></a>4、编码-Base64编码</h3><p>把每三个8Bit的字节转换为四个6Bit的字节，不能算加密，因为这种编码过程是可逆的</p>
+<h3 id="5、URL编码"><a href="#5、URL编码" class="headerlink" title="5、URL编码"></a>5、URL编码</h3><p>URL编码就是找到你要编码的字符对应底层的16进制，然后再在前面加一个 百分号（%）。比如：a将编码成%61 。</p>
+<h3 id="6、ACSLL码"><a href="#6、ACSLL码" class="headerlink" title="6、ACSLL码"></a>6、ACSLL码</h3><p>基于拉丁字母的一套电脑编码系统；</p>
+<p>ASCII (American Standard Code for Information Interchange)：美国信息交换标准代码是基于<strong>拉丁字母</strong>的一套电脑<strong>编码</strong>系统，主要用于显示现代<strong>英语</strong>和其他<strong>西欧</strong>语言。它是最通用的<strong>信息交换标准</strong>，并等同于<strong>国际</strong>标准 ISO&#x2F;IEC 646。ASCII第一次以规范标准的类型发表是在1967年，最后一次更新则是在1986年，到目前为止共定义了128个字符 。</p>
+<h2 id="Web应用基础"><a href="#Web应用基础" class="headerlink" title="Web应用基础"></a>Web应用基础</h2><p>HTTP1.0定义了三种请求方法： GET, POST 和 HEAD方法。</p>
+<p>HTTP1.1新增了五种请求方法：OPTIONS, PUT, DELETE, TRACE 和 CONNECT 方法。</p>
+<p>post方法中，请求头部是以一个空行为结束，即请求头部和body之间存在一个空白行。</p>
 ]]></content>
   </entry>
 </search>

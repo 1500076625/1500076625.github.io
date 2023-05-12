@@ -923,15 +923,20 @@
 ]]></content>
   </entry>
   <entry>
-    <title>web渗透的步骤</title>
-    <url>/2023/04/20/web%E6%B8%97%E9%80%8F%E7%9A%84%E6%AD%A5%E9%AA%A4/</url>
-    <content><![CDATA[<h2 id="1、信息收集"><a href="#1、信息收集" class="headerlink" title="1、信息收集"></a>1、信息收集</h2><p>子域名、C段（同网段不同服务器）、旁注（同服务器不同站点）、目录探测、服务器端口、服务器脚本语言类型及版本、CMS识别、web中间件、web框架、数据库类型及版本、操作系统类型及版本。</p>
-<h2 id="2、漏洞探测发现（手动-amp-自动）"><a href="#2、漏洞探测发现（手动-amp-自动）" class="headerlink" title="2、漏洞探测发现（手动&amp;自动）"></a>2、漏洞探测发现（手动&amp;自动）</h2><p><strong>手动</strong></p>
-<p>去常见的地方去发现top10的漏洞，<strong>比如</strong>：搜索栏，login登录框、发表言论栏，修改信息的地方、与数据库交互的地方、URL地址、上传点等。</p>
-<p><strong>自动</strong></p>
-<p><strong>自动漏洞扫描工具</strong>：AWVS、APPScan、xray、yakit、goby、wpscan等，</p>
-<p>发现中间件漏洞、框架漏洞、CMS漏洞、操作系统漏洞、端口漏洞等，去漏洞库（exploit-db、CVE漏洞库），网上寻找相应的POC进行验证。</p>
-<h2 id="3、漏洞利用"><a href="#3、漏洞利用" class="headerlink" title="3、漏洞利用"></a>3、漏洞利用</h2><p>去网上查找对应的exp和payload进行利用，MSF、各种漏洞库、阿里云漏洞库、知道创宇漏洞库去进行查找利用，最后达到控制服务器的目的。</p>
+    <title>docker搭建靶场常用命令</title>
+    <url>/2023/04/19/%E6%90%AD%E5%BB%BA%E9%9D%B6%E5%9C%BAdocker%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<h4 id="启动docker服务-："><a href="#启动docker服务-：" class="headerlink" title="启动docker服务 ："></a>启动docker服务 ：</h4><p> systemctl start docker</p>
+<h4 id="重启docker服务："><a href="#重启docker服务：" class="headerlink" title="重启docker服务："></a>重启docker服务：</h4><p> systemctl restart  docker</p>
+<h4 id="关闭docker服务："><a href="#关闭docker服务：" class="headerlink" title="关闭docker服务："></a>关闭docker服务：</h4><p>systemctl stop docker</p>
+<h4 id="启动靶场："><a href="#启动靶场：" class="headerlink" title="启动靶场："></a>启动靶场：</h4><p>docker-compose build &amp;&amp; docker-compose up -d</p>
+<h4 id="查看运行状态："><a href="#查看运行状态：" class="headerlink" title="查看运行状态："></a>查看运行状态：</h4><p>docker ps</p>
+<h4 id="进入镜像："><a href="#进入镜像：" class="headerlink" title="进入镜像："></a>进入镜像：</h4><p>docker exec -it 4r8werw8e8er &#x2F;bin&#x2F;bash</p>
+<p>docker exec -it 4r8werw8e8er bash</p>
+<h4 id="退出镜像："><a href="#退出镜像：" class="headerlink" title="退出镜像："></a>退出镜像：</h4><p>exit</p>
+<h4 id="关闭靶场镜像："><a href="#关闭靶场镜像：" class="headerlink" title="关闭靶场镜像："></a>关闭靶场镜像：</h4><p>docker-compose down</p>
+<h4 id="关闭docker："><a href="#关闭docker：" class="headerlink" title="关闭docker："></a>关闭docker：</h4><p>systemctl stop docker</p>
+<h4 id="docker-服务开机自启动命令："><a href="#docker-服务开机自启动命令：" class="headerlink" title="docker 服务开机自启动命令："></a>docker 服务开机自启动命令：</h4><p>systemctl enable docker.service</p>
+<h4 id="关闭docker-服务开机自启动命令："><a href="#关闭docker-服务开机自启动命令：" class="headerlink" title="关闭docker 服务开机自启动命令："></a>关闭docker 服务开机自启动命令：</h4><p>systemctl disable docker.service</p>
 ]]></content>
   </entry>
   <entry>
@@ -989,6 +994,122 @@
 <p>技术的深化，代码能力是基础，进一步对各个系统和漏洞原理的理解，是延申，不断的学习和突破，最后技术就会越来越好，也就会脱离信息搜集的循环，迈入更高的层面。</p>
 <p>不过做项目时候的信息搜集，那是公司项目，是不可避免的，公司花钱请人来就是干这个的。技术栈的突破和延申，是自己的事情。</p>
 <p>我觉得更优的解法就是先集中花一部分时间练习信息收集，然后配合自研的小工具把效率提上去， 练到了一定程度，做项目的时候信息搜集基本都能出东西了，公司这边能跟客户交差了，再把时间花到漏洞的突破和延申上。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>web渗透的步骤</title>
+    <url>/2023/04/20/web%E6%B8%97%E9%80%8F%E7%9A%84%E6%AD%A5%E9%AA%A4/</url>
+    <content><![CDATA[<h2 id="1、信息收集"><a href="#1、信息收集" class="headerlink" title="1、信息收集"></a>1、信息收集</h2><p>子域名、C段（同网段不同服务器）、旁注（同服务器不同站点）、目录探测、服务器端口、服务器脚本语言类型及版本、CMS识别、web中间件、web框架、数据库类型及版本、操作系统类型及版本。</p>
+<h2 id="2、漏洞探测发现（手动-amp-自动）"><a href="#2、漏洞探测发现（手动-amp-自动）" class="headerlink" title="2、漏洞探测发现（手动&amp;自动）"></a>2、漏洞探测发现（手动&amp;自动）</h2><p><strong>手动</strong></p>
+<p>去常见的地方去发现top10的漏洞，<strong>比如</strong>：搜索栏，login登录框、发表言论栏，修改信息的地方、与数据库交互的地方、URL地址、上传点等。</p>
+<p><strong>自动</strong></p>
+<p><strong>自动漏洞扫描工具</strong>：AWVS、APPScan、xray、yakit、goby、wpscan等，</p>
+<p>发现中间件漏洞、框架漏洞、CMS漏洞、操作系统漏洞、端口漏洞等，去漏洞库（exploit-db、CVE漏洞库），网上寻找相应的POC进行验证。</p>
+<h2 id="3、漏洞利用"><a href="#3、漏洞利用" class="headerlink" title="3、漏洞利用"></a>3、漏洞利用</h2><p>去网上查找对应的exp和payload进行利用，MSF、各种漏洞库、阿里云漏洞库、知道创宇漏洞库去进行查找利用，最后达到控制服务器的目的。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>欢迎你的到来</title>
+    <url>/2023/04/18/%E6%AC%A2%E8%BF%8E%E4%BD%A0/</url>
+    <content><![CDATA[<h1 id="欢迎你"><a href="#欢迎你" class="headerlink" title="欢迎你"></a>欢迎你</h1><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/2030300.jpg"
+                     
+                ></p>
+<p>感谢各位靓仔靓妹来到本人的博客，鄙人不才，现在主攻Web渗透方向，还是小白，但是一直在路上，俗话说的好，“不积跬步无以至千里，不积小流无以成江河，道阻且长，行则将至”，做好自己，相信未来。</p>
+<div class="note-large notel-default"><div class="notel-title"><p>信息</p>
+</div><div class="notel-content"><p>如有指教，请加QQ：1500076625，在此表示感谢。</p>
+ </div></div>]]></content>
+  </entry>
+  <entry>
+    <title>病毒名词解释</title>
+    <url>/2023/04/22/%E7%97%85%E6%AF%92/</url>
+    <content><![CDATA[<h2 id="恶意软件-内部俗称“僵木蠕”"><a href="#恶意软件-内部俗称“僵木蠕”" class="headerlink" title="恶意软件(内部俗称“僵木蠕”)"></a>恶意软件(内部俗称“僵木蠕”)</h2><p>指在计算机系统上执行恶意任务的病毒、蠕虫、特洛伊木马、后门、僵尸网络、Rootkit、逻辑炸弹、间谍软件、广告软件。</p>
+<h2 id="恶意软件危害"><a href="#恶意软件危害" class="headerlink" title="恶意软件危害"></a><strong>恶意软件危害</strong></h2><p><strong>1、破坏计算机数据</strong></p>
+<pre><code>  计算机病毒激发后会通过格式化、改写、删除、破坏设置等破坏计算机储存数据
+</code></pre>
+<p><strong>2、窃取用户隐私信息</strong></p>
+<pre><code>  如银行密码、账户密码等用户隐私信息,盗用用户财产
+</code></pre>
+<p><strong>3、利用被病毒控制的用户计算机进行非法行为</strong></p>
+<pre><code> 如利用僵尸主机发起DDOS攻击
+</code></pre>
+<p>4<strong>、占用计算机空间、抢占硬件资源</strong></p>
+<pre><code>  如挖矿木马，占用用户计算资源进行虚拟货币挖矿
+</code></pre>
+<h2 id="恶意软件特性"><a href="#恶意软件特性" class="headerlink" title="恶意软件特性"></a>恶意软件特性</h2><p>自启动特性</p>
+<p>恶意软件行为特征</p>
+<p>下载和后门特性</p>
+<p>信息收集特性</p>
+<p>隐藏特性</p>
+<p>文件感染特性</p>
+<p>网络攻击特性</p>
+<h2 id="常见的恶意软件"><a href="#常见的恶意软件" class="headerlink" title="常见的恶意软件"></a><strong>常见的恶意软件</strong></h2><h3 id="1、勒索软件"><a href="#1、勒索软件" class="headerlink" title="1、勒索软件"></a>1、勒索软件</h3><p>通过骚扰、恐吓甚至采用绑架用户文件等方式，使用户数据资产或计算资源无法正常使用，并以此为条件向用户勒索钱财</p>
+<p>​		具有代表性的勒索软件：WannaCry利用Windows操作系统445端口存在的漏洞进行传播，并具有自我复制、主动传播的特性，被改软件加密后的文件的后缀名会被统一改成 “.WNCRY” 。</p>
+<h3 id="2、DDOS木马"><a href="#2、DDOS木马" class="headerlink" title="2、DDOS木马"></a>2、DDOS木马</h3><p>黑客可向指定ip发送DDOS攻击，影响企业的正常业务</p>
+<p>​		代表木马：盖茨木马（Linux型木马），此类Linux木马主要恶意特点是具备了后门程序，DDoS攻击的能力，并且会替换常用的系统文件进行伪装。木马得名于其在变量函数的命名中，大量使用Gates这个单词。</p>
+<p>​		其余木马：DDoS_XOR、DbSecuritySpt</p>
+<h3 id="3、蠕虫病毒"><a href="#3、蠕虫病毒" class="headerlink" title="3、蠕虫病毒"></a>3、蠕虫病毒</h3><p>计算机蠕虫不需要附在别的程序内，可能不用使用者介入操作也能自我复制或执行，未必会直接破坏被感染的系统，却几乎都对网络有害。但也有直接破坏系统资源的蠕虫病毒，如WannaCry。</p>
+<p>​		代表病毒：熊猫烧香，一款拥有自动传播、自动感染硬盘能力和强大的破坏能力的病毒，它不但能感染系统中exe，com，pif，src，html，asp等文件，它还能中止大量的反病毒软件进程并且会删除扩展名为gho的文件。</p>
+<p>​		其余蠕虫：红色代码、超级病毒、WannaCry</p>
+<h3 id="4、挖矿木马"><a href="#4、挖矿木马" class="headerlink" title="4、挖矿木马"></a>4、挖矿木马</h3><p>​	黑客通过木马控制大量肉鸡电脑，为其制造虚拟货币，占用大量的系统资源.</p>
+<p>​		典型的挖矿木马：ddg</p>
+<p>​		1、对可以未授权访问redis的服务器写入公钥登录，定时下载并执行脚本；</p>
+<p>​		2、脚本下载AnXqV和ddg文件并运行，AnXqV进行挖矿，ddg进行系统监控远程调用并内网传播。</p>
+<p>​		其余挖矿木马：Linux.MulDrop.14、minerd</p>
+<h3 id="5、恶意软件处置"><a href="#5、恶意软件处置" class="headerlink" title="5、恶意软件处置"></a>5、恶意软件处置</h3><p>​		1、杀毒软件</p>
+<p>​		2、重装系统</p>
+<p>​		3、系统还原</p>
+<p>​		4、Ghost还原</p>
+<p>处理过程包括修复病毒修改的注册表&#x2F;文件内容和删除病毒文件两部分，注册表有启动项检查、服务检查、检查Winlogon加载项、检查其他加载项，还有检测可疑文件（使用一些常用工具进行加检测HijackThis、Process Explorer、PCHunter、火绒剑、ProcessHacker、Autoruns）</p>
+<h2 id="电脑病毒"><a href="#电脑病毒" class="headerlink" title="电脑病毒"></a><strong>电脑病毒</strong></h2><p>一种能把自己(或经演变)注入其它程序的计算机程序,启动区病毒,宏(macro)病毒,脚本(script)病毒也是相同概念</p>
+<p><strong>1、病毒工作三部曲</strong></p>
+<p>​		1.住进阶段: 执行被感染的程序,病毒就加载入计算机内存</p>
+<p>​		2.感染阶段: 病毒把自己注入其他程序,包括远程文件</p>
+<p>​		3.执行阶段: 当某些条件成熟时, 一些病毒会有一些特别的行为. 例如重新启动,删除文件</p>
+<p><strong>2、特点</strong></p>
+<p>​		  传播性、隐蔽性、感染性、潜伏性、可激发性、表现性或破坏性都很强</p>
+<h3 id="1、宏病毒"><a href="#1、宏病毒" class="headerlink" title="1、宏病毒"></a>1、宏病毒</h3><p><strong>定义：</strong>宏病毒是一种寄存在<strong>文档</strong>或<strong>模板</strong>的宏中的<strong>计算机病毒</strong>。一旦打开这样的文档，其中的宏就会被<strong>执行</strong>，于是宏病毒就会被激活，转移到计算机上，并驻留在<strong>Normal模板上</strong>。从此以后，所有自动保存的文档都会“感染”上这种宏病毒，而且如果其他用户打开了感染病毒的文档，宏病毒又会转移到他的<strong>计算机</strong>上。</p>
+<h3 id="2、蠕虫"><a href="#2、蠕虫" class="headerlink" title="2、蠕虫"></a>2、蠕虫</h3><p>蠕虫是一种能够利用系统漏洞通过网络进行自我传播的恶意程序。它是利用网络进行复制和传播，传染途径是通过网络和电子邮件。</p>
+<h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><p> 计算机蠕虫不需要附在别的程序内，可能不用使用者介入操作也能自我复制或执行，未必会直接破坏被感染的系统，却几乎都对网络有害。</p>
+<h3 id="3、木马"><a href="#3、木马" class="headerlink" title="3、木马"></a>3、木马</h3><p>木马与病毒一样也是一种有害的程序，其特征与特洛伊木马一样具有伪装性，表面上没有危害、甚至还附有用户需要的功能，却会在用户不经意间，对用户的计算机系统产生破坏或窃取数据，特别是用户的各种账户及口令等重要且需要保密的信息，甚至控制用户的计算机系统。</p>
+<h4 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h4><p>占用空间小、运行后较难阻止其行为、隐蔽性高</p>
+<h3 id="4、Rootkit"><a href="#4、Rootkit" class="headerlink" title="4、Rootkit"></a>4、Rootkit</h3><p>用于修改操作系统，以改变操作系统的表现行为的工具软件 。而这种改变，往往不是操作系统设计时所期望的。 广义而言，Rootkit也可视为一项技术，恶意软件利用该项技术来达到隐藏自身的目的。</p>
+<h2 id="僵尸网络"><a href="#僵尸网络" class="headerlink" title="僵尸网络"></a><strong>僵尸网络</strong></h2><h3 id="1、僵尸（Bot）"><a href="#1、僵尸（Bot）" class="headerlink" title="1、僵尸（Bot）"></a>1、僵尸（Bot）</h3><p>一种集后门与蠕虫一体的恶意程序. 通常使用IRC (Internet Relay Chat) 接受和执行黑客命令</p>
+<h3 id="2、僵尸网络（Botnet）"><a href="#2、僵尸网络（Botnet）" class="headerlink" title="2、僵尸网络（Botnet）"></a>2、僵尸网络（Botnet）</h3><p>将大量主机感染bot程序（僵尸程序）病毒，从而在控制者和被感染主机之间所形成的一个可一对多控制的网络。</p>
+<h2 id="DNS污染"><a href="#DNS污染" class="headerlink" title="DNS污染"></a>DNS污染</h2><p>指一些刻意制造或无意中制造出来的<strong>域名服务器数据包</strong>，把域名指往不正确的IP地址。</p>
+<h2 id="NGAF-x2F-AF（深信服下一代防火墙）"><a href="#NGAF-x2F-AF（深信服下一代防火墙）" class="headerlink" title="NGAF&#x2F;AF（深信服下一代防火墙）"></a>NGAF&#x2F;AF（深信服下一代防火墙）</h2><p>NGAF和AF是一样的，以前叫AF，现在叫NGAF，都是一样的，同一个东西。</p>
+<p>专注网络边界安全效果，通过应用丰富的安全创新防御技术和简单易用的产品设计理念，不仅增强网络边界的安全检测与防控能力，而且实现网络安全风险可视化展示与快速处置，让组织网络边界安全建设更有效、更简单。</p>
+<p>产品系列：</p>
+<p><strong>AF-1000-FH系列</strong></p>
+<p>适用于互联网出口边界安全防御、内网边界隔离、数据中心边界防护、广域安全组网。</p>
+<p><strong>AF-2000-FH系列</strong></p>
+<p>适用于互联网出口边界安全防御、内网边界隔离、数据中心边界防护、广域安全组网。</p>
+<p>mss平台</p>
+<p>EDR</p>
+<p>SIP</p>
+<p>云镜</p>
+<p>态势感知</p>
+<p>零信任</p>
+<p>XDR</p>
+<p>AC（上网行为管理）</p>
+<h2 id="内存马"><a href="#内存马" class="headerlink" title="内存马"></a>内存马</h2><p>内存马是指一种只在内存中运行，没有文件落地或者运行后能够删除自身的木马。</p>
+<h2 id="判断网页是否为伪静态"><a href="#判断网页是否为伪静态" class="headerlink" title="判断网页是否为伪静态"></a>判断网页是否为伪静态</h2><p>使用javascript:alert(document.lastModified)</p>
+<p>看弹出的时间是否会变化，变化则是伪静态，不变则是静态。</p>
+<h2 id="常见的字符集-amp-字符编码"><a href="#常见的字符集-amp-字符编码" class="headerlink" title="常见的字符集&amp;字符编码"></a>常见的字符集&amp;字符编码</h2><p>计算机中储存的信息都是用<strong>二进制</strong>数表示的；<br>而我们在屏幕上看到的<strong>英文、汉字</strong>等字符是<strong>二进制数转换</strong>之后的结果。<br>通俗的说，按照<strong>何种规则</strong>将字符<strong>存储在计算机中</strong>，如’a’用什么表示，称为”<strong>编码</strong>“；<br>反之，将存储在计算机中的二进制数<strong>解析</strong>显示出来，称为”<strong>解码</strong>“，如同密码学中的加密和解密。<br>在解码过程中，如果<strong>使用</strong>了<strong>错误</strong>的解码<strong>规则</strong>，则导致’a’解析成’b’或者<strong>乱码</strong>。</p>
+<h3 id="1、GBK编码-计算机编码"><a href="#1、GBK编码-计算机编码" class="headerlink" title="1、GBK编码(计算机编码)"></a>1、GBK编码(计算机编码)</h3><p>GBK全称《汉字内码扩展规范》，中文名是<strong>汉字编码字符集</strong></p>
+<h3 id="2、UNICODE编码"><a href="#2、UNICODE编码" class="headerlink" title="2、UNICODE编码"></a>2、UNICODE编码</h3><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">以**\u、\u+、&amp;#x、&amp;#**开头，比如：\u0031\u0038\</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="3、16进制编码"><a href="#3、16进制编码" class="headerlink" title="3、16进制编码"></a>3、16进制编码</h3><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">以**\x**开头</span><br><span class="line">GET /news/society/201210/2358322923.shtml&quot;&lt;/script&gt;&lt;object 		data=jav\x61scr\x69pt:npsduc(uhg)&gt; </span><br><span class="line"></span><br><span class="line">**其中的\x61会被解码成a，\x69会被解码成i ** </span><br></pre></td></tr></table></figure></div>
+
+<h3 id="4、编码-Base64编码"><a href="#4、编码-Base64编码" class="headerlink" title="4、编码-Base64编码"></a>4、编码-Base64编码</h3><p>把每三个8Bit的字节转换为四个6Bit的字节，不能算加密，因为这种编码过程是可逆的</p>
+<h3 id="5、URL编码"><a href="#5、URL编码" class="headerlink" title="5、URL编码"></a>5、URL编码</h3><p>URL编码就是找到你要编码的字符对应底层的16进制，然后再在前面加一个 百分号（%）。比如：a将编码成%61 。</p>
+<h3 id="6、ACSLL码"><a href="#6、ACSLL码" class="headerlink" title="6、ACSLL码"></a>6、ACSLL码</h3><p>基于拉丁字母的一套电脑编码系统；</p>
+<p>ASCII (American Standard Code for Information Interchange)：美国信息交换标准代码是基于<strong>拉丁字母</strong>的一套电脑<strong>编码</strong>系统，主要用于显示现代<strong>英语</strong>和其他<strong>西欧</strong>语言。它是最通用的<strong>信息交换标准</strong>，并等同于<strong>国际</strong>标准 ISO&#x2F;IEC 646。ASCII第一次以规范标准的类型发表是在1967年，最后一次更新则是在1986年，到目前为止共定义了128个字符 。</p>
+<h2 id="Web应用基础"><a href="#Web应用基础" class="headerlink" title="Web应用基础"></a>Web应用基础</h2><p>HTTP1.0定义了三种请求方法： GET, POST 和 HEAD方法。</p>
+<p>HTTP1.1新增了五种请求方法：OPTIONS, PUT, DELETE, TRACE 和 CONNECT 方法。</p>
+<p>post方法中，请求头部是以一个空行为结束，即请求头部和body之间存在一个空白行。</p>
 ]]></content>
   </entry>
   <entry>
@@ -1663,37 +1784,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>docker搭建靶场常用命令</title>
-    <url>/2023/04/19/%E6%90%AD%E5%BB%BA%E9%9D%B6%E5%9C%BAdocker%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<h4 id="启动docker服务-："><a href="#启动docker服务-：" class="headerlink" title="启动docker服务 ："></a>启动docker服务 ：</h4><p> systemctl start docker</p>
-<h4 id="重启docker服务："><a href="#重启docker服务：" class="headerlink" title="重启docker服务："></a>重启docker服务：</h4><p> systemctl restart  docker</p>
-<h4 id="关闭docker服务："><a href="#关闭docker服务：" class="headerlink" title="关闭docker服务："></a>关闭docker服务：</h4><p>systemctl stop docker</p>
-<h4 id="启动靶场："><a href="#启动靶场：" class="headerlink" title="启动靶场："></a>启动靶场：</h4><p>docker-compose build &amp;&amp; docker-compose up -d</p>
-<h4 id="查看运行状态："><a href="#查看运行状态：" class="headerlink" title="查看运行状态："></a>查看运行状态：</h4><p>docker ps</p>
-<h4 id="进入镜像："><a href="#进入镜像：" class="headerlink" title="进入镜像："></a>进入镜像：</h4><p>docker exec -it 4r8werw8e8er &#x2F;bin&#x2F;bash</p>
-<p>docker exec -it 4r8werw8e8er bash</p>
-<h4 id="退出镜像："><a href="#退出镜像：" class="headerlink" title="退出镜像："></a>退出镜像：</h4><p>exit</p>
-<h4 id="关闭靶场镜像："><a href="#关闭靶场镜像：" class="headerlink" title="关闭靶场镜像："></a>关闭靶场镜像：</h4><p>docker-compose down</p>
-<h4 id="关闭docker："><a href="#关闭docker：" class="headerlink" title="关闭docker："></a>关闭docker：</h4><p>systemctl stop docker</p>
-<h4 id="docker-服务开机自启动命令："><a href="#docker-服务开机自启动命令：" class="headerlink" title="docker 服务开机自启动命令："></a>docker 服务开机自启动命令：</h4><p>systemctl enable docker.service</p>
-<h4 id="关闭docker-服务开机自启动命令："><a href="#关闭docker-服务开机自启动命令：" class="headerlink" title="关闭docker 服务开机自启动命令："></a>关闭docker 服务开机自启动命令：</h4><p>systemctl disable docker.service</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>欢迎你的到来</title>
-    <url>/2023/04/18/%E6%AC%A2%E8%BF%8E%E4%BD%A0/</url>
-    <content><![CDATA[<h1 id="欢迎你"><a href="#欢迎你" class="headerlink" title="欢迎你"></a>欢迎你</h1><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/2030300.jpg"
-                     
-                ></p>
-<p>感谢各位靓仔靓妹来到本人的博客，鄙人不才，现在主攻Web渗透方向，还是小白，但是一直在路上，俗话说的好，“不积跬步无以至千里，不积小流无以成江河，道阻且长，行则将至”，做好自己，相信未来。</p>
-<div class="note-large notel-default"><div class="notel-title"><p>信息</p>
-</div><div class="notel-content"><p>如有指教，请加QQ：1500076625，在此表示感谢。</p>
- </div></div>]]></content>
-  </entry>
-  <entry>
     <title>文件上传绕过方式汇总</title>
     <url>/2023/04/19/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E7%9A%84%E7%BB%95%E8%BF%87%E6%96%B9%E5%BC%8F/</url>
     <content><![CDATA[<h1 id="文件上传的绕过方式"><a href="#文件上传的绕过方式" class="headerlink" title="文件上传的绕过方式"></a>文件上传的绕过方式</h1><h2 id="1、前对验证绕过"><a href="#1、前对验证绕过" class="headerlink" title="1、前对验证绕过"></a><strong>1、前对验证绕过</strong></h2><p>F12打开调试器关闭js格式实现绕过</p>
@@ -1718,96 +1808,6 @@
 
 <p>让后通过bp抓包，进行null playd无限跑包，抓上传1.php包跑，跑了之后放包重新抓访问phpinfoshell.php包开始同时跑包，这样就可以通过条件竞争进行有概率的利用漏洞，在被删除之前访问1.php执行里面的file_put_contents函数创建phpinfoshell.php木马文件进行完美绕过。</p>
 <h2 id="13、二次渲染"><a href="#13、二次渲染" class="headerlink" title="13、二次渲染"></a>13、二次渲染</h2><p>意思是上传了的图片马中的16进制的内容被进行渲染篡改成乱码了，我们要对比上传前和上传后的图片马16进制的地方，哪个地方没有被二次渲染，就在那个地方进行添加一句话木马，这样就可以绕过二次渲染实现上传成功。</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>病毒名词解释</title>
-    <url>/2023/04/22/%E7%97%85%E6%AF%92/</url>
-    <content><![CDATA[<h2 id="恶意软件-内部俗称“僵木蠕”"><a href="#恶意软件-内部俗称“僵木蠕”" class="headerlink" title="恶意软件(内部俗称“僵木蠕”)"></a>恶意软件(内部俗称“僵木蠕”)</h2><p>指在计算机系统上执行恶意任务的病毒、蠕虫、特洛伊木马、后门、僵尸网络、Rootkit、逻辑炸弹、间谍软件、广告软件。</p>
-<h2 id="恶意软件危害"><a href="#恶意软件危害" class="headerlink" title="恶意软件危害"></a><strong>恶意软件危害</strong></h2><p><strong>1、破坏计算机数据</strong></p>
-<pre><code>  计算机病毒激发后会通过格式化、改写、删除、破坏设置等破坏计算机储存数据
-</code></pre>
-<p><strong>2、窃取用户隐私信息</strong></p>
-<pre><code>  如银行密码、账户密码等用户隐私信息,盗用用户财产
-</code></pre>
-<p><strong>3、利用被病毒控制的用户计算机进行非法行为</strong></p>
-<pre><code> 如利用僵尸主机发起DDOS攻击
-</code></pre>
-<p>4<strong>、占用计算机空间、抢占硬件资源</strong></p>
-<pre><code>  如挖矿木马，占用用户计算资源进行虚拟货币挖矿
-</code></pre>
-<h2 id="恶意软件特性"><a href="#恶意软件特性" class="headerlink" title="恶意软件特性"></a>恶意软件特性</h2><p>自启动特性</p>
-<p>恶意软件行为特征</p>
-<p>下载和后门特性</p>
-<p>信息收集特性</p>
-<p>隐藏特性</p>
-<p>文件感染特性</p>
-<p>网络攻击特性</p>
-<h2 id="常见的恶意软件"><a href="#常见的恶意软件" class="headerlink" title="常见的恶意软件"></a><strong>常见的恶意软件</strong></h2><h3 id="1、勒索软件"><a href="#1、勒索软件" class="headerlink" title="1、勒索软件"></a>1、勒索软件</h3><p>通过骚扰、恐吓甚至采用绑架用户文件等方式，使用户数据资产或计算资源无法正常使用，并以此为条件向用户勒索钱财</p>
-<p>​		具有代表性的勒索软件：WannaCry利用Windows操作系统445端口存在的漏洞进行传播，并具有自我复制、主动传播的特性，被改软件加密后的文件的后缀名会被统一改成 “.WNCRY” 。</p>
-<h3 id="2、DDOS木马"><a href="#2、DDOS木马" class="headerlink" title="2、DDOS木马"></a>2、DDOS木马</h3><p>黑客可向指定ip发送DDOS攻击，影响企业的正常业务</p>
-<p>​		代表木马：盖茨木马（Linux型木马），此类Linux木马主要恶意特点是具备了后门程序，DDoS攻击的能力，并且会替换常用的系统文件进行伪装。木马得名于其在变量函数的命名中，大量使用Gates这个单词。</p>
-<p>​		其余木马：DDoS_XOR、DbSecuritySpt</p>
-<h3 id="3、蠕虫病毒"><a href="#3、蠕虫病毒" class="headerlink" title="3、蠕虫病毒"></a>3、蠕虫病毒</h3><p>计算机蠕虫不需要附在别的程序内，可能不用使用者介入操作也能自我复制或执行，未必会直接破坏被感染的系统，却几乎都对网络有害。但也有直接破坏系统资源的蠕虫病毒，如WannaCry。</p>
-<p>​		代表病毒：熊猫烧香，一款拥有自动传播、自动感染硬盘能力和强大的破坏能力的病毒，它不但能感染系统中exe，com，pif，src，html，asp等文件，它还能中止大量的反病毒软件进程并且会删除扩展名为gho的文件。</p>
-<p>​		其余蠕虫：红色代码、超级病毒、WannaCry</p>
-<h3 id="4、挖矿木马"><a href="#4、挖矿木马" class="headerlink" title="4、挖矿木马"></a>4、挖矿木马</h3><p>​	黑客通过木马控制大量肉鸡电脑，为其制造虚拟货币，占用大量的系统资源.</p>
-<p>​		典型的挖矿木马：ddg</p>
-<p>​		1、对可以未授权访问redis的服务器写入公钥登录，定时下载并执行脚本；</p>
-<p>​		2、脚本下载AnXqV和ddg文件并运行，AnXqV进行挖矿，ddg进行系统监控远程调用并内网传播。</p>
-<p>​		其余挖矿木马：Linux.MulDrop.14、minerd</p>
-<h3 id="5、恶意软件处置"><a href="#5、恶意软件处置" class="headerlink" title="5、恶意软件处置"></a>5、恶意软件处置</h3><p>​		1、杀毒软件</p>
-<p>​		2、重装系统</p>
-<p>​		3、系统还原</p>
-<p>​		4、Ghost还原</p>
-<p>处理过程包括修复病毒修改的注册表&#x2F;文件内容和删除病毒文件两部分，注册表有启动项检查、服务检查、检查Winlogon加载项、检查其他加载项，还有检测可疑文件（使用一些常用工具进行加检测HijackThis、Process Explorer、PCHunter、火绒剑、ProcessHacker、Autoruns）</p>
-<h2 id="电脑病毒"><a href="#电脑病毒" class="headerlink" title="电脑病毒"></a><strong>电脑病毒</strong></h2><p>一种能把自己(或经演变)注入其它程序的计算机程序,启动区病毒,宏(macro)病毒,脚本(script)病毒也是相同概念</p>
-<p><strong>1、病毒工作三部曲</strong></p>
-<p>​		1.住进阶段: 执行被感染的程序,病毒就加载入计算机内存</p>
-<p>​		2.感染阶段: 病毒把自己注入其他程序,包括远程文件</p>
-<p>​		3.执行阶段: 当某些条件成熟时, 一些病毒会有一些特别的行为. 例如重新启动,删除文件</p>
-<p><strong>2、特点</strong></p>
-<p>​		  传播性、隐蔽性、感染性、潜伏性、可激发性、表现性或破坏性都很强</p>
-<h3 id="1、宏病毒"><a href="#1、宏病毒" class="headerlink" title="1、宏病毒"></a>1、宏病毒</h3><p><strong>定义：</strong>宏病毒是一种寄存在<strong>文档</strong>或<strong>模板</strong>的宏中的<strong>计算机病毒</strong>。一旦打开这样的文档，其中的宏就会被<strong>执行</strong>，于是宏病毒就会被激活，转移到计算机上，并驻留在<strong>Normal模板上</strong>。从此以后，所有自动保存的文档都会“感染”上这种宏病毒，而且如果其他用户打开了感染病毒的文档，宏病毒又会转移到他的<strong>计算机</strong>上。</p>
-<h3 id="2、蠕虫"><a href="#2、蠕虫" class="headerlink" title="2、蠕虫"></a>2、蠕虫</h3><p>蠕虫是一种能够利用系统漏洞通过网络进行自我传播的恶意程序。它是利用网络进行复制和传播，传染途径是通过网络和电子邮件。</p>
-<h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><p> 计算机蠕虫不需要附在别的程序内，可能不用使用者介入操作也能自我复制或执行，未必会直接破坏被感染的系统，却几乎都对网络有害。</p>
-<h3 id="3、木马"><a href="#3、木马" class="headerlink" title="3、木马"></a>3、木马</h3><p>木马与病毒一样也是一种有害的程序，其特征与特洛伊木马一样具有伪装性，表面上没有危害、甚至还附有用户需要的功能，却会在用户不经意间，对用户的计算机系统产生破坏或窃取数据，特别是用户的各种账户及口令等重要且需要保密的信息，甚至控制用户的计算机系统。</p>
-<h4 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h4><p>占用空间小、运行后较难阻止其行为、隐蔽性高</p>
-<h3 id="4、Rootkit"><a href="#4、Rootkit" class="headerlink" title="4、Rootkit"></a>4、Rootkit</h3><p>用于修改操作系统，以改变操作系统的表现行为的工具软件 。而这种改变，往往不是操作系统设计时所期望的。 广义而言，Rootkit也可视为一项技术，恶意软件利用该项技术来达到隐藏自身的目的。</p>
-<h2 id="僵尸网络"><a href="#僵尸网络" class="headerlink" title="僵尸网络"></a><strong>僵尸网络</strong></h2><h3 id="1、僵尸（Bot）"><a href="#1、僵尸（Bot）" class="headerlink" title="1、僵尸（Bot）"></a>1、僵尸（Bot）</h3><p>一种集后门与蠕虫一体的恶意程序. 通常使用IRC (Internet Relay Chat) 接受和执行黑客命令</p>
-<h3 id="2、僵尸网络（Botnet）"><a href="#2、僵尸网络（Botnet）" class="headerlink" title="2、僵尸网络（Botnet）"></a>2、僵尸网络（Botnet）</h3><p>将大量主机感染bot程序（僵尸程序）病毒，从而在控制者和被感染主机之间所形成的一个可一对多控制的网络。</p>
-<h2 id="DNS污染"><a href="#DNS污染" class="headerlink" title="DNS污染"></a>DNS污染</h2><p>指一些刻意制造或无意中制造出来的<strong>域名服务器数据包</strong>，把域名指往不正确的IP地址。</p>
-<h2 id="NGAF-x2F-AF（深信服下一代防火墙）"><a href="#NGAF-x2F-AF（深信服下一代防火墙）" class="headerlink" title="NGAF&#x2F;AF（深信服下一代防火墙）"></a>NGAF&#x2F;AF（深信服下一代防火墙）</h2><p>NGAF和AF是一样的，以前叫AF，现在叫NGAF，都是一样的，同一个东西。</p>
-<p>专注网络边界安全效果，通过应用丰富的安全创新防御技术和简单易用的产品设计理念，不仅增强网络边界的安全检测与防控能力，而且实现网络安全风险可视化展示与快速处置，让组织网络边界安全建设更有效、更简单。</p>
-<p>产品系列：</p>
-<p><strong>AF-1000-FH系列</strong></p>
-<p>适用于互联网出口边界安全防御、内网边界隔离、数据中心边界防护、广域安全组网。</p>
-<p><strong>AF-2000-FH系列</strong></p>
-<p>适用于互联网出口边界安全防御、内网边界隔离、数据中心边界防护、广域安全组网。</p>
-<p>mss平台</p>
-<p>EDR</p>
-<p>SIP</p>
-<p>云镜</p>
-<p>态势感知</p>
-<p>零信任</p>
-<p>XDR</p>
-<p>AC（上网行为管理）</p>
-<h2 id="内存马"><a href="#内存马" class="headerlink" title="内存马"></a>内存马</h2><p>内存马是指一种只在内存中运行，没有文件落地或者运行后能够删除自身的木马。</p>
-<h2 id="判断网页是否为伪静态"><a href="#判断网页是否为伪静态" class="headerlink" title="判断网页是否为伪静态"></a>判断网页是否为伪静态</h2><p>使用javascript:alert(document.lastModified)</p>
-<p>看弹出的时间是否会变化，变化则是伪静态，不变则是静态。</p>
-<h2 id="常见的字符集-amp-字符编码"><a href="#常见的字符集-amp-字符编码" class="headerlink" title="常见的字符集&amp;字符编码"></a>常见的字符集&amp;字符编码</h2><p>计算机中储存的信息都是用<strong>二进制</strong>数表示的；<br>而我们在屏幕上看到的<strong>英文、汉字</strong>等字符是<strong>二进制数转换</strong>之后的结果。<br>通俗的说，按照<strong>何种规则</strong>将字符<strong>存储在计算机中</strong>，如’a’用什么表示，称为”<strong>编码</strong>“；<br>反之，将存储在计算机中的二进制数<strong>解析</strong>显示出来，称为”<strong>解码</strong>“，如同密码学中的加密和解密。<br>在解码过程中，如果<strong>使用</strong>了<strong>错误</strong>的解码<strong>规则</strong>，则导致’a’解析成’b’或者<strong>乱码</strong>。</p>
-<h3 id="1、GBK编码-计算机编码"><a href="#1、GBK编码-计算机编码" class="headerlink" title="1、GBK编码(计算机编码)"></a>1、GBK编码(计算机编码)</h3><p>GBK全称《汉字内码扩展规范》，中文名是<strong>汉字编码字符集</strong></p>
-<h3 id="2、UNICODE编码"><a href="#2、UNICODE编码" class="headerlink" title="2、UNICODE编码"></a>2、UNICODE编码</h3><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">以**\u、\u+、&amp;#x、&amp;#**开头，比如：\u0031\u0038\</span><br></pre></td></tr></table></figure></div>
-
-<h3 id="3、16进制编码"><a href="#3、16进制编码" class="headerlink" title="3、16进制编码"></a>3、16进制编码</h3><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">以**\x**开头</span><br><span class="line">GET /news/society/201210/2358322923.shtml&quot;&lt;/script&gt;&lt;object 		data=jav\x61scr\x69pt:npsduc(uhg)&gt; </span><br><span class="line"></span><br><span class="line">**其中的\x61会被解码成a，\x69会被解码成i ** </span><br></pre></td></tr></table></figure></div>
-
-<h3 id="4、编码-Base64编码"><a href="#4、编码-Base64编码" class="headerlink" title="4、编码-Base64编码"></a>4、编码-Base64编码</h3><p>把每三个8Bit的字节转换为四个6Bit的字节，不能算加密，因为这种编码过程是可逆的</p>
-<h3 id="5、URL编码"><a href="#5、URL编码" class="headerlink" title="5、URL编码"></a>5、URL编码</h3><p>URL编码就是找到你要编码的字符对应底层的16进制，然后再在前面加一个 百分号（%）。比如：a将编码成%61 。</p>
-<h3 id="6、ACSLL码"><a href="#6、ACSLL码" class="headerlink" title="6、ACSLL码"></a>6、ACSLL码</h3><p>基于拉丁字母的一套电脑编码系统；</p>
-<p>ASCII (American Standard Code for Information Interchange)：美国信息交换标准代码是基于<strong>拉丁字母</strong>的一套电脑<strong>编码</strong>系统，主要用于显示现代<strong>英语</strong>和其他<strong>西欧</strong>语言。它是最通用的<strong>信息交换标准</strong>，并等同于<strong>国际</strong>标准 ISO&#x2F;IEC 646。ASCII第一次以规范标准的类型发表是在1967年，最后一次更新则是在1986年，到目前为止共定义了128个字符 。</p>
-<h2 id="Web应用基础"><a href="#Web应用基础" class="headerlink" title="Web应用基础"></a>Web应用基础</h2><p>HTTP1.0定义了三种请求方法： GET, POST 和 HEAD方法。</p>
-<p>HTTP1.1新增了五种请求方法：OPTIONS, PUT, DELETE, TRACE 和 CONNECT 方法。</p>
-<p>post方法中，请求头部是以一个空行为结束，即请求头部和body之间存在一个空白行。</p>
 ]]></content>
   </entry>
 </search>

@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="Cream">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://evan.beee.top" crossorigin>
+    
+        
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="http://example.com/2023/05/17/主机检查/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="前言：每次出去给政府单位做安全检查的时候，必备的一些主机检查的命令。 1、cat &#x2F;etc&#x2F;passwd  检查密码 （允许所有用户读取）用户的关键信息被存放在系统的&#x2F;etc&#x2F;passwd文件中，系统的每一个合法用户账号对应于该文件中的一行记录。这行记录定义了每个用户账号的属性。 12345678910&#x2F;etc&#x2F;passwd文件是一个纯文本文件，每行采用了相">
+<meta property="og:type" content="article">
+<meta property="og:title" content="主机检查">
+<meta property="og:url" content="http://example.com/2023/05/17/%E4%B8%BB%E6%9C%BA%E6%A3%80%E6%9F%A5/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="前言：每次出去给政府单位做安全检查的时候，必备的一些主机检查的命令。 1、cat &#x2F;etc&#x2F;passwd  检查密码 （允许所有用户读取）用户的关键信息被存放在系统的&#x2F;etc&#x2F;passwd文件中，系统的每一个合法用户账号对应于该文件中的一行记录。这行记录定义了每个用户账号的属性。 12345678910&#x2F;etc&#x2F;passwd文件是一个纯文本文件，每行采用了相">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-05-17T01:04:37.166Z">
+<meta property="article:modified_time" content="2023-05-17T01:04:09.083Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/favicon.ico" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <!--- Page Info-->
+    
+    <title>
+        
+            主机检查 -
+        
+        Record learning moments
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="stylesheet" href="//evan.beee.top/projects/hexo-theme-redefine/v2.1.2/source/assets/fonts.css">
+    <!--- Font Part-->
+    
+    
+    
+    
+
+    <!--- Inject Part-->
+    
+    <script id="hexo-configurations">
+    let Global = window.Global || {};
+    Global.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN","path":"search.xml"};
+    Global.theme_config = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[""]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":false,"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":true,"percentage":true},"busuanzi_counter":{"enable":false,"site_pv":false,"site_uv":false,"post_pv":false},"pjax":true,"open_graph":true},"home_banner":{"enable":true,"image":{"light":"/images/bg.jpg","dark":"/images/bg.jpg"},"title":"Learn new ideas and strive to be a new youth","subtitle":{"text":["A short step, not even a thousand miles","不积小流，无以成江河"],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn"},"typing_speed":70,"backing_speed":50,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":true,"links":{"github":"https://github.com/1500076625","instagram":null,"zhihu":"https://www.zhihu.com/","twitter":null,"email":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.1.2","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"right","first_item":"info","announcement":"Welcome To Home","links":{"Archives":{"icon":"fa-regular fa-archive"},"Tags":{"icon":"fa-regular fa-tags"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"}}},"article_date_format":"YYYY-MM-DD HH:mm:ss","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}}};
+    Global.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    <link rel="stylesheet" href="//evan.beee.top/projects/hexo-theme-redefine/v2.1.2/source/fontawesome/fontawesome.min.css">
+    <link rel="stylesheet" href="//evan.beee.top/projects/hexo-theme-redefine/v2.1.2/source/fontawesome/brands.min.css">
+    <link rel="stylesheet" href="//evan.beee.top/projects/hexo-theme-redefine/v2.1.2/source/fontawesome/solid.min.css">
+    <link rel="stylesheet" href="//evan.beee.top/projects/hexo-theme-redefine/v2.1.2/source/fontawesome/regular.min.css">
+    
+        <link rel="stylesheet" href="//evan.beee.top/projects/hexo-theme-redefine/v2.1.2/source/fontawesome/thin.min.css">
+    
+    
+        <link rel="stylesheet" href="//evan.beee.top/projects/hexo-theme-redefine/v2.1.2/source/fontawesome/light.min.css">
+    
+    
+        <link rel="stylesheet" href="//evan.beee.top/projects/hexo-theme-redefine/v2.1.2/source/fontawesome/duotone.min.css">
+    
+    
+        <link rel="stylesheet" href="//evan.beee.top/projects/hexo-theme-redefine/v2.1.2/source/fontawesome/sharp-solid.min.css">
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fa-solid fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="main-content-container">
+
+        <div class="main-content-header">
+            <header class="navbar-container">
+    
+    <div class="navbar-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                Record learning moments
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-house"></i>
+                                        
+                                        首页
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i></div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="navbar-drawer">
+        <ul class="drawer-navbar-list">
+            
+                
+                    <li class="drawer-navbar-item flex-center">
+                        <a class="" 
+                        href="/"  >
+                             
+                                
+                                    <i class="fa-regular fa-house"></i>
+                                
+                                首页
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container">
+        <div class="article-content-container">
+
+            
+            
+                <div class="article-title">
+                    <h1 class="article-title-regular">主机检查</h1>
+                </div>
+            
+                
+            
+
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="/images/touxiang.png">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">Cream</span>
+                            
+                                <span class="author-label"></span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2023-05-17 09:04:37</span>
+        <span class="mobile">2023-05-17 09:04</span>
+        <span class="hover-info">创建</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2023-05-17 09:04:09</span>
+            <span class="mobile">2023-05-17 09:04</span>
+            <span class="hover-info">更新</span>
+        </span>
+    
+
+    
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>5.1k 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>21 分钟</span>
+        </span>
+    
+    
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content markdown-body">
+                <p>前言：每次出去给政府单位做安全检查的时候，必备的一些主机检查的命令。</p>
+<h3 id="1、cat-x2F-etc-x2F-passwd-检查密码-（允许所有用户读取）"><a href="#1、cat-x2F-etc-x2F-passwd-检查密码-（允许所有用户读取）" class="headerlink" title="1、cat &#x2F;etc&#x2F;passwd  检查密码 （允许所有用户读取）"></a>1、cat &#x2F;etc&#x2F;passwd  检查密码 （允许所有用户读取）</h3><p>用户的关键信息被存放在系统的&#x2F;etc&#x2F;passwd文件中，系统的每一个合法用户账号对应于该文件中的一行记录。这行记录定义了每个用户账号的属性。</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">/etc/passwd</span><br><span class="line">文件是一个纯文本文件，每行采用了相同的格式：</span><br><span class="line">name:password:uid:gid:comment:home:shell</span><br><span class="line"></span><br><span class="line">root:x:0:0:root:/root:/bin/bash</span><br><span class="line">bin:x:1:1:bin:/bin:/sbin/nologin</span><br><span class="line">daemon:x:2:2:daemon:/sbin:/sbin/nologin</span><br><span class="line">......</span><br><span class="line">desktop:x:80:80:desktop:/var/lib/menu/kde:/sbin/nologin</span><br><span class="line">mengqc:x:500:500:mengqc:/home/mengqc:/bin/bash</span><br></pre></td></tr></table></figure></div>
+
+<p>在该文件中，每一行用户记录的各个数据段用“：”分隔，分别定义了用户的各方面属性。各个字段的顺序和含义如下：<br>注册名：口令密码：用户标识号：组标识号：用户名：用户主目录：命令解释程序</p>
+<p>Name：用户登录名<br>Password：用户口令。此域中的口令是加密的。当用户登录系统时，系统对输入的口令采取相同的算法，与此域中的内容进行比较。如果此域为空，表明该用户登录时不需要口令。<br>Uid：指定用户的 UID。用户登录进系统后，系统通过该值，而不是用户名来识别用户。<br>gid：GID。如果系统要对相同的一群人赋予相同的权利，则使用该值。comment：用来保存用户的真实姓名和个人细节。<br>home：指定用户的主目录的绝对路径。<br>shell：如果用户登录成功，则要执行的命令的绝对路径放在这一区域中。它可以是任何命令。</p>
+<h3 id="2、cat-x2F-etc-x2F-shadow-检查影子文件-（仅允许root用户读取）"><a href="#2、cat-x2F-etc-x2F-shadow-检查影子文件-（仅允许root用户读取）" class="headerlink" title="2、cat &#x2F;etc&#x2F;shadow 检查影子文件 （仅允许root用户读取）"></a>2、cat &#x2F;etc&#x2F;shadow 检查影子文件 （仅允许root用户读取）</h3><p>&#x2F;etc&#x2F;shadow 文件，用于存储 Linux 系统中用户的密码信息，又称为“影子文件”。</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">root:$6$9w5Td6lg$bgpsy3olsq9WwWvS5Sst2W3ZiJpuCGDY.4w4MRk3ob/i85fl38RH15wzVoomff9isV1PzdcXmixzhnMVhMxbvO:15775:0:99999:7:::bin:*:15513:0:99999:7:::</span><br><span class="line"></span><br><span class="line">同 /etc/passwd 文件一样，文件中每行代表一个用户，同样使用 &quot;:&quot; 作为分隔符，不同之处在于，每行用户信息被划分为 9 个字段。每个字段的含义如下：</span><br><span class="line">&#123;用户名&#125;：&#123;加密后的口令密码&#125;：&#123;口令最后修改时间距原点(1970-1-1)的天数&#125;：&#123;口令最小修改间隔(防止修改口令，如果时限未到，将恢复至旧口令)：&#123;口令最大修改间隔&#125;：&#123;口令失效前的警告天数&#125;：&#123;账户不活动天数&#125;：&#123;账号失效天数&#125;：&#123;保留&#125;</span><br><span class="line"></span><br><span class="line">所谓的密码域密文也是由三部分组成的，即：$id$salt$encrypted。</span><br><span class="line">id为1时，采用md5进行加密；</span><br><span class="line">id为5时，采用SHA256进行加密；</span><br><span class="line">id为6时，采用SHA512进行加密。</span><br><span class="line"></span><br><span class="line">所有伪用户的密码都是 &quot;!!&quot; 或 &quot;*&quot;，代表没有密码是不能登录的。当然，新创建的用户如果不设定密码，那么它的密码项也是 &quot;!!&quot;，代表这个用户没有密码，不能登录。</span><br><span class="line"></span><br><span class="line">这里显示 15775 天，也就是说，此 root 账号在 1970 年 1 月 1 日之后的第 15775 天修改的 root 用户密码。</span><br><span class="line">[root@localhost ~]# date -d &quot;1970-01-01 15775 days&quot;</span><br><span class="line">2013年03月11日 星期一 00:00:00 CST</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="3、cat-x2F-etc-x2F-profile-查看超时时间"><a href="#3、cat-x2F-etc-x2F-profile-查看超时时间" class="headerlink" title="3、cat &#x2F;etc&#x2F;profile 查看超时时间"></a>3、cat &#x2F;etc&#x2F;profile 查看超时时间</h3><p>查看&#x2F;etc&#x2F;profile中的TIMEOUT环境变量，是否配置超时锁定参数；（如参数前面带有#证明该数值未启用）</p>
+<h3 id="4、chage-l-用户名"><a href="#4、chage-l-用户名" class="headerlink" title="4、chage -l [用户名]"></a>4、chage -l [用户名]</h3><p>列出用户以及密码的有效期</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]# chage -l root</span><br><span class="line">最近一次密码修改时间					：从不</span><br><span class="line">密码过期时间					：从不</span><br><span class="line">密码失效时间					：从不</span><br><span class="line">帐户过期时间						：从不</span><br><span class="line">两次改变密码之间相距的最小天数		：0</span><br><span class="line">两次改变密码之间相距的最大天数		：99999</span><br><span class="line">在密码过期之前警告的天数	：7</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="5、cat-x2F-etc-x2F-pam-d-x2F-system-auth和cat-x2F-etc-x2F-pam-d-x2F-password-auth"><a href="#5、cat-x2F-etc-x2F-pam-d-x2F-system-auth和cat-x2F-etc-x2F-pam-d-x2F-password-auth" class="headerlink" title="5、cat &#x2F;etc&#x2F;pam.d&#x2F;system-auth和cat &#x2F;etc&#x2F;pam.d&#x2F;password-auth"></a>5、cat &#x2F;etc&#x2F;pam.d&#x2F;system-auth和cat &#x2F;etc&#x2F;pam.d&#x2F;password-auth</h3><p>输出的结果是一样的，一个主一个备，每次系统都是先看system,再看password的配置文件</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]# cat /etc/pam.d/system-auth</span><br><span class="line">#%PAM-1.0</span><br><span class="line"># This file is auto-generated.</span><br><span class="line"># User changes will be destroyed the next time authconfig is run.</span><br><span class="line">auth        required      pam_env.so</span><br><span class="line">auth        required      pam_faildelay.so delay=2000000</span><br><span class="line">auth        sufficient    pam_fprintd.so</span><br><span class="line">auth        sufficient    pam_unix.so nullok try_first_pass</span><br><span class="line">auth        requisite     pam_succeed_if.so uid &gt;= 1000 quiet_success</span><br><span class="line">auth        required      pam_deny.so</span><br><span class="line"></span><br><span class="line">account     required      pam_unix.so</span><br><span class="line">account     sufficient    pam_localuser.so</span><br><span class="line">account     sufficient    pam_succeed_if.so uid &lt; 1000 quiet</span><br><span class="line">account     required      pam_permit.so</span><br><span class="line"></span><br><span class="line">password    requisite     pam_pwquality.so try_first_pass local_users_only retry=3 authtok_type=</span><br><span class="line">password    sufficient    pam_unix.so sha512 shadow nullok try_first_pass use_authtok</span><br><span class="line">password    required      pam_deny.so</span><br><span class="line"></span><br><span class="line">session     optional      pam_keyinit.so revoke</span><br><span class="line">session     required      pam_limits.so</span><br><span class="line">-session     optional      pam_systemd.so</span><br><span class="line">session     [success=1 default=ignore] pam_succeed_if.so service in crond quiet use_uid</span><br><span class="line">session     required      pam_unix.so</span><br><span class="line"></span><br><span class="line">auth会用来进行登陆检查，即使第一个模块失败，用来防止用户知道在哪个过程失败，主要目的是防止攻击。</span><br><span class="line">auth 组件：认证接口，要求并验证密码</span><br><span class="line">account组件：检测是否允许访问。检测账户是否过期或者在末端时间内能否登陆。</span><br><span class="line">password组件：设置并验证密码</span><br><span class="line">session组件：配置和管理用户sesison。</span><br><span class="line"></span><br><span class="line">required:该模块必须success才能进行继续。即使失败用户也不会立刻获知，直到所有相关模块完成。</span><br><span class="line">requisite：该模块必须success才能使认证继续进行。</span><br><span class="line">suffifient:如果失败则忽略。</span><br><span class="line">optinal:忽略结果，不管是否失败。</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="6、netstat-nltp"><a href="#6、netstat-nltp" class="headerlink" title="6、netstat -nltp"></a>6、netstat -nltp</h3><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">netstat 常见参数</span><br><span class="line"></span><br><span class="line">-a (all)显示所有选项，默认不显示 LISTEN 相关</span><br><span class="line">-t (tcp)显示tcp相关选项</span><br><span class="line">-u (udp)显示udp相关选项</span><br><span class="line">-l 列出有在 listen (监听) 的服务状态</span><br><span class="line">-n 不显示别名，能显示数字的全部转化成数字</span><br><span class="line">-p 显示建立相关链接（sockets）的程序名</span><br><span class="line">-r 显示路由信息，路由表</span><br><span class="line">-e 显示扩展信息，例如uid等</span><br><span class="line">-s 按各个协议进行统计</span><br><span class="line">-c 每隔一个固定时间，执行该netstat命令。</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="7、find-x2F-name-rhosts-ls"><a href="#7、find-x2F-name-rhosts-ls" class="headerlink" title="7、find &#x2F; -name .rhosts -ls"></a>7、find &#x2F; -name .rhosts -ls</h3><p>查找这个文件是否存在，查看其权限是否安全</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">.rhosts 文件是 /etc/hosts.equiv 文件的用户等效文件。此文件包含主机-用户组合列表，而不包含一般意义的主机。如果此文件中列出了主机-用户组合，则指定用户将被授予从指定主机登录而不必提供口令的权限。</span><br><span class="line"></span><br><span class="line">请注意，.rhosts 文件必须驻留在用户起始目录的顶层。如果 .rhost 文件位于子目录中，则不会访问这些文件。</span><br><span class="line"></span><br><span class="line">用户可在其起始目录中创建 .rhosts 文件。使用 .rhosts 文件是另外一种允许在不使用 /etc/hosts.equiv 文件的情况下，在不同系统的用户自己帐户之间进行可信访问的方法。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">使用 .rhosts 文件时的安全风险</span><br><span class="line"></span><br><span class="line">遗憾的是，.rhosts 文件存在严重的安全问题。虽然 /etc/hosts.equiv 文件受系统管理员的控制并且可以有效地管理，但任何用户都可以创建 .rhosts 文件，从而可以在系统管理员不知情时对其选择的任何人授予访问权限。</span><br><span class="line"></span><br><span class="line">如果所有用户起始目录都在一台服务器上，并且只有某些人员才在该服务器上具有超级用户权限，则防止用户使用 .rhosts 文件的一种好方法就是以超级用户身份在用户起始目录中创建一个空文件。然后，将此文件的权限更改为 000，这样即使作为超级用户也很难更改它。此更改可有效地防止用户因不负责任地使用 .rhosts 文件而导致的系统安全风险。但是，如果用户能够更改指向其起始目录的有效路径，则此更改将不能解决任何问题。</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="8、cat-x2F-etc-x2F-hosts-equiv-查看是否存在"><a href="#8、cat-x2F-etc-x2F-hosts-equiv-查看是否存在" class="headerlink" title="8、cat &#x2F;etc&#x2F;hosts.equiv 查看是否存在"></a>8、cat &#x2F;etc&#x2F;hosts.equiv 查看是否存在</h3><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">/etc/hosts.equiv 文件包含远程系统的可信主机列表，每行显示一台主机。如果用户尝试从此文件中列出的主机之一远程登录（使用 rlogin 命令），并且如果远程系统可以访问用户的口令项，则远程系统允许用户在不使用口令的情况下登录。</span><br><span class="line"></span><br><span class="line">典型的 hosts.equiv 文件具有以下结构：</span><br><span class="line"></span><br><span class="line">host1</span><br><span class="line">host2 user_a</span><br><span class="line">+@group1</span><br><span class="line">-@group2</span><br><span class="line">如果在 hosts.equiv 中创建一个简单的主机项（如上述 host1 项），则表示该主机是可信的，该计算机中的任何用户也是可信的。</span><br><span class="line"></span><br><span class="line">如果还包含用户名（如示例中的第二项），则该主机只有在指定用户尝试访问时才可信。</span><br><span class="line"></span><br><span class="line">前面带有加号 (+) 的组名表示，该网络组中的所有计算机均被视为可信。</span><br><span class="line"></span><br><span class="line">前面带有减号 (-) 的组名表示，该网络组中的所有计算机均被视为不可信。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">使用 /etc/hosts.equiv 文件时的安全风险</span><br><span class="line"></span><br><span class="line">/etc/hosts.equiv 文件存在安全风险。如果将 /etc/hosts.equiv 文件保存在系统上，则应仅包含网络中的可信主机。该文件不应包含属于不同网络的任何主机或公共区域中的所有计算机。例如，不应包含终端室内的主机。</span><br><span class="line"></span><br><span class="line">使用不受信任的主机可能产生严重的安全问题。请将 /etc/hosts.equiv 文件替换为正确配置的文件，或者完全删除该文件。</span><br><span class="line"></span><br><span class="line">/etc/hosts.equiv 文件中的一个 + 行表示信任所有已知主机。</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="9、cat-x2F-etc-x2F-login-defs"><a href="#9、cat-x2F-etc-x2F-login-defs" class="headerlink" title="9、cat &#x2F;etc&#x2F;login.defs"></a>9、cat &#x2F;etc&#x2F;login.defs</h3><p>&#x2F;etc&#x2F;login.defs 文件用于在创建用户时，对用户的一些基本属性做默认设置，例如指定用户 UID 和 GID 的范围，用户的过期时间，密码的最大长度，等等。</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]# cat /etc/login.defs</span><br><span class="line">#</span><br><span class="line"># Please note that the parameters in this configuration file control the</span><br><span class="line"># behavior of the tools from the shadow-utils component. None of these</span><br><span class="line"># tools uses the PAM mechanism, and the utilities that use PAM (such as the</span><br><span class="line"># passwd command) should therefore be configured elsewhere. Refer to</span><br><span class="line"># /etc/pam.d/system-auth for more information.</span><br><span class="line">#</span><br><span class="line"></span><br><span class="line"># *REQUIRED*</span><br><span class="line">#   Directory where mailboxes reside, _or_ name of file, relative to the</span><br><span class="line">#   home directory.  If you _do_ define both, MAIL_DIR takes precedence.</span><br><span class="line">#   QMAIL_DIR is for Qmail</span><br><span class="line">#</span><br><span class="line">#QMAIL_DIR	Maildir</span><br><span class="line">MAIL_DIR	/var/spool/mail</span><br><span class="line">#MAIL_FILE	.mail</span><br><span class="line"></span><br><span class="line"># Password aging controls:</span><br><span class="line">#</span><br><span class="line">#	PASS_MAX_DAYS	Maximum number of days a password may be used.</span><br><span class="line">#	PASS_MIN_DAYS	Minimum number of days allowed between password changes.</span><br><span class="line">#	PASS_MIN_LEN	Minimum acceptable password length.</span><br><span class="line">#	PASS_WARN_AGE	Number of days warning given before a password expires.</span><br><span class="line">#</span><br><span class="line">PASS_MAX_DAYS	99999</span><br><span class="line">PASS_MIN_DAYS	0</span><br><span class="line">PASS_MIN_LEN	5</span><br><span class="line">PASS_WARN_AGE	7</span><br><span class="line"></span><br><span class="line">#</span><br><span class="line"># Min/max values for automatic uid selection in useradd</span><br><span class="line">#</span><br><span class="line">UID_MIN                  1000</span><br><span class="line">UID_MAX                 60000</span><br><span class="line"># System accounts</span><br><span class="line">SYS_UID_MIN               201</span><br><span class="line">SYS_UID_MAX               999</span><br><span class="line"></span><br><span class="line">#</span><br><span class="line"># Min/max values for automatic gid selection in groupadd</span><br><span class="line">#</span><br><span class="line">GID_MIN                  1000</span><br><span class="line">GID_MAX                 60000</span><br><span class="line"># System accounts</span><br><span class="line">SYS_GID_MIN               201</span><br><span class="line">SYS_GID_MAX               999</span><br><span class="line"></span><br><span class="line">#</span><br><span class="line"># If defined, this command is run when removing a user.</span><br><span class="line"># It should remove any at/cron/print jobs etc. owned by</span><br><span class="line"># the user to be removed (passed as the first argument).</span><br><span class="line">#</span><br><span class="line">#USERDEL_CMD	/usr/sbin/userdel_local</span><br><span class="line"></span><br><span class="line">#</span><br><span class="line"># If useradd should create home directories for users by default</span><br><span class="line"># On RH systems, we do. This option is overridden with the -m flag on</span><br><span class="line"># useradd command line.</span><br><span class="line">#</span><br><span class="line">CREATE_HOME	yes</span><br><span class="line"></span><br><span class="line"># The permission mask is initialized to this value. If not specified, </span><br><span class="line"># the permission mask will be initialized to 022.</span><br><span class="line">UMASK           077</span><br><span class="line"></span><br><span class="line"># This enables userdel to remove user groups if no members exist.</span><br><span class="line">#</span><br><span class="line">USERGROUPS_ENAB yes</span><br><span class="line"></span><br><span class="line"># Use SHA512 to encrypt password.</span><br><span class="line">ENCRYPT_METHOD SHA512 </span><br></pre></td></tr></table></figure></div>
+
+<table>
+<thead>
+<tr>
+<th>MAIL_DIR &#x2F;var&#x2F;spool&#x2F;mail</th>
+<th>创建用户时，系统会在目录 &#x2F;var&#x2F;spool&#x2F;mail 中创建一个用户邮箱，比如 lamp 用户的邮箱是 &#x2F;var&#x2F;spool&#x2F;mail&#x2F;lamp。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>PASS_MAX_DAYS 99999</td>
+<td>密码有效期，99999 是自 1970 年 1 月 1 日起密码有效的天数，相当于 273 年，可理解为密码始终有效。</td>
+</tr>
+<tr>
+<td>PASS_MIN_DAYS 0</td>
+<td>表示自上次修改密码以来，最少隔多少天后用户才能再次修改密码，默认值是 0。</td>
+</tr>
+<tr>
+<td>PASS_MIN_LEN 5</td>
+<td>指定密码的最小长度，默认不小于 5 位，但是现在用户登录时验证已经被 PAM 模块取代，所以这个选项并不生效。</td>
+</tr>
+<tr>
+<td>PASS_WARN_AGE 7</td>
+<td>指定在密码到期前多少天，系统就开始通知用户密码即将到期，默认为 7 天。</td>
+</tr>
+<tr>
+<td>UID_MIN 500</td>
+<td>指定最小 UID 为 500，也就是说，添加用户时，默认 UID 从 500开始。注意，如果手工指定了一个用户的 UID 是 550，那么下一个创建的用户的 UID 就会从 551 开始，哪怕 500~549 之间的 UID 没有使用。</td>
+</tr>
+<tr>
+<td>UID_MAX 60000</td>
+<td>指定用户最大的 UID 为 60000。</td>
+</tr>
+<tr>
+<td>GID_MIN 500</td>
+<td>指定最小 GID 为 500，也就是在添加组时，组的 GID 从 500 开始。</td>
+</tr>
+<tr>
+<td>GID_MAX 60000</td>
+<td>用户 GID 最大为 60000。</td>
+</tr>
+<tr>
+<td>CREATE_HOME yes</td>
+<td>指定在创建用户时，是否同时创建用户主目录，yes 表示创建，no 则不创建，默认是 yes。</td>
+</tr>
+<tr>
+<td>UMASK 077</td>
+<td>用户主目录的权限默认设置为 077。</td>
+</tr>
+<tr>
+<td>USERGROUPS_ENAB yes</td>
+<td>指定删除用户的时候是否同时删除用户组，准确地说，这里指的是删除用户的初始组，此项的默认值为 yes。</td>
+</tr>
+<tr>
+<td>ENCRYPT_METHOD SHA512</td>
+<td>指定用户密码采用的加密规则，默认采用 SHA512，这是新的密码加密模式，原先的 Linux 只能用 DES 或 MD5 加密。</td>
+</tr>
+</tbody></table>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 rules.d]# cat /etc/login.defs|grep -vE &quot;#|^$&quot;</span><br><span class="line">MAIL_DIR	/var/spool/mail</span><br><span class="line">PASS_MAX_DAYS	99999</span><br><span class="line">PASS_MIN_DAYS	0</span><br><span class="line">PASS_MIN_LEN	5</span><br><span class="line">PASS_WARN_AGE	7</span><br><span class="line">UID_MIN                  1000</span><br><span class="line">UID_MAX                 60000</span><br><span class="line">SYS_UID_MIN               201</span><br><span class="line">SYS_UID_MAX               999</span><br><span class="line">GID_MIN                  1000</span><br><span class="line">GID_MAX                 60000</span><br><span class="line">SYS_GID_MIN               201</span><br><span class="line">SYS_GID_MAX               999</span><br><span class="line">CREATE_HOME	yes</span><br><span class="line">UMASK           077</span><br><span class="line">USERGROUPS_ENAB yes</span><br><span class="line">ENCRYPT_METHOD SHA512 </span><br></pre></td></tr></table></figure></div>
+
+<h3 id="10、iptables-L"><a href="#10、iptables-L" class="headerlink" title="10、iptables -L"></a>10、iptables -L</h3><p>列出添加防火墙规则,-L 表示查看当前表的所有规则，默认查看的是 filter 表</p>
+<h3 id="11、查看防火墙规则和运行情况"><a href="#11、查看防火墙规则和运行情况" class="headerlink" title="11、查看防火墙规则和运行情况"></a>11、查看防火墙规则和运行情况</h3><p>firewall-cmd是firewalld防火墙自带的字符管理工具，可以用来设置firewalld防火墙的各种规则</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# systemctl 选项 firewalld</span><br><span class="line">选项：</span><br><span class="line">    stop：关闭</span><br><span class="line">    start：开启</span><br><span class="line">    restart：重启</span><br><span class="line">    status：状态</span><br><span class="line"></span><br><span class="line">systemctl enable/disable firewalld		//设置 firewalld 开机 自启/不自启 动</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]# firewall-cmd --state			//查看firewalld防火墙是否运行</span><br><span class="line">not running</span><br><span class="line">[root@centos7 log]# firewall-cmd --list-all</span><br><span class="line">FirewallD is not running</span><br><span class="line">[root@centos7 ~]# systemctl start firewalld			//打开firewalld防火墙</span><br><span class="line">[root@centos7 ~]# firewall-cmd --state</span><br><span class="line">running</span><br><span class="line">[root@centos7 ~]# systemctl status firewalld			//查看运行状态</span><br><span class="line">● firewalld.service - firewalld - dynamic firewall daemon</span><br><span class="line">   Loaded: loaded (/usr/lib/systemd/system/firewalld.service; disabled; vendor preset: enabled)</span><br><span class="line">   Active: active (running) since 二 2023-05-16 14:40:47 CST; 4min 9s ago</span><br><span class="line">     Docs: man:firewalld(1)</span><br><span class="line"> Main PID: 72382 (firewalld)</span><br><span class="line">    Tasks: 2</span><br><span class="line">   CGroup: /system.slice/firewalld.service</span><br><span class="line">           └─72382 /usr/bin/python -Es /usr/sbin/firewalld --nofork --nopid</span><br><span class="line"></span><br><span class="line">5月 16 14:40:47 centos7 systemd[1]: Starting firewalld - dynamic firewall daemon...</span><br><span class="line">5月 16 14:40:47 centos7 systemd[1]: Started firewalld - dynamic firewall daemon.</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+<h3 id="12、systemctl-list-unit-files查看自启列表命令"><a href="#12、systemctl-list-unit-files查看自启列表命令" class="headerlink" title="12、systemctl list-unit-files	查看自启列表命令"></a>12、systemctl list-unit-files	查看自启列表命令</h3><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">执行结果:&quot;enabled:自启动&quot;,&quot;disabled:未自启动&quot;</span><br><span class="line"></span><br><span class="line">[root@centos7 ~]# systemctl list-unit-files</span><br><span class="line">UNIT FILE                                     STATE   </span><br><span class="line">proc-sys-fs-binfmt_misc.automount             static  </span><br><span class="line">dev-hugepages.mount                           static  </span><br><span class="line">dev-mqueue.mount                              static  </span><br><span class="line">proc-fs-nfsd.mount                            static  </span><br><span class="line">proc-sys-fs-binfmt_misc.mount                 static  </span><br><span class="line">sys-fs-fuse-connections.mount                 static  </span><br><span class="line">sys-kernel-config.mount                       static  </span><br><span class="line">sys-kernel-debug.mount                        static  </span><br><span class="line">tmp.mount                                     disabled</span><br><span class="line">var-lib-nfs-rpc_pipefs.mount                  static  </span><br><span class="line">brandbot.path                                 disabled</span><br><span class="line">cups.path                                     enabled </span><br><span class="line">systemd-ask-password-console.path             static  </span><br><span class="line">systemd-ask-password-plymouth.path            static  </span><br><span class="line">systemd-ask-password-wall.path                static  </span><br><span class="line">session-1.scope                               static  </span><br><span class="line">abrt-ccpp.service                             enabled </span><br><span class="line">abrt-oops.service                             enabled </span><br><span class="line">abrt-pstoreoops.service                       disabled</span><br><span class="line">abrt-vmcore.service                           enabled </span><br></pre></td></tr></table></figure></div>
+
+<h3 id="13、cat-x2F-etc-x2F-audit-x2F-auditd-conf"><a href="#13、cat-x2F-etc-x2F-audit-x2F-auditd-conf" class="headerlink" title="13、cat &#x2F;etc&#x2F;audit&#x2F;auditd.conf"></a>13、cat &#x2F;etc&#x2F;audit&#x2F;auditd.conf</h3><p>该文件控制审计守护进程的配置</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]# cat /etc/audit/auditd.conf</span><br><span class="line">#</span><br><span class="line"># This file controls the configuration of the audit daemon</span><br><span class="line">#</span><br><span class="line"></span><br><span class="line">local_events = yes		//本地的事件是否记录</span><br><span class="line"></span><br><span class="line">write_logs = yes		//日志是否落盘，设置为no的场景应该是将会把日志存储到远程服务器的客户端(没有足够空间的情况下)</span><br><span class="line"></span><br><span class="line">log_file = /var/log/audit/audit.log		//日志记录的文件</span><br><span class="line"></span><br><span class="line">log_group = root		//日志文件默认所属的组</span><br><span class="line"></span><br><span class="line">log_format = RAW		//日志的格式，一般设置为RAW即可</span><br><span class="line"></span><br><span class="line">flush = INCREMENTAL_ASYNC	//设置日志写到日志的同步方式，这里设置为异步增量式</span><br><span class="line"></span><br><span class="line">freq = 50	//当flush设为为了INCREMENTAL_ASYNC或INCREMENTAL才有效，意思是当有50条记录时才同步到日志文件</span><br><span class="line"></span><br><span class="line">max_log_file = 8	//设置日志文件的大小，单位为M</span><br><span class="line"></span><br><span class="line">num_logs = 5		//设置日志文件的最多数量</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">priority_boost = 4	//优先级的设置，默认为4即可</span><br><span class="line">disp_qos = lossy</span><br><span class="line"></span><br><span class="line">dispatcher = /sbin/audispd		//指定dispatcher的路径</span><br><span class="line"></span><br><span class="line">name_format = NONE		//设置多节点时的note的名称</span><br><span class="line"></span><br><span class="line">##name = mydomain		//当name_format设置为USER后，此参数才会有效，这里会在日志中的node名为logserver</span><br><span class="line"></span><br><span class="line">max_log_file_action = ROTATE	//当max_log_file设置的大小达到后，deamon程序将执行的动作，这里为循环式地记录</span><br><span class="line"></span><br><span class="line">space_left = 75		//设置space_left_action对应的剩余硬盘空间，单位为M</span><br><span class="line"></span><br><span class="line">space_left_action = SYSLOG	//设置当剩余硬盘空间达到设置值时的动作，这里设置为SYSLOG</span><br><span class="line"></span><br><span class="line">verify_email = yes	//检测action_mail_acct的域名是否有效</span><br><span class="line"></span><br><span class="line">action_mail_acct = root	//当space_left_action、admin_space_left_action设置为email时的邮箱地址</span><br><span class="line"></span><br><span class="line">admin_space_left = 50	//admin_space_left_action执行动作的触发剩余空间大小，单位为M，必须比space_left小</span><br><span class="line"></span><br><span class="line">admin_space_left_action = SUSPEND	//当admin_space_left设置的剩余空间达到时要执行的动作</span><br><span class="line"></span><br><span class="line">disk_full_action = SUSPEND	//硬盘空间满时如何执行的设置</span><br><span class="line"></span><br><span class="line">disk_error_action = SUSPEND	//硬盘错误时如何执行的设置</span><br><span class="line"></span><br><span class="line">use_libwrap = yes	//是否使用tcp_wrappers进行服务接入的限制</span><br><span class="line"></span><br><span class="line">##tcp_listen_port = 60	//开启远程日志服务器端口，以提供远程日志服务</span><br><span class="line"></span><br><span class="line">tcp_listen_queue = 5	//设置允许多少等待的连接数</span><br><span class="line"></span><br><span class="line">tcp_max_per_addr = 1	//设置允许一个IP同时最多多少个连接，设置过大会有DOS攻击的风险</span><br><span class="line"></span><br><span class="line">##tcp_client_ports = 1024-65535	//设置只允许客户端的连接端口，能有效防止注入攻击</span><br><span class="line"></span><br><span class="line">tcp_client_max_idle = 0	//设置断开连接的空间时间，不推荐设置</span><br><span class="line"></span><br><span class="line">enable_krb5 = no	// 设置是否使用Kerberos5验证和加密</span><br><span class="line"></span><br><span class="line">krb5_principal = auditd	//设置用于Kerberos5申请tickit的主要标识</span><br><span class="line"></span><br><span class="line">##krb5_key_file = /etc/audit/audit.key</span><br><span class="line"></span><br><span class="line">distribute_network = no	//分布式网络设置</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="14、-cd-x2F-etc-x2F-audit-x2F-rules-d-x2F-amp-amp-ll"><a href="#14、-cd-x2F-etc-x2F-audit-x2F-rules-d-x2F-amp-amp-ll" class="headerlink" title="14、 cd &#x2F;etc&#x2F;audit&#x2F;rules.d&#x2F; &amp;&amp; ll"></a>14、 cd &#x2F;etc&#x2F;audit&#x2F;rules.d&#x2F; &amp;&amp; ll</h3><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 /]# cd /etc/audit/rules.d/ &amp;&amp; ll</span><br><span class="line">总用量 4</span><br><span class="line">-rw-------. 1 root root 163 9月   1 2022 audit.rules</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="15、ps-ef"><a href="#15、ps-ef" class="headerlink" title="15、ps -ef"></a>15、ps -ef</h3><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 rules.d]# ps -ef</span><br><span class="line">UID         PID   PPID  C STIME TTY          TIME CMD</span><br><span class="line">root          1      0  0 5月15 ?       00:00:07 /usr/lib/systemd/systemd --switched-root --system --deserialize 22</span><br><span class="line">root          2      0  0 5月15 ?       00:00:00 [kthreadd]</span><br><span class="line">root          3      2  0 5月15 ?       00:00:01 [ksoftirqd/0]</span><br><span class="line">root          5      2  0 5月15 ?       00:00:00 [kworker/0:0H]</span><br><span class="line">root          7      2  0 5月15 ?       00:00:00 [migration/0]</span><br><span class="line">root          8      2  0 5月15 ?       00:00:00 [rcu_bh]</span><br><span class="line">root          9      2  0 5月15 ?       00:00:06 [rcu_sched]</span><br><span class="line">root         10      2  0 5月15 ?       00:00:00 [lru-add-drain]</span><br><span class="line">root         11      2  0 5月15 ?       00:00:00 [watchdog/0]</span><br><span class="line">root         13      2  0 5月15 ?       00:00:00 [kdevtmpfs]</span><br><span class="line">root         14      2  0 5月15 ?       00:00:00 [netns]</span><br><span class="line">root         15      2  0 5月15 ?       00:00:00 [khungtaskd]</span><br><span class="line">root         16      2  0 5月15 ?       00:00:00 [writeback]</span><br><span class="line">root         17      2  0 5月15 ?       00:00:00 [kintegrityd]</span><br><span class="line">root         18      2  0 5月15 ?       00:00:00 [bioset]</span><br><span class="line">root         19      2  0 5月15 ?       00:00:00 [bioset]</span><br><span class="line">root         20      2  0 5月15 ?       00:00:00 [bioset]</span><br><span class="line">......</span><br></pre></td></tr></table></figure></div>
+
+<table>
+<thead>
+<tr>
+<th>-A</th>
+<th>显示所有的进程，跟-e的效果相同</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-a</td>
+<td>显示现行终端机下的所有进程，包括其他用户的进程</td>
+</tr>
+<tr>
+<td>-u</td>
+<td>显示当前用户的进程状态</td>
+</tr>
+<tr>
+<td>-x</td>
+<td>通常与 a 这个参数一起使用，可列出较完整信息</td>
+</tr>
+<tr>
+<td>-l</td>
+<td>较长、较详细的将该PID的信息列出</td>
+</tr>
+<tr>
+<td>-j</td>
+<td>工作的格式(jobs format)</td>
+</tr>
+<tr>
+<td>-f</td>
+<td>把进程的所有信息都显示出来</td>
+</tr>
+<tr>
+<td>-e</td>
+<td>表示显示所有继承</td>
+</tr>
+</tbody></table>
+<h3 id="16、cat-x2F-etc-x2F-hosts-deny和cat-x2F-etc-x2F-hosts-allow"><a href="#16、cat-x2F-etc-x2F-hosts-deny和cat-x2F-etc-x2F-hosts-allow" class="headerlink" title="16、cat &#x2F;etc&#x2F;hosts.deny和cat &#x2F;etc&#x2F;hosts.allow"></a>16、cat &#x2F;etc&#x2F;hosts.deny和cat &#x2F;etc&#x2F;hosts.allow</h3><p>可以通过配置hosts.allow和hosts.deny来控制访问权限</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">/etc/hosts.allow和/etc/hosts.deny的作用</span><br><span class="line"></span><br><span class="line">他们两个的关系为：/etc/hosts.allow 的设定优先于 /etc/hosts.deny</span><br><span class="line"></span><br><span class="line">1. 当档案 /etc/hosts.allow 存在时，则先以此档案内之设定为准；</span><br><span class="line"></span><br><span class="line">2. 而在 /etc/hosts.allow 没有规定到的事项，将在 /etc/hosts.deny 当中继续设定！</span><br><span class="line"></span><br><span class="line">也就是说， /etc/hosts.allow 的设定优先于 /etc/hosts.deny 啰！了解了吗？基本上，只要 hosts.allow 也就够了，因为我们可以将allow 与 deny 都写在同一个档案内，只是这样一来似乎显得有点杂乱无章，因此，通常我们都是：</span><br><span class="line"></span><br><span class="line">1. 允许进入的写在 /etc/hosts.allow 当中；</span><br><span class="line"></span><br><span class="line">2. 不许进入的则写在 /etc/hosts.deny 当中。</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">示例：</span><br><span class="line">1、只允许 140.116.44.0/255.255.255.0 与 140.116.79.0/255.255.255.0 这两个网域，及 140.116.141.99 这个主机可以进入我们的 telnet 服务器；</span><br><span class="line">2、此外，其它的 IP 全部都挡掉！</span><br><span class="line"></span><br><span class="line">这样则首先可以设定 /etc/hosts.allow 这个档案成为：</span><br><span class="line"></span><br><span class="line">[root @test root]# vi /etc/hosts.allow</span><br><span class="line"></span><br><span class="line">telnetd: 140.116.44.0/255.255.255.0 : allow</span><br><span class="line"></span><br><span class="line">telnetd: 140.116.79.0/255.255.255.0 : allow</span><br><span class="line"></span><br><span class="line">telnetd: 140.116.141.99 : allow</span><br><span class="line"></span><br><span class="line">再来，设定 /etc/hosts.deny 成为『全部都挡掉』的状态：</span><br><span class="line"></span><br><span class="line">[root @test root]# vi /etc/hosts.deny</span><br><span class="line"></span><br><span class="line">telnetd: ALL : deny</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="17、cat-x2F-etc-x2F-crontab-查看定时任务"><a href="#17、cat-x2F-etc-x2F-crontab-查看定时任务" class="headerlink" title="17、cat &#x2F;etc&#x2F;crontab 查看定时任务"></a>17、cat &#x2F;etc&#x2F;crontab 查看定时任务</h3><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 rules.d]# cat /etc/crontab</span><br><span class="line">SHELL=/bin/bash		//指定了系统要使用哪个shell，这里是bash</span><br><span class="line">PATH=/sbin:/bin:/usr/sbin:/usr/bin	//指定了系统执行命令的路径</span><br><span class="line">MAILTO=root		//指定了crond的任务执行信息将通过电子邮件发送给root用户。如果MAILTO变量的值为空，则表示不发送任务执行信息给用户</span><br><span class="line"></span><br><span class="line"># For details see man 4 crontabs</span><br><span class="line"></span><br><span class="line"># Example of job definition:</span><br><span class="line"># .---------------- minute (0 - 59)</span><br><span class="line"># |  .------------- hour (0 - 23)</span><br><span class="line"># |  |  .---------- day of month (1 - 31)</span><br><span class="line"># |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...</span><br><span class="line"># |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat</span><br><span class="line"># |  |  |  |  |</span><br><span class="line"># *  *  *  *  * user-name  command to be executed</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="18、auditctl-l-查看审计规则"><a href="#18、auditctl-l-查看审计规则" class="headerlink" title="18、auditctl -l  查看审计规则"></a>18、auditctl -l  查看审计规则</h3><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 rules.d]# auditctl -list</span><br><span class="line">No rules</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="19、systemctl-status-auditd查看auditd服务的状态"><a href="#19、systemctl-status-auditd查看auditd服务的状态" class="headerlink" title="19、systemctl status auditd	查看auditd服务的状态"></a>19、systemctl status auditd	查看auditd服务的状态</h3><h3 id="20、cd-x2F-var-x2F-log"><a href="#20、cd-x2F-var-x2F-log" class="headerlink" title="20、cd &#x2F;var&#x2F;log"></a>20、cd &#x2F;var&#x2F;log</h3><h3 id="21、ps-ef-grep-audit"><a href="#21、ps-ef-grep-audit" class="headerlink" title="21、ps -ef |grep audit"></a>21、ps -ef |grep audit</h3><h3 id="22、ps-ef-grep-syslog"><a href="#22、ps-ef-grep-syslog" class="headerlink" title="22、ps -ef |grep syslog"></a>22、ps -ef |grep syslog</h3><h3 id="23、service-rsyslog-status查看日志服务状态"><a href="#23、service-rsyslog-status查看日志服务状态" class="headerlink" title="23、service rsyslog status	查看日志服务状态"></a>23、service rsyslog status	查看日志服务状态</h3><h3 id="24、cd-x2F-var-x2F-log-amp-amp-ll查看log目录下的权限"><a href="#24、cd-x2F-var-x2F-log-amp-amp-ll查看log目录下的权限" class="headerlink" title="24、cd &#x2F;var&#x2F;log &amp;&amp; ll	查看log目录下的权限"></a>24、cd &#x2F;var&#x2F;log &amp;&amp; ll	查看log目录下的权限</h3>
+            </div>
+
+            
+
+            
+
+            
+
+            
+                <div class="article-nav">
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                            rel="next"
+                            href="/2023/05/12/POC%E9%9B%86/"
+                            >
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">🔥 POC-bomber</span>
+                                    <span class="post-nav-item">下一篇</span>
+                                </span>
+                                <span class="right arrow-icon flex-center">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+
+            
+        </div>
+
+        
+            <div class="toc-content-container">
+                <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">此页目录</div>
+        <div class="page-title">主机检查</div>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81cat-x2F-etc-x2F-passwd-%E6%A3%80%E6%9F%A5%E5%AF%86%E7%A0%81-%EF%BC%88%E5%85%81%E8%AE%B8%E6%89%80%E6%9C%89%E7%94%A8%E6%88%B7%E8%AF%BB%E5%8F%96%EF%BC%89"><span class="nav-text">1、cat &#x2F;etc&#x2F;passwd  检查密码 （允许所有用户读取）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81cat-x2F-etc-x2F-shadow-%E6%A3%80%E6%9F%A5%E5%BD%B1%E5%AD%90%E6%96%87%E4%BB%B6-%EF%BC%88%E4%BB%85%E5%85%81%E8%AE%B8root%E7%94%A8%E6%88%B7%E8%AF%BB%E5%8F%96%EF%BC%89"><span class="nav-text">2、cat &#x2F;etc&#x2F;shadow 检查影子文件 （仅允许root用户读取）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3%E3%80%81cat-x2F-etc-x2F-profile-%E6%9F%A5%E7%9C%8B%E8%B6%85%E6%97%B6%E6%97%B6%E9%97%B4"><span class="nav-text">3、cat &#x2F;etc&#x2F;profile 查看超时时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4%E3%80%81chage-l-%E7%94%A8%E6%88%B7%E5%90%8D"><span class="nav-text">4、chage -l [用户名]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5%E3%80%81cat-x2F-etc-x2F-pam-d-x2F-system-auth%E5%92%8Ccat-x2F-etc-x2F-pam-d-x2F-password-auth"><span class="nav-text">5、cat &#x2F;etc&#x2F;pam.d&#x2F;system-auth和cat &#x2F;etc&#x2F;pam.d&#x2F;password-auth</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6%E3%80%81netstat-nltp"><span class="nav-text">6、netstat -nltp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7%E3%80%81find-x2F-name-rhosts-ls"><span class="nav-text">7、find &#x2F; -name .rhosts -ls</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8%E3%80%81cat-x2F-etc-x2F-hosts-equiv-%E6%9F%A5%E7%9C%8B%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8"><span class="nav-text">8、cat &#x2F;etc&#x2F;hosts.equiv 查看是否存在</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9%E3%80%81cat-x2F-etc-x2F-login-defs"><span class="nav-text">9、cat &#x2F;etc&#x2F;login.defs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10%E3%80%81iptables-L"><span class="nav-text">10、iptables -L</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11%E3%80%81%E6%9F%A5%E7%9C%8B%E9%98%B2%E7%81%AB%E5%A2%99%E8%A7%84%E5%88%99%E5%92%8C%E8%BF%90%E8%A1%8C%E6%83%85%E5%86%B5"><span class="nav-text">11、查看防火墙规则和运行情况</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12%E3%80%81systemctl-list-unit-files%E6%9F%A5%E7%9C%8B%E8%87%AA%E5%90%AF%E5%88%97%E8%A1%A8%E5%91%BD%E4%BB%A4"><span class="nav-text">12、systemctl list-unit-files	查看自启列表命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13%E3%80%81cat-x2F-etc-x2F-audit-x2F-auditd-conf"><span class="nav-text">13、cat &#x2F;etc&#x2F;audit&#x2F;auditd.conf</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#14%E3%80%81-cd-x2F-etc-x2F-audit-x2F-rules-d-x2F-amp-amp-ll"><span class="nav-text">14、 cd &#x2F;etc&#x2F;audit&#x2F;rules.d&#x2F; &amp;&amp; ll</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#15%E3%80%81ps-ef"><span class="nav-text">15、ps -ef</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#16%E3%80%81cat-x2F-etc-x2F-hosts-deny%E5%92%8Ccat-x2F-etc-x2F-hosts-allow"><span class="nav-text">16、cat &#x2F;etc&#x2F;hosts.deny和cat &#x2F;etc&#x2F;hosts.allow</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#17%E3%80%81cat-x2F-etc-x2F-crontab-%E6%9F%A5%E7%9C%8B%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1"><span class="nav-text">17、cat &#x2F;etc&#x2F;crontab 查看定时任务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#18%E3%80%81auditctl-l-%E6%9F%A5%E7%9C%8B%E5%AE%A1%E8%AE%A1%E8%A7%84%E5%88%99"><span class="nav-text">18、auditctl -l  查看审计规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#19%E3%80%81systemctl-status-auditd%E6%9F%A5%E7%9C%8Bauditd%E6%9C%8D%E5%8A%A1%E7%9A%84%E7%8A%B6%E6%80%81"><span class="nav-text">19、systemctl status auditd	查看auditd服务的状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#20%E3%80%81cd-x2F-var-x2F-log"><span class="nav-text">20、cd &#x2F;var&#x2F;log</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#21%E3%80%81ps-ef-grep-audit"><span class="nav-text">21、ps -ef |grep audit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#22%E3%80%81ps-ef-grep-syslog"><span class="nav-text">22、ps -ef |grep syslog</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#23%E3%80%81service-rsyslog-status%E6%9F%A5%E7%9C%8B%E6%97%A5%E5%BF%97%E6%9C%8D%E5%8A%A1%E7%8A%B6%E6%80%81"><span class="nav-text">23、service rsyslog status	查看日志服务状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#24%E3%80%81cd-x2F-var-x2F-log-amp-amp-ll%E6%9F%A5%E7%9C%8Blog%E7%9B%AE%E5%BD%95%E4%B8%8B%E7%9A%84%E6%9D%83%E9%99%90"><span class="nav-text">24、cd &#x2F;var&#x2F;log &amp;&amp; ll	查看log目录下的权限</span></a></li></ol>
+
+    </div>
+</div>
+            </div>
+        
+    </div>
+</div>
+
+
+                
+
+            </div>
+            
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">Cream</a>
+        </div>
+        
+        <div class="theme-info info-item">
+            <span class="powered-by-container">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" href="https://hexo.io">Hexo</a> 驱动</span>
+                <br>
+            <span class="theme-version-container">主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.1.2</a>
+        </div>
+        
+        
+        
+            <div id="start_div" style="display:none">
+                2022/3/12 00:00:00
+            </div>
+            <div>
+                博客已运行 <span class="odometer" id="runtime_days" ></span> 天 <span class="odometer" id="runtime_hours"></span> 小时 <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span> 秒
+            </div>
+        
+        
+        
+            <script async data-pjax>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-expand-width flex-center">
+            <i class="fa-regular fa-expand"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fa-solid fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa-solid fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+
+</main>
+
+
+
+<script src="//evan.beee.top/projects/hexo-theme-redefine/v2.1.2/source/js/utils.js"></script><script src="//evan.beee.top/projects/hexo-theme-redefine/v2.1.2/source/js/main.js"></script><script src="//evan.beee.top/projects/hexo-theme-redefine/v2.1.2/source/js/layouts/navbarShrink.js"></script><script src="//evan.beee.top/projects/hexo-theme-redefine/v2.1.2/source/js/tools/scrollTopBottom.js"></script><script src="//evan.beee.top/projects/hexo-theme-redefine/v2.1.2/source/js/tools/lightDarkSwitch.js"></script>
+
+
+    <script src="//evan.beee.top/projects/hexo-theme-redefine/v2.1.2/source/js/tools/localSearch.js"></script>
+
+
+
+    <script src="//evan.beee.top/projects/hexo-theme-redefine/v2.1.2/source/js/tools/codeBlock.js"></script>
+
+
+
+    <script src="//evan.beee.top/projects/hexo-theme-redefine/v2.1.2/source/js/layouts/lazyload.js"></script>
+
+
+
+    <script src="//evan.beee.top/projects/hexo-theme-redefine/v2.1.2/source/js/tools/runtime.js"></script>
+    <script src="//evan.beee.top/projects/hexo-theme-redefine/v2.1.2/source/js/layouts/odometer.min.js"></script>
+    <link rel="stylesheet" href="//evan.beee.top/projects/hexo-theme-redefine/v2.1.2/source/assets/odometer-theme-minimal.css">
+
+
+
+  <script src="//evan.beee.top/projects/hexo-theme-redefine/v2.1.2/source/js/libs/Typed.min.js"></script>
+  <script src="//evan.beee.top/projects/hexo-theme-redefine/v2.1.2/source/js/plugins/typed.js"></script>
+
+
+
+
+
+
+<div class="post-scripts pjax">
+    
+        <script src="//evan.beee.top/projects/hexo-theme-redefine/v2.1.2/source/js/tools/tocToggle.js"></script><script src="//evan.beee.top/projects/hexo-theme-redefine/v2.1.2/source/js/libs/anime.min.js"></script><script src="//evan.beee.top/projects/hexo-theme-redefine/v2.1.2/source/js/layouts/toc.js"></script><script src="//evan.beee.top/projects/hexo-theme-redefine/v2.1.2/source/js/plugins/tabs.js"></script>
+    
+</div>
+
+
+    <script src="//evan.beee.top/projects/hexo-theme-redefine/v2.1.2/source/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax',
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            Global.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            Global.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            Global.refresh();
+        });
+    });
+</script>
+
+
+
+
+</body>
+</html>

